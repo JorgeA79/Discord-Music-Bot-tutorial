@@ -1,4 +1,6 @@
 //FIRST TEST HANDLER IS WORKING OR NOT
+const Discord = require("discord.js");
+
 module.exports = {
   name: "ping",
   description: "Pinging the bot",
