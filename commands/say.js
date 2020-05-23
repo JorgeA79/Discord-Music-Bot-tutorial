@@ -4,7 +4,7 @@ module.exports = {
   name: "say",
   description: "Say something owo",
   execute(client, message, args) {
-    const args = message.content.slice(prefix.length).split(` `);
+  
 		message.delete(1000);
 		if (!args.length) {
 		return message.channel.send(`You didn't say anything, ${message.author}!`);
