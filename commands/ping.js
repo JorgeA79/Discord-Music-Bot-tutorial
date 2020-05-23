@@ -3,7 +3,9 @@ module.exports = {
   name: "ping",
   description: "Pinging the bot",
   execute(client, message) {
-  message.channel.send(`Pong! :ping_pong:  \`${Date.now() - message.createdTimestamp} ms\``);
+    const embed = new Discord.MessageEmbed()
+    .setDescriprion(`Pong! :ping_pong:  \`${Date.now() - message.createdTimestamp} ms\``); 
+  message.channel.send(embed);
     
 }
 }
