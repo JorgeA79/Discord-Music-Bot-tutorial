@@ -7,11 +7,11 @@ module.exports = {
   let member = message.mentions.members.first();
 		 if(!member) 
 		return message.reply("Try mentioning the person");	
-		
-		  message.channel.send(`**${message.author.username}** is dancing with **${member.user.username}**`);
+
 		const embed = new Discord.MessageEmbed()
+		.setDescrption(`**${message.author.username}** is dancing with **${member.user.username}**`)
   		 .setColor(0xC76CF5)
   		.setImage("https://cdn.lowgif.com/full/0e7bb3437e9b4f2a-are-na-anime-dance-gif-7-gif.gif");
-   message.channel.send(embed);
+   		message.channel.send(embed);
   }
 };
