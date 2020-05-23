@@ -22,7 +22,7 @@ module.exports = {
         return message.channel.send(embed);
     }
       const embed = new Discord.MessageEmbed()
-          .setTitle("Music Queue :white_check_mark: ")
+          .setTitle("Music Queue <a:kawaii:713667075838705698> ")
           .setDescription(`${serverQueue.songs
         .map((song, index) => index + 1 + ". " + song.title)
         .join("\n\n")}`,
