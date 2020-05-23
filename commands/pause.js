@@ -4,22 +4,28 @@ module.exports = {
   execute (client, message, args) {
   const { channel } = message.member.voice;
     if (!channel) {
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-      return message.channel.send("YOU NEED TO BE IN VOICE CHANNEL :/");
+       const embed = new Discord.MessageEmbed()
+          .setDescription("**You need to be in a voice channel** <a:x_:713677703756251147>")
+          .setColor(0xC76CF5);
+      return message.channel.send(embed);
     }
 
     const serverQueue = message.client.queue.get(message.guild.id);
 
     if (!serverQueue) {
-      return message.channel.send("There is nothing playing that i could pause");
+       const embed = new Discord.MessageEmbed()
+          .setDescription("**There is nothing in the queue** <a:x_:713677703756251147>")
+          .setColor(0xC76CF5);
+        return message.channel.send(embed);
     }
     
     if(serverQueue && serverQueue.playing) {
       serverQueue.playing = false;
       serverQueue.connection.dispatcher.pause(true)
-      
-      
-      return message.channel.send("✅ | Paused The Current Playing Song")
+       const embed = new Discord.MessageEmbed()
+          .setDescription("✅ | Paused The Current Playing Song")
+          .setColor(0xC76CF5);
+        return message.channel.send(embed);
   }  
   }
 }
