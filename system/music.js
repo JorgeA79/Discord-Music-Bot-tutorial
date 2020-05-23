@@ -50,7 +50,7 @@ module.exports = {
   	          .setColor(0x7AFFA8)
   	          .setDescription(`🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 0s / ${song.duration}s`)
 	      		.addField(`Enjoy your song <:kannaheart:712714267056537641>`)
-  	          .setThumbnail("")
+  	          .setThumbnail(song.image)
 	             .setURL(song.url)
      	queue.textChannel.send(embed);
     
