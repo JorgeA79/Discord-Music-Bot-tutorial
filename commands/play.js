@@ -49,11 +49,23 @@ module.exports = {
 
     if (urlcheck) {
       try {
+         const opts = {
+        query: targetsong,
+        pageStart: 1, // first page result
+        pageEnd: 1, // until page 3
+        }
+        
+        yts( query , function ( err, r ) {
+        const videos = r.videos
+        const thumbnail = videos.thumbnail,
+        image = videos.thumbnail.toString();
+        })
         songData = await ytdl.getInfo(args[0]);
         song = {
           title: songData.title,
           url: songData.video_url,
           duration: songData.length_seconds
+          image: image
         };
       } catch (error) {
         if (message.include === "copyright") {
