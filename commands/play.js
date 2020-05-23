@@ -18,7 +18,11 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      return message.channel.send("YOU NEED TO BE IN VOICE CHANNEL :/");
+      const embed = new Discord.MessageEmbed()
+    .setDescription("You need to be in a voice channel <a:x_:713677703756251147>")
+    .setColor(0xC76CF5);
+      //IF AUTHOR IS NOT IN VOICE CHANNEL
+     return message.channel.send(embed);
     }
 
     //WE WILL ADD PERMS ERROR LATER :(
@@ -86,7 +90,11 @@ module.exports = {
     
     if(serverQueue) {
       serverQueue.songs.push(song)
-      return serverQueue.textChannel.send(`\`${song.title}\`, Song Added to queue`)
+      const embed = new Util.MessageEmbed()
+      .setDescription("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>")
+      .setColor(0xC76CF5);
+      //IF AUTHOR IS NOT IN VOICE CHANNEL
+     return message.channel.send(embed);
       .catch(console.error)
     } else {
       queueConstruct.songs.push(song);
