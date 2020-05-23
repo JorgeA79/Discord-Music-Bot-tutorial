@@ -51,10 +51,12 @@ module.exports = {
       try {
        
         songData = await ytdl.getInfo(args[0]);
+        const image = "https://img.youtube.com/vi/" + songData.video_id +"/default.jpg";
         song = {
           title: songData.title,
           url: songData.video_url,
-          duration: songData.length_seconds
+          duration: songData.length_seconds,
+          image: image
         };
       } catch (error) {
         if (message.include === "copyright") {
@@ -70,7 +72,7 @@ module.exports = {
         
         const result = await youtube.searchVideos(targetsong, 1)
         songData = await ytdl.getInfo(result[0].url)
-        const image = "https://img.youtube.com/vi/" + songData.video_id +"/default.jpg";
+        
          song = {
           title: songData.title,
           url: songData.video_url,
