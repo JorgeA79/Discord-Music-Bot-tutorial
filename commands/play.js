@@ -64,7 +64,7 @@ module.exports = {
         song = {
           title: songData.title,
           url: songData.video_url,
-          duration: songData.length_seconds
+          duration: songData.length_seconds,
           image: image
         };
       } catch (error) {
