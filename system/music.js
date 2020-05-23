@@ -48,8 +48,8 @@ module.exports = {
 	            .setTitle(song.title)
   	          .setAuthor("PixelEdits","https://cdn.discordapp.com/avatars/710373309279109129/3bccbda5edd8e7228a8ba9166385f349.png?size=256")
   	          .setColor(0x7AFFA8)
-  	          .setDescription(`🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 0s / ${song.duration}`)
-	      .addField(`STARTED PLAYING **${song.title} **`)
+  	          .setDescription(`🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 0s / ${song.duration}s`)
+	      		.addField(`Enjoy your song <:kannaheart:712714267056537641>`)
   	          .setThumbnail("")
 	             .setURL(song.url)
      	queue.textChannel.send(embed);
