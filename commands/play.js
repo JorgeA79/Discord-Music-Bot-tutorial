@@ -89,12 +89,8 @@ module.exports = {
     }
     
     if(serverQueue) {
-      serverQueue.songs.push(song)
-      const embed = new Util.MessageEmbed()
-      .setDescription("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>")
-      .setColor(0xC76CF5);
-      //IF AUTHOR IS NOT IN VOICE CHANNEL
-     return message.channel.send(embed);
+      serverQueue.songs.push(song);
+      return message.channel.send("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>"));
       .catch(console.error)
     } else {
       queueConstruct.songs.push(song);
