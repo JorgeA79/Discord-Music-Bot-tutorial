@@ -70,6 +70,8 @@ module.exports = {
         
         const result = await youtube.searchVideos(targetsong, 1)
         songData = await ytdl.getInfo(result[0].url)
+        const image = "https://img.youtube.com/vi/" + songData.title +"/default.jpg";
+        console.log(songData.id);
          song = {
           title: songData.title,
           url: songData.video_url,
