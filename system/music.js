@@ -47,7 +47,7 @@ module.exports = {
              const embed = new Discord.MessageEmbed()
 	            .setTitle(song.title)
   	          .setAuthor("PixelEdits","https://cdn.discordapp.com/avatars/710373309279109129/3bccbda5edd8e7228a8ba9166385f349.png?size=256")
-  	          .setColor(0x7AFFA8)
+  	          .setColor(0xC76CF5)
   	          .setDescription(`🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 0s / ${song.duration}s <:loveyou:712720057553125447> `)
   	          .setThumbnail(song.image)
 	          .setURL(song.url)
