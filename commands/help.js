@@ -17,7 +17,7 @@ module.exports = {
   .addField("Fun Commands", "\`8ball\`, \`flip\` \`head\` or \`tail\`,\`say\`")
 .addField("Roleplay Commands", "\`hug\`,\`slap\`,\`kiss\`,\`shoot\`,\`protect\`,\`wave\`,\`date\`,\`dance\`,\`pat\`")
 .addField("Japan Commands", "\`profile\`,\`ammy\`,\`pixel\`,\`nia\`,\`jelly\`,\`aldrin\`,\`chuuni\`")
-	.addField("Music Commands", "\`play\`,\`leave\`")
+	.addField("Music Commands", "\`play\`,\`stop\`,\`np\`,\`queue\`,\`pause\`,\`resume\`,\`lyrics\`,\`skip\`")
   message.channel.send(embed);
   
   }
