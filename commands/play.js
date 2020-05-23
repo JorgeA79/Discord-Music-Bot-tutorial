@@ -18,11 +18,8 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      const embed = new Util.MessageEmbed()
-    .setDescription("You need to be in a voice channel <a:x_:713677703756251147>")
-    .setColor(0xC76CF5);
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-     return message.channel.send(embed);
+     return message.channel.send("You need to be in a voice channel <a:x_:713677703756251147>");
     }
 
     //WE WILL ADD PERMS ERROR LATER :(
