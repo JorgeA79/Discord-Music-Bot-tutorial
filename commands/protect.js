@@ -6,7 +6,7 @@ module.exports = {
   execute(client, message, args) {
       var hugifs =  [
 	 "https://i.gifer.com/3cA2.gif",
- 	 "https://memestatic.fjcdn.com/gifs/Protect+the+cinnamon+roll_7619b3_6456881.gif"];
+ 	 "https://bigmemes.funnyjunk.com/gifs/Protect+the+cinnamon+roll_7619b3_6456881.gif"];
 
 		
     
