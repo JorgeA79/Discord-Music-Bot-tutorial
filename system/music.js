@@ -1,6 +1,7 @@
 //I WILL BE BACK AFTER 5 min
 const ytdlDiscord = require("ytdl-core-discord");
-const Discord = require("discord.js);
+const Discord = require("discord.js");
+			
 module.exports = {
   async play(song, message) {
     const queue = message.client.queue.get(message.guild.id);
