@@ -17,11 +17,8 @@ module.exports = {
 
     const { channel } = message.member.voice;
     if (!channel) {
-          const embed = new Util.MessageEmbed()
-          .setDescription("You need to be in a voice channel <a:x_:713677703756251147>")
-          .setColor(0xC76CF5);
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-     return message.channel.send(embed);
+     return message.channel.send("You need to be in a voice channel <a:x_:713677703756251147>");
     }
 
     //WE WILL ADD PERMS ERROR LATER :(
@@ -89,10 +86,7 @@ module.exports = {
     
     if(serverQueue) {
       serverQueue.songs.push(song);
-          const embed = new Util.MessageEmbed()
-          .setDescription("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>")
-          .setColor(0xC76CF5);
-     return message.channel.send(embed)
+     return message.channel.send("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>")
       .catch(console.error)
     } else {
       queueConstruct.songs.push(song);
