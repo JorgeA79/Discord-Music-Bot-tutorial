@@ -1,3 +1,5 @@
+const Discord = require("discord.js");
+
 module.exports = {
   name: "pause",
   description: "pause the song",
@@ -28,4 +30,4 @@ module.exports = {
         return message.channel.send(embed);
   }  
   }
-}
+};
