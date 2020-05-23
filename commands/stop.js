@@ -18,7 +18,9 @@ module.exports = {
 
     serverQueue.songs = [];
     serverQueue.connection.dispatcher.end();
-
-    serverQueue.textChannel.send("**Stoped the song form playing music**");
+    const embed = new Discord.MessageEmbed()
+    .setDescription("**Stoped the song form playing music** <a:x_:713677703756251147>")
+    .setColor(0xC76CF5);
+    serverQueue.textChannel.send(embed);
   }
 };
