@@ -9,7 +9,7 @@ module.exports = {
     if(!song) {
       queue.channel.leave();
       message.client.queue.delete(message.guild.id)
-      return queue.textChannel.send("Music Queue is Ended Now 😌").catch(console.error)
+      return queue.textChannel.send("Music Queue has Ended Now <a:sad:713691844076109866>").catch(console.error)
     }
     
     try {
