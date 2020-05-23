@@ -4,7 +4,7 @@ module.exports = {
   name: "slap",
   description: "slap someone owo",
   execute(client, message, args) {
-      var huggifs =  [
+      var hugifs =  [
 	    "https://media1.tenor.com/images/b6d8a83eb652a30b95e87cf96a21e007/tenor.gif?itemid=10426943",
  	    "https://media.giphy.com/media/Zau0yrl17uzdK/giphy.gif",
  	    "https://i.pinimg.com/originals/4e/9e/a1/4e9ea150354ad3159339b202cbc6cad9.gif"];
