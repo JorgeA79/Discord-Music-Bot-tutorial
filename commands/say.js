@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "hug",
-  description: "Hug someone owo",
+  name: "say",
+  description: "Say something owo",
   execute(client, message, args) {
     const args = message.content.slice(prefix.length).split(` `);
 		message.delete(1000);
