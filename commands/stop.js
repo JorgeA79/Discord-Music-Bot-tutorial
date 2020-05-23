@@ -7,7 +7,7 @@ module.exports = {
     const { channel } = message.member.voice;
     if (!channel) {
       //IF AUTHOR IS NOT IN VOICE CHANNEL
-      return message.channel.send("YOU NEED TO BE IN VOICE CHANNEL :/");
+      return message.channel.send("You need to be in a voice channel <a:x_:713677703756251147>");
     }
 
     const serverQueue = message.client.queue.get(message.guild.id);
