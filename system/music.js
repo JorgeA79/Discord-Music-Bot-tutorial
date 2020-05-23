@@ -1,6 +1,6 @@
 //I WILL BE BACK AFTER 5 min
 const ytdlDiscord = require("ytdl-core-discord");
-
+const Discord = require("discord.js";)
 module.exports = {
   async play(song, message) {
     const queue = message.client.queue.get(message.guild.id);
@@ -43,7 +43,15 @@ module.exports = {
     dispatcher.setVolumeLogarithmic(queue.volume / 100); //VOLUME
     
     
-    
+             const embed = new Discord.MessageEmbed()
+	            .setTitle("**STARTED PLAYING**")
+              .setDescription(song.title)
+  	          .setAuthor("PixelEdits","https://cdn.discordapp.com/avatars/710373309279109129/3bccbda5edd8e7228a8ba9166385f349.png?size=256")
+  	          .setColor(0x7AFFA8)
+  	          .setDescription(`🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 0s / XDs`)
+  	          .setThumbnail("")
+	             .setURL(song.url)
+     	  message.channel.send(embed);
       queue.textChannel.send(`**STARTED PLAYING** - [${song.title}](${song.url})`)
     
     
