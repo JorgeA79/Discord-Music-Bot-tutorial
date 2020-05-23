@@ -87,7 +87,7 @@ module.exports = {
     
     if(serverQueue) {
       serverQueue.songs.push(song);
-      return message.channel.send("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>");
+      return message.channel.send("\`${song.title}\`, Song Added to queue <a:kawaii:713667075838705698>")
       .catch(console.error)
     } else {
       queueConstruct.songs.push(song);
