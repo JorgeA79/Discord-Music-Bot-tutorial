@@ -52,7 +52,7 @@ module.exports = {
   	          .setThumbnail(song.image)
 	          .setURL(song.url)
 	     	.setTimestamp()
-	  	.setFooter(`Enjoy your song <:kannaheart:712714267056537641>`);
+	  	.setFooter(`Enjoy your song!`);
      	queue.textChannel.send(embed);
     
     
