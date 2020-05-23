@@ -6,7 +6,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
 
-  message.channel.send("<:kawaii:713667075838705698>");
+  message.channel.send("<a:kawaii:713667075838705698>");
     
 }
 }
