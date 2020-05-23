@@ -49,23 +49,12 @@ module.exports = {
 
     if (urlcheck) {
       try {
-         const opts = {
-        query: targetsong,
-        pageStart: 1, // first page result
-        pageEnd: 1, // until page 3
-        }
-        
-        yts( query , function ( err, r ) {
-        const videos = r.videos
-        const thumbnail = videos.thumbnail,
-        image = videos.thumbnail.toString();
-        })
+       
         songData = await ytdl.getInfo(args[0]);
         song = {
           title: songData.title,
           url: songData.video_url,
-          duration: songData.length_seconds,
-          image: image
+          duration: songData.length_seconds
         };
       } catch (error) {
         if (message.include === "copyright") {
@@ -78,25 +67,13 @@ module.exports = {
       }
     } else {
       try {
-        const opts = {
-        query: targetsong,
-        pageStart: 1, // first page result
-        pageEnd: 1, // until page 3
-        }
-        
-        yts( query , function ( err, r ) {
-        const videos = r.videos
-        const thumbnail = videos.thumbnail,
-        image = videos.thumbnail.toString();
-        })
         
         const result = await youtube.searchVideos(targetsong, 1)
         songData = await ytdl.getInfo(result[0].url)
          song = {
           title: songData.title,
           url: songData.video_url,
-          duration: songData.length_seconds,
-          image: image
+          duration: songData.length_seconds
         };
       } catch (error) {
         console.error(error)
