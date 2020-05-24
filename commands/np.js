@@ -21,24 +21,7 @@ module.exports = {
       .setColor(0xC76CF5);
       return message.channel.send(embed);
     }
-    
-    
-     const embed = new Discord.MessageEmbed()
-	    .setTitle(serverQueue.songs[0].title)
-  	  .setAuthor("PixelEdits","https://cdn.discordapp.com/avatars/710373309279109129/3bccbda5edd8e7228a8ba9166385f349.png?size=256")
-  	  .setColor(0xC76CF5)
-  	  .setDescription(`🔵▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 0s / ${serverQueue.songs[0].durations}s <a:kawaii:713667075838705698> `)
-  	  .setThumbnail(serverQueue.songs[0].image)
-	    .setURL(serverQueue.songs[0].url)
-	    .setTimestamp()
-	  	.setFooter(`Enjoy your song!`);
-     	queue.textChannel.send(embed);
-    
-    
-    message.channel.send(serverQueue.songs[0].title)
-
-    
-    
+        message.channel.send(serverQueue.songs[0].title) 
     
   }
 }
