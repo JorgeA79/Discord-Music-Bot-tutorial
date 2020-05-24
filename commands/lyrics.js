@@ -27,12 +27,12 @@ module.exports = {
     song.lyrics()
     .then(lyrics => {
       if (lyrics.length > 4095) {
-        return message.channel.send("LYRICS ARE TOO LONG")
+        return message.channel.send("Lyrics are too long")
       }
       
       if (lyrics.length < 2048) {
         const lyricsEmbed = new MessageEmbed()
-          .setColor("#ff2050")
+          .setColor(0xC76CF5)
           .setDescription(lyrics.trim());
         return m.edit('', lyricsEmbed);
       }
