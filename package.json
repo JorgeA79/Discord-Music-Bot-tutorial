@@ -20,7 +20,7 @@
     "@discordjs/opus": "^0.1.0",
     "genius-lyrics": "^2.0.0",
     "yt-search":"^1.1.2 ",
-    "pokedex.js":"3.3.3"
+    "pokedex":"1.1.0"
   },
   "engines": {
     "node": "12.x"
