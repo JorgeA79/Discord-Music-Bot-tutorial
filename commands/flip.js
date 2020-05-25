@@ -17,7 +17,7 @@ module.exports = {
             } else if (result == 2) {
     		    const embed = new Discord.MessageEmbed()
             .setTitle("Tail")
-            .setDescription("`You got me <:wholesomekermit:705354033799364628> `")
+            .setDescription(`You got me <:wholesomekermit:705354033799364628> `)
             .setColor(0xC76CF5)
             .setImage("https://68.media.tumblr.com/4c0e4d4f186433f84ad11109f0b619b2/tumblr_np6oolnI2c1td4t64o1_500.gif");
             message.channel.send(embed);
@@ -35,13 +35,16 @@ module.exports = {
             } else if (result == 2) {
     		    const embed = new Discord.MessageEmbed()
             .setTitle("Tail")
-            .setDescription("`You got me <:wholesomekermit:705354033799364628> `")
+            .setDescription(`You got me <:wholesomekermit:705354033799364628> `)
             .setColor(0xC76CF5)
             .setImage("https://68.media.tumblr.com/4c0e4d4f186433f84ad11109f0b619b2/tumblr_np6oolnI2c1td4t64o1_500.gif");
             message.channel.send(embed);
     	      }	 
     }else{
-     message.channel.send("no");
+            const embed = new Discord.MessageEmbed()
+            .setDescription(`You need to specify tail or head`)
+            .setColor(0xC76CF5)
+            message.channel.send(embed);
     
     }
 }
