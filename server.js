@@ -82,31 +82,20 @@ client.on('message', message => {
 	  if (message.content.startsWith(PREFIX + say)) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		const argsowo = args.splice(1).join(" ");  
- 	if (!argsowo.length) {
-          const embed = new Discord.MessageEmbed()
-          .setDescription("**You didn't write any Pokemon** <a:x_:713677703756251147>")
-          .setColor(0xC76CF5);
-          return message.channel.send(embed);
-    }
+
 
     var pokemon = pokedex.pokemon(argsowo); 
-    console.dir(pokemon);
-    var name = pokemon.name;
-    var id = pokemon.id;
-    var height = pokemon.height;
-    var weight = pokemon.weight;
-    var sprite = pokemon.sprites.animated;
-    var exp = pokemon.base_experience;
-
+   
+    if(!pokemon){
+ 	return message.channel.send('No xd');	    
+    }
+	 console.dir(pokemon);	  
           const embed = new Discord.MessageEmbed()
           .setDescription('')
           .setColor(0xC76CF5);
            message.channel.send(embed);
 
-	  }catch (err) { //IF IT CATCH ERROR
-      console.log(err)
-      message.channel.send("I am getting error on using this command")
-    }
+	  }
 });
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
