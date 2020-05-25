@@ -28,7 +28,7 @@ module.exports = {
 
 	var r8ballAnswer = answers[Math.floor(Math.random() * answers.length)];
     const embed = new Discord.MessageEmbed()
-    .setDescription(r8ballAnswer)
+    .setDescription(`:8ball:  | ${r8ballAnswer}`)
     .setColor(0xC76CF5);
     message.channel.send(embed);
   }
