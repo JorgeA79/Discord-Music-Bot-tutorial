@@ -107,11 +107,11 @@ client.on('message', message => {
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
 			var entry = pokemonE.pokedex_entries;
 			var selectEntry = entry[Math.floor(Math.random() * entry.length)];
-			
+			console.log(selectEntry);
 			
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
-			.setDescription(`${selectEntry.en}`)
+			.setDescription(`${selectEntry}`)
 			.setThumbnail(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
