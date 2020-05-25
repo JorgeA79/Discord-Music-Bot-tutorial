@@ -6,7 +6,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
   
-    const args = message.content.slice(0).split(` `);
+const args = message.content.slice('p!').split(' ');
 		message.delete(1000);
   
     const embed = new Discord.MessageEmbed()
