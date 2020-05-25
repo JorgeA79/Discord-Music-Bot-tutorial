@@ -16,6 +16,7 @@ module.exports = {
     }
 
     var pokemon = pokedex.pokemon(args); 
+    console.dir(pokemon);
     var name = pokemon.name;
     var id = pokemon.id;
     var height = pokemon.height;
@@ -24,7 +25,7 @@ module.exports = {
     var exp = pokemon.base_experience;
 
           const embed = new Discord.MessageEmbed()
-          .setDescription(sprite)
+          .setDescription('')
           .setColor(0xC76CF5);
            message.channel.send(embed);
 
