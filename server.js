@@ -3,6 +3,12 @@ const client = new discord.Client({ disableEveryone: true, disabledEvents: ["TYP
 const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
+const oakdexPokedex = require('oakdex-pokedex');
+
+const eevee = oakdexPokedex.findPokemon('Eevee')
+// returns data/pokemon/eevee.json
+console.log(eevee.pokedex_entries); // Eeevee
+
 
 client.prefix = PREFIX
 client.queue = new Map();
