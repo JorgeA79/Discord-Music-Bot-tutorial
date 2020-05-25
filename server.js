@@ -100,6 +100,7 @@ client.on('message', message => {
     			var height = pokemon.height;
     			var weight = pokemon.weight;
     			var sprite = pokemon.sprites.animated;
+			var types = pokemon.types.en;
     			var exp = pokemon.base_experience;    
 			var pokemonL = name.charAt(0).toUpperCase();
 			var pokemonM = name.slice(1); 
@@ -114,6 +115,7 @@ client.on('message', message => {
           		.setTitle(`${pokemonX} #${id}`)
 			.setDescription(`${selectEntry}`)
 			.setThumbnail(pokemon.sprites.animated)
+			.addField("Types", "\`"+ types +"\`")
 			.addField("Height", "\`"+ height/10 +"m\`")
 			.addField("Weight", "\`"+ weight/10 +"kg\`")
 			.addField("Base Experience", "\`"+ exp +"\`")
