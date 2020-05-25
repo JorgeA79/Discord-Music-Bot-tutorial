@@ -105,10 +105,13 @@ client.on('message', message => {
 			var pokemonM = name.slice(1); 
 			var pokemonX = pokemonL + pokemonM;			    
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
-
+			var entry = pokemonE.pokedex_entries;
+			var selectEntry = entry[Math.floor(Math.random() * entry.length)];
+			
+			
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
-			.setDescription(`${pokemonE.pokedex_entries}`)
+			.setDescription(`${selectEntry.en}`)
 			.setThumbnail(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
