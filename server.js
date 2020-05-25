@@ -114,7 +114,6 @@ client.on('message', message => {
 			var sp_atk = pokemonE.base_stats.sp_atk
 			var sp_def = pokemonE.base_stats.sp_def
 			var speed = pokemonE.base_stats.speed
-			console.log(stats.hp);
 			console.log(abilities);
 
           		const embed = new discord.MessageEmbed()
