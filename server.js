@@ -55,7 +55,23 @@ client.on("message", message => {
 });
 
 
+    var say = "say";
+    client.on('message', message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(prefix + say)) {
+		const args = message.content.slice(prefix.length).split(` `);
+		message.delete(1000);
+		if (!args.length) {
+		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	   }
+		const embed = new Discord.MessageEmbed()
+   .setColor(0xC76CF5)
+   .setDescription(args.splice(1).join(" "))
+   message.channel.send(embed);
 
+		
+	}
+});
 
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
