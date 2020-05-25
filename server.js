@@ -118,7 +118,7 @@ client.on('message', message => {
 			.addField("Base Stats", "\`"+ stats +"\`", true)
 			.addField("Height", "\`"+ height/10 +"m\`", true)
 			.addField("Weight", "\`"+ weight/10 +"kg\`", true)
-			.addField("Abilities", "\`"+ abilities +"\`", false)
+			.addField("Abilities", "\`"+ abilities +"\`", true)
 			.addField("Base Experience", "\`"+ exp +"\`", true)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
