@@ -7,6 +7,9 @@ const { TOKEN, PREFIX } = require("./config.json")
 client.prefix = PREFIX
 client.queue = new Map();
 
+var Pokedex = require('pokedex'),
+    pokedex = new Pokedex();
+
 //CLIENT EVENTS
 client.on("ready", () => {
   console.log('Ready TO play some soft songs')
@@ -74,5 +77,32 @@ client.on("message", message => {
 	}
 });
 
+client.on('message', message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + say)) {
+		const args = message.content.slice(PREFIX.length).split(` `);
+ 	if (!args.length) {
+          const embed = new Discord.MessageEmbed()
+          .setDescription("**You didn't write any Pokemon** <a:x_:713677703756251147>")
+          .setColor(0xC76CF5);
+          return message.channel.send(embed);
+    }
+
+    var pokemon = pokedex.pokemon(args); 
+    console.dir(pokemon);
+    var name = pokemon.name;
+    var id = pokemon.id;
+    var height = pokemon.height;
+    var weight = pokemon.weight;
+    var sprite = pokemon.sprites.animated;
+    var exp = pokemon.base_experience;
+
+          const embed = new Discord.MessageEmbed()
+          .setDescription('')
+          .setColor(0xC76CF5);
+           message.channel.send(embed);
+
+	  }
+});
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
