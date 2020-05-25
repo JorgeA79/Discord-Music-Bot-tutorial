@@ -5,9 +5,7 @@ const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 
-const eevee = oakdexPokedex.findPokemon('Eevee')
-// returns data/pokemon/eevee.json
-console.log(eevee.pokedex_entries["Ultra Moon"].en); // Eeevee
+
 
 
 client.prefix = PREFIX
@@ -96,6 +94,7 @@ client.on('message', message => {
 		    try {
         		var pokemon = pokedex.pokemon(argsowo)
 			console.dir(pokemon);    
+			    
 			var name = pokemon.name.toString();
     			var id = pokemon.id;
     			var height = pokemon.height;
@@ -104,10 +103,12 @@ client.on('message', message => {
     			var exp = pokemon.base_experience;    
 			var pokemonL = name.charAt(0).toUpperCase();
 			var pokemonM = name.slice(1); 
-			var pokemonX = pokemonL + pokemonM;
-			
+			var pokemonX = pokemonL + pokemonM;			    
+			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
+
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
+			.setDescription(`pokemonE.pokedex_entries["Ultra Moon"].en`)
 			.setThumbnail(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
