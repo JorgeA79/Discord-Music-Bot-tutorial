@@ -84,13 +84,13 @@ client.on('message', message => {
 		const argsowo = args.splice(1).join(" ");  
 
 		    try {
-        		var pokemon = pokedex.pokemon(argsowo); 
-			console.dir(pokemon);    
+        		pokedex.pokemon(argsowo)
+
     			} catch(e) {
         		console.log(e);
 			return message.channel.send('No xd');	  
     			}
-	  
+	  	console.dir(pokemon);    
           	const embed = new discord.MessageEmbed()
           	.setDescription('')
           	.setColor(0xC76CF5);
