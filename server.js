@@ -114,7 +114,7 @@ client.on('message', message => {
           		.setTitle(`${pokemonX} #${id}`)
 			.setDescription(`${selectEntry}`)
 			.setThumbnail(pokemon.sprites.animated)
-			.addField(`Height", "\``+ height +`\``)
+			.addField("Height", "\`"+ height +"\`")
 			.addField(`Weight", "\`${weight}\``)
 			.addField(`Base Experience", "\`${exp}\``)
           		.setColor(0xC76CF5);
