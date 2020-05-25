@@ -6,12 +6,6 @@ const { TOKEN, PREFIX } = require("./config.json")
 
 client.prefix = PREFIX
 client.queue = new Map();
-var Pokedex = require('pokedex'),
-    pokedex = new Pokedex();
-
-console.log( pokedex.pokemon('gengar'));
-
-console.log( pokedex.pokemon('gengar').sprites.animated);
 
 //CLIENT EVENTS
 client.on("ready", () => {
