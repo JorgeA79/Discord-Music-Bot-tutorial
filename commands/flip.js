@@ -5,7 +5,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
   
-  if(args == tails){
+  if(args[0] == "tails"){
   message.channel.send("yes");
     }else{
     message.channel.send("no");
