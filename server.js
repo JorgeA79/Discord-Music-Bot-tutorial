@@ -9,7 +9,7 @@ client.queue = new Map();
 var Pokedex = require('pokedex'),
     pokedex = new Pokedex();
 
-console.log( pokedex.pokemon('gengar').sprites[0]);
+console.log( pokedex.pokemon('gengar').sprites.animated);
 
 //CLIENT EVENTS
 client.on("ready", () => {
