@@ -121,7 +121,7 @@ client.on('message', message => {
           		.setTitle(`${pokemonX} #${id}`)
 			.setThumbnail(pokemon.sprites.animated)
 			.addField("Types", "\`"+ types +"\`")
-			.addField("Base Stats", "\`"+ stats +"\`", true)
+			.addField("Base Stats", true)
 			.addField("Height", "\`"+ height/10 +"m\`", true)
 			.addField("Weight", "\`"+ weight/10 +"kg\`", true)
 			.addField("Abilities", true)
