@@ -113,9 +113,8 @@ client.on('message', message => {
 			    
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
-			.setDescription(`${selectEntry}`)
 			.setThumbnail(pokemon.sprites.animated)
-			.addField("Types", "\`"+  +"\`")
+			.addField("Types", "\`"+ types +"\`")
 			.addField("Height", "\`"+ height/10 +"m\`")
 			.addField("Weight", "\`"+ weight/10 +"kg\`")
 			.addField("Base Experience", "\`"+ exp +"\`")
