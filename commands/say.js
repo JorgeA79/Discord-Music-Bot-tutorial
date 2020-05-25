@@ -4,7 +4,7 @@ module.exports = {
   name: "say",
   description: "Dance with someone owo",
   execute(client, message, args) {
-
-   		message.channel.send(args);
+  const argso = message.content.slice(prefix.length).split(` `);
+   		message.channel.send(args.splice(1).join(" "));
   }
 };
