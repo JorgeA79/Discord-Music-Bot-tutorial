@@ -79,7 +79,7 @@ client.on("message", message => {
 
 client.on('message', message => {
 	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + pokedex)) {
+	  if (message.content.startsWith(PREFIX + "pokedex")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		const argsowo = args.splice(1).join(" ");  
 
@@ -88,14 +88,14 @@ client.on('message', message => {
    
    		if(!pokemon){
  		return message.channel.send('No xd');	    
-    		}else{
+    		}
 	 	console.dir(pokemon);	  
           	const embed = new discord.MessageEmbed()
           	.setDescription('')
           	.setColor(0xC76CF5);
            	message.channel.send(embed);
 
-		}	  }
+		  }
 });
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
