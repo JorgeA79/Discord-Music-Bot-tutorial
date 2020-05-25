@@ -107,9 +107,9 @@ client.on('message', message => {
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
 			
 			var types = pokemonE.types
-			var entry = pokemonE.pokedex_entries
+			var entry = pokemonE.pokedex_entries[1]
 			console.log(types);
-			console.log(entry[0]);
+			console.log(entry);
 			    
 			    
           		const embed = new discord.MessageEmbed()
