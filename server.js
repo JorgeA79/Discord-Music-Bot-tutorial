@@ -109,7 +109,7 @@ client.on('message', message => {
 			var types = pokemonE.types
 			var entry = pokemonE.pokedex_entries
 			console.log(types);
-			console.log(entry);
+			console.log(entry[0]);
 			    
 			    
           		const embed = new discord.MessageEmbed()
