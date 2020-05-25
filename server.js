@@ -7,7 +7,7 @@ const oakdexPokedex = require('oakdex-pokedex');
 
 const eevee = oakdexPokedex.findPokemon('Eevee')
 // returns data/pokemon/eevee.json
-console.log(eevee.pokedex_entries); // Eeevee
+console.log(eevee.pokedex_entries["Ultra Moon"].en); // Eeevee
 
 
 client.prefix = PREFIX
