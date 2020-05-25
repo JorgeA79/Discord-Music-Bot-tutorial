@@ -108,7 +108,7 @@ client.on('message', message => {
 
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
-			.setDescription(`${pokemonE.pokedex_entries["Ultra Moon"].en}`)
+			.setDescription(`${pokemonE.pokedex_entries}`)
 			.setThumbnail(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
