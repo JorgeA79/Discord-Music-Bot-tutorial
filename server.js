@@ -79,21 +79,21 @@ client.on("message", message => {
 
 client.on('message', message => {
 	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + say)) {
+	  if (message.content.startsWith(PREFIX + pokedex)) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		const argsowo = args.splice(1).join(" ");  
 
 
-    var pokemon = pokedex.pokemon(argsowo); 
+    		var pokemon = pokedex.pokemon(argsowo); 
    
-    if(!pokemon){
- 	return message.channel.send('No xd');	    
-    }
-	 console.dir(pokemon);	  
-          const embed = new Discord.MessageEmbed()
-          .setDescription('')
-          .setColor(0xC76CF5);
-           message.channel.send(embed);
+   		if(!pokemon){
+ 		return message.channel.send('No xd');	    
+    		}
+	 	console.dir(pokemon);	  
+          	const embed = new discord.MessageEmbed()
+          	.setDescription('')
+          	.setColor(0xC76CF5);
+           	message.channel.send(embed);
 
 	  }
 });
