@@ -110,8 +110,8 @@ client.on('message', message => {
 			var entry = pokemonE.pokedex_entries
 			console.log(types);
 			console.log(entry);
-			    
-			    
+			const entryO = entry.toArray();
+			 console.log(entryO);   
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
 			.setThumbnail(pokemon.sprites.animated)
@@ -121,7 +121,8 @@ client.on('message', message => {
 			.addField("Base Experience", "\`"+ exp +"\`")
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
-    			} catch(e) {
+    			
+		   	} catch(e) {
         		console.log(e);
 			const embed = new discord.MessageEmbed()
 			.setDescription(`Thats not a pokemon, ${message.author}!`)
