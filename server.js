@@ -109,7 +109,7 @@ client.on('message', message => {
 			var entry = pokemonE.pokedex_entries;
 			var selectEntry = entry[Math.floor(Math.random() * entry.length)];
 			var entryowo = entry[0];
-			console.log(entryowo);
+			console.log(types);
 			
 			    
 			    
@@ -117,7 +117,7 @@ client.on('message', message => {
           		.setTitle(`${pokemonX} #${id}`)
 			.setDescription(`${selectEntry}`)
 			.setThumbnail(pokemon.sprites.animated)
-			.addField("Types", "\`"+ types[0] +"\`")
+			.addField("Types", "\`"+  +"\`")
 			.addField("Height", "\`"+ height/10 +"m\`")
 			.addField("Weight", "\`"+ weight/10 +"kg\`")
 			.addField("Base Experience", "\`"+ exp +"\`")
