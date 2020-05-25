@@ -5,10 +5,13 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
   
-  if(args[0] == "tails"){
+  if(args[0] == "tail"){
   message.channel.send("yes");
+    }else if(args[0] == "head"){
+    message.channel.send("puede ser");
     }else{
-    message.channel.send("no");
+     message.channel.send("no");
+    
     }
 }
 }
