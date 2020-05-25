@@ -107,7 +107,7 @@ client.on('message', message => {
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
 			
 			var types = pokemonE.types
-			var entry = pokemon.pokedex_entries
+			var entry = pokemonE.pokedex_entries.en
 			console.log(types);
 			console.log(entry);
 			    
