@@ -105,17 +105,19 @@ client.on('message', message => {
 			var pokemonM = name.slice(1); 
 			var pokemonX = pokemonL + pokemonM;			    
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
-			
+			var abilities = pokemonE.abilities
 			var types = pokemonE.types
 			var entry = pokemonE.pokedex_entries
+			var stats = pokemonE.base_stats
 			console.log(types);
 			console.log(entry);
-			const entryO = entry.toArray();
-			 console.log(entryO);   
+			
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
 			.setThumbnail(pokemon.sprites.animated)
 			.addField("Types", "\`"+ types +"\`")
+			.addField("Abilities", "\`"+ abilities +"\`")
+			.addField("Base Stats", "\`"+ stats +"\`")
 			.addField("Height", "\`"+ height/10 +"m\`")
 			.addField("Weight", "\`"+ weight/10 +"kg\`")
 			.addField("Base Experience", "\`"+ exp +"\`")
