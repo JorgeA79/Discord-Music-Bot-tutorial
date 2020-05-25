@@ -60,10 +60,11 @@ client.on("message", message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + say)) {
 		const args = message.content.slice(PREFIX.length).split(` `);
-		
+		message.delete({ timeout: 1000});
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   }
+		  
 		const embed = new discord.MessageEmbed()
    		.setColor(0xC76CF5)
    		.setDescription(args.splice(1).join(" "))
