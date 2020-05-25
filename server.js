@@ -108,7 +108,12 @@ client.on('message', message => {
 			var abilities = pokemonE.abilities
 			var types = pokemonE.types
 			var entry = pokemonE.pokedex_entries
-			var stats = pokemonE.base_stats
+			var hp = pokemonE.base_stats.hp
+			var atk = pokemonE.base_stats.atk
+			var def = pokemonE.base_stats.def
+			var sp_atk = pokemonE.base_stats.sp_atk
+			var sp_def = pokemonE.base_stats.sp_def
+			var speed = pokemonE.base_stats.speed
 			console.log(stats.hp);
 			console.log(abilities);
 
@@ -119,7 +124,13 @@ client.on('message', message => {
 			.addField("Base Stats", "\`"+ stats +"\`", true)
 			.addField("Height", "\`"+ height/10 +"m\`", true)
 			.addField("Weight", "\`"+ weight/10 +"kg\`", true)
-			.addField("Abilities", "\`"+ abilities +"\`", true)
+			.addField("Abilities", true)
+			.addField(`**HP:** ${hp}`, true)
+			.addField(`**ATK:** ${atk}`, true)
+			.addField(`**DEF:** ${def}`, true)
+			.addField(`**SP.ATK:** ${sp_atk}`, true)
+			.addField(`**SP.DEF:** ${sp_def}`, true)
+			.addField(`**SPEED:** ${speed}`, true)
 			.addField("Base Experience", "\`"+ exp +"\`", true)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
