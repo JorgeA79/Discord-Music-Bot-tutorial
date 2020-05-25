@@ -109,8 +109,7 @@ client.on('message', message => {
 			var types = pokemonE.types
 			var entry = pokemonE.pokedex_entries
 			var stats = pokemonE.base_stats
-			console.log(types);
-			console.log(entry);
+			console.log(stats);
 			
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
