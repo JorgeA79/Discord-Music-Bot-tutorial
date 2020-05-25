@@ -120,6 +120,9 @@ client.on('message', message => {
         		console.log(e);
 			const embed = new discord.MessageEmbed()
 			.setDescription(`Thats not a pokemon, ${message.author}!`)
+			.addField("Height", "\`${height}\`")
+			.addField("Weight", "\`${weight}\`")
+			.addField("Base Experience", "\`${exp}\`")
           		.setColor(0xC76CF5);
            		message.channel.send(embed);  
     			}
