@@ -99,7 +99,7 @@ client.on('message', message => {
 			    
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${name} #${id}`)
-			.setImage(pokemon.sprites.animated)
+			.setThumbnail(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
     			} catch(e) {
