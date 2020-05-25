@@ -81,14 +81,15 @@ client.on('message', message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + say)) {
 		const args = message.content.slice(PREFIX.length).split(` `);
- 	if (!args.length) {
+		const argsowo = args.splice(1).join(" ");  
+ 	if (!argsowo.length) {
           const embed = new Discord.MessageEmbed()
           .setDescription("**You didn't write any Pokemon** <a:x_:713677703756251147>")
           .setColor(0xC76CF5);
           return message.channel.send(embed);
     }
 
-    var pokemon = pokedex.pokemon(args); 
+    var pokemon = pokedex.pokemon(argsowo); 
     console.dir(pokemon);
     var name = pokemon.name;
     var id = pokemon.id;
