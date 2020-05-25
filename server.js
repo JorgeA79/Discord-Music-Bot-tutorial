@@ -103,7 +103,10 @@ client.on('message', message => {
           .setColor(0xC76CF5);
            message.channel.send(embed);
 
-	  }
+	  }catch (err) { //IF IT CATCH ERROR
+      console.log(err)
+      message.channel.send("I am getting error on using this command")
+    }
 });
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
