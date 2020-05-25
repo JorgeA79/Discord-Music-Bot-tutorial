@@ -90,15 +90,18 @@ client.on('message', message => {
 		    try {
         		var pokemon = pokedex.pokemon(argsowo)
 			console.dir(pokemon);    
-			var name = pokemon.name;
+			var name = pokemon.name.toString();
     			var id = pokemon.id;
     			var height = pokemon.height;
     			var weight = pokemon.weight;
     			var sprite = pokemon.sprites.animated;
     			var exp = pokemon.base_experience;    
-			    
+			var pokemonL = name.charAt(0).toUpperCase();
+			var pokemonM = name.slice(1); 
+			var pokemonX = pokemonL + pokemonM;
+			
           		const embed = new discord.MessageEmbed()
-          		.setTitle(`${name} #${id}`)
+          		.setTitle(`${pokemonX} #${id}`)
 			.setThumbnail(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
