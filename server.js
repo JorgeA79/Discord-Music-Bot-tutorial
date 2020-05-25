@@ -4,6 +4,12 @@ const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 
+client.prefix = PREFIX
+client.queue = new Map();
+var Pokedex = require('pokedex'),
+    pokedex = new Pokedex();
+
+console.log( pokedex.pokemon('gengar').id);
 
 //CLIENT EVENTS
 client.on("ready", () => {
@@ -17,13 +23,6 @@ client.on("error", console.error)
 
 //DEFINIING
 client.commands = new discord.Collection()
-client.prefix = PREFIX
-client.queue = new Map();
-var Pokedex = require('pokedex'),
-    pokedex = new Pokedex();
-
-console.log( pokedex.pokemon('gengar') );
-
 
 //LETS LOAD ALL FILES
 const cmdFiles = readdirSync(join(__dirname, "commands")).filter(file => file.endsWith(".js"))
