@@ -107,7 +107,7 @@ client.on('message', message => {
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
 			var entry = pokemonE.pokedex_entries;
 			var selectEntry = entry[Math.floor(Math.random() * entry.length)];
-			console.log(entry{0});
+			console.log(entry("Ultra Moon"));
 			
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
