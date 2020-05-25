@@ -82,18 +82,32 @@ client.on('message', message => {
 	  if (message.content.startsWith(PREFIX + "pokedex")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		const argsowo = args.splice(1).join(" ");  
-
+			
+		  	if (!args.length) {
+			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	   		}
+		  
 		    try {
         		var pokemon = pokedex.pokemon(argsowo)
 			console.dir(pokemon);    
+			var name = pokemon.name;
+    			var id = pokemon.id;
+    			var height = pokemon.height;
+    			var weight = pokemon.weight;
+    			var sprite = pokemon.sprites.animated;
+    			var exp = pokemon.base_experience;    
+			    
           		const embed = new discord.MessageEmbed()
-          		.setDescription('')
+          		.setTitle(`${name} #${id}`)
 			.setImage(pokemon.sprites.animated)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
     			} catch(e) {
         		console.log(e);
-			return message.channel.send('No xd');	  
+			const embed = new discord.MessageEmbed()
+			.setDescription("Thats not a pokemon, ${message.author}!")
+          		.setColor(0xC76CF5);
+           		message.channel.send(embed);  
     			}
 	  	
 
