@@ -115,8 +115,8 @@ client.on('message', message => {
 			.setDescription(`${selectEntry}`)
 			.setThumbnail(pokemon.sprites.animated)
 			.addField("Height", "\`"+ height +"\`")
-			.addField(`Weight", "\`${weight}\``)
-			.addField(`Base Experience", "\`${exp}\``)
+			.addField("Weight", "\`"+ weight +"\`")
+			.addField("Base Experience", "\`"+ exp +"\`")
           		.setColor(0xC76CF5);
            		message.channel.send(embed);
     			} catch(e) {
