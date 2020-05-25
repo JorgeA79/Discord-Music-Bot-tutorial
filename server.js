@@ -88,14 +88,14 @@ client.on('message', message => {
    
    		if(!pokemon){
  		return message.channel.send('No xd');	    
-    		}
+    		}else{
 	 	console.dir(pokemon);	  
           	const embed = new discord.MessageEmbed()
           	.setDescription('')
           	.setColor(0xC76CF5);
            	message.channel.send(embed);
 
-	  }
+		}	  }
 });
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
