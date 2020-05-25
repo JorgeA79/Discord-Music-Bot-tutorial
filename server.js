@@ -6,7 +6,7 @@ const { TOKEN, PREFIX } = require("./config.json")
 const Pokedex = require('pokedex.js')
 const pokedex = new Pokedex('en')
  
-console.log(pokedex.name('Pikachu').get())
+console.log(pokedex.name('Pikachu').get().type)
 // [{"id":"25","localId":{"galar":"194"},"name":"Pikachu","type":["Electric"],"ability":[{"name":"Static","hidden":false},{"name":"Lightning Rod","hidden":true}],"eggGroup":["Field","Fairy"],"baseStats":{"H":"35","A":"55","B":"40","C":"50","D":"50","S":"90"},"generation":1}]
 
 
