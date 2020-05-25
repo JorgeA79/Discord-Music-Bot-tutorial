@@ -100,15 +100,13 @@ client.on('message', message => {
     			var height = pokemon.height;
     			var weight = pokemon.weight;
     			var sprite = pokemon.sprites.animated;
-			var types = pokemon.types
     			var exp = pokemon.base_experience;    
 			var pokemonL = name.charAt(0).toUpperCase();
 			var pokemonM = name.slice(1); 
 			var pokemonX = pokemonL + pokemonM;			    
 			const pokemonE = oakdexPokedex.findPokemon(pokemonX)
-			var entry = pokemonE.pokedex_entries;
-			var selectEntry = entry[Math.floor(Math.random() * entry.length)];
-			var entryowo = entry[0];
+			
+			var types = pokemonE.types
 			console.log(types);
 			
 			    
