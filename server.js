@@ -19,6 +19,10 @@ client.on("error", console.error)
 client.commands = new discord.Collection()
 client.prefix = PREFIX
 client.queue = new Map();
+var Pokedex = require('pokedex'),
+    pokedex = new Pokedex();
+
+console.log( pokedex.pokemon('gengar') );
 
 
 //LETS LOAD ALL FILES
