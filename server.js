@@ -108,7 +108,7 @@ client.on('message', message => {
     			} catch(e) {
         		console.log(e);
 			const embed = new discord.MessageEmbed()
-			.setDescription("Thats not a pokemon, ${message.author}!")
+			.setDescription(`Thats not a pokemon, ${message.author}!`)
           		.setColor(0xC76CF5);
            		message.channel.send(embed);  
     			}
