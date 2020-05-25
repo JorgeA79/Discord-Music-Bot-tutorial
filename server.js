@@ -60,7 +60,7 @@ client.on("message", message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + say)) {
 		const args = message.content.slice(PREFIX.length).split(` `);
-		message.delete(1000);
+		
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   }
