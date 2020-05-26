@@ -115,8 +115,16 @@ client.on('message', message => {
 			var sp_def = pokemonE.base_stats.sp_def
 			var speed = pokemonE.base_stats.speed
 			var evo = pokemonE.evolution_from
+			var desc = "";
 			console.log(abilities[0].name);
 			console.log(evo);
+			    
+			if(evo == "null"){
+			desc = "This Pokemon doesn't evolve from anything";
+			}else{	
+			desc = `It evolves from ${evo}`;	
+			}
+			    
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
 			.setDescription("OwO")
