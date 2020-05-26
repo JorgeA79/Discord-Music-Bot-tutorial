@@ -124,6 +124,14 @@ client.on('message', message => {
 			}else{	
 			desc = `It evolves from ${evo}`;	
 			}
+			
+			if(types[0] == "dark"){
+			console.log("Si");	
+			    
+			}    
+			console.log("No");    
+			    
+			    
 			    
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
