@@ -116,6 +116,7 @@ client.on('message', message => {
 			var speed = pokemonE.base_stats.speed
 			var evo = pokemonE.evolution_from
 			var desc = "";
+			var color = 0xC76CF5;    
 			console.log(abilities[0].name);
 			console.log(evo);
 			    
@@ -127,12 +128,9 @@ client.on('message', message => {
 			
 			if(types[0] == "Dark"){
 			console.log("Si");	
-			    
-			}    
-			console.log("No");    
-			    
-			    
-			    
+			color = 0x2B2B2B;   
+			}    			    		    
+		    
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
 			.setDescription(desc)
@@ -150,7 +148,7 @@ client.on('message', message => {
         		console.log(e);
 			const embed = new discord.MessageEmbed()
 			.setDescription(`Thats not a pokemon, ${message.author}!`)
-          		.setColor(0xC76CF5);
+          		.setColor(color);
            		message.channel.send(embed);  
     			}
 	  	
