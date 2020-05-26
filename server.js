@@ -119,7 +119,7 @@ client.on('message', message => {
 			console.log(abilities[0].name);
 			console.log(evo);
 			    
-			if(evo == "null"){
+			if(!evo){
 			desc = "This Pokemon doesn't evolve from anything";
 			}else{	
 			desc = `It evolves from ${evo}`;	
