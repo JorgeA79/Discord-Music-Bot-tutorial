@@ -126,11 +126,66 @@ client.on('message', message => {
 			desc = `It evolves from ${evo}`;	
 			}
 			
-			if(types[0] == "Dark"){
-			console.log("Si");	
+			    
+			    
+			    
+			    
+			    
+			if(types[0] == "Fire"){
+			color = 0xFF7F08;
+			}	
+			else if(types[0] == "Grass"){
+			color = 0x55B533;   
+			}  
+			else if(types[0] == "Water"){
+			color = 0x4F5BFF;   
+			} 
+			else if(types[0] == "Bug"){
+			color = 0x7EFF4F;   
+			}  
+			else if(types[0] == "Ground"){
+			color = 0x734802;   
+			}
+			else if(types[0] == "Rock"){
+			color = 0x4D4232;   
+			}  
+			else if(types[0] == "Flying"){
+			color = 0x9EFFF9;   
+			} 
+			else if(types[0] == "Electric"){
+			color = 0xFFE629;   
+			}  
+			else if(types[0] == "Steel"){
+			color = 0xA6A6A4;   
+			}
+			else if(types[0] == "Dragon"){
+			color = 0xCD36FF;   
+			}  
+			else if(types[0] == "Poison"){
+			color = 0x6E0491;   
+			}
+			else if(types[0] == "Fighting"){
+			color = 0x522C01;   
+			}  
+			else if(types[0] == "Psychic"){
+			color = 0xFF0DDF;   
+			} 
+			else if(types[0] == "Ice"){
+			color = 0x0DE3FF;   
+			}
+			else if(types[0] == "Ghost"){
+			color = 0x4E0DD1;   
+			}  
+			else if(types[0] == "Normal"){
+			color = 0xFFFFFF;   
+			}      
+		    	else if(types[0] == "Dark"){
 			color = 0x2B2B2B;   
 			}    			    		    
-		    
+			else if(types[0] == "Fairy
+			color = 0xF79CFF;   
+			}
+			    
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
 			.setDescription(desc)
