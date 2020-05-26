@@ -125,7 +125,7 @@ client.on('message', message => {
 			desc = `It evolves from ${evo}`;	
 			}
 			
-			if(types[0] == "dark"){
+			if(types[0] == "Dark"){
 			console.log("Si");	
 			    
 			}    
