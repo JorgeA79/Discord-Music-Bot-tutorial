@@ -141,14 +141,14 @@ client.on('message', message => {
 			.addField("Weight", "\`"+ weight/10 +"kg\`", true)
 			.addField("Ability","\`"+ abilities[0].name +"\`",true)
 			.addField("Base Experience", "\`"+ exp +"\`", true)
-          		.setColor(0xC76CF5);
+          		.setColor(color);
            		message.channel.send(embed);
     			
 		   	} catch(e) {
         		console.log(e);
 			const embed = new discord.MessageEmbed()
 			.setDescription(`Thats not a pokemon, ${message.author}!`)
-          		.setColor(color);
+          		.setColor(0xC76CF5);
            		message.channel.send(embed);  
     			}
 	  	
