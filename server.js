@@ -124,12 +124,7 @@ client.on('message', message => {
 			desc = "This Pokemon doesn't evolve from anything";
 			}else{	
 			desc = `It evolves from ${evo}`;	
-			}
-			
-			    
-			    
-			    
-			    
+			}	    
 			    
 			if(types[0] == "Fire"){
 			color = 0xFF7F08;
