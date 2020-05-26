@@ -182,7 +182,7 @@ client.on('message', message => {
 		    	else if(types[0] == "Dark"){
 			color = 0x2B2B2B;   
 			}    			    		    
-			else if(types[0] == "Fairy
+			else if(types[0] == "Fairy"){
 			color = 0xF79CFF;   
 			}
 			    
