@@ -114,10 +114,12 @@ client.on('message', message => {
 			var sp_atk = pokemonE.base_stats.sp_atk
 			var sp_def = pokemonE.base_stats.sp_def
 			var speed = pokemonE.base_stats.speed
+			var evo = pokemonE.evolution_from
 			console.log(abilities[0].name);
-
+			console.log(evo);
           		const embed = new discord.MessageEmbed()
           		.setTitle(`${pokemonX} #${id}`)
+			.setDescription("OwO")
 			.setThumbnail(pokemon.sprites.animated)
 			.addField("Types", "\`"+ types +"\`")
 			.addField("Base Stats",`**HP:** ${hp} \n**ATK:** ${atk} \n **DEF:** ${def} \n**SP.ATK:** ${sp_atk} \n**SP.DEF:** ${sp_def} \n**SPEED:** ${speed}` , true)
