@@ -13,27 +13,27 @@ module.exports = {
 	const desc = "";  
 	
 	if(percentage > 0 && percentage <10) {
-	desc = ":black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 10 && percentage <20) {
-	desc = ":white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 20 && percentage <30) {	
-	desc = ":white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 30 && percentage <40) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 40 && percentage <50) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 50 && percentage <60) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 60 && percentage <70) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 70 && percentage <80) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 80 && percentage <90) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square: :black_large_square:";
 	}else if(percentage > 90 && percentage <100) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square:"
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :black_large_square:";
 	}else if(percentage == 100) {
-	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: white_medium_square:"	
+	desc = ":white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square: :white_medium_square:";	
 	}
 	  
 	  
