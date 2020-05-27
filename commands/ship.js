@@ -17,7 +17,7 @@ module.exports = {
 	message.channel.send(embed);
 	}else{
 	const embed = new Discord.MessageEmbed()
-        .setDescription(`**${mention1.user.username}** matches % with **${mention2.user.username}**`)
+        .setDescription(`**${mention1.username}** matches % with **${mention2.username}**`)
 	.setColor(0xC76CF5)
 	message.channel.send(embed);	
 	}  
