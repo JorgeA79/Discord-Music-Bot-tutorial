@@ -4,6 +4,6 @@ module.exports = {
   execute(client, message, args) {
 
 	mention = message.mentions.users;
-  console.log(Array.from(mention)[0]);
+  console.log(Array.from(mention)[1].User);
   }
 };
