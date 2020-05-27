@@ -18,7 +18,7 @@ module.exports = {
 	return message.reply(`Try mentioning the person`);	
 	}else if(!mention2){
 	const embed = new Discord.MessageEmbed()
-        .setDescription(`**${message.author.username}** matches % with **${mention1.username}** \nxd`)
+        .setDescription(`**${message.author.username}** matches % with **${mention1.username}** \n:black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: `)
 	.setColor(0xC76CF5)
 	message.channel.send(embed);
 	
