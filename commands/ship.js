@@ -1,9 +1,26 @@
+const Discord = require("discord.js");
+
 module.exports = {
   name: "ship",
   description: "Stop the music",
   execute(client, message, args) {
 
 	mention = message.mentions.users;
-  console.log(Array.from(mention)[1]);
+  	mention1 = Array.from(mention)[0];
+	mention2 = Array.from(mention)[1];
+	if(!mention1){
+	return message.reply("Try mentioning the person");	
+	}	
+	if(!mention2){
+	const embed = new Discord.MessageEmbed()
+        .setDescription(`**${message.author.username}** matches % with **${mention1.user.username}**`)
+	.setColor(0xC76CF5)
+	message.channel.send(embed);
+	}else{
+	const embed = new Discord.MessageEmbed()
+        .setDescription(`**${mention1.user.username}** matches % with **${mention2.user.username}**`)
+	.setColor(0xC76CF5)
+	message.channel.send(embed);	
+	}  
   }
 };
