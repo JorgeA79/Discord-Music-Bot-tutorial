@@ -10,7 +10,7 @@ module.exports = {
 	mention2 = mention.last();
 	console.log(mention2);
 	var percentage = Math.floor(Math.random() * 100) + 1; 
-	const desc = "";  
+	var desc = "";  
 	
 	if(percentage > 0 && percentage <10) {
 	desc = ":black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:";
