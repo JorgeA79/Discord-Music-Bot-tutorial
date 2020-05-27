@@ -6,12 +6,11 @@ module.exports = {
   execute(client, message, args) {
 
 	mention = message.mentions.users;
-  	mention1 = Array.from(mention)[0];
+  	mention1 = mention.first();
 	mention2 = Array.from(mention)[1];
 	if(!mention1){
 	return message.reply("Try mentioning the person");	
-	}	
-	if(!mention2){
+	}else if(!mention2){
 	const embed = new Discord.MessageEmbed()
         .setDescription(`**${message.author.username}** matches % with **${mention1.user.username}**`)
 	.setColor(0xC76CF5)
