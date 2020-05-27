@@ -8,6 +8,7 @@ module.exports = {
 	mention = message.mentions.users;
   	mention1 = mention.first();
 	mention2 = Array.from(mention)[1];
+	console.log(mention2);
 	if(!mention1){
 	return message.reply("Try mentioning the person");	
 	}else if(!mention2){
@@ -17,7 +18,7 @@ module.exports = {
 	message.channel.send(embed);
 	}else{
 	const embed = new Discord.MessageEmbed()
-        .setDescription(`**${mention1.username}** matches % with **${mention2.user.username}**`)
+        .setDescription(`**${mention1.username}** matches % with **${mention2.username}**`)
 	.setColor(0xC76CF5)
 	message.channel.send(embed);	
 	}  
