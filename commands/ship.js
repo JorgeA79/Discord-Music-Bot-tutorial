@@ -51,12 +51,12 @@ module.exports = {
 	
 	}else if(mention1.id == "304357538101723137" && mention2.id == "360207757787398145"){
 	const embed = new Discord.MessageEmbed()
-        .setDescription(`**${mesntion1.username}** has a Perfect match with **${mention2.username}** \n**Perfect** :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: `)
+        .setDescription(`**${mention1.username}** has a Perfect match with **${mention2.username}** \n**Perfect** :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: `)
 	.setColor(0xC76CF5)
 	message.channel.send(embed);
 	}else if(mention1.id == "360207757787398145" && mention2.id == "304357538101723137"){
 	const embed = new Discord.MessageEmbed()
-        .setDescription(`**${mesntion1.username}** has a Perfect match with **${mention2.username}** \n**Perfect** :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: `)
+        .setDescription(`**${mention1.username}** has a Perfect match with **${mention2.username}** \n**Perfect** :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: :green_square: `)
 	.setColor(0xC76CF5)
 	message.channel.send(embed);
 	}	
