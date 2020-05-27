@@ -14,7 +14,7 @@ module.exports = {
 	
 	if(percentage > 0 && percentage <10) {
 	desc = ":black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
-	else if(percentage > 10 && percentage <20) {
+	}else if(percentage > 10 && percentage <20) {
 	desc = ":white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
 	}else if(percentage > 20 && percentage <30) {	
 	desc = ":white_medium_square: :white_medium_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square: :black_large_square:"
