@@ -10,6 +10,10 @@ module.exports = {
 	mention2 = mention.last();
 	console.log(mention2);
 	  
+	if(mention1 == mention2){
+	mention2 = "";
+	}
+	  
 	if(!mention1){
 	return message.reply(`Try mentioning the person`);	
 	}else if(!mention2){
