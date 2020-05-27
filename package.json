@@ -21,7 +21,8 @@
     "genius-lyrics": "^2.0.0",
     "yt-search":"^1.1.2 ",
     "pokedex":"1.1.0",
-    "oakdex-pokedex":"0.4.5"
+    "oakdex-pokedex":"0.4.5",
+    "pg":"8.2.1"
   },
   "engines": {
     "node": "12.x"
