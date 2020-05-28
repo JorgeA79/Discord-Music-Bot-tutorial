@@ -26,8 +26,12 @@ var xd = 24;
 var dx = 5;
 var idx = message.author.id;
     
-pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
+//pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
 
+    pool.query("CREATE TABLE userxp (id INT PRIMARY KEY, xp INT, lvl INT)", (err, res)=>{
+console.log(err,res)
+ pool.end()
+}) 
   
 }
 }
