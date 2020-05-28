@@ -206,14 +206,14 @@ client.on('message', message => {
 		  }
 });
 
-const pg = require('pg')
-const talkedRecently = new Set();
 const pool = new pg.Pool({
-  user: 'rzzdnmvcvbukfk',
-  host: 'ec2-34-198-243-120.compute-1.amazonaws.com',
-  database: 'd8109afqb7n9hf',
-  password: '61a0b3cb10dace308474cb1da5a50cbb78642e040627827ec3cd3a73ea4fd493',
-  port: 5432,
+	connectionString : process.env.DATABASE_URL,
+	port: 5432,
+        host: process.env.dbhost,
+        database: process.env.db,
+        user: process.env.user,
+        password: process.env.password,
+        ssl: true,
 })
 pool.connect()
 
