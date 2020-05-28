@@ -206,6 +206,41 @@ client.on('message', message => {
 		  }
 });
 
+const talkedRecently = new Set();
+
+client.on('message', message => {
+	  if (message.author === client.user) return;
+	if(message.channel.type === "dm") return;
+	 if (talkedRecently.has(message.author.id)) {
+            msg.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+    		} else {
+
+           // the user can type the command ... your command code goes here :)
+
+        // Adds the user to the set so that they can't talk for a minute
+    
+		pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
+   		 if(err) throw err;
+    		let sql;  
+    		if(!result.rows[0]){
+    		sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
+    		} else {
+     		let xp = result.rows[0].xp;
+     		sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;
+          
+    		}  
+     		pool.query(sql, console.log);
+    		});
+	    
+	        talkedRecently.add(message.author.id);
+	    
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 60000);
+    }
+	
+});
 
 
 //DONT DO ANYTHING WITH THIS TOKEN lol
