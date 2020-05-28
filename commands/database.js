@@ -12,9 +12,22 @@ pool.connect()
 
 
 module.exports = {
-  name: "test",
+  name: "owo",
   description: "Pinging the bot",
   execute(client, message) {
-   
+  
+    
+   const text = 'INSERT INTO xp(id, xp) VALUES($1, $2) RETURNING *'
+  const values = ['Jorge', '40']
+ 
+    
+    pool.query(text, values, (err, res) => {
+  if (err) {
+    console.log(err.stack)
+  } else {
+    console.log(res.rows[0])
+    // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+  }
+})
 }
 }
