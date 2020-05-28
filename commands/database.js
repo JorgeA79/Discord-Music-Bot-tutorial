@@ -48,6 +48,8 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
     
     pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
     if(err) throw err;
+    if(!result.rows[0])  return message.channel.send("This user has no xp")
+      
     let xp = result.rows[0].xp;
       message.channel.send(xp);
     }); 
