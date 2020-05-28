@@ -205,5 +205,29 @@ client.on('message', message => {
 
 		  }
 });
+
+
+  client.on('message', message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + "sum")) {
+		const args = message.content.slice(PREFIX.length).split(` `);
+		//args.splice(1).join(" ")
+		var num1 = args.splice(1);
+		var num2 = args.splice(2);
+		var sumNum = num1 + num2;  
+		
+		  if(!num1){
+		 message.channel.send("You didnt write any number")
+		}
+		if(!num2){
+		 message.channel.send("You didnt write the second number")
+		}  
+		  message.channel.send(sumNum)
+		
+	}
+});
+
+
+
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
