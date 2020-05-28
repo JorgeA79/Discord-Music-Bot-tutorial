@@ -17,19 +17,32 @@ const pool = new pg.Pool({
 })
 pool.connect()
 
+function generateXp(){
+let min = 10;
+let max = 30;  
+return Math.floor(Math.random()*(max - min+1)) + 10;
+}
 
 module.exports = {
   name: "owo",
   description: "Pinging the bot",
   execute(client, message) {
-var xd = 24;
-var dx = 5;
-var idx = message.author.id;
-    
+
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
 
-    
-   
-  
+    pool.query(`SELECT * FROM userxp WHERE id = '${message.authoer.id}'`, (err,rows) =>{
+    if(err) throw err;
+    let sql;  
+    if(rows.length < 1){
+    sql = `INSERT INTO userxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`
+    } else {
+     let xp = rows[0].xp;
+     sql = `UPDATE userxp SET xp = ${xp + generateXp()} WHERE id = '${message.guild.id}'`;
+     
+      
+    }  
+     pool.query(sql, console.log);
+    });
+
 }
 }
