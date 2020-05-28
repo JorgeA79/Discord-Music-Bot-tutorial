@@ -206,7 +206,17 @@ client.on('message', message => {
 		  }
 });
 
+const pg = require('pg')
 const talkedRecently = new Set();
+const pool = new pg.Pool({
+  user: 'rzzdnmvcvbukfk',
+  host: 'ec2-34-198-243-120.compute-1.amazonaws.com',
+  database: 'd8109afqb7n9hf',
+  password: '61a0b3cb10dace308474cb1da5a50cbb78642e040627827ec3cd3a73ea4fd493',
+  port: 5432,
+})
+pool.connect()
+
 
 client.on('message', message => {
 	  if (message.author === client.user) return;
@@ -242,6 +252,11 @@ client.on('message', message => {
 	
 });
 
+function generateXp(){
+let min = 10;
+let max = 30;  
+return Math.floor(Math.random()*(max - min+1)) + 10;
+}
 
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
