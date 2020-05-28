@@ -30,17 +30,18 @@ var idx = message.author.id;
 
     
 pool.query(`SELECT * FROM userxp WHERE id = '${message.author.id}'`,(err, result) => {
-const curlvl = Math.floor(0.1 * Math.sqrt(result.rows.xp + 0.1));
+const curlvl = Math.floor(0.1 * Math.sqrt(result.rows[0].xp + 0.1));
 const xpgen = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
 
 if(err) return err;
 
   
 let sql;
+  
 if (!result.rows[0]){
     sql = `INSERT INTO userxp(idx, xp, level) VALUES('${message.author.id}', 0, 0)`
 } else {
-    let xp = result.rows.xp;
+    let xp = result.rows[0].xp;
     sql = `UPDATE userxp SET xp = ${xp + xpgen} WHERE userid = '${message.author.id}'`
 }
                      
