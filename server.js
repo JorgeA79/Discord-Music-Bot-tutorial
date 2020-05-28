@@ -222,7 +222,7 @@ client.on('message', message => {
 	  if (message.author === client.user) return;
 	if(message.channel.type === "dm") return;
 	 if (talkedRecently.has(message.author.id)) {
-            msg.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+            message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
     		} else {
 
            // the user can type the command ... your command code goes here :)
