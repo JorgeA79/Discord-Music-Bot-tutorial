@@ -29,20 +29,7 @@ module.exports = {
   execute(client, message) {
 
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
-    
-pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
-    if(err) throw err;
-    let sql;  
-    if(!result.rows[0]){
-    sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
-    } else {
-     let xp = result.rows[0].xp;
-     sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;
-     
-      
-    }  
-     pool.query(sql, console.log);
-    });
+ 
 
    let target = message.mentions.users.first() || message.author;
     
