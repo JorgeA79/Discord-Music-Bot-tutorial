@@ -31,15 +31,15 @@ module.exports = {
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
  
 
-   let target = message.mentions.users.first() || message.author;
+   //let target = message.mentions.users.first() || message.author;
     
-    pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
-    if(err) throw err;
-    if(!result.rows[0])  return message.channel.send("This user has no xp")
+    //pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
+    //if(err) throw err;
+    //if(!result.rows[0])  return message.channel.send("This user has no xp")
       
-    let xp = result.rows[0].xp;
-      message.channel.send(xp);
-    }); 
+    //let xp = result.rows[0].xp;
+      //message.channel.send(xp);
+    //}); 
     
 
 }
