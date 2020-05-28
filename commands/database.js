@@ -37,7 +37,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
     sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
     } else {
      let xp = result.rows[0].xp;
-     sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.guild.id}'`;
+     sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;
      
       
     }  
