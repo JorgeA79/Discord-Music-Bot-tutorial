@@ -29,11 +29,18 @@ module.exports = {
   execute(client, message) {
 
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
-
-   pool.query("CREATE TABLE userxpxd (id BIGINT, xp INT, lvl INT)", (err, res)=>{
-console.log(err,res)
-  pool.end()
-})
+pool.query(`SELECT * FROM userxpxd WHERE id = '${message.author.id}'`, (err,rows) =>{
+    if(err) throw err;
+    let sql;  
+    if(rows.length < 1){
+    sql = `INSERT INTO userxpxd (id,xp) VALUES ('${message.author.id}', ${generateXp()})`
+    } else {
+     let xp = rows[0].xp;
+     sql = `UPDATE userxpxd SET xp = ${xp + generateXp()} WHERE id = '${message.guild.id}'`;
+  
+    }  
+     pool.query(sql, console.log);
+    });
 
 }
 }
