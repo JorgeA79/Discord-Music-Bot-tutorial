@@ -25,7 +25,7 @@ module.exports = {
   
 const idx = message.author.id;
 const query = `
-INSERT INTO usersxp (id, xp, lvl)
+INSERT INTO userxp (id, xp, lvl)
 VALUES (idx, 30, 1)
 `;
     
