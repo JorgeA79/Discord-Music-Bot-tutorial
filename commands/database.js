@@ -30,11 +30,19 @@ module.exports = {
 
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
     
-   pool.query("CREATE TABLE usersxp (id BIGSERIAL PRIMARY KEY, xp INT, lvl INT)", (err, res)=>{
-console.log(err,res)
- pool.end()
- })
-
+pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,rows) =>{
+    if(err) throw err;
+    let sql;  
+    if(rows.length < 1){
+    sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`
+    } else {
+     let xp = rows[0].xp;
+     sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.guild.id}'`;
+     
+      
+    }  
+     pool.query(sql, console.log);
+    });
 
 
 }
