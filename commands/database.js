@@ -26,27 +26,30 @@ var xd = 24;
 var dx = 5;
 var idx = message.author.id;
     
-pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
+//pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
 
     
-pool.query(`SELECT * FROM xp WHERE userid = '${message.author.id}'`,(err, result) => {
+pool.query(`SELECT * FROM userxp WHERE id = '${message.author.id}'`,(err, result) => {
 const curlvl = Math.floor(0.1 * Math.sqrt(rows.xp + 0.1));
 const xpgen = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
 
-  if(err) throw err;
-    let sql;
-if (!result.rows[0]){{
+if(err) return err;
+
+  
+let sql;
+if (!result.rows[0]){
     sql = `INSERT INTO userxp(idx, xp, level) VALUES('${message.author.id}', 0, 0)`
 } else {
     let xp = result.rows.xp;
-    sql = `UPDATE xp SET xp = ${xp + xpgen} WHERE userid = '${message.author.id}'`
+    sql = `UPDATE userxp SET xp = ${xp + xpgen} WHERE userid = '${message.author.id}'`
 }
                      
  pool.query(sql, console.log);
- pool.end(err => {
+pool.end(err => {
   if(err) throw err; 
   console.log('Not logged to PostgresSQL');
 });
+                     
 });
 });
   
