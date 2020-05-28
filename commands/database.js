@@ -26,7 +26,7 @@ var xd = 24;
 var dx = 5;
 var idx = message.author.id;
     
-//pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
+pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
 
   
 }
