@@ -18,14 +18,14 @@ module.exports = {
   
     
    const text = 'INSERT INTO xp(id, xp) VALUES($1, $2) RETURNING *'
-  const values = ['Jorge', '40']
+  const values = ['Dania', '30']
  
     
     pool.query(text, values, (err, res) => {
   if (err) {
     console.log(err.stack)
   } else {
-    console.log(res.rows[0])
+    console.dir(res.rows)
     // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
   }
 })
