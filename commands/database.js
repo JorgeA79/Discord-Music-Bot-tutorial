@@ -1,6 +1,13 @@
 const Discord = require("discord.js");
 const pg = require('pg')
 
+
+//pool.query("CREATE TABLE userxp (id INT, xp INT, lvl INT)", (err, res)=>{
+// console.log(err,res)
+//  pool.end()
+// })
+
+
 const pool = new pg.Pool({
   user: 'rzzdnmvcvbukfk',
   host: 'ec2-34-198-243-120.compute-1.amazonaws.com',
@@ -16,13 +23,20 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
   
-
- pool.query("CREATE TABLE userxp (id INT, xp INT, lvl INT)", (err, res)=>{
- console.log(err,res)
-   pool.end()
- })
+const idx = message.author.id;
+const query = `
+INSERT INTO users (id, xp, lvl)
+VALUES (idx, 30, 1)
+`;
     
-
+pool.query(query, (err, res) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(res.rows);
+    pool.end();   
+});
   
   
 }
