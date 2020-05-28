@@ -44,6 +44,14 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
      pool.query(sql, console.log);
     });
 
+   let target = message.mentions.users.first() || message.author;
+    
+    pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
+    if(err) throw err;
+    let xp = result.rows[0].xp;
+      message.channel.send(xp);
+    }); 
+    
 
 }
 }
