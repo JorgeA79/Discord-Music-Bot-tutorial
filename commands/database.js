@@ -22,17 +22,12 @@ module.exports = {
   name: "owo",
   description: "Pinging the bot",
   execute(client, message) {
-  
-const idx = message.author.id;
-const query = `
-INSERT INTO userxp (id, xp, lvl)
-VALUES ('+idx+', 30, 1)
-`;
+var xd = 30;
+var dx = 1;
+var idx = message.author.id;
     
-pool.query("CREATE TABLE userxp (id BIGINT, xp INT, lvl INT)", (err, res)=>{
- console.log(err,res)
- pool.end()
-})
+pool.query('INSERT INTO usersxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx]
+
   
 }
 }
