@@ -30,7 +30,7 @@ var idx = message.author.id;
 
     
 pool.query(`SELECT * FROM userxp WHERE id = '${message.author.id}'`,(err, result) => {
-const curlvl = Math.floor(0.1 * Math.sqrt(rows.xp + 0.1));
+const curlvl = Math.floor(0.1 * Math.sqrt(result.rows.xp + 0.1));
 const xpgen = Math.floor(Math.random() * (20 - 5 + 1)) + 5;
 
 if(err) return err;
