@@ -30,7 +30,7 @@ module.exports = {
 
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
 
-    pool.query(`SELECT * FROM userxp WHERE id = '${message.authoer.id}'`, (err,rows) =>{
+    pool.query(`SELECT * FROM userxp WHERE id = '${message.author.id}'`, (err,rows) =>{
     if(err) throw err;
     let sql;  
     if(rows.length < 1){
