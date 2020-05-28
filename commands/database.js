@@ -15,6 +15,8 @@ const pool = new pg.Pool({
   password: '61a0b3cb10dace308474cb1da5a50cbb78642e040627827ec3cd3a73ea4fd493',
   port: 5432,
 })
+
+
 pool.connect()
 
 function generateXp(){
