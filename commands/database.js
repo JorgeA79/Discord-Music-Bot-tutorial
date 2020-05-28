@@ -22,8 +22,8 @@ module.exports = {
   name: "owo",
   description: "Pinging the bot",
   execute(client, message) {
-var xd = 30;
-var dx = 1;
+var xd = 24;
+var dx = 5;
 var idx = message.author.id;
     
 pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
