@@ -29,15 +29,10 @@ INSERT INTO userxp (id, xp, lvl)
 VALUES ('+idx+', 30, 1)
 `;
     
-pool.query(query, (err, res) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(res.rows);
-    pool.end();   
-});
-  
+pool.query("CREATE TABLE userxp (id BIGINT, xp INT, lvl INT)", (err, res)=>{
+ console.log(err,res)
+ pool.end()
+})
   
 }
 }
