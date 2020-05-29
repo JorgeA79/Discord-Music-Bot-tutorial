@@ -4,8 +4,7 @@ const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
-const { registerFont, Canvas } = require('canvas')
-registerFont('./fonts/Bebas.ttf', { family: 'Bebas' })
+const Canvas = require('canvas');
 
 
 client.prefix = PREFIX
@@ -279,7 +278,7 @@ client.on('message', async message => {
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
 
-	ctx.font = '28px Bebas';
+	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`Your XP: ${xp}`, canvas.width / 2.5, canvas.height / 1.8);
 
@@ -305,8 +304,8 @@ const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
 	let fontSize = 70;
 	do {
-	ctx.addFont("Bebas");
-	ctx.font = `${fontSize -= 10}px Bebas`;
+
+	ctx.font = `${fontSize -= 10}px sans-serif`;
 	} while (ctx.measureText(text).width > canvas.width - 300);
 	return ctx.font;
 };
