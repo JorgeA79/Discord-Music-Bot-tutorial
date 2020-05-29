@@ -255,7 +255,7 @@ return Math.floor(Math.random()*(max - min+1)) + 10;
 var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
 
 
-const Canvas = require('canvas');
+const Canvas = require('canvas'), Font = Canvas.Font;
 
     client.on('message', async message => {
 	  if (message.author === client.user) return;
