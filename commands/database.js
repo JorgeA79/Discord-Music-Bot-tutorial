@@ -30,7 +30,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
 
-pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
+//pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
  
 
    let target = message.mentions.users.first() || message.author;
