@@ -259,7 +259,7 @@ const Canvas = require('canvas');
 	 	  
 	   let target = message.mentions.users.first() || message.author;
     
-    		pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
+    		pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,async (err, result)=>{
     		if(err) return err;
     		if(!result.rows[0])  return message.channel.send("This user has no xp")
       
