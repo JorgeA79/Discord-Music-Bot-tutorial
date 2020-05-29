@@ -8,7 +8,7 @@ const pg = require('pg')
 // })
 
 module.exports = {
-  name: "owo",
+  name: "xp",
   description: "Pinging the bot",
   execute(client, message) {
 
@@ -17,11 +17,11 @@ module.exports = {
     const pool = new pg.Pool({
 	    connectionString : process.env.DATABASE_URL,
 	      port: 5432,
-        host: process.env.dbhost,
-        database: process.env.db,
-        user: process.env.user,
-        password: process.env.password,
-        ssl: true,
+        	host: process.env.dbhost,
+        	database: process.env.db,
+        	user: process.env.user,
+        	password: process.env.password,
+        	ssl: true,
         })
       pool.connect()
     
