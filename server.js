@@ -221,7 +221,7 @@ const pool = new pg.Pool({
 pool.connect()
 
 const talkedRecently = new Set();
-client.on('message', message => {
+client.on('message', async message => {
 	 if (message.author === client.user) return;
  	 if(message.channel.type === "dm") return;
 	 if (talkedRecently.has(message.author.id)) {
