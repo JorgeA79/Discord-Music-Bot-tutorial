@@ -282,7 +282,7 @@ const Canvas = require('canvas');
 	const avatar = await Canvas.loadImage(message.author.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
 
-	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
+	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	channel.send(`OwO, ${message.author.username}!`, attachment);
 
