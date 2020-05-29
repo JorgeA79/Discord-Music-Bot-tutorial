@@ -258,7 +258,7 @@ const Canvas = require('canvas');
 			const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage('./2vsIPEP.3f295fd2.png');
+	const background = await Canvas.loadImage('./OWO.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#74037b';
