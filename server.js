@@ -254,7 +254,19 @@ const Canvas = require('canvas');
     client.on('message', async message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "image")) {
-		
+	
+		  
+	 	  
+	   let target = message.mentions.users.first() || message.author;
+    
+    		pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
+    		if(err) return err;
+    		if(!result.rows[0])  return message.channel.send("This user has no xp")
+      
+    		let xp = result.rows[0].xp;
+    		message.channel.send(xp);
+			
+			
 			const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
@@ -267,7 +279,7 @@ const Canvas = require('canvas');
 	// Slightly smaller text placed above the member's display name
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText('Owo,', canvas.width / 2.5, canvas.height / 3.5);
+	ctx.fillText('Your XP: ${xp},', canvas.width / 2.5, canvas.height / 3.5);
 
 	// Add an exclamation point here and below
 	ctx.font = applyText(canvas, `${message.author.username}!`);
@@ -285,6 +297,12 @@ const Canvas = require('canvas');
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
 	message.channel.send(`OwO, ${message.author.username}!`, attachment);
+			
+    		
+		}); 	  
+		  
+		  
+			
 
 		
 	}
