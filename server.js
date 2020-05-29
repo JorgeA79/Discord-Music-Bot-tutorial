@@ -284,7 +284,7 @@ const Canvas = require('canvas');
 
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 
-	channel.send(`OwO, ${message.author.username}!`, attachment);
+	message.channel.send(`OwO, ${message.author.username}!`, attachment);
 
 		
 	}
