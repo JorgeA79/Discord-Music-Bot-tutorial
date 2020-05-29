@@ -5,14 +5,17 @@ const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 
-
-
-
 client.prefix = PREFIX
 client.queue = new Map();
 
 var Pokedex = require('pokedex'),
     pokedex = new Pokedex();
+
+
+function fontFile(name) {
+  return path.join(__dirname, '../fonts', name);
+}
+
 
 //CLIENT EVENTS
 client.on("ready", () => {
@@ -249,6 +252,9 @@ let max = 30;
 return Math.floor(Math.random()*(max - min+1)) + 10;
 }
 
+
+
+
 const Canvas = require('canvas');
 
     client.on('message', async message => {
@@ -303,6 +309,8 @@ const Canvas = require('canvas');
 });
 
 const applyText = (canvas, text) => {
+	var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
+
 	const ctx = canvas.getContext('2d');
 
 	// Declare a base size of the font
@@ -310,7 +318,7 @@ const applyText = (canvas, text) => {
 
 	do {
 		// Assign the font to the context and decrement it so it can be measured again
-		ctx.font = `${fontSize -= 10}px sans-serif`;
+	ctx.font = `${fontSize -= 10}px sans-serif`;
 		// Compare pixel width of the text to the canvas minus the approximate avatar size
 	} while (ctx.measureText(text).width > canvas.width - 300);
 
