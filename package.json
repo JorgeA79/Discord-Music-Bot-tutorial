@@ -25,7 +25,8 @@
     "pg":"8.2.1",
     "canvas":"2.6.1",
     "path":"0.12.7",
-    "canvas-constructor":"3.2.0"
+    "canvas-constructor":"3.2.0",
+    "node-fetch":"2.6.0"
   },
   "engines": {
     "node": "12.x"
