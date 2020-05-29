@@ -12,9 +12,6 @@ var Pokedex = require('pokedex'),
     pokedex = new Pokedex();
 
 
-function fontFile(name) {
-  return path.join(__dirname, '../fonts', name);
-}
 
 
 //CLIENT EVENTS
@@ -254,9 +251,16 @@ return Math.floor(Math.random()*(max - min+1)) + 10;
 
 
 
-const Canvas = require('canvas'), Font = Canvas.Font;
+const Canvas = require('canvas')
+, Font = Canvas.Font
+, path = require('path');
+ 
 var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
 
+
+function fontFile(name) {
+  return path.join(__dirname, '../fonts', name);
+}
 
     client.on('message', async message => {
 	  if (message.author === client.user) return;
