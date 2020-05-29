@@ -4,6 +4,9 @@ const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
+const { registerFont, createCanvas } = require('canvas')
+registerFont('./fonts/Bebas.ttf', { family: 'Bebas' })
+
 
 client.prefix = PREFIX
 client.queue = new Map();
@@ -250,35 +253,23 @@ return Math.floor(Math.random()*(max - min+1)) + 10;
 }
 
 
-
-const Canvas = require('canvas')
-, Font = Canvas.Font
-, path = require('path');
- 
-var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
-
-
-function fontFile(name) {
-  return path.join(__dirname, '../fonts', name);
-}
-
-    client.on('message', async message => {
-	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + "image")) {
+client.on('message', async message => {
+	if (message.author === client.user) return;
+	if (message.content.startsWith(PREFIX + "image")) {
 	
 		  
 	 	  
-	   let target = message.mentions.users.first() || message.author;
+	let target = message.mentions.users.first() || message.author;
     
-    		pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,async (err, result)=>{
-    		if(err) return err;
-    		if(!result.rows[0])  return message.channel.send("This user has no xp")
+    	pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,async (err, result)=>{
+    	if(err) return err;
+    	if(!result.rows[0])  return message.channel.send("This user has no xp")
       
-    		let xp = result.rows[0].xp;
+    	let xp = result.rows[0].xp;
 
 			
 			
-			const canvas = Canvas.createCanvas(700, 250);
+	const canvas = Canvas.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
 	const background = await Canvas.loadImage('./OWO.png');
@@ -287,13 +278,12 @@ function fontFile(name) {
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-	// Slightly smaller text placed above the member's display name
+
 	ctx.font = '28px Bebas';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`Your XP: ${xp}`, canvas.width / 2.5, canvas.height / 1.8);
 
-	// Add an exclamation point here and below
-	ctx.addFont(Bebas);
+
 	ctx.font = applyText(canvas, `${target.username}!`);
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username}!`, canvas.width / 2.5, canvas.height / 3.5);
@@ -305,33 +295,21 @@ function fontFile(name) {
 
 	const avatar = await Canvas.loadImage(target.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
-
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-
-	message.channel.send(`OwO, ${target.username}!`, attachment);
-			
+	message.channel.send(`OwO, ${target.username}!`, attachment);			
 		}); 	  		
 	}
 });
 
 const applyText = (canvas, text) => {
-
-
 	const ctx = canvas.getContext('2d');
-
-	// Declare a base size of the font
 	let fontSize = 70;
-
 	do {
-		// Assign the font to the context and decrement it so it can be measured again
-	ctx.addFont(Bebas);
+	ctx.addFont("Bebas");
 	ctx.font = `${fontSize -= 10}px Bebas`;
-		// Compare pixel width of the text to the canvas minus the approximate avatar size
 	} while (ctx.measureText(text).width > canvas.width - 300);
-
-	// Return the result to use in the actual canvas
 	return ctx.font;
 };
 
-//DONT DO ANYTHING WITH THIS TOKEN lol
+
 client.login(process.env.BOT_TOKEN)
