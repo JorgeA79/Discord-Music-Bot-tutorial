@@ -229,7 +229,7 @@ client.on('message', async message => {
  } else {
     
 		pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
-      		if(err) throw err;
+      		if(err) return err;
    		let sql;  
     		if(!result.rows[0]){
     		sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
