@@ -252,10 +252,11 @@ let max = 30;
 return Math.floor(Math.random()*(max - min+1)) + 10;
 }
 
-var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
 
 
 const Canvas = require('canvas'), Font = Canvas.Font;
+var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
+
 
     client.on('message', async message => {
 	  if (message.author === client.user) return;
