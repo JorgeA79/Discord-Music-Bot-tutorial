@@ -249,5 +249,48 @@ let max = 30;
 return Math.floor(Math.random()*(max - min+1)) + 10;
 }
 
+const Canvas = require('canvas');
+
+    client.on('message', async message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + "image")) {
+		
+			const canvas = Canvas.createCanvas(700, 250);
+	const ctx = canvas.getContext('2d');
+
+	const background = await Canvas.loadImage('./2vsIPEP.3f295fd2.png');
+	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+	ctx.strokeStyle = '#74037b';
+	ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+	// Slightly smaller text placed above the member's display name
+	ctx.font = '28px sans-serif';
+	ctx.fillStyle = '#ffffff';
+	ctx.fillText('Owo,', canvas.width / 2.5, canvas.height / 3.5);
+
+	// Add an exclamation point here and below
+	ctx.font = applyText(canvas, `${message.author.username}!`);
+	ctx.fillStyle = '#ffffff';
+	ctx.fillText(`${message.author.username}!`, canvas.width / 2.5, canvas.height / 1.8);
+
+	ctx.beginPath();
+	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
+	ctx.closePath();
+	ctx.clip();
+
+	const avatar = await Canvas.loadImage(message.author.displayAvatarURL({ format: 'jpg' }));
+	ctx.drawImage(avatar, 25, 25, 200, 200);
+
+	const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
+
+	channel.send(`OwO, ${message.author.username}!`, attachment);
+
+		
+	}
+});
+
+
+
 //DONT DO ANYTHING WITH THIS TOKEN lol
 client.login(process.env.BOT_TOKEN)
