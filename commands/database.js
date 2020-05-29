@@ -2,14 +2,12 @@ const Discord = require("discord.js");
 const pg = require('pg');
 
     const pool = new pg.Pool({
-	    connectionString : process.env.DATABASE_URL,
 	      port: 5432,
         	host: process.env.dbhost,
         	database: process.env.db,
         	user: process.env.user,
         	password: process.env.password,
-        	ssl: true,
-        })
+        });
       pool.connect()
     
 //pool.query("CREATE TABLE userxp (id INT, xp INT, lvl INT)", (err, res)=>{
