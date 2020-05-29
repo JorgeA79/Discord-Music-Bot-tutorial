@@ -22,7 +22,8 @@
     "yt-search":"^1.1.2 ",
     "pokedex":"1.1.0",
     "oakdex-pokedex":"0.4.5",
-    "pg":"8.2.1"
+    "pg":"8.2.1",
+    "canvas":"2.6.1"
   },
   "engines": {
     "node": "12.x"
