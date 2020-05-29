@@ -217,9 +217,10 @@ const pool = new pg.Pool({
         password: '9bea5f1fa4e2b903889c29e14b98e19e7d5e6612980a22e84b56d881c2c1bf74',
         ssl: true,
 })
+
 pool.connect()
 
-
+const talkedRecently = new Set();
 client.on('message', message => {
 	 if (message.author === client.user) return;
  	 if(message.channel.type === "dm") return;
