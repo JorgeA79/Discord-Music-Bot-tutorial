@@ -270,7 +270,7 @@ const Canvas = require('canvas');
     		if(!result.rows[0])  return message.channel.send("This user has no xp")
       
     		let xp = result.rows[0].xp;
-    		message.channel.send(xp);
+
 			
 			
 			const canvas = Canvas.createCanvas(700, 250);
@@ -309,7 +309,7 @@ const Canvas = require('canvas');
 });
 
 const applyText = (canvas, text) => {
-	var Bebas = new Font('Bebas', fontFile('Bebas.ttf'));
+
 
 	const ctx = canvas.getContext('2d');
 
