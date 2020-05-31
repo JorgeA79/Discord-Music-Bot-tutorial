@@ -29,7 +29,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   
   } else {
 	  
-  message.send(`Succesfully collected $${amount}`);
+  message.channel.send(`Succesfully collected $${amount}`);
   
   pool.query(`UPDATE usersxp SET lastD = ${Date.now()} WHERE id = '${message.author.id}'`, console.log);	  
   
