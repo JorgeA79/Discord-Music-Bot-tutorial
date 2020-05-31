@@ -25,7 +25,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
 	  
   let timeObj = ms(cooldown -(Date.now() - lastDaily));
   
-  message.channel.send(`Your already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**!`)
+  message.channel.send(`Your already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**!`);
   
   } else {
 	  
@@ -40,7 +40,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   
   
         }		
-	)};  
+	});  
 	   
 	   
 }
