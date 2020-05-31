@@ -6,12 +6,8 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
 
-  
-    let money = db.fetch(`money_${message.author.id}`)
-    
-    if (money === null) money = 0;
-      
-      message.channel.send(`You have ${money}`);
+  let sql = `ALTER TABLE usersxp ADD COLUMN money BIGINT;`; 
+  pool.query(sql, console.log);
     
 }
 }
