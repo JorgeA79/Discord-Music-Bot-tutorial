@@ -29,7 +29,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   
   message.channel.send(`Your already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**!`);
   let money = result.rows[0].money;
-  const total += eval(money) + eval(amount);  
+  var total += eval(money) + eval(amount);  
   console.log(total);
   } else {
 	  
