@@ -29,10 +29,6 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   
   message.channel.send(`Your already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**!`);
   let money = result.rows[0].money;
-  
-  var total = 0;
-  
-  total += eval(money) + eval(amount); 
 	  
   console.log(total);
   } else {
@@ -43,8 +39,11 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   
    let money = result.rows[0].money;
    if(money === null) money=0;
-  	  
-  pool.query(`UPDATE usersxp SET money = ${money + 250} WHERE id = '${message.author.id}'`, console.log);		  
+  
+  var total = 0;
+  total += eval(money) + eval(amount); 	  
+	  
+  pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);		  
   
   
         }		
