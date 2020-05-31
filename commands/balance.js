@@ -23,7 +23,10 @@ module.exports = {
 	       
     }  
     let money = result.rows[0].money;
-    message.channel.send(money);
+         const embed = new Discord.MessageEmbed()
+          .setDescription(`:credit_card:  | **${target.username}** you have $${money} :yen:`)
+          .setColor(0xC76CF5);
+         message.channel.send(embed);
     }); 
     
 }
