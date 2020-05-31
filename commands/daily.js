@@ -20,7 +20,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
  
 	
   let lastDaily = result.rows[0].lastD;	  
-	
+console.log(lastDaily)	
   if(lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0){
 	  
   let timeObj = ms(cooldown -(Date.now() - lastDaily));
