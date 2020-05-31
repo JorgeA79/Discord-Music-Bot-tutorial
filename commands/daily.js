@@ -26,15 +26,22 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   if(lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0){
 	  
   let timeObj = ms(cooldown -(Date.now() - lastDaily));
-  
-  message.channel.send(`Your already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**!`);
+	  
+  	  const embed = new Discord.MessageEmbed()
+          .setDescription(`You already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**! <a:x_:713677703756251147>`)
+          .setColor(0xC76CF5);
+          message.channel.send(embed);
+	  
   let money = result.rows[0].money;
 	  
   console.log(total);
   } else {
+
+  const embed = new Discord.MessageEmbed()
+          .setDescription(`:credit_card: | Succesfully collected $${amount} :yen:`)
+          .setColor(0xC76CF5);
+          message.channel.send(embed);  
 	  
-  message.channel.send(`Succesfully collected $${amount}`);
-  
   pool.query(`UPDATE usersxp SET lastD = ${Date.now()} WHERE id = '${message.author.id}'`, console.log);	  
   
    let money = result.rows[0].money;
