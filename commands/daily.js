@@ -11,8 +11,8 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
   console.log(Date.now());
-var xd = 12;	  
-  let sql = `UPDATE usersxp SET lastDaily = ${xd} WHERE id = '${message.author.id}'`;
+  
+  let sql = `ALTER TABLE usersxp ADD COLUMN lastD BIGINT`;
   pool.query(sql, console.log);
     
 }
