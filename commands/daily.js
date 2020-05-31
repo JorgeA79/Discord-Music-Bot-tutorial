@@ -7,11 +7,12 @@ const pool = new pg.Pool({
 pool.connect()
 
 module.exports = {
-  name: "balance",
+  name: "daily",
   description: "Pinging the bot",
   execute(client, message) {
-
-  let sql = `UPDATE usersxp SET lastDaily = ${Date.now()} WHERE id = '${message.author.id}'`;
+  console.log(Date.now());
+var xd = 12;	  
+  let sql = `UPDATE usersxp SET lastDaily = ${xd} WHERE id = '${message.author.id}'`;
   pool.query(sql, console.log);
     
 }
