@@ -15,7 +15,7 @@ module.exports = {
     
     pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
     if(err) return err;
-    if(!result.rows[0]){  
+    if(result.rows[0].money === null){  
     	  const embed = new Discord.MessageEmbed()
           .setDescription(`**${target.username}** has no money <a:x_:713677703756251147>`)
           .setColor(0xC76CF5);
