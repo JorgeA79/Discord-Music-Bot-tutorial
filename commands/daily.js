@@ -16,7 +16,7 @@ module.exports = {
 	  
 pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
    if(err) return err;	  
-  let cooldown = 8640000,
+  let cooldown = 86400000,
   amount = 250;
  
 	
