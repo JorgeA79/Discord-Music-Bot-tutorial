@@ -16,8 +16,8 @@ module.exports = {
 	  
 pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
    if(err) return err;	  
-  let cooldown = 86400000,
-  amount = 250;
+  let cooldown = 86400000;
+  var amount = 250;
  
 	
   let lastDaily = result.rows[0].lastd;
@@ -28,7 +28,9 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
   let timeObj = ms(cooldown -(Date.now() - lastDaily));
   
   message.channel.send(`Your already collected, please wait **${timeObj.hours}h ${timeObj.minutes}m**!`);
-  
+  let money = result.rows[0].money;
+	  
+  console.log(money + 250);
   } else {
 	  
   message.channel.send(`Succesfully collected $${amount}`);
@@ -38,7 +40,7 @@ pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resul
    let money = result.rows[0].money;
    if(money === null) money=0;
   	  
-  pool.query(`UPDATE usersxp SET money = ${money + amount} WHERE id = '${message.author.id}'`, console.log);		  
+  pool.query(`UPDATE usersxp SET money = ${money + 250} WHERE id = '${message.author.id}'`, console.log);		  
   
   
         }		
