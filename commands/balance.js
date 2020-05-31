@@ -11,8 +11,20 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
 
-  let sql = `ALTER TABLE usersxp ADD COLUMN money BIGINT;`; 
-  pool.query(sql, console.log);
+  let target = message.mentions.users.first() || message.author;
+    
+    pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
+    if(err) return err;
+    if(!result.rows[0]){  
+    	  const embed = new Discord.MessageEmbed()
+          .setDescription(`**${target.username}** has no money <a:x_:713677703756251147>`)
+          .setColor(0xC76CF5);
+          return message.channel.send(embed);
+	       
+    }  
+    let money = result.rows[0].money;
+    message.channel.send(money);
+    }); 
     
 }
 }
