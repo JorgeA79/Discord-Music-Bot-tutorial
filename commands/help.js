@@ -12,7 +12,7 @@ module.exports = {
 .setThumbnail("https://cdn.discordapp.com/avatars/370483123848478721/2a073955469d1aefda2ce240ab5d2948.png?size=128")
 
   .addField("Main Commands",
-    "\`help\`,\`ping\`,\`server\`")
+    "\`help\`,\`ping\`,\`server\`,\`balance\`,\`daily\`")
 
   .addField("Fun Commands", "\`8ball\`, \`flip\` \`head\` or \`tail\`,\`say\`, \`ship\`")
 .addField("Roleplay Commands", "\`hug\`,\`slap\`,\`kiss\`,\`shoot\`,\`protect\`,\`wave\`,\`date\`,\`dance\`,\`pat\`")
