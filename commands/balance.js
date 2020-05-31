@@ -6,7 +6,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
 
-    db.add(`money_${message.author.id}`, 100)
+  
     let money = db.fetch(`money_${message.author.id}`)
     
     if (money === null) money = 0;
