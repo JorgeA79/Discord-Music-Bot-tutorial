@@ -61,8 +61,8 @@ const masterb = new SlotSymbol('masterb', {
 pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
    if(err) return err;	  
 
-let amount;	
-let total;	
+var amount =0;	
+var total =0;	
   let money = result.rows[0].money;
    if(money === null) money=0;
 	
