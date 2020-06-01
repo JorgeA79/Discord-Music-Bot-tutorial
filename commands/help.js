@@ -14,7 +14,7 @@ module.exports = {
   .addField("Main Commands",
     "\`help\`,\`ping\`,\`server\`,\`balance\`,\`daily\`,\`profile\`")
 
-  .addField("Fun Commands", "\`8ball\`, \`flip\` \`head\` or \`tail\`,\`say\`, \`ship\`")
+  .addField("Fun Commands", "\`8ball\`, \`flip\` \`head\` or \`tail\`,\`say\`, \`ship\`, \`slots\`")
 .addField("Roleplay Commands", "\`hug\`,\`slap\`,\`kiss\`,\`shoot\`,\`protect\`,\`wave\`,\`date\`,\`dance\`,\`pat\`")
 .addField("Music Commands", "\`play\`,\`stop\`,\`np\`,\`queue\`,\`pause\`,\`resume\`,\`lyrics\`,\`skip\`,\`clear\`")
 .addField("Anime Commands", "\`pokedex\`")
