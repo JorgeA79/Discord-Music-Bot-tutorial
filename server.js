@@ -255,10 +255,14 @@ return Math.floor(Math.random()*(max - min+1)) + 10;
 
 client.on('message', async message => {
 	if (message.author === client.user) return;
-	if (message.content.startsWith(PREFIX + "image")) {
+	if (message.content.startsWith(PREFIX + "profile")) {
 	
 	var bgx = [
-	'./images/Bg1.png'
+	'./images/Bg1.png',
+	'./images/Bg2.png',
+	'./images/Bg3.png',
+	'./images/Bg4.png',
+	'./images/Bg5.png'	
 	]	  
 	var bg = bgx[Math.floor(Math.random() * bgx.length)];
 		
