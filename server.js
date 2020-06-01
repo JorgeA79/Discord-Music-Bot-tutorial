@@ -279,7 +279,7 @@ client.on('message', async message => {
 	ctx.drawImage(boxes, 250, 18, 450, 67);
 	ctx.drawImage(boxes, 400, 170, 300, 50);
 	ctx.drawImage(boxes, 400, 100, 300, 50);	
-	ctx.drawImage(boxes, 0, 0, 160, 250);	
+	ctx.drawImage(boxes, 0, 0, 120, 250);	
 		
 	ctx.font = '28px Impact';
 	ctx.fillStyle = '#ffffff';
