@@ -276,7 +276,7 @@ client.on('message', async message => {
 	ctx.strokeStyle = '#121010';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
         
-	ctx.drawImage(boxes, 250, 20, 450, 67);	
+	ctx.drawImage(boxes, 250, 18, 450, 67);	
 	ctx.drawImage(boxes, 0, 0, 150, 250);	
 		
 	ctx.font = '28px Helvetica';
