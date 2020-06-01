@@ -348,12 +348,12 @@ async function profile(message, score) {
   const { level, points } = placeholder.get(key);
 
   try {
-    const result = await fetch(member.user.displayAvatarURL.replace(imageUrlRegex, '?size=128'));
+    const result = await fetch(member.displayAvatarURL.replace(imageUrlRegex, '?size=128'));
     if (!result.ok) throw new Error('Failed to get the avatar!');
     const avatar = await result.buffer();
 
     const name = member.username.length > 30 ? member.username.substring(0, 17) + '...'
-      : member.displayName;
+      : member.username;
 
     return new Canvas(400, 180)
       .setColor('#7289DA')
