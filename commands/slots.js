@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const { SlotMachine, SlotSymbol } = require('slot-machine');
 
 module.exports = {
-  name: "ping",
+  name: "slots",
   description: "Pinging the bot",
   execute(client, message) {
 
