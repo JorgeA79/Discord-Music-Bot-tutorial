@@ -257,7 +257,9 @@ client.on('message', async message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith(PREFIX + "image")) {
 	
-		  
+	var bg = ¨[
+	'./images/Bg1.png'
+	]	  
 	 	  
 	let target = message.mentions.users.first() || message.author;
     
@@ -272,7 +274,7 @@ client.on('message', async message => {
 	const canvas = Canvasx.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvasx.loadImage('./images/Bg1.png');
+	const background = await Canvasx.loadImage(bg);
 	const boxes = await Canvasx.loadImage('./images/Box.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
