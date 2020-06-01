@@ -315,7 +315,7 @@ client.on('message', async message => {
  	ctx.shadowOffsetY = 20;		
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 	
-	const embed = new Discord.MessageEmbed()
+	const embed = new discord.MessageEmbed()
             .setDescription(`:round_pushpin:  |  Profile card of ${target.username}`)
 	    .setColor(0xC76CF5)
             .setImage(attachment);
