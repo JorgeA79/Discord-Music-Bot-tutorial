@@ -27,7 +27,8 @@ const wild = new SlotSymbol('wild', {
  
 const machine = new SlotMachine(3, [cherry, money, wild]);
 const results = machine.play();
- 
+
+message.channel.send(results.visualize());    
 console.log(results.visualize());
     
 }
