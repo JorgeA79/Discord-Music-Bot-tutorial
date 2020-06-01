@@ -279,10 +279,10 @@ client.on('message', async message => {
 	ctx.drawImage(boxes, 250, 18, 450, 67);	
 	ctx.drawImage(boxes, 0, 0, 150, 250);	
 		
-	ctx.font = '24px Impact';
+	ctx.font = '28px Impact';
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`Your XP: ${xp}`, canvas.width / 3, canvas.height / 1.8);
-	ctx.fillText(`Your money: $${money}`, canvas.width / 2.5, canvas.height / 1.5);	
+	ctx.fillText(`Your XP: ${xp}`, canvas.width / 1.5, canvas.height / 1.8);
+	ctx.fillText(`Your money: $${money}`, canvas.width / 1.5, canvas.height / 1.5);	
 
 	ctx.font = applyText(canvas, `${target.username}!`);
 	ctx.fillStyle = '#ffffff';
