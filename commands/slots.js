@@ -76,14 +76,15 @@ amount = eval(resultspoints) + eval(less);
 	
 var text = `You won ${amount} | :yen: `;
 	
-if(amount <= 0)	text = `You lost ${amount} | :yen: `;
+if(amount <= 0)	text = `You lost ${amount} credits | :yen: `;
 	
 total += eval(money) + eval(amount); 
 	
 pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);	    
     
      const embed = new Discord.MessageEmbed()
-     .setDescription(`${results.visualize()} \n${text}`)
+     .setTitle("Pokemon Slots")
+     .setDescription(`|${results.visualize()}| \n${text}`)
      .setColor(0xC76CF5)
      message.channel.send(embed);	
  
