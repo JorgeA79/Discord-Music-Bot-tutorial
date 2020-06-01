@@ -5,6 +5,9 @@ const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 const Canvasx = require('canvas');
 const { join } = require('path');
+const { registerFont } = require('canvas');
+registerFont('./fonts/Bebas.ttf', { family: 'Bebas' })
+
 client.prefix = PREFIX
 client.queue = new Map();
 
@@ -283,7 +286,7 @@ client.on('message', async message => {
 	ctx.drawImage(boxes, 0, 0, 120, 250);
 
 		
-	ctx.font = '28px Impact';
+	ctx.font = '28px Bebas';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.2);	
@@ -314,7 +317,7 @@ const applyText = (canvas, text) => {
 	let fontSize = 70;
 	do {
 
-	ctx.font = `${fontSize -= 10}px Impact`;
+	ctx.font = `${fontSize -= 10}px Bebas`;
 	} while (ctx.measureText(text).width > canvas.width - 300);
 	return ctx.font;
 };
