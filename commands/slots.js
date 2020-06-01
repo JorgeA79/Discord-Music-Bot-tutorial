@@ -71,7 +71,7 @@ const machine = new SlotMachine(3, [pokeb, greatb, ultrab, quickb, luxuryb, time
 const results = machine.play();
 const resultspoints = machine.play().totalPoints;
 let less = -1;
-amount = eval(resultspoints) eval(less);	
+amount = eval(resultspoints) + eval(less);	
 total += eval(money) + eval(amount); 	
 pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);	    
     
