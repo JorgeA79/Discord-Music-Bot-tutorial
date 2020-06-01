@@ -65,8 +65,13 @@ var amount =0;
 var total =0;	
   let money = result.rows[0].money;
    if(money === null) money=0;
-	
-	
+   if(money <= 0){	
+	const embed = new Discord.MessageEmbed()
+     .setDescription(`You have no money to play`)
+     .setColor(0xC76CF5)
+     return message.channel.send(embed);	
+     
+   }
 	
 const machine = new SlotMachine(3, [pokeb, greatb, ultrab, quickb, luxuryb, timerb, loveb, premierb, masterb]);
 const results = machine.play();
