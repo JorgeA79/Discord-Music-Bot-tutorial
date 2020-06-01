@@ -84,11 +84,10 @@ pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}
     
      const embed = new Discord.MessageEmbed()
      .setTitle("Pokemon Slots")
-     .setDescription(`|${results.visualize()}| \n${text}`)
+     .setDescription(`${results.visualize()} \n${text}`)
      .setColor(0xC76CF5)
      message.channel.send(embed);	
- 
-message.channel.send(resultspoints);        
+     
 
 });
     
