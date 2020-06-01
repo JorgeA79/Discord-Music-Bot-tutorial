@@ -269,7 +269,7 @@ client.on('message', async message => {
 	const canvas = Canvasx.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvasx.loadImage('./OWO.png');
+	const background = await Canvasx.loadImage('./images/Bg1.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
