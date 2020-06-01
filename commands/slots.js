@@ -72,12 +72,18 @@ const machine = new SlotMachine(3, [pokeb, greatb, ultrab, quickb, luxuryb, time
 const results = machine.play();
 const resultspoints = machine.play().totalPoints;
 let less = -1;
-amount = eval(resultspoints) + eval(less);	
-total += eval(money) + eval(amount); 	
+amount = eval(resultspoints) + eval(less);
+	
+var text = `You won ${amount} | :yen: `;
+	
+if(amount <= 0)	text = `You lost ${amount} | :yen: `;
+	
+total += eval(money) + eval(amount); 
+	
 pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);	    
     
      const embed = new Discord.MessageEmbed()
-     .setDescription(results.visualize())
+     .setDescription(`${results.visualize()} \n${text}`)
      .setColor(0xC76CF5)
      message.channel.send(embed);	
  
