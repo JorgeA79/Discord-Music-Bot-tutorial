@@ -63,10 +63,9 @@ const resultspoints = machine.play().totalPoints;
       .setDescription(results.visualize())
 	    .setColor(0xC76CF5)
 	    message.channel.send(embed);	
-    
-    
+ 
 message.channel.send(resultspoints);        
-message.channel.send(results.visualize());    
+
 
     
 }
