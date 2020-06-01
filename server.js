@@ -278,7 +278,7 @@ client.on('message', async message => {
         
 	ctx.drawImage(boxes, 250, 25, 450, 60);	
 		
-	ctx.font = '28px sans-serif';
+	ctx.font = '28px Helvetica';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`Your XP: ${xp}`, canvas.width / 2.5, canvas.height / 1.8);
 	ctx.fillText(`Your money: $${money}`, canvas.width / 2.5, canvas.height / 1.5);	
@@ -305,7 +305,7 @@ const applyText = (canvas, text) => {
 	let fontSize = 70;
 	do {
 
-	ctx.font = `${fontSize -= 10}px sans-serif`;
+	ctx.font = `${fontSize -= 10}px Helvetica`;
 	} while (ctx.measureText(text).width > canvas.width - 300);
 	return ctx.font;
 };
