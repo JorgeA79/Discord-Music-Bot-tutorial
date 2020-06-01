@@ -1,5 +1,9 @@
 const Discord = require("discord.js");
 const { SlotMachine, SlotSymbol } = require('slot-machine');
+const pool = new pg.Pool({
+	connectionString : process.env.DATABASE_URL,
+});
+pool.connect()
 
 module.exports = {
   name: "slots",
@@ -53,20 +57,32 @@ const masterb = new SlotSymbol('masterb', {
 });
  
 
- 
+pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
+   if(err) return err;	  
+
+let amount;	
+let total;	
+  let money = result.rows[0].money;
+   if(money === null) money=0;
+	
+	
+	
 const machine = new SlotMachine(3, [pokeb, greatb, ultrab, quickb, luxuryb, timerb, loveb, premierb, masterb]);
 const results = machine.play();
 const resultspoints = machine.play().totalPoints;
-    
+let less = -1;
+amount = eval(resultspoints) eval(less);	
+total += eval(money) + eval(amount); 	
+pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);	    
     
      const embed = new Discord.MessageEmbed()
-      .setDescription(results.visualize())
-	    .setColor(0xC76CF5)
-	    message.channel.send(embed);	
+     .setDescription(results.visualize())
+     .setColor(0xC76CF5)
+     message.channel.send(embed);	
  
 message.channel.send(resultspoints);        
 
-
+});
     
 }
 }
