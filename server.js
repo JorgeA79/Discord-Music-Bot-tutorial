@@ -348,7 +348,7 @@ async function profile(message, score) {
   const { level, points } = placeholder.get(key);
 
   try {
-    const result = await fetch(member.displayAvatarURL.replace(imageUrlRegex, '?size=128'));
+    const result = await fetch(member.displayAvatarURL);
     if (!result.ok) throw new Error('Failed to get the avatar!');
     const avatar = await result.buffer();
 
