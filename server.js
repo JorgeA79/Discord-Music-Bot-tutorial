@@ -277,13 +277,14 @@ client.on('message', async message => {
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
         
 	ctx.drawImage(boxes, 250, 18, 450, 67);
-	ctx.drawImage(boxes, 450, 150, 250, 50);		
-	ctx.drawImage(boxes, 0, 0, 150, 250);	
+	ctx.drawImage(boxes, 400, 150, 300, 50);
+	ctx.drawImage(boxes, 400, 90, 300, 50);	
+	ctx.drawImage(boxes, 0, 0, 160, 250);	
 		
 	ctx.font = '28px Impact';
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`XP: ${xp}`, canvas.width / 1.5, canvas.height / 1.8);
-	ctx.fillText(`Balance: $${money}`, canvas.width / 1.5, canvas.height / 1.3);	
+	ctx.fillText(`XP: ${xp}`, canvas.width / 2, canvas.height / 1.8);
+	ctx.fillText(`Balance: $${money}`, canvas.width / 2, canvas.height / 1.3);	
 
 	ctx.font = applyText(canvas, `${target.username}!`);
 	ctx.fillStyle = '#ffffff';
