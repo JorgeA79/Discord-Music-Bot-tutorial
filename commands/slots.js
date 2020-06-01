@@ -14,42 +14,42 @@ const pokeb = new SlotSymbol('pokeb', {
 const greatb = new SlotSymbol('greatb', {
     display: '<:greatb:716936621022248970>',
     points: 15,
-    weight: 90
+    weight: 80
 });    
 const ultrab = new SlotSymbol('ultrab', {
     display: '<:ultrab:716936621529890869>',
     points: 20,
-    weight: 80
+    weight: 70
 });  
 const premierb = new SlotSymbol('premierb', {
     display: '<:premierb:716936621592674365>',
     points: 25,
-    weight: 70
+    weight: 65
 });
 const quickb = new SlotSymbol('quickb', {
     display: '<:quickb:716936621609582715>',
     points: 25,
-    weight: 70
+    weight: 60
 });
 const timerb = new SlotSymbol('timerb', {
     display: '<:timerb:716936621680885760>',
     points: 25,
-    weight: 70
+    weight: 60
 });    
 const loveb = new SlotSymbol('loveb', {
     display: '<:loveb:716936621118849034>',
     points: 30,
-    weight: 60
+    weight: 55
 });  
 const luxuryb = new SlotSymbol('luxuryb', {
     display: '<:luxuryb:716936620753813586>',
     points: 35,
-    weight: 55
+    weight: 45
 });      
 const masterb = new SlotSymbol('masterb', {
     display: '<:masterb:716936718825029723>',
     points: 100,
-    weight: 50
+    weight: 40
 });
  
 
@@ -61,7 +61,7 @@ const resultspoints = machine.play().totalPoints;
     
 message.channel.send(resultspoints);        
 message.channel.send(results.visualize());    
-console.log(results.visualize());
+
     
 }
 }
