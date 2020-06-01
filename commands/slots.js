@@ -24,8 +24,15 @@ const wild = new SlotSymbol('wild', {
     weight: 50,
     wildcard: true
 });
+    
+const xd = new SlotSymbol('xd', {
+    display: ':wait:',
+    points: 30,
+    weight: 100,
+    wildcard: true
+});    
  
-const machine = new SlotMachine(3, [cherry, money, wild]);
+const machine = new SlotMachine(3, [cherry, money, wild, xd]);
 const results = machine.play();
 
 message.channel.send(results.visualize());    
