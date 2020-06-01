@@ -56,7 +56,10 @@ const masterb = new SlotSymbol('masterb', {
  
 const machine = new SlotMachine(3, [pokeb, greatb, ultrab, quickb, luxuryb, timerb, loveb, premierb, masterb]);
 const results = machine.play();
-
+const resultspoints = machine.play().totalPoints;
+    
+    
+message.channel.send(resultspoints);        
 message.channel.send(results.visualize());    
 console.log(results.visualize());
     
