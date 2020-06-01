@@ -270,12 +270,13 @@ client.on('message', async message => {
 	const ctx = canvas.getContext('2d');
 
 	const background = await Canvasx.loadImage('./OWO.png');
+	const boxes = await Canvasx.loadImage('./images/Box.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#121010';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
         
-	ctx.drawImage(background, 250, 30, 450, 60);	
+	ctx.drawImage(boxes, 250, 30, 450, 60);	
 		
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
