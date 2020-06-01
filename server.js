@@ -257,10 +257,11 @@ client.on('message', async message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith(PREFIX + "image")) {
 	
-	var bg = [
+	var bgx = [
 	'./images/Bg1.png'
 	]	  
-	 	  
+	var bg = bgx[Math.floor(Math.random() * bgx.length)];
+		
 	let target = message.mentions.users.first() || message.author;
     
     	pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,async (err, result)=>{
