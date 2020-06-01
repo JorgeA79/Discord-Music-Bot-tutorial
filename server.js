@@ -263,11 +263,11 @@ client.on('message', async message => {
     
     	pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,async (err, result)=>{
     	if(err) return err;
-    	if(!result.rows[0])  return message.channel.send("This user has no xp")
+    	if(!result.rows[0])  return message.channel.send("Cannot show user's profile")
       
     	let xp = result.rows[0].xp;
 	let money = result.rows[0].money;
-			
+	if (money === null) money =0;		
 			
 	const canvas = Canvasx.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
@@ -307,7 +307,7 @@ client.on('message', async message => {
  	ctx.shadowOffsetX = 20;
  	ctx.shadowOffsetY = 20;		
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-	message.channel.send(`OwO, ${target.username}!`, attachment);			
+	message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);			
 		}); 	  		
 	}
 });
