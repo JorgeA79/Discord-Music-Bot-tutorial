@@ -4,7 +4,7 @@ const { readdirSync } = require("fs");
 const { join } = require("path");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
-const Canvas = require('canvas');
+const Canvasx = require('canvas');
 
 const { Canvas } = require('canvas-constructor');
 const { Attachment } = require('discord.js');
@@ -275,10 +275,10 @@ client.on('message', async message => {
 	let money = result.rows[0].money;
 			
 			
-	const canvas = Canvas.createCanvas(700, 250);
+	const canvas = Canvasx.createCanvas(700, 250);
 	const ctx = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage('./OWO.png');
+	const background = await Canvasx.loadImage('./OWO.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#74037b';
@@ -299,7 +299,7 @@ client.on('message', async message => {
 	ctx.closePath();
 	ctx.clip();
 
-	const avatar = await Canvas.loadImage(target.displayAvatarURL({ format: 'jpg' }));
+	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 25, 25, 200, 200);
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 	message.channel.send(`OwO, ${target.username}!`, attachment);			
