@@ -274,8 +274,13 @@ client.on('message', async message => {
 
 	ctx.strokeStyle = '#74037b';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-        ctx.rect(200, 50, 500, 50);
         
+	ctx.beginPath();	
+	ctx.rect(200, 50, 500, 50);
+        ctx.stroke();
+	
+	ctx.drawImage(background, 200, 50, 500, 50);	
+		
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`Your XP: ${xp}`, canvas.width / 2.5, canvas.height / 1.8);
