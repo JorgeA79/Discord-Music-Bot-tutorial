@@ -284,7 +284,7 @@ client.on('message', async message => {
 	ctx.font = '28px Impact';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
-	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.3);	
+	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.2);	
 
 	ctx.font = applyText(canvas, `${target.username}!`);
 	ctx.fillStyle = '#ffffff';
