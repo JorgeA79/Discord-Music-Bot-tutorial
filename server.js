@@ -4,7 +4,7 @@ const { readdirSync } = require("fs");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 const Canvasx = require('canvas');
-const join = require('path');
+const { join } = require('path');
 client.prefix = PREFIX
 client.queue = new Map();
 
