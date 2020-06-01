@@ -276,14 +276,15 @@ client.on('message', async message => {
 	ctx.strokeStyle = '#121010';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
         
+	ctx.shadowColor = '#898';
+ 	ctx.shadowBlur = 20;
+ 	ctx.shadowOffsetX = 20;
+ 	ctx.shadowOffsetY = 20;		
 	ctx.drawImage(boxes, 250, 18, 450, 67);
 	ctx.drawImage(boxes, 400, 170, 300, 50);
 	ctx.drawImage(boxes, 400, 100, 300, 50);	
 	ctx.drawImage(boxes, 0, 0, 120, 250);
-	 ctx.shadowColor = '#898';
- 	ctx.shadowBlur = 20;
- 	ctx.shadowOffsetX = 20;
- 	ctx.shadowOffsetY = 20;	
+
 		
 	ctx.font = '28px Impact';
 	ctx.fillStyle = '#ffffff';
