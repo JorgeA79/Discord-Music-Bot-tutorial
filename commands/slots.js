@@ -54,9 +54,15 @@ const masterb = new SlotSymbol('masterb', {
  
 
  
-const machine = new SlotMachine(1, [pokeb, greatb, ultrab, quickb, luxuryb, timerb, loveb, premierb, masterb]);
+const machine = new SlotMachine(3, [pokeb, greatb, ultrab, quickb, luxuryb, timerb, loveb, premierb, masterb]);
 const results = machine.play();
 const resultspoints = machine.play().totalPoints;
+    
+    
+     const embed = new Discord.MessageEmbed()
+      .setDescription(results.visualize())
+	    .setColor(0xC76CF5)
+	    message.channel.send(embed);	
     
     
 message.channel.send(resultspoints);        
