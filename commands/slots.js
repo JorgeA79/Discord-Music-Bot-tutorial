@@ -26,7 +26,7 @@ const wild = new SlotSymbol('wild', {
 });
     
 const xd = new SlotSymbol('xd', {
-    display: ':wait:',
+    display: '<:wait:694792686783168524>',
     points: 30,
     weight: 100,
     wildcard: true
