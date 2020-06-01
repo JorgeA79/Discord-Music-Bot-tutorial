@@ -257,7 +257,7 @@ client.on('message', async message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith(PREFIX + "image")) {
 	
-	var bg = ¨[
+	var bg = [
 	'./images/Bg1.png'
 	]	  
 	 	  
