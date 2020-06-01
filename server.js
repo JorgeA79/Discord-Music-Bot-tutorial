@@ -272,10 +272,10 @@ client.on('message', async message => {
 	const background = await Canvasx.loadImage('./OWO.png');
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-	ctx.strokeStyle = '#74037b';
+	ctx.strokeStyle = '#121010';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
         
-	ctx.drawImage(background, 200, 30, 500, 60);	
+	ctx.drawImage(background, 300, 30, 400, 60);	
 		
 	ctx.font = '28px sans-serif';
 	ctx.fillStyle = '#ffffff';
