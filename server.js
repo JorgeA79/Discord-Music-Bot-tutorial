@@ -352,7 +352,7 @@ async function profile(message, score) {
     if (!result.ok) throw new Error('Failed to get the avatar!');
     const avatar = await result.buffer();
 
-    const name = member.displayName.length > 30 ? member.displayName.substring(0, 17) + '...'
+    const name = member.username.length > 30 ? member.username.substring(0, 17) + '...'
       : member.displayName;
 
     return new Canvas(400, 180)
@@ -376,9 +376,7 @@ async function profile(message, score) {
       .setTextFont('18pt Klavika Regular')
       .setColor('#FFFFFF')
       .addText(name, 285, 54)
-      .addText(`Level: ${level.toLocaleString()}`, 84, 159)
       .setTextAlign('left')
-      .addText(`Score: ${points.toLocaleString()}`, 241, 136)
       .toBuffer();
   } catch (error) {
     await message.channel.send(`An error occurred: **${error.message}**`);
