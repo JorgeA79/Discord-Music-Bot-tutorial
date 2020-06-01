@@ -279,7 +279,7 @@ client.on('message', async message => {
 	ctx.drawImage(boxes, 250, 18, 450, 67);	
 	ctx.drawImage(boxes, 0, 0, 150, 250);	
 		
-	ctx.font = '28px Helvetica';
+	ctx.font = '28px Impact';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`Your XP: ${xp}`, canvas.width / 2.5, canvas.height / 1.8);
 	ctx.fillText(`Your money: $${money}`, canvas.width / 2.5, canvas.height / 1.5);	
@@ -306,7 +306,7 @@ const applyText = (canvas, text) => {
 	let fontSize = 70;
 	do {
 
-	ctx.font = `${fontSize -= 10}px Helvetica`;
+	ctx.font = `${fontSize -= 10}px Impact`;
 	} while (ctx.measureText(text).width > canvas.width - 300);
 	return ctx.font;
 };
