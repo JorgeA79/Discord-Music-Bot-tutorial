@@ -343,20 +343,20 @@ const applyText = (canvas, text) => {
         var name = args.splice(2).join(" ");
 		  
   	if(!args[1]){
-	   const embed = new Discord.MessageEmbed()
+	   const embed = new discord.MessageEmbed()
             .setDescription(`You need to specify an user`)
             .setColor(0xC76CF5)
             return message.channel.send(embed);
  	}
 		
-	 	if(args[1] == "taiko"){
+	if(args[1] == "taiko"){
 
-   		 const embed = new Discord.MessageEmbed()
+   		 const embed = new discord.MessageEmbed()
             	.setDescription(`${name}`)
      	       .setColor(0xC76CF5);
      		message.channel.send(embed);
     
- 		 }	  
+ 	}	  
 		
 	}
 });
