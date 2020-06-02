@@ -8,7 +8,7 @@ module.exports = {
 	 const embed = new Discord.MessageEmbed()
 	   .setTitle("> Click to join our server <")
   .setColor(0xC76CF5) 
-  .setThumbnail("https://cdn.discordapp.com/avatars/370483123848478721/2a073955469d1aefda2ce240ab5d2948.png?size=128")
+  .setThumbnail(process.env.BOT_AVATAR)
   .setTimestamp()
   .setURL("https://discord.gg/gwFXT55");
   
