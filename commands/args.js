@@ -6,12 +6,12 @@ module.exports = {
 	cooldown: 5,
 	execute(message) {
   		const PREFIX = "p!";
-		const args = message.content.slice(PREFIX.length).split(` `);
-    if (!args.length) {
+		const argsxd = message.content.slice(PREFIX.length).split(` `);
+    		if (!argsxd.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-	   }
+	   	}
     
-    message.channel.send(args.splice(1).join(" "));
+    message.channel.send(argsxd.splice(1).join(" "));
     
 	}
 };
