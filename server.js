@@ -336,8 +336,8 @@ const applyText = (canvas, text) => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "args")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
-		var name = args.splice(2).join(" ");	
-		  
+		var name = args.splice(2).join("%20");	
+		var title = args.splice(2).join(` `);  
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   	}
@@ -356,7 +356,7 @@ const applyText = (canvas, text) => {
 		if(args[1] == "osu"){
 
     		const embed = new discord.MessageEmbed()
-           	.setTitle(`${name}'s Signature`)
+           	.setTitle(`${title}'s Signature`)
             	.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=0&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             	.setColor(0xC76CF5);
      		message.channel.send(embed);
