@@ -334,7 +334,7 @@ const applyText = (canvas, text) => {
 
     client.on('message', message => {
 	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + "args")) {
+	  if (message.content.startsWith(PREFIX + "osu")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		var name = args.splice(2).join("%20");	
 		const xd = name.toString();
