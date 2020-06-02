@@ -12,7 +12,7 @@ module.exports = {
 .setThumbnail(process.env.BOT_AVATAR)
 
   .addField("Main Commands",
-    "\`help\` \`ping\` \`server\` \`balance\` \`daily\` \`profile\`")
+    "\`help\` \`ping\` \`server\` \`balance\` \`daily\` \`profile\`", true)
 
   .addField("Fun Commands", "\`8ball\` \`flip\` \`head\` or \`tail\` \`say\` \`ship\` \`slots\`", true)
 .addField("Roleplay Commands", "\`hug\` \`slap\` \`kiss\` \`shoot\`,\`protect\` \`wave\` \`date\` \`dance\` \`pat\`", true)
