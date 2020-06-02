@@ -17,15 +17,15 @@ module.exports = {
             .setColor(0xC76CF5)
             return message.channel.send(embed);
  }
- let args2= ` ${args[2]}`;
- let args3= ` ${args[3]}`;
- let args4= ` ${args[4]}`;  
- let args5= ` ${args[5]}`;  
+
  if(!args[2]) args2 = "";
  if(!args[3]) args3 = "";
  if(!args[4]) args4 = "";
  if(!args[5]) args5 = "";
-    
+ var args2= ` ${args[2]}`;
+ var args3= ` ${args[3]}`;
+ var args4= ` ${args[4]}`;  
+ var args5= ` ${args[5]}`;    
   if(args[0] == "taiko"){
 
     const embed = new Discord.MessageEmbed()
