@@ -353,10 +353,10 @@ const applyText = (canvas, text) => {
             	.setColor(0xC76CF5)
             	return message.channel.send(embed);
  		}
-		if(args[0] == "osu"){
+		if(args[1] == "osu"){
 
     		const embed = new discord.MessageEmbed()
-           	.setDescription(`${name}'s Signature`)
+           	.setTitle(`${name}'s Signature`)
             	.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=0&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             	.setColor(0xC76CF5);
      		message.channel.send(embed);
