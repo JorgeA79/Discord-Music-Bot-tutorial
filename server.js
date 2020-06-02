@@ -336,20 +336,20 @@ const applyText = (canvas, text) => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "args")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
+		var name = args.splice(2).join(" ");	
+		  
+		if (!args.length) {
+		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	   	}
+		if(!args[1]){
+	    	const embed = new discord.MessageEmbed()
+            	.setDescription(`You need to specify a mode`)
+            	.setColor(0xC76CF5)
+            	return message.channel.send(embed);
+ 		}  
+		
 
-	if (!args.length) {
-	     return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-	}
-        
-	var name = args.splice(2).join(" ");		  
-  	
-	if(!args[1]){
-	    const embed = new discord.MessageEmbed()
-            .setDescription(`You need to specify a mode`)
-            .setColor(0xC76CF5)
-            return message.channel.send(embed);
- 	}		
-	  		
+		
 	}
 });
 
