@@ -337,26 +337,19 @@ const applyText = (canvas, text) => {
 	  if (message.content.startsWith(PREFIX + "args")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 
-		if (!args.length) {
-		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-	   }
-        var name = args.splice(2).join(" ");
-		  
-  	if(!args[1]){
-	   const embed = new discord.MessageEmbed()
-            .setDescription(`You need to specify an user`)
+	if (!args.length) {
+	     return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+	}
+        
+	var name = args.splice(2).join(" ");		  
+  	
+	if(!args[1]){
+	    const embed = new discord.MessageEmbed()
+            .setDescription(`You need to specify a mode`)
             .setColor(0xC76CF5)
             return message.channel.send(embed);
- 	}
-		
-	if(args[1] == "taiko"){
-		const embed = new discord.MessageEmbed()
-            	.setTitle(`${name}'s Signature`)
-		.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
-     	        .setColor(0xC76CF5);
-     		message.channel.send(embed);
- 	}	  
-		
+ 	}		
+	  		
 	}
 });
 
