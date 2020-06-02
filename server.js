@@ -343,7 +343,7 @@ const applyText = (canvas, text) => {
 		  
 		const embed = new discord.MessageEmbed()
    		.setColor(0xC76CF5)
-   		.setDescription(args.splice(1))
+   		.setDescription(args[1])
    		message.channel.send(embed);
 
 		
