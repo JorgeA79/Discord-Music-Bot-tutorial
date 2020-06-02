@@ -11,7 +11,7 @@ module.exports = {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   }
     
-    message.channel.send(args.splice(1));
+    message.channel.send(args.splice(1).join(" "));
     
 	}
 };
