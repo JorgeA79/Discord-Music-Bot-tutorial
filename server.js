@@ -337,7 +337,8 @@ const applyText = (canvas, text) => {
 	  if (message.content.startsWith(PREFIX + "args")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		var name = args.splice(2).join("%20");	
-		const titlexd = args.splice(2).join(" ");   
+		const titlexd = args.replace("%20"," "); 
+		 
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   	}
