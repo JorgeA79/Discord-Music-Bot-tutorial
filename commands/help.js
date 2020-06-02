@@ -17,7 +17,7 @@ module.exports = {
   .addField("Fun Commands", "\`8ball\` \`flip\` \`head\` or \`tail\` \`say\` \`ship\` \`slots\`", true)
 .addField("Roleplay Commands", "\`hug\` \`slap\` \`kiss\` \`shoot\`,\`protect\` \`wave\` \`date\` \`dance\` \`pat\`", true)
 .addField("Music Commands", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`", true)
-.addField("Anime Commands", "\`pokedex\`")
+.addField("Anime Commands", "\`pokedex\`",true)
 .addField("Game Commands", "\`osu\`",true)      
   message.channel.send(embed);
   
