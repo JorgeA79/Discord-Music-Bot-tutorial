@@ -5,7 +5,7 @@ module.exports = {
 	description: 'Hugging.',
 	cooldown: 5,
 	execute(message) {
-  
+  		const PREFIX = "p!";
 		const args = message.content.slice(PREFIX.length).split(` `);
     if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
