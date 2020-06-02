@@ -4,8 +4,10 @@ module.exports = {
   name: "osu",
   description: "Pinging the bot",
   execute(client, message, args) {
-  
-  if(!args[0]){
+    
+  const argsxd = message.content.slice(PREFIX.length).split(` `);
+    
+  if(!args.length){
           const embed = new Discord.MessageEmbed()
             .setDescription(`You need to specify an osu mode`)
             .setColor(0xC76CF5)
