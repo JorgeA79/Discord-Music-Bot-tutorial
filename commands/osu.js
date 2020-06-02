@@ -18,29 +18,41 @@ module.exports = {
             return message.channel.send(embed);
  }
   if(args[0] == "taiko"){
-    getOsu(`1`,args[1]);
-     message.channel.send(getOsu.embed);
+
+    const embed = new Discord.MessageEmbed()
+            .setDescription(`${args[1]}'s Signature`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=$args[1]}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setColor(0xC76CF5);
+     message.channel.send(embed);
     
   }else if(args[0] == "osu"){
-      getOsu(`0`,args[1]);
-       message.channel.send(getOsu.embed);
+
+     const embed = new Discord.MessageEmbed()
+            .setDescription(`${args[1]}'s Signature`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}&mode=0&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setColor(0xC76CF5);
+            message.channel.send(embed);
     }
     else if(args[0] == "ctb"){
-      getOsu(`2`,args[1]);
-       message.channel.send(getOsu.embed);
+      const embed = new Discord.MessageEmbed()
+            .setDescription(`${args[1]}'s Signature`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}&mode=2&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setColor(0xC76CF5);
+            message.channel.send(embed);
     }
     else if(args[0] == "mania"){ 
       getOsu(`3`,args[1]);
-      message.channel.send(getOsu.embed);
+     const embed = new Discord.MessageEmbed()
+            .setDescription(`${args[1]}'s Signature`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}&mode=3&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setColor(0xC76CF5);
+            message.channel.send(embed);
     }
 }
 }
 
 
 function getOsu(mode, name){
-          const embed = new Discord.MessageEmbed()
-            .setDescription(`${name}'s Signature`)
-            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=${mode}&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
-            .setColor(0xC76CF5);
+          
             
 }
