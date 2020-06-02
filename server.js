@@ -346,13 +346,13 @@ const applyText = (canvas, text) => {
 	   	}
 		if(!args[1]){
 	    	const embed = new discord.MessageEmbed()
-            	.setDescription(`You need to specify a mode`)
+            	.setDescription("You need to specify a mode | :exclamation: \n 1. Osu \n 2. Taiko \n 3. CTB \n 4. Mania \n `p!osu <mode> <user>`")
             	.setColor(0xC76CF5)
             	return message.channel.send(embed);
  		}  
 		if(!name){
    		const embed = new discord.MessageEmbed()
-            	.setDescription(`You need to specify an user`)
+            	.setDescription("You need to specify an user | :exclamation: \n `p!osu <mode> <user>`")
             	.setColor(0xC76CF5)
             	return message.channel.send(embed);
  		}
@@ -393,7 +393,7 @@ const applyText = (canvas, text) => {
     
  		 } else {
 		 const embed = new discord.MessageEmbed()
-            	.setDescription(`You need to specify a mode`)
+            	.setDescription("You need to specify a mode | :exclamation: \n 1. Osu \n 2. Taiko \n 3. CTB \n 4. Mania \n `p!osu <mode> <user>`")
             	.setColor(0xC76CF5)
             	return message.channel.send(embed);
 		 
