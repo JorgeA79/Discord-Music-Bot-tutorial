@@ -336,7 +336,7 @@ const applyText = (canvas, text) => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "args")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
-		message.delete({ timeout: 1000});
+
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   }
@@ -349,7 +349,7 @@ const applyText = (canvas, text) => {
             return message.channel.send(embed);
  	}
 		
-	 if(args[0] == "taiko"){
+	 	if(args[1] == "taiko"){
 
    		 const embed = new Discord.MessageEmbed()
             	.setDescription(`${name}`)
