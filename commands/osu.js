@@ -30,7 +30,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
             .setDescription(`${args[1]} ${args2} ${args3} ${args4} ${args5}'s Signature`)
-            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}${args[2]}${args[3]}${args[4]}${args[5]}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]} ${args2} ${args3} ${args4} ${args5}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             .setColor(0xC76CF5);
      message.channel.send(embed);
     
@@ -38,14 +38,14 @@ module.exports = {
 
      const embed = new Discord.MessageEmbed()
             .setDescription(`${args[1]} ${args2} ${args3} ${args4} ${args5}'s Signature`)
-            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}${args[2]}${args[3]}${args[4]}${args[5]}&mode=0&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]} ${args2} ${args3} ${args4} ${args5}&mode=0&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             .setColor(0xC76CF5);
             message.channel.send(embed);
     }
     else if(args[0] == "ctb"){
       const embed = new Discord.MessageEmbed()
             .setDescription(`${args[1]} ${args2} ${args3} ${args4} ${args5}'s Signature`)
-            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}${args[2]}${args[3]}${args[4]}${args[5]}&mode=2&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]} ${args2} ${args3} ${args4} ${args5}&mode=2&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             .setColor(0xC76CF5);
             message.channel.send(embed);
     }
@@ -53,7 +53,7 @@ module.exports = {
       getOsu(`3`,args[1]);
      const embed = new Discord.MessageEmbed()
             .setDescription(`${args[1]} ${args2} ${args3} ${args4} ${args5}'s Signature`)
-            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}${args[2]}${args[3]}${args[4]}${args[5]}&mode=3&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]} ${args2} ${args3} ${args4} ${args5}&mode=3&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             .setColor(0xC76CF5);
             message.channel.send(embed);
     }
