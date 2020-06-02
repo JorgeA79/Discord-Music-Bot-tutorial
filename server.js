@@ -347,8 +347,21 @@ const applyText = (canvas, text) => {
             	.setColor(0xC76CF5)
             	return message.channel.send(embed);
  		}  
-		
+		if(!name){
+   		const embed = new Discord.MessageEmbed()
+            	.setDescription(`You need to specify an user`)
+            	.setColor(0xC76CF5)
+            	return message.channel.send(embed);
+ 		}
+		if(args[0] == "osu"){
 
+    		const embed = new Discord.MessageEmbed()
+           	.setDescription(`${name}'s Signature`)
+            	.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=0&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            	.setColor(0xC76CF5);
+     		message.channel.send(embed);
+    
+ 		 }
 		
 	}
 });
