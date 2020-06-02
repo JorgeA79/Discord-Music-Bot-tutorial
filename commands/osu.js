@@ -41,6 +41,6 @@ function getOsu(mode, name){
           const embed = new Discord.MessageEmbed()
             .setDescription(`${name}'s Signature`)
             .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=${mode}&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
-            .setColor(0xC76CF5)
+            .setColor(0xC76CF5);
             
 }
