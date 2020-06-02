@@ -12,13 +12,13 @@ module.exports = {
 .setThumbnail(process.env.BOT_AVATAR)
 
   .addField("Main Commands",
-    "\`help\`,\`ping\`,\`server\`,\`balance\`,\`daily\`,\`profile\`")
+    "\`help\`,\`ping\`,\`server\`\n \`balance\`,\`daily\`,\`profile\`")
 
-  .addField("Fun Commands", "\`8ball\`, \`flip\` \`head\` or \`tail\`,\`say\`, \`ship\`, \`slots\`")
-.addField("Roleplay Commands", "\`hug\`,\`slap\`,\`kiss\`,\`shoot\`,\`protect\`,\`wave\`,\`date\`,\`dance\`,\`pat\`")
-.addField("Music Commands", "\`play\`,\`stop\`,\`np\`,\`queue\`,\`pause\`,\`resume\`,\`lyrics\`,\`skip\`,\`clear\`")
+  .addField("Fun Commands", "\`8ball\`, \`flip\` \`head\` or \`tail\`,\`say\`, \`ship\`, \`slots\`", true)
+.addField("Roleplay Commands", "\`hug\`,\`slap\`,\`kiss\`,\`shoot\`,\`protect\`,\`wave\`,\`date\`,\`dance\`,\`pat\`", true)
+.addField("Music Commands", "\`play\`,\`stop\`,\`np\`,\`queue\`,\`pause\`,\`resume\`,\`lyrics\`,\`skip\`,\`clear\`", true)
 .addField("Anime Commands", "\`pokedex\`")
-.addField("Game Commands", "\`osu\`")      
+.addField("Game Commands", "\`osu\`",true)      
   message.channel.send(embed);
   
   }
