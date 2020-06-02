@@ -19,14 +19,19 @@ module.exports = {
  }
   if(args[0] == "taiko"){
     getOsu(`1`,args[1]);
-    }else if(args[0] == "osu"){
+     message.channel.send(getOsu.embed);
+    
+  }else if(args[0] == "osu"){
       getOsu(`0`,args[1]);
+       message.channel.send(getOsu.embed);
     }
     else if(args[0] == "ctb"){
       getOsu(`2`,args[1]);
+       message.channel.send(getOsu.embed);
     }
     else if(args[0] == "mania"){ 
       getOsu(`3`,args[1]);
+      message.channel.send(getOsu.embed);
     }
 }
 }
@@ -37,5 +42,5 @@ function getOsu(mode, name){
             .setDescription(`${name}'s Signature`)
             .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=${mode}&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             .setColor(0xC76CF5)
-            message.channel.send(embed);
+            
 }
