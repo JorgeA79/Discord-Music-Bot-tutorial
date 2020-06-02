@@ -350,12 +350,11 @@ const applyText = (canvas, text) => {
  	}
 		
 	if(args[1] == "taiko"){
-
-   		 const embed = new discord.MessageEmbed()
-            	.setDescription(`${name}`)
-     	       .setColor(0xC76CF5);
+		const embed = new discord.MessageEmbed()
+            	.setTitle(`${name}'s Signature`)
+		.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+     	        .setColor(0xC76CF5);
      		message.channel.send(embed);
-    
  	}	  
 		
 	}
