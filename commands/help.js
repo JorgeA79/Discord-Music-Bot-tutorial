@@ -8,7 +8,7 @@ module.exports = {
      	const embed = new Discord.MessageEmbed()
   .setTitle("Pixel's Commands")
    .setColor(0xC76CF5)
-  .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761>")
+  .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761> \n ")
 .setThumbnail(process.env.BOT_AVATAR)
 
   .addField(":shield: Main Commands",
