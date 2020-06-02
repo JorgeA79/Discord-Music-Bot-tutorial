@@ -21,7 +21,7 @@ module.exports = {
 
     const embed = new Discord.MessageEmbed()
             .setDescription(`${args[1]}'s Signature`)
-            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=$args[1]}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            .setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${args[1]}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
             .setColor(0xC76CF5);
      message.channel.send(embed);
     
