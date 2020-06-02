@@ -340,12 +340,23 @@ const applyText = (canvas, text) => {
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   }
+        var name = args.splice(2).join(" ");
 		  
-		const embed = new discord.MessageEmbed()
-   		.setColor(0xC76CF5)
-   		.setDescription(args[1])
-   		message.channel.send(embed);
+  	if(!args[1]){
+	   const embed = new Discord.MessageEmbed()
+            .setDescription(`You need to specify an user`)
+            .setColor(0xC76CF5)
+            return message.channel.send(embed);
+ 	}
+		
+	 if(args[0] == "taiko"){
 
+   		 const embed = new Discord.MessageEmbed()
+            	.setDescription(`${name}`)
+     	       .setColor(0xC76CF5);
+     		message.channel.send(embed);
+    
+ 		 }	  
 		
 	}
 });
