@@ -9,7 +9,7 @@ module.exports = {
   .setTitle("Pixel's Commands")
    .setColor(0xC76CF5)
   .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761>")
-.setThumbnail("https://cdn.discordapp.com/avatars/370483123848478721/2a073955469d1aefda2ce240ab5d2948.png?size=128")
+.setThumbnail(process.env.BOT_AVATAR)
 
   .addField("Main Commands",
     "\`help\`,\`ping\`,\`server\`,\`balance\`,\`daily\`,\`profile\`")
