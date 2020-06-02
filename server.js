@@ -337,7 +337,7 @@ const applyText = (canvas, text) => {
 	  if (message.content.startsWith(PREFIX + "args")) {
 		const args = message.content.slice(PREFIX.length).split(` `);
 		var name = args.splice(2).join("%20");	
-		var title = args.splice(2).join(` `);  
+		var title = args.splice(2).join(" ");  
 		if (!args.length) {
 		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
 	   	}
@@ -362,7 +362,39 @@ const applyText = (canvas, text) => {
      		message.channel.send(embed);
     
  		 }
-		
+		else if(args[1] == "taiko"){
+
+    		const embed = new discord.MessageEmbed()
+           	.setTitle(`${title}'s Signature`)
+            	.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=1&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            	.setColor(0xC76CF5);
+     		message.channel.send(embed);
+    
+ 		 }
+		 else if(args[1] == "ctb"){
+
+    		const embed = new discord.MessageEmbed()
+           	.setTitle(`${title}'s Signature`)
+            	.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=2&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            	.setColor(0xC76CF5);
+     		message.channel.send(embed);
+    
+ 		 }
+		else if(args[1] == "mania"){
+
+    		const embed = new discord.MessageEmbed()
+           	.setTitle(`${title}'s Signature`)
+            	.setImage(`https://lemmmy.pw/osusig/sig.php?colour=hexff66aa&uname=${name}&mode=3&countryrank&flagshadow&flagstroke&darktriangles&opaqueavatar&rankedscore&onlineindicator=undefined&xpbar&xpbarhex`)
+            	.setColor(0xC76CF5);
+     		message.channel.send(embed);
+    
+ 		 } else {
+		 const embed = new discord.MessageEmbed()
+            	.setDescription(`You need to specify a mode`)
+            	.setColor(0xC76CF5)
+            	return message.channel.send(embed);
+		 
+		 }
 	}
 });
 
