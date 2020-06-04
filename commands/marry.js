@@ -23,34 +23,24 @@ module.exports = {
 	   
 	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,result) =>{
           let marry = result.rows[0].marry;
-	  
 		  
 	  if(marry !== null){  
-	
 	  married = "1";
 	  return message.reply("Is already married");	  
 	  }
 	  });	
 	  
-	  
+	  if(married = "2"){
 	  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
 		  
 	  let marry = result.rows[0].marry;
-	  if(marry === null){  	  
-	   
-	  
-		  
-	  if(married == "2"){	  
-		  
+	  if(marry === null){  	 	  
 		  
 	  message.channel.send(`${member.user}, Do you want to marry with ${message.author}`)
 	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === member.user.id, { time: 10000 });
           console.log(collector)
           collector.on('collect', m => {
           
-		  
-		  
-		  
 		  
 		 if (m.content == "yes") {
 		  
@@ -68,14 +58,12 @@ module.exports = {
 		collector.stop('Collector stopped manually'); 
           }  
 	  })
+		  
 	  collector.on('end', collected => {
 	  if(collected.size === 0){
 	  return message.reply("No one replied");
 	  }		  
 	  });
-		  
-		  
-	  }	  
 		  
 	   }else {
 	   
@@ -83,5 +71,6 @@ module.exports = {
 	   
 	   }
 	  });
+	  }
 }
 }
