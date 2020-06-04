@@ -23,5 +23,10 @@ module.exports = {
           }
     
 	  })
+	  collector.on('end', collected => {
+	  if(collected.size === 0){
+	  return message.reply("No one replied");
+	  }		  
+	  });
 }
 }
