@@ -25,7 +25,7 @@ module.exports = {
 	}
 	 let marry = result.rows[0].marry;       
       	  const embed = new Discord.MessageEmbed()
-          .setDescription(`${message.author} divorced from @<${marry}>`)
+          .setDescription(`${message.author} divorced from <@${marry}>`)
           .setColor(0xC76CF5);
           message.channel.send(embed);
       
