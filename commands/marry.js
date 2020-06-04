@@ -21,18 +21,12 @@ module.exports = {
 	   if(!member) return message.reply("Try mentioning the person");
 	   if(member.user.id == message.author.id) return message.reply("You cannot marry with yourself");
 	   
-	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,result) =>{
-          let marry = result.rows[0].marry;
+	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
+          let marryxd = resultx.rows[0].marry;
 		  
-	  if(marry !== null){  
-	  married = "1";
-	  return message.reply("Is already married");	  
-	  }
-	  });	
+	  if(marryxd !== null){  
 	  
-	  if(married = "2"){
-	  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
-		  
+		  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{	  
 	  let marry = result.rows[0].marry;
 	  if(marry === null){  	 	  
 		  
@@ -71,6 +65,9 @@ module.exports = {
 	   
 	   }
 	  });
+	  }else{
+	  return message.reply("Is already married");
 	  }
+	    });
 }
 }
