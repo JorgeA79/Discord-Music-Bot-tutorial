@@ -11,10 +11,13 @@ module.exports = {
           console.log(collector)
           collector.on('collect', m => {
           if (m.content == "See") {
+		  if(m.author.id == "528854186176282634"){  
                 m.channel.send("You Want To See Someones Spec OK!");
+	  }
           } else if (m.content == "Change") {
+		   if(m.author.id == "528854186176282634"){  
                 m.channel.send("You Want To Change Your Spec OK!");
-          }
+          }}
     
 	  })
 }
