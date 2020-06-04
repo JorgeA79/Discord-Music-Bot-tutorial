@@ -15,7 +15,7 @@ module.exports = {
         
 			message.channel.send(`${collected.first().author} accepted!`);
         
-      }else if(message.content.startsWith('No'){
+      }else if(message.content.startsWith('No')){
             	message.channel.send(`${collected.first().author} denied!`);   
                }else{
                	message.channel.send(`${collected.first().author}thats not a valid answer!`);
