@@ -9,11 +9,11 @@ module.exports = {
  message.channel.send(`Do you want to marry with ${message.author.username}`)
 	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
           console.log(collector)
-          collector.on('collect', message => {
-          if (message.content == "See") {
-                message.channel.send("You Want To See Someones Spec OK!");
-          } else if (message.content == "Change") {
-                message.channel.send("You Want To Change Your Spec OK!");
+          collector.on('collect', m => {
+          if (m.content == "See") {
+                m.channel.send("You Want To See Someones Spec OK!");
+          } else if (m.content == "Change") {
+                m.channel.send("You Want To Change Your Spec OK!");
           }
     
 	  })
