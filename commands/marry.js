@@ -13,7 +13,7 @@ module.exports = {
   execute(client, message) {
  
 	  let member = message.mentions.members.first();  		  
-	  var married = "2";
+	  var married = "0";
 	  
 	   
 	  
