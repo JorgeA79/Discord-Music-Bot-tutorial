@@ -20,21 +20,24 @@ module.exports = {
 	   if(member.user.id == message.author.id) return message.reply("You cannot marry with yourself");
 	  
 	  		  
-	  let married = "0";	  
+	  let married = "2";	  
 	  let marry = result.rows[0].marry;
 	  if(marry === null){  	  
 	   
 	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
           let marryxd = resultx.rows[0].marry;
 	  if(marryxd === null){  
+		     message.channel.send(`dx`)
 	  married = "2";	  
 	  }else{
 	  message.reply("Is already married");
-	  married = "1";	  
-	  }	  
+		   message.channel.send(`xd`)
+	  married = "1";	  	  
 	  });	  
 		  
 	  if(married == "2"){	  
+		  
+		  
 	  message.channel.send(`${member.user}, Do you want to marry with ${message.author}`)
 	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === member.user.id, { time: 10000 });
           console.log(collector)
