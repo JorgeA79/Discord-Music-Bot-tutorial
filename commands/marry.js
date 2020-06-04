@@ -36,7 +36,7 @@ module.exports = {
           collector.on('collect', m => {
           
 		  
-		 if (m.content == "yes") {
+		 if (m.content.toLowerCase() == "yes") {
 		  
 	  	
 		pool.query(`UPDATE usersxp SET marry = ${member.user.id} WHERE id = '${message.author.id}'`, console.log);
@@ -49,7 +49,7 @@ module.exports = {
 	  	collector.stop('Collector stopped manually');
 	
 			   
-          } else if (m.content == "no") {
+          } else if (m.content.toLowerCase() == "no") {
 	
   		 const embed = new Discord.MessageEmbed()
                 .setDescription(`**${message.author.username}** was rejected by **${member.user.username}**`)
