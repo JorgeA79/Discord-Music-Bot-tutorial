@@ -24,7 +24,7 @@ module.exports = {
 	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
           let marryxd = resultx.rows[0].marry;
 		  
-	  if(marryxd !== null){  
+	  if(marryxd === null){  
 	  
 		  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{	  
 	  let marry = result.rows[0].marry;
