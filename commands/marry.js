@@ -5,23 +5,16 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
  
-  
-const filter = (m, user) => {
-return m == message.content.includes('yes') && user.id =="528854186176282634";
-};  
 	  
- message.channel.send(`Do you want to marry with ${message.author.username}`).then(() => {
-	message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
-		        .then(collected => {
-  
-			message.channel.send(`${collected.first().author} accepted!`);
-		
-			})
-	 
-			.catch(collected => {
-			message.channel.send('Looks like nobody got the answer this time.');
-		});
-});
+ message.channel.send(`Do you want to marry with ${message.author.username}`)
+	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+          console.log(collector)
+          collector.on('collect', message => {
+          if (message.content == "See") {
+                message.channel.send("You Want To See Someones Spec OK!");
+          } else if (message.content == "Change") {
+                message.channel.send("You Want To Change Your Spec OK!");
+          }
     
     
 }
