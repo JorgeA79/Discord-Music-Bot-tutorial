@@ -9,7 +9,7 @@ module.exports = {
 	   if(!member) return message.reply("Try mentioning the person");
 	   if(member.user.id == message.author.id) return message.reply("You cannot marry with yourself");
 	  
- 	  message.channel.send(`Do you want to marry with ${member.user}`)
+ 	  message.channel.send(`${member.user}, Do you want to marry with message.author`)
 	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === member.user.id, { time: 10000 });
           console.log(collector)
           collector.on('collect', m => {
