@@ -30,6 +30,7 @@ module.exports = {
 	
 	  married = "1";
 	  return message.reply("Is already married");	  
+	  }
 	  });	  
 		  
 	  if(married == "2"){	  
