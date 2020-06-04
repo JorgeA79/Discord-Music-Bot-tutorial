@@ -16,10 +16,11 @@ module.exports = {
           if (m.content == "yes") {
 	
                 m.channel.send("Accepted");
-	  
+	  	collector.stop('Collector stopped manually');
           } else if (m.content == "no") {
 	
                 m.channel.send("Denied");
+		collector.stop('Collector stopped manually'); 
           }
     
 	  })
