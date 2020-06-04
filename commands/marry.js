@@ -25,7 +25,7 @@ module.exports = {
 	  if(marry === null){  
  	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
           let marryxd = resultx.rows[0].marryxd;
-	  if(marry === null){  
+	  if(marryxd === null){  
 		  
 	  }else{
 	  return message.reply("Is already married");
