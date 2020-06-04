@@ -1,4 +1,11 @@
- const Discord = require("discord.js");
+const Discord = require("discord.js");
+const pg = require('pg')
+
+const pool = new pg.Pool({
+	connectionString : process.env.DATABASE_URL,
+});
+pool.connect()
+
 
 module.exports = {
   name: "marry",
@@ -15,11 +22,17 @@ module.exports = {
           collector.on('collect', m => {
           if (m.content == "yes") {
 	
+		 pool.query(`ALTER TABLE usersxp ADD COLUMN marry BIGINT`, console.log);	  
+		  
                 m.channel.send("Accepted");
 	  	collector.stop('Collector stopped manually');
+		  
           } else if (m.content == "no") {
 	
-                m.channel.send("Denied");
+                
+		  
+		  
+		m.channel.send("Denied");
 		collector.stop('Collector stopped manually'); 
           }
     
