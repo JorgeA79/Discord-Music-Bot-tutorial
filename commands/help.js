@@ -12,7 +12,7 @@ module.exports = {
 .setThumbnail(process.env.BOT_AVATAR)
 
   .addField(":shield: Main Commands",
-    "\`help\` \`ping\` \`server\` \`balance\` \`daily\` \`profile\`", true)
+    "\`help\` \`ping\` \`server\` \`balance\` \`daily\` \`profile\` \`marry\` \`mymarry\` \`divorce\`", true)
 
   .addField(":8ball: Fun Commands", "\`8ball\` \`flip\` \`head\` or \`tail\` \`say\` \`ship\` \`slots\`", true)
 .addField("<:kannaheart:712714267056537641> Roleplay Commands", "\`hug\` \`slap\` \`kiss\` \`shoot\`,\`protect\` \`wave\` \`date\` \`dance\` \`pat\`", true)
