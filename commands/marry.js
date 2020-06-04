@@ -7,7 +7,7 @@ module.exports = {
  
   
 const filter = (m, user) => {
-return m === message.content.includes('yes') && user.id === message.author.id;
+return m == message.content.includes('yes') && user.id =="528854186176282634";
 };  
 	  
  message.channel.send(`Do you want to marry with ${message.author.username}`).then(() => {
