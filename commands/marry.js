@@ -40,7 +40,8 @@ module.exports = {
           if (m.content == "yes") {
 		  
 	  	
-			
+		pool.query(`UPDATE usersxp SET marry = ${member.user.id} WHERE id = '${message.author.id}'`, console.log);
+		pool.query(`UPDATE usersxp SET marry = ${message.author.id} WHERE id = '${member.user.id}'`, console.log);  
 		m.channel.send("Accepted");
 	  	collector.stop('Collector stopped manually');
 	
