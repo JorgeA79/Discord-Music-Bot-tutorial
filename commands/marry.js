@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+ const Discord = require("discord.js");
 
 module.exports = {
   name: "marry",
@@ -16,6 +16,6 @@ module.exports = {
                 message.channel.send("You Want To Change Your Spec OK!");
           }
     
-    
+	  })
 }
 }
