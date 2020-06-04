@@ -12,26 +12,33 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
  
-	  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
+	  let member = message.mentions.members.first();  		  
+	  var married = "2";
 	  
+	   
 	  
-	   let member = message.mentions.members.first();
+
 	   if(!member) return message.reply("Try mentioning the person");
 	   if(member.user.id == message.author.id) return message.reply("You cannot marry with yourself");
-	  
-	  		  
-	  let married = "2";	  
-	  let marry = result.rows[0].marry;
-	  if(marry === null){  	  
 	   
-	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
-          let marryxd = resultx.rows[0].marry;
-	  if(marryxd !== null){  
+	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,result) =>{
+          let marry = result.rows[0].marry;
+	  
+		  
+	  if(marry !== null){  
 	
 	  married = "1";
 	  return message.reply("Is already married");	  
 	  }
-	  });	  
+	  });	
+	  
+	  
+	  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
+		  
+	  let marry = result.rows[0].marry;
+	  if(marry === null){  	  
+	   
+	  
 		  
 	  if(married == "2"){	  
 		  
