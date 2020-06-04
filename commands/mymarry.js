@@ -13,7 +13,7 @@ module.exports = {
   execute(client, message) {
  
 
-	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
+	  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,resultx) =>{
           let marryxd = resultx.rows[0].marry;
 		      let author = message.author;
 	        message.channel.send(`${author} is maried with <@${marryxd}>`)
