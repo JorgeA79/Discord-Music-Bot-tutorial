@@ -30,7 +30,7 @@ module.exports = {
 	  let marry = result.rows[0].marry;
 	  if(marry === null){  	 	  
 		  
-	  message.channel.send(`${member.user}, Do you want to marry with ${message.author}`)
+	  message.channel.send(`${member.user}, Do you want to marry with ${message.author}` + "` <Answer with yes or no>`")
 	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === member.user.id, { time: 10000 });
           console.log(collector)
           collector.on('collect', m => {
@@ -41,14 +41,21 @@ module.exports = {
 	  	
 		pool.query(`UPDATE usersxp SET marry = ${member.user.id} WHERE id = '${message.author.id}'`, console.log);
 		pool.query(`UPDATE usersxp SET marry = ${message.author.id} WHERE id = '${member.user.id}'`, console.log);  
-		m.channel.send("Accepted");
+		 const embed = new Discord.MessageEmbed()
+                .setDescription(`**${message.author.username}** is now maried **${member.user.username}**`)
+	        .setColor(0xC76CF5)
+                .setImage("https://media1.tenor.com/images/783e9568a1c06da76a50dc2c98129f11/tenor.gif?itemid=12390162");
+	        m.channel.send(embed);
 	  	collector.stop('Collector stopped manually');
 	
 			   
           } else if (m.content == "no") {
 	
-  
-		m.channel.send("Denied");
+  		 const embed = new Discord.MessageEmbed()
+                .setDescription(`**${message.author.username}** was rejected by **${member.user.username}**`)
+	        .setColor(0xC76CF5)
+                .setImage("https://data.whicdn.com/images/20070149/original.gif");
+	        m.channel.send(embed);
 		collector.stop('Collector stopped manually'); 
           }  
 	  })
@@ -66,7 +73,7 @@ module.exports = {
 	   }
 	  });
 	  }else{
-	  return message.reply("Is already married");
+	  return message.reply("That user is already married");
 	  }
 	    });
 }
