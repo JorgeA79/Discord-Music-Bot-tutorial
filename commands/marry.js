@@ -26,13 +26,10 @@ module.exports = {
 	   
 	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
           let marryxd = resultx.rows[0].marry;
-	  if(marryxd === null){  
-		     message.channel.send(`dx`)
-	  married = "2";	  
-	  }else{
-	  message.reply("Is already married");
-		   message.channel.send(`xd`)
-	  married = "1";	  	  
+	  if(marryxd !== null){  
+	
+	  married = "1";
+	  return message.reply("Is already married");	  
 	  });	  
 		  
 	  if(married == "2"){	  
