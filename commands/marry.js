@@ -19,23 +19,31 @@ module.exports = {
 	   if(!member) return message.reply("Try mentioning the person");
 	   if(member.user.id == message.author.id) return message.reply("You cannot marry with yourself");
 	  
+	  		  
+		  
+	  let marry = result.rows[0].marry;
+	  if(marry === null){  	  
+	   
 	  pool.query(`SELECT * FROM usersxp WHERE id = '${member.user.id}'`, (err,resultx) =>{
-          let marryxd = resultx.rows[0].marryxd;
+          let marryxd = resultx.rows[0].marry;
 	  if(marryxd === null){  
 		  
 	  }else{
 	  return message.reply("Is already married");
 	  }	  
-	  });		  
+	  });	  
 		  
-	  let marry = result.rows[0].marry;
-	  if(marry === null){  	  
 		  
 	  message.channel.send(`${member.user}, Do you want to marry with ${message.author}`)
 	  const collector = new Discord.MessageCollector(message.channel, m => m.author.id === member.user.id, { time: 10000 });
           console.log(collector)
           collector.on('collect', m => {
-          if (m.content == "yes") {
+          
+		  
+		  
+		  
+		  
+		 if (m.content == "yes") {
 		  
 	  	
 		pool.query(`UPDATE usersxp SET marry = ${member.user.id} WHERE id = '${message.author.id}'`, console.log);
