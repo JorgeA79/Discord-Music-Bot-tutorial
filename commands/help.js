@@ -19,7 +19,8 @@ module.exports = {
 .addField("<:kannaheart:712714267056537641> Roleplay Commands", "\`hug\` \`slap\` \`kiss\` \`shoot\`,\`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
 .addField(":musical_note: Music Commands", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`", true)
 .addField("<:pokeb:716936621265518613> Anime Commands", "\`pokedex\`",true)
-.addField(":video_game: Game Commands", "\`osu\`\n\u200b",true) 
+.addField(":video_game: Game Commands", "\`osu\` \n\u200b",true) 
+    .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed);
   
