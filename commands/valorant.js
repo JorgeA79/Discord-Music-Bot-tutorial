@@ -12,14 +12,16 @@ module.exports = {
   execute(client, message, args) {
     
   
-    if(args[0]=="agent"){
+    if(args[0].toLowerCase() =="agent"){
     
     var agent = jsonContent.agents[0]; 
-    if(!args[1]) return message.reply("Please specify one of the agents \n -Viper\n -Omen\n -Reyna\n -Jett")
-    if(args[1] == "viper") agent = jsonContent.agents[0]; 
-    if(args[1] == "jett") agent = jsonContent.agents[1];
-    if(args[1] == "omen") agent = jsonContent.agents[2];
-    if(args[1] == "reyna") agent = jsonContent.agents[3]; 
+    if(!args[1]) return message.reply("Please specify one of the agents \n -Viper\n -Omen\n -Reyna\n -Jett\n -Sova")
+    if(args[1].toLowerCase() == "viper") agent = jsonContent.agents[0]; 
+    if(args[1].toLowerCase() == "jett") agent = jsonContent.agents[1];
+    if(args[1].toLowerCase() == "omen") agent = jsonContent.agents[2];
+    if(args[1].toLowerCase() == "reyna") agent = jsonContent.agents[3]; 
+    if(args[1].toLowerCase() == "sova") agent = jsonContent.agents[4]; 
+
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
     .setDescription(`${agent.emote} - **${agent.name}'s** agent info`)
