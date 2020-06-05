@@ -18,7 +18,7 @@ module.exports = {
     .setDescription(`${jsonContent.emote} - **${jsonContent.name}'s** agent info`)
     .addField("Name:", `${jsonContent.name}`, true)
     .addField("Type:", `${jsonContent.type}`, true)
-     .addField("Abilities:", `${jsonContent.abilities[0]} \n ${jsonContent.abilities[1] } \n ${jsonContent.abilities[2]}`, false)
+     .addField("Abilities:", `**[C]**${jsonContent.abilities[0]} \n **[Q]**${jsonContent.abilities[1] } \n **[E]**${jsonContent.abilities[2]}`, false)
     .setThumbnail(jsonContent.thumbnail)
     .setImage(jsonContent.image)
     .setColor(0xC76CF5);
