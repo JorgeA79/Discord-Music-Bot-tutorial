@@ -11,10 +11,8 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
     
-for (var i=0; i<jsonContent.agents.length; i++) {
-
   
-    var agent = jsonContent.agents[i]; 
+    var agent = jsonContent.agents[0]; 
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
     .setDescription(`${agent.emote} - **${agent.name}'s** agent info`)
@@ -27,6 +25,6 @@ for (var i=0; i<jsonContent.agents.length; i++) {
     .setColor(0xC76CF5);
     message.channel.send(embed);
       
-    }    
+  
 }
 }
