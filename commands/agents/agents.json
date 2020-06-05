@@ -35,6 +35,15 @@
     "thumbnail":"https://pbs.twimg.com/profile_images/1266776493826478083/XgQ9LG2H_400x400.jpg",
     "emote":"<:Reyna:718508594714378360>",
     "image":"https://storage.googleapis.com/valorant-agents-assets/reyna_banner.png"
+    },
+      {
+    "name":"Sova",
+    "type":"<:Initiator:718595576773476372> - Initiator",
+    "abilities":[ "<:CSova:718575904611238059> - Owl Drone", "<:QSova:718575904753975337> - Shock Bolt", "<:ESova:718575904934330379> - Recon Bolt", "<:XSova:718575905060159621> -  Hunter's Fury" ],
+    "description": "Sova tracks, finds, and eliminates enemies with ruthless efficiency and precision. His custom bow and incredible scouting abilities ensure that even if you run, you cannot hide.",
+    "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/718596220188360714/74517-sova-article_m-1.jpg",
+    "emote":"<:sova:718595926666772531>",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/718596292321738822/unknown.png"
     }
     ]
 }
