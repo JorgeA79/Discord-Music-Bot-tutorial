@@ -12,6 +12,9 @@ module.exports = {
   execute(client, message, args) {
     
 for (var i=0; i<jsonContent.agents.length; i++) {
+  
+  if(args[0] == "Viper") i=0;
+  if(args[0] == "Jett") i=1;
     var agent = jsonContent.agents[i]; 
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
