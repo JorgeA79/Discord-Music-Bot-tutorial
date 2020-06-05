@@ -9,6 +9,15 @@
     "emote":"<:Viper:718447352091770900>",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/718330628067688518/unknown.png"
     }
+    {
+    "name":"Jett",
+    "type":"<:Duelist:718449661517758494> - Duelist",
+    "abilities":[ "<:CJett:718469124157734913> - Cloudburst", "<:QJett:718469124606656532> - Updraft", "<:EJett:718469124182900808> - Tailwind", "<:XJett:718469124669571183> - Blade Storm" ],
+    "description": "Jett’s agile and evasive fighting style lets her take risks no one else can. She runs circles around every skirmish, cutting enemies up before they even know what hit them.",
+    "thumbnail":"https://66.media.tumblr.com/680fb8175159760c4d4036c2ab3fe2ee/742dfaf6b5b753b2-11/s250x400/b8c19d9d69498a5328591653a1a0c42360a8aa3e.jpg",
+    "emote":"<:Jett:718468403312197652>",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/718468150248734740/unknown.png"
+    }
     ]
 }
 
