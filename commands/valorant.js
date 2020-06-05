@@ -14,7 +14,8 @@ module.exports = {
   
     var agent = jsonContent.agents[0]; 
     if(args[0] == "viper") agent = jsonContent.agents[0]; 
-    if(args[0] == "jett") agent = jsonContent.agents[1]; 
+    if(args[0] == "jett") agent = jsonContent.agents[1];
+    if(args[0] == "omen") agent = jsonContent.agents[2]; 
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
     .setDescription(`${agent.emote} - **${agent.name}'s** agent info`)
