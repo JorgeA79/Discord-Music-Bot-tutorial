@@ -15,7 +15,7 @@ module.exports = {
     if(args[0]=="agent"){
     
     var agent = jsonContent.agents[0]; 
-    if(!args[1]) return message.reply("Please specify on of the agents \n -Viper\n -Omen\n -Reyna\n -Jett")
+    if(!args[1]) return message.reply("Please specify one of the agents \n -Viper\n -Omen\n -Reyna\n -Jett")
     if(args[1] == "viper") agent = jsonContent.agents[0]; 
     if(args[1] == "jett") agent = jsonContent.agents[1];
     if(args[1] == "omen") agent = jsonContent.agents[2];
