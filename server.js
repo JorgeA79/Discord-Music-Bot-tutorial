@@ -298,9 +298,9 @@ client.on('message', async message => {
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.2);	
 
-	ctx.font = applyText(canvas, `${target.username}!`);
+	ctx.font = applyText(canvas, `${target.username.normalize("NFC")}!`);
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${target.username}!`, canvas.width / 2.5, canvas.height / 3.5);
+	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
 
 	ctx.beginPath();
 	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
