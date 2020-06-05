@@ -15,8 +15,9 @@ module.exports = {
     const title = args[1];
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
-    .setDescription(`${jsonContent.emote}**${title}'s** agent info`)
-    .addField("owo", `${jsonContent.name}, ${jsonContent.abilities}, ${jsonContent.type}`)
+    .setDescription(`${jsonContent.emote} - **${jsonContent.name}'s** agent info`)
+    .addField("Name:", `${jsonContent.name}`, true)
+    .addField("Type:", `${jsonContent.type}`, true)
     .setThumbnail(jsonContent.thumbnail)
     .setImage(jsonContent.image)
     .setColor(0xC76CF5);
