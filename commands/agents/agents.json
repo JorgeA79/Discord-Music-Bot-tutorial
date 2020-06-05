@@ -17,6 +17,15 @@
     "thumbnail":"https://66.media.tumblr.com/680fb8175159760c4d4036c2ab3fe2ee/742dfaf6b5b753b2-11/s250x400/b8c19d9d69498a5328591653a1a0c42360a8aa3e.jpg",
     "emote":"<:Jett:718468403312197652>",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/718468150248734740/unknown.png"
+    },
+     {
+    "name":"Omen",
+    "type":"<:Controller:718449661534273546> - Controller",
+    "abilities":[ "<:COmen:718503986659065906> - Shrouded Step", "<:QOmen:718503989938880583> - Paranoia", "<:EOmen:718503986843615333> - Dark Cover", "<:XOmen:718504390675136623> - From the Shadows" ],
+    "description": "Omen hunts in the shadows. He renders enemies blind, teleports across the field, then lets paranoia take hold as foes scramble to uncover where it might strike next.",
+    "thumbnail":"https://i.redd.it/u1w2c9jy9yr41.jpg",
+    "emote":"<:Omen:718503997098688602>",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/718504887507484713/unknown.png"
     }
     ]
 }
