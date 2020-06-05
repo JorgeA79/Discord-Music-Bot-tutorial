@@ -12,7 +12,7 @@ module.exports = {
   execute(client, message) {
     const embed = new Discord.MessageEmbed()
     .setDescription(`${jsonContent.name}, ${jsonContent.abilities}, ${jsonContent.type}`)
-    .setThumbnail(jsonContent.thubnail)
+    .setThumbnail(jsonContent.thumbnail)
     .setImage(jsonContent.image)
     .setColor(0xC76CF5);
   message.channel.send(embed);
