@@ -1,10 +1,14 @@
 {
-"name":"Viper",
-"type":"<:Controller:718449661534273546> - Controller",
-"abilities":[ "<:CViper:718451387276722216> - Snakebite", "<:QViper:718451387264139295> - Poison Cloud", "<:EViper:718451387045904385> - Toxic Screen", "<:XViper:718451387293368393> - Viper's Pit" ],
-"description": "Viper deploys an array of poisonous chemical devices to control the battlefield and cripple the enemy’s vision. If the toxins don’t kill her prey, her mind games surely will.",
-"thumbnail":"https://static1.millenium.gg/articles/7/16/52/7/@/74508-viper-article_m-1.jpg",
-"emote":"<:Viper:718447352091770900>",
-"image":"https://cdn.discordapp.com/attachments/396942894487044099/718330628067688518/unknown.png"
+  "agents":[
+    {
+    "name":"Viper",
+    "type":"<:Controller:718449661534273546> - Controller",
+    "abilities":[ "<:CViper:718451387276722216> - Snakebite", "<:QViper:718451387264139295> - Poison Cloud", "<:EViper:718451387045904385> - Toxic Screen", "<:XViper:718451387293368393> - Viper's Pit" ],
+    "description": "Viper deploys an array of poisonous chemical devices to control the battlefield and cripple the enemy’s vision. If the toxins don’t kill her prey, her mind games surely will.",
+    "thumbnail":"https://static1.millenium.gg/articles/7/16/52/7/@/74508-viper-article_m-1.jpg",
+    "emote":"<:Viper:718447352091770900>",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/718330628067688518/unknown.png"
+    }
+    ]
 }
 
