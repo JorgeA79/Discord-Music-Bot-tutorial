@@ -12,10 +12,14 @@ module.exports = {
   execute(client, message, args) {
     
   
+    if(args[0]=="agent"){
+    
     var agent = jsonContent.agents[0]; 
-    if(args[0] == "viper") agent = jsonContent.agents[0]; 
-    if(args[0] == "jett") agent = jsonContent.agents[1];
-    if(args[0] == "omen") agent = jsonContent.agents[2]; 
+    if(!args[1]) return message.reply("Please specify on of the agents \n -Viper\n -Omen\n -Reyna\n -Jett")
+    if(args[1] == "viper") agent = jsonContent.agents[0]; 
+    if(args[1] == "jett") agent = jsonContent.agents[1];
+    if(args[1] == "omen") agent = jsonContent.agents[2];
+    if(args[1] == "reyna") agent = jsonContent.agents[3]; 
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
     .setDescription(`${agent.emote} - **${agent.name}'s** agent info`)
@@ -28,6 +32,8 @@ module.exports = {
     .setColor(0xC76CF5);
     message.channel.send(embed);
       
-  
+    }else{
+    return message.reply("Current Valorant modules \n -Agent")
+    }  
 }
 }
