@@ -20,7 +20,7 @@ module.exports = {
 .addField(":musical_note: Music Commands", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`", true)
 .addField("<:pokeb:716936621265518613> Anime Commands", "\`pokedex\`",true)
 .addField(":video_game: Game Commands", "\`osu\`\n\u200b",true) 
-        
+  	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed);
   
   }
