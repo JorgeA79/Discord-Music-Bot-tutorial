@@ -26,7 +26,16 @@
     "thumbnail":"https://i.redd.it/u1w2c9jy9yr41.jpg",
     "emote":"<:Omen:718503997098688602>",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/718504887507484713/unknown.png"
-    }
+    },
+     {
+    "name":"Reyna",
+    "type":"<:Duelist:718449661517758494> - Duelist",
+    "abilities":[ "<:CReyna:718508592566632468> - Leer", "<:QReyna:718508593246371952> - Devour", "<:EReyna:718508592474488862> - Dismiss", "<:XReyna:718508593573396551> - Empress" ],
+    "description": " The sulfurous Mexican mercenary can heal herself thanks to orbs she collects from the corpses of her enemies. Unconventional but effective methods!",
+    "thumbnail":"https://pbs.twimg.com/profile_images/1266776493826478083/XgQ9LG2H_400x400.jpg",
+    "emote":"<:Reyna:718508594714378360>",
+    "image":"https://storage.googleapis.com/valorant-agents-assets/reyna_banner.png"
+    },
     ]
 }
 
