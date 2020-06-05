@@ -11,7 +11,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
     
-for (var i=1; i<jsonContent.agents.length; i++) {
+for (var i=0; i<jsonContent.agents.length; i++) {
     var agent = jsonContent.agents[i]; 
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
