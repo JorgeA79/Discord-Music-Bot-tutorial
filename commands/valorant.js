@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 
-var contents = fs.readFileSync("./agents/agents.json");
+var contents = fs.readFileSync("./commands/agents/agents.json");
 var jsonContent = JSON.parse(contents);
 
 
