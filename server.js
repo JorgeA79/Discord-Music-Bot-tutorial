@@ -20,7 +20,7 @@ var Pokedex = require('pokedex'),
 //CLIENT EVENTS
 client.on("ready", () => {
   console.log('Ready TO play some soft songs')
-  client.user.setActivity("Playing in Japan | p!help")
+  client.user.setActivity("in Japan | p!help")
 })
 
 client.on("warn", info => console.log(info));
