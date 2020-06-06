@@ -44,7 +44,16 @@
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/718596220188360714/74517-sova-article_m-1.jpg",
     "emote":"<:sova:718595926666772531>",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/718596292321738822/unknown.png"
-    }
+    },
+     {
+    "name":"Phoenix",
+    "type":"<:Duelist:718449661517758494> - Duelist",
+    "abilities":[ "<:CPhoenix:718652977422008412> - Blaze", "<:QPhoenix:718652977514151968> - Curveball", "<:EPhoenix:718652977711415426> - Hot Hands", "<:XPhoenix:718652977648238633> - Run it Back" ],
+    "description": "Phoenix’s star power shines through in his fighting style, igniting the battlefield with flash and flare. Whether he’s got backup or not, he’s rushing in to fight on his own terms.",
+    "thumbnail":"https://www.dailyesports.gg/wp-content/uploads/2020/04/phoenix_front-1200x900.jpg",
+    "emote":"<:Phoenix:718653260462030848>",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/718652445659627530/unknown.png"
+    },
     ]
 }
 
