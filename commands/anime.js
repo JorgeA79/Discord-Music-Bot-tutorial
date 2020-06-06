@@ -2,6 +2,7 @@
 const Discord = require("discord.js");
 const { get } = require("request-promise-native");
 const { MessageEmbed } = require("discord.js")
+var request = require('request');
 
 module.exports = {
   name: "ping",
@@ -24,30 +25,24 @@ let option = {
       json: true
     }
     
-    
-    message.channel.send("Fetching The Info").then(msg => {
-      get(option).then(body => {
-       try {
-        let embed = new MessageEmbed()
+    request(option, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      let embed = new MessageEmbed()
         .setTitle(body.data[0].attributes.titles.en)
         .setColor("RED")
         .setDescription(body.data[0].attributes.synopsis)
         .setThumbnail(body.data[0].attributes.posterImage.original)
         .addField("Ratings", body.data[0].attributes.averageRating)
         .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
-        //.setImage(body.data[0].attributes.coverImage.large)
-        //try it
-        
+        .setImage(body.data[0].attributes.coverImage.large)      
         
         message.channel.send(embed)
-        msg.delete();
-        
-       } catch (err) {
-        msg.delete();
-         return message.channel.send("Unable to find this anime");
-       }     
-      })
-    })
+      console.log(body); // Print the google web page.
+    }else{
+    return message.channel.send("Unable to find this anime");
+    }
+    });
+
       
       
       
