@@ -46,7 +46,8 @@ let option = {
         msg.delete();
          return message.channel.send("Unable to find this anime");
        }     
-      }  
+      })
+    })
       
       
       
