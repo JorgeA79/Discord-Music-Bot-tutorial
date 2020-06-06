@@ -5,7 +5,7 @@ const { MessageEmbed } = require("discord.js")
 var request = require('request');
 
 module.exports = {
-  name: "ping",
+  name: "anime",
   description: "Pinging the bot",
   execute(client, message) {
 
