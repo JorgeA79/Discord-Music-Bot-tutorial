@@ -7,7 +7,7 @@ var request = require('request');
 module.exports = {
   name: "anime",
   description: "Pinging the bot",
-  execute(client, message) {
+  execute(client, message, args) {
 
  if(!args.length) {
       return message.channel.send("Please Give Anime Name")
