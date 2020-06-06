@@ -26,11 +26,7 @@ let option = {
     }
     
     request(option, function (error, response, body) {
-    if (error) {
-       return message.channel.send("Unable to find this anime");
-    }
-      
-      if (!error && response.statusCode == 200) {
+      try {   
       let embed = new MessageEmbed()
         .setTitle(body.data[0].attributes.titles.en)
         .setColor("RED")
@@ -41,8 +37,11 @@ let option = {
         .setImage(body.data[0].attributes.coverImage.large)      
         
         message.channel.send(embed)
-      console.log(body); // Print the google web page.
+
     }
+    catch(error){
+    return message.channel.send("Unable to find this anime");
+    } 
     });
 
       
