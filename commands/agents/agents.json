@@ -75,7 +75,7 @@
        {
     "name":"Sage",
     "type":"<:Sentinel:718673625703776327> - Sentinel",
-    "abilities":[ "<:CSage:718676558059012167> - Barrier Orb", "<:QSage:718676558000160880> - 	Slow Orb", "<:ESage:718676557803028491> - Healing Orb", "<:Xsage:718676559007055974> - Resurrection" ],
+    "abilities":[ "<:CSage:718676558059012167> - Barrier Orb", "<:QSage:718676558000160880> - Slow Orb", "<:ESage:718676557803028491> - Healing Orb", "<:Xsage:718676559007055974> - Resurrection" ],
     "description": "Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends and stave off forceful assaults, she provides a calm center to a hellish battlefield.",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/718675777524334704/unknown.png",
     "emote":"<:Sage:718676567538139146>",
