@@ -17,8 +17,12 @@ const cmd = args.join(" ").split(' | ');
    Anime.fromName(cmd[0]).then(function (anime){
    anime.episodes[cmd[1]-1].fetch().then(function(episode){
    console.log(episode)
+      var pokemonL = cmd[0].charAt(0).toUpperCase();
+			var pokemonM = cmd.slice(1); 
+			var pokemonX = pokemonL + pokemonM;
+     
     let embed = new Discord.MessageEmbed()
-    .setTitle(`SCRAP - ${cmd}`)
+    .setTitle(`${pokemonX}, Episode ${cmd[1]}`)
     .setColor(0xC76CF5)
     .addField(episode.videoLinks[0].name, `[LINK 1](${episode.videoLinks[0].url})`, true)
     .addField(episode.videoLinks[1].name, `[LINK 2](https:${episode.videoLinks[1].url})`, true)
