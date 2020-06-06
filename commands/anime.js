@@ -10,7 +10,10 @@ module.exports = {
   execute(client, message, args) {
 
  if(!args.length) {
-      return message.channel.send("Please Give Anime Name")
+      const embed = new Discord.MessageEmbed()
+      .setDescription("Please specify an anime name <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
  }
  
  
@@ -28,8 +31,8 @@ let option = {
     request(option, function (error, response, body) {
       try {   
       let embed = new MessageEmbed()
-        .setTitle(body.data[0].attributes.titles.en)
-        .setColor("RED")
+        .setTitle(body.data[0].attributes.titles.en + " <a:kawaii:713667075838705698>")
+        .setColor(0xC76CF5)
         .setDescription(body.data[0].attributes.synopsis)
         .setThumbnail(body.data[0].attributes.posterImage.original)
         .addField("Ratings", body.data[0].attributes.averageRating)
@@ -40,7 +43,10 @@ let option = {
 
     }
     catch(error){
-    return message.channel.send("Unable to find this anime");
+       const embed = new Discord.MessageEmbed()
+      .setDescription("That's not a valid anime <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
     } 
     });
 
