@@ -40,7 +40,7 @@ module.exports = {
      .addField(`${jsonContent.agents[6].emote} **${jsonContent.agents[6].name}**`,`${jsonContent.agents[6].type}`, true)
      .addField(`${jsonContent.agents[7].emote} **${jsonContent.agents[7].name}**`,`${jsonContent.agents[7].type}`, true)
      .addField(`${jsonContent.agents[8].emote} **${jsonContent.agents[8].name}**`,`${jsonContent.agents[8].type}\n\u200b`, true)
-     .setThumbnail('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
+     .setThumbnail('https://preview.redd.it/pq2si1uks8t41.png?width=512&format=png&auto=webp&s=a86b0d7a2620b6f0d404e191d37d75f895996c23')
      .setColor(0xC76CF5);
      return message.channel.send(embed);
       
