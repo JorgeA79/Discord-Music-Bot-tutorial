@@ -1,6 +1,6 @@
 //FIRST TEST HANDLER IS WORKING OR NOT
 const Discord = require("discord.js");
-onst { get } = require("request-promise-native");
+const { get } = require("request-promise-native");
 const { MessageEmbed } = require("discord.js")
 
 module.exports = {
