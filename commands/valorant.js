@@ -42,7 +42,7 @@ module.exports = {
     .addField("p!valorant agent/p!valorant agent [agent-name]:", `<:valorant:718659131917074504> Get all the agents in game/ or the info about one in specific`, false)
      .setImage('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
     .setColor(0xC76CF5);
-    message.channel.send(embed);
+    return message.channel.send(embed);
     }  
 }
 }
