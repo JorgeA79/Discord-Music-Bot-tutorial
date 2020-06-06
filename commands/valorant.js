@@ -37,7 +37,9 @@ module.exports = {
      .addField(`${jsonContent.agents[3].emote} **${jsonContent.agents[3].name}**`,`${jsonContent.agents[3].type}`, true)
      .addField(`${jsonContent.agents[4].emote} **${jsonContent.agents[4].name}**`,`${jsonContent.agents[4].type}`, true)
      .addField(`${jsonContent.agents[5].emote} **${jsonContent.agents[5].name}**`,`${jsonContent.agents[5].type}\n\u200b`, true)
-     .addField(`${jsonContent.agents[6].emote} **${jsonContent.agents[6].name}**`,`${jsonContent.agents[6].type}`, true) 
+     .addField(`${jsonContent.agents[6].emote} **${jsonContent.agents[6].name}**`,`${jsonContent.agents[6].type}`, true)
+     .addField(`${jsonContent.agents[7].emote} **${jsonContent.agents[7].name}**`,`${jsonContent.agents[7].type}`, true)
+     .addField(`${jsonContent.agents[8].emote} **${jsonContent.agents[8].name}**`,`${jsonContent.agents[8].type}\n\u200b`, true)
      .setThumbnail('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
      .setColor(0xC76CF5);
      return message.channel.send(embed);
@@ -50,7 +52,9 @@ module.exports = {
     if(args[1].toLowerCase() == "reyna") agent = jsonContent.agents[3]; 
     if(args[1].toLowerCase() == "sova") agent = jsonContent.agents[4]; 
     if(args[1].toLowerCase() == "phoenix") agent = jsonContent.agents[5]; 
-    if(args[1].toLowerCase() == "raze") agent = jsonContent.agents[6]; 
+    if(args[1].toLowerCase() == "raze") agent = jsonContent.agents[6];
+    if(args[1].toLowerCase() == "cypher") agent = jsonContent.agents[7]; 
+    if(args[1].toLowerCase() == "sage") agent = jsonContent.agents[8];   
       
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
