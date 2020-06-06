@@ -53,6 +53,15 @@
     "thumbnail":"https://www.dailyesports.gg/wp-content/uploads/2020/04/phoenix_front-1200x900.jpg",
     "emote":"<:Phoenix:718653260462030848>",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/718652445659627530/unknown.png"
+    },
+         {
+    "name":"Raze",
+    "type":"<:Duelist:718449661517758494> - Duelist",
+    "abilities":[ "<:CRaze:718667466347380827> - Boom Bot", "<:QRaze:718667465990864897> - Blast Pack", "<:ERaze:718667466359832596> - Paint Shells", "<:XRaze:718667466620010547> - Showstopper" ],
+    "description": "Raze loves explosives. With her blunt-force-trauma playstyle, she excels at flushing entrenched enemies and clearing tight spaces with a generous dose of boom.",
+    "thumbnail":"https://storage.googleapis.com/valorant-agents-assets/raze_avatar.png",
+    "emote":"<:Raze:718667471330082847>",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/718667958242508830/unknown.png"
     }
     ]
 }
