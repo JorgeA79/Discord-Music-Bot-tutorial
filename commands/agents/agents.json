@@ -81,6 +81,7 @@
     "emote":"<:Sage:718676567538139146>",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/718675828254179348/unknown.png"
     },
+    {
      "name":"Breach",
     "type":"<:Initiator:718595576773476372> - Initiator",
     "abilities":[ "<:CBreach:718716477217439774> - Aftershock", "<:QBreach:718716480379813900> - Flashpoint", "<:EBreach:718716480572620820> - Fault Line", "<:XBreach:718716480593723423> -  Rolling Thunder" ],
