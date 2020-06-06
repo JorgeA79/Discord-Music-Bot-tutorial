@@ -18,7 +18,7 @@ const cmd = args.join(" ").split(' | ');
    anime.episodes[cmd[1]-1].fetch().then(function(episode){
    console.log(episode)
       var pokemonL = cmd[0].charAt(0).toUpperCase();
-			var pokemonM = cmd.slice(1); 
+			var pokemonM = cmd[0].slice(1); 
 			var pokemonX = pokemonL + pokemonM;
      
     let embed = new Discord.MessageEmbed()
