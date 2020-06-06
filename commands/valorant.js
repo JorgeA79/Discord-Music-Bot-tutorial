@@ -11,7 +11,15 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
     
-  
+    if(!args){
+     const embed = new Discord.MessageEmbed()
+     .setTitle("Valorant Commands")
+    .setDescription(`${message.author}, This are all the commmands related to valorant game!\n\u200b`)
+    .addField("p!valorant agent/p!valorant agent [agent-name]:", `<:valorant:718659131917074504> Get all the agents in game/ or the info about one in specific`, false)
+     .setImage('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
+    .setColor(0xC76CF5);
+    return message.channel.send(embed);
+    } 
     if(args[0].toLowerCase() =="agent" || args[0].lenght >=1){
     
     var agent = jsonContent.agents[0]; 
