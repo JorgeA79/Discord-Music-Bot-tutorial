@@ -1,6 +1,6 @@
 //FIRST TEST HANDLER IS WORKING OR NOT
 const Discord = require("discord.js");
-const Anime = require('anime-scrapper').Anime
+const Anime = require('anime-scraper').Anime
 
 module.exports = {
   name: "test",
