@@ -31,7 +31,8 @@
     "parse-ms":"2.1.0",
     "slot-machine":"2.1.0",
     "request-promise-native":"1.0.8",
-    "request":"2.88.2"
+    "request":"2.88.2",
+    "anime-scraper":"3.1.1"
   },
   "engines": {
     "node": "12.x"
