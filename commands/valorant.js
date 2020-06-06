@@ -11,7 +11,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
     
-    if(!args){
+    if(!args[0]){
      const embed = new Discord.MessageEmbed()
      .setTitle("Valorant Commands")
     .setDescription(`${message.author}, This are all the commmands related to valorant game!\n\u200b`)
@@ -20,6 +20,9 @@ module.exports = {
     .setColor(0xC76CF5);
     return message.channel.send(embed);
     } 
+    
+    
+    
     if(args[0].toLowerCase() =="agent" || args[0].lenght >=1){
     
     var agent = jsonContent.agents[0]; 
