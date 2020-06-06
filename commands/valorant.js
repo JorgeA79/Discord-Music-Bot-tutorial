@@ -12,7 +12,7 @@ module.exports = {
   execute(client, message, args) {
     
   
-    if(args[0].toLowerCase() =="agent"){
+    if(args[0].toLowerCase() =="agent" || args[0].lenght >=1){
     
     var agent = jsonContent.agents[0]; 
     if(!args[1]) return message.reply("Please specify one of the agents \n -Viper\n -Omen\n -Reyna\n -Jett\n -Sova\n -Phoenix")
