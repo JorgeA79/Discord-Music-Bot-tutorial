@@ -29,7 +29,8 @@
     "node-fetch":"2.6.0",
     "quick.db":"7.1.1",
     "parse-ms":"2.1.0",
-    "slot-machine":"2.1.0"
+    "slot-machine":"2.1.0",
+    "request-promise-native":"1.0.8"
   },
   "engines": {
     "node": "12.x"
