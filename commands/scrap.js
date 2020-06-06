@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const Anime = require('anime-scraper').Anime
 
 module.exports = {
-  name: "test",
+  name: "scrap",
   description: "Pinging the bot",
   execute(client, message, args) {
 const cmd = args.join(" ").split(' | ');
