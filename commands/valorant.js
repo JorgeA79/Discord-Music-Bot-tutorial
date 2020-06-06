@@ -31,12 +31,12 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
      .setTitle("Valorant Agents")
      .setDescription(`This are all the available agents in Valorant:\n\u200b`)
-     .addField(`${jsonContent.agents[0].emote} ${jsonContent.agents[0].name}`,`${jsonContent.agents[0].type}`, true)
-     .addField(`${jsonContent.agents[1].emote} ${jsonContent.agents[1].name}`,`${jsonContent.agents[1].type}`, true)
-     .addField(`${jsonContent.agents[2].emote} ${jsonContent.agents[2].name}`,`${jsonContent.agents[2].type}\n\u200b`, true)
-     .addField(`${jsonContent.agents[3].emote} ${jsonContent.agents[3].name}`,`${jsonContent.agents[3].type}`, true)
-     .addField(`${jsonContent.agents[4].emote} ${jsonContent.agents[4].name}`,`${jsonContent.agents[4].type}`, true)
-     .addField(`${jsonContent.agents[5].emote} ${jsonContent.agents[5].name}`,`${jsonContent.agents[5].type}\n\u200b`, true)
+     .addField(`${jsonContent.agents[0].emote} **${jsonContent.agents[0].name}**`,`${jsonContent.agents[0].type}`, true)
+     .addField(`${jsonContent.agents[1].emote} **${jsonContent.agents[1].name}**`,`${jsonContent.agents[1].type}`, true)
+     .addField(`${jsonContent.agents[2].emote} **${jsonContent.agents[2].name}**`,`${jsonContent.agents[2].type}\n\u200b`, true)
+     .addField(`${jsonContent.agents[3].emote} **${jsonContent.agents[3].name}**`,`${jsonContent.agents[3].type}`, true)
+     .addField(`${jsonContent.agents[4].emote} **${jsonContent.agents[4].name}**`,`${jsonContent.agents[4].type}`, true)
+     .addField(`${jsonContent.agents[5].emote} **${jsonContent.agents[5].name}**`,`${jsonContent.agents[5].type}\n\u200b`, true)
      .setThumbnail('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
      .setColor(0xC76CF5);
      return message.channel.send(embed);
