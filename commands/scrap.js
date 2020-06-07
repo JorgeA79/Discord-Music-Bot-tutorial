@@ -33,6 +33,8 @@ const cmd = args.join(" ").split(' | ');
 			var pokemonM = cmd[0].slice(1); 
 			var pokemonX = pokemonL + pokemonM;
     
+	console.log(episode.videoLinks.length); 
+	   
     if(episode.videoLinks.length = 1){
     let embed = new Discord.MessageEmbed()
     .setTitle(`${pokemonX}, Episode ${cmd[1]}`)
