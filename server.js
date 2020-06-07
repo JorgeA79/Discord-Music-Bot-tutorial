@@ -256,7 +256,7 @@ return Math.floor(Math.random()*(max - min+1)) + 10;
 client.on('message', async message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith(PREFIX + "profile")) {
-	const marry = Client.fetchUser('304357538101723137').username
+	const marry = client.fetchUser('304357538101723137').username
 	console.log(marry)	
 	var bgx = [
 	'./images/Bg1.png',
