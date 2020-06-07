@@ -25,6 +25,7 @@ const cmd = args.join(" ").split(' | ');
 	    return message.channel.send(embed);   
 	   
    } 
+   try {  
    Anime.fromName(cmd[0]).then(function (anime){
    anime.episodes[cmd[1]-1].fetch().then(function(episode){
    console.log(episode)
@@ -45,5 +46,12 @@ const cmd = args.join(" ").split(' | ');
      message.channel.send(embed)
    })
    })
+    }
+    catch(err){	   
+     const embed = new Discord.MessageEmbed()
+      .setDescription("We could not find that anime <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
+    }   
 }
 }
