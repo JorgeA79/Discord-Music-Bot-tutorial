@@ -9,10 +9,21 @@ module.exports = {
 const cmd = args.join(" ").split(' | ');
    
    if(!cmd[0]){
-   return message.channel.send("Please give animme name");
+     	    
+	    const embed = new Discord.MessageEmbed()
+            .setDescription(`**${message.author.username}** please specify an anime name!`+"\n`p!scrap <anime-name> | <epsiode>`")
+	    .setColor(0xC76CF5)
+	    return message.channel.send(embed);   
+	   
+   
    }
    if(!cmd[1]){
-   return message.channel.send("Please give animme episode number");
+	   
+    	    const embed = new Discord.MessageEmbed()
+            .setDescription(`**${message.author.username}** please specify an episode!`+"\n`p!scrap <anime-name> | <epsiode>`")
+	    .setColor(0xC76CF5)
+	    return message.channel.send(embed);   
+	   
    } 
    Anime.fromName(cmd[0]).then(function (anime){
    anime.episodes[cmd[1]-1].fetch().then(function(episode){
