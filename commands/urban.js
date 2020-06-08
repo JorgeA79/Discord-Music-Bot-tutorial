@@ -25,7 +25,7 @@ module.exports = {
             .setTimestamp()
 	          .setAuthor(`Urban Dictionary | ${word}`, image)
             .setColor(0xC76CF5)
-            .setThumbanil(image)
+            .setThumbnail(image)
             .setFooter(`Written by ${author || "unown"}`);
            
            
