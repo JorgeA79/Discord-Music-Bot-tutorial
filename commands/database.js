@@ -13,7 +13,7 @@ pool.connect()
 // })
 
 module.exports = {
-  name: "xp",
+  name: "level",
   description: "Pinging the bot",
   execute(client, message) {
 
@@ -27,10 +27,19 @@ module.exports = {
       
     let xp = result.rows[0].xp;
     let currLvl = result.rows[0].lvl;
-    if(currLvl === null) currLvl = 0;   
- 
-    message.channel.send(currLvl);    
-    message.channel.send(xp);
+    if(currLvl === null) currLvl = 0; 
+    let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	     
+      
+          const embed = new discord.MessageEmbed()
+            		.setDescription(`**Level Card**\n\u200b`)
+    	          .setAuthor(`${target.username}`, `target.displayAvatarURL({ format: 'jpg' })`)
+			          .addField("**Level:**", `#{currLvl}`,true)
+                .addField("**Exp:**", `#{xp} / ${nextLvlxp}`,true) 
+	    		      .setColor(0xC76CF5)
+            		.setThumbnail(message.author.displayAvatarURL({ format: 'jpg' }));
+      
+    message.channel.send(embed);  
+
     }); 
     
 
