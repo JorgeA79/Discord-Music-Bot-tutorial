@@ -95,7 +95,7 @@ client.on('message', message => {
 	   		}
 		  
 		    try {
-        		var pokemon = pokedex.pokemon(argsowo)
+        		var pokemon = pokedex.pokemon(argsowo.toLowerCase())
 			console.dir(pokemon);    
 			    
 			var name = pokemon.name.toString();
