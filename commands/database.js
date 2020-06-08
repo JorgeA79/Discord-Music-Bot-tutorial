@@ -28,15 +28,7 @@ module.exports = {
     let xp = result.rows[0].xp;
     let currLvl = result.rows[0].lvl;
     if(currLvl === null) currLvl = 0;   
-      
-    let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	   
-    let nextLvl = eval(currLvl) + eval(1);
-    
-       
-    if(xp > nextLvlxp){
-    pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${target.id}'`, console.log);
-    
-    }
+ 
     message.channel.send(currLvl);    
     message.channel.send(xp);
     }); 
