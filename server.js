@@ -231,17 +231,21 @@ client.on('message', async message => {
     		sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
     		} else {
      		let xp = result.rows[0].xp;
+		let lvlM = result.rows[0].lvlup;
      		sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;
           	let currLvl = result.rows[0].lvl;
     		if(currLvl === null) currLvl = 0;   
-      
+      		if(lvlM === null) lvlM = 0;  
     		let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	   
     		let nextLvl = eval(currLvl) + eval(1);
     
        
     			if(xp > nextLvlxp){
     			pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
+			message.channe.send(`You leveled up to ${nextLvl}`)	
     			}
+			
+			
 			
     		}  
     		pool.query(sql, console.log);
