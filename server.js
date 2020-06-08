@@ -240,7 +240,7 @@ client.on('message', async message => {
     
        
     			if(xp > nextLvlxp){
-    			pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${target.id}'`, console.log);
+    			pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
     			}
 			
     		}  
