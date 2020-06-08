@@ -281,7 +281,7 @@ client.on('message', async message => {
     		pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
 		pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
 			
-			 const embed = new Discord.MessageEmbed()
+			 const embed = new discord.MessageEmbed()
             		.setDescription(`Congratulations **${message.author.username}** you leveled up to level **${nextLvl}**\n\u200b`)
 			.addField("**Rewards:**", "+ $250",true) 
 	    		.setColor(0xC76CF5)
