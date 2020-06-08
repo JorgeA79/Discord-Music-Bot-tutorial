@@ -16,7 +16,7 @@ module.exports = {
  
   let embed = new MessageEmbed()
         .setColor(0xC76CF5)
-        .setDescription(`I'd give **${args.join(" ")}** a ${percentage}/10 <a:kawaii:713667075838705698>`);    
+        .setDescription(`<:imshy:694792210012569640>  |  I'd give **${args.join(" ")}** a ${percentage}/10 <a:kawaii:713667075838705698>`);    
         message.channel.send(embed)
 	
 
