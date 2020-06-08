@@ -18,7 +18,7 @@ module.exports = {
   execute(client, message) {
 
 //pool.query('INSERT INTO userxp (id, xp, lvl) VALUES ($1, $2, $3)', [idx, xd, dx])
-    pool.query(`ALTER TABLE usersxp ADD COLUMN lvlup INT`);
+
     let target = message.mentions.users.first() || message.author;
     
     pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,(err, result)=>{
