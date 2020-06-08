@@ -12,7 +12,7 @@ module.exports = {
 .setThumbnail(process.env.BOT_AVATAR)
 
   .addField("<:discord_bot_dev:719520819771998289> Core", "\`help\` \`ping\` \`server\` \`invite\` \`support\`\n\u200b", true)
-  .addField(":gem: Social", "\`profile\` \`marry\` \`mymarry\` \`divorce\`\n\u200b", true)
+  .addField(":gem: Social", "\`profile\` \`marry\` \`mymarry\` \`divorce\` \`level\`\n\u200b", true)
   .addField(":credit_card:  Economy", "\`balance\` \`daily\` \`slots\`\n\u200b", true)      
   .addField(":8ball: Fun & Games", "\`8ball\` \`flip\` \`head\` or \`tail\` \`say\` \`ship\`\n\u200b", true)   
   .addField("<:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\`,\`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
