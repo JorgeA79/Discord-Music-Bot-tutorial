@@ -1,5 +1,8 @@
 const Discord = require("discord.js");
 const urban = require("urban");
+const { stripIndents } = require("common-tags");
+
+
 module.exports = {
   name: "urban",
   description: "Pinging the bot",
