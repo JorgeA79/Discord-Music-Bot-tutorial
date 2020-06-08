@@ -31,10 +31,10 @@ module.exports = {
     let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	     
       
           const embed = new Discord.MessageEmbed()
-            		.setDescription(`**Level Card**\n\u200b`)
-    	          .setAuthor(`${target.username}`, `${target.displayAvatarURL({ format: 'jpg' })}`)
-			          .addField("**Level:**", `#{currLvl}`,true)
-                .addField("**Exp:**", `#{xp} / ${nextLvlxp}`,true) 
+            			.setDescription(`**Level Card**\n\u200b`)
+    	          		.setAuthor(`${target.username}`, `${target.displayAvatarURL({ format: 'jpg' })}`)
+			        .addField("**Level:**", `${currLvl}`,true)
+                		.addField("**Exp:**", `${xp} / ${nextLvlxp}`,true) 
 	    		      .setColor(0xC76CF5)
             		.setThumbnail(target.displayAvatarURL({ format: 'jpg' }));
       
