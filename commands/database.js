@@ -35,9 +35,9 @@ module.exports = {
        
     if(xp > nextLvlxp){
     pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${target.id}'`, console.log);
-    message.channel.send(currLvl);  
+    
     }
-      
+    message.channel.send(currLvl);    
     message.channel.send(xp);
     }); 
     
