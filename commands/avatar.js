@@ -1,5 +1,5 @@
 module.exports = {
-  name: "level",
+  name: "avatar",
   description: "Pinging the bot",
   execute(client, message) {
 
