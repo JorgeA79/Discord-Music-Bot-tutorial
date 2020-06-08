@@ -8,9 +8,15 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
    
-   if(!args[0]) return message.channel.send("You need to specify a word");
-   
-   let image = "https://origin.marketplaceimages.windowsphone.com/v8/images/5c942bfe-6c90-45b0-8cd7-1f2129c6e319?imageType=ws_icon_medium";
+   if(!args[0]){
+	
+      const embed = new Discord.MessageEmbed()
+      .setDescription("Please specify a word <a:x_:713677703756251147> \n`p!urban <your word>`")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);   
+	  
+   }
+   let image = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxeXc6CDMTuda_avVhbE95cPJ2QMoKLxNbHR5pvyUoB0a_y-fl&usqp=CAU";
    let search = urban(args.slice(0).join(" ")) 
     try {
     search.first(res =>{
@@ -33,7 +39,10 @@ module.exports = {
     
     })       
     }catch(e){
-    return message.channel.send("Couldn't find anything sorry");
+    const embed = new Discord.MessageEmbed()
+      .setDescription("Couldn't find anything <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
     }
 }
 }
