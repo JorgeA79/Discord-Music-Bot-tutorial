@@ -23,7 +23,9 @@ module.exports = {
     .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed)
-    .then(msg => msg.react('🇺'))
-    .then(msg => msg.react('w'))
+    .then(msg => { msg.react('🇺')
+                    msg.react('w')
+                 })
+
   }
 };
