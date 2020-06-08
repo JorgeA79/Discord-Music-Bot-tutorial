@@ -30,7 +30,7 @@ module.exports = {
     if(currLvl === null) currLvl = 0; 
     let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	     
       
-          const embed = new discord.MessageEmbed()
+          const embed = new Discord.MessageEmbed()
             		.setDescription(`**Level Card**\n\u200b`)
     	          .setAuthor(`${target.username}`, `target.displayAvatarURL({ format: 'jpg' })`)
 			          .addField("**Level:**", `#{currLvl}`,true)
