@@ -244,7 +244,7 @@ client.on('message', async message => {
 		
 		if(xp > nextLvlxp){
     		pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
-		message.channe.send(`You leveled up to ${nextLvl}`)	
+		message.channel.send(`You leveled up to ${nextLvl}`)	
     		}
 			
     		});
@@ -254,7 +254,7 @@ client.on('message', async message => {
    		setTimeout(() => {
  
  		talkedRecently.delete(message.author.id);
-		}, 60000);
+		}, 15000);
 		}
 		});
 
