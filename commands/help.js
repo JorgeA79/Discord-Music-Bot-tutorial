@@ -22,7 +22,8 @@ module.exports = {
   .addField("\u200b", "\u200b",true)     
     .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
-  message.channel.send(embed).then(message.react('🇺'))
+  message.channel.send(embed)
+    .then(msg => msg.react('🇺'))
   
   }
 };
