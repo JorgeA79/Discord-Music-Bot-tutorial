@@ -23,9 +23,9 @@ module.exports = {
     .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed)
-    .then(msg => { msg.react('arrow_forward')
+    .then(msg => { msg.react(':arrow_forward:')
                     msg.react('🇼')
-                  msg.react('arrow_backward')
+                  msg.react(':arrow_backward:')
                  })
 
   }
