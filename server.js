@@ -235,17 +235,7 @@ client.on('message', async message => {
 		}  
 		
     		pool.query(sql, console.log);
-		let xp = result.rows[0].xp;	
-		let currLvl = result.rows[0].lvl;
-		if(currLvl === null) currLvl = 0;
-		if(currLvl === null) currLvl = 0;   
-    		let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	   
-    		let nextLvl = eval(currLvl) + eval(1);
 		
-		if(xp > nextLvlxp){
-    		pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
-		message.channel.send(`You leveled up to ${nextLvl}`)	
-    		}
 			
     		});
 	    
@@ -254,7 +244,7 @@ client.on('message', async message => {
    		setTimeout(() => {
  
  		talkedRecently.delete(message.author.id);
-		}, 15000);
+		}, 25000);
 		}
 		});
 
@@ -263,6 +253,31 @@ let min = 10;
 let max = 30;  
 return Math.floor(Math.random()*(max - min+1)) + 10;
 }
+
+
+client.on('message', async message => {
+	 if (message.author === client.user) return;
+ 	 if(message.channel.type === "dm") return;
+		pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
+      		if(err) return err;
+		
+		let xp = result.rows[0].xp;	
+		let currLvl = result.rows[0].lvl;
+		if(xp === null) xp = 0;	
+		if(currLvl === null) currLvl = 0;
+		if(currLvl === null) currLvl = 0;   
+    		let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	   
+    		let nextLvl = eval(currLvl) + eval(1);
+		
+		if(xp > nextLvlxp){
+    		pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
+		message.channel.send(`You leveled up to ${nextLvl}`)	
+    		}	
+			
+		});	
+	
+});
+
 
 
 client.on('message', async message => {
