@@ -24,7 +24,7 @@ module.exports = {
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed)
     .then(msg => { msg.react('🇺')
-                    msg.react('w')
+                    msg.react('🇼')
                  })
 
   }
