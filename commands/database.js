@@ -32,11 +32,11 @@ module.exports = {
       
           const embed = new Discord.MessageEmbed()
             		.setDescription(`**Level Card**\n\u200b`)
-    	          .setAuthor(`${target.username}`, `target.displayAvatarURL({ format: 'jpg' })`)
+    	          .setAuthor(`${target.username}`, `${target.displayAvatarURL({ format: 'jpg' })}`)
 			          .addField("**Level:**", `#{currLvl}`,true)
                 .addField("**Exp:**", `#{xp} / ${nextLvlxp}`,true) 
 	    		      .setColor(0xC76CF5)
-            		.setThumbnail(message.author.displayAvatarURL({ format: 'jpg' }));
+            		.setThumbnail(target.displayAvatarURL({ format: 'jpg' }));
       
     message.channel.send(embed);  
 
