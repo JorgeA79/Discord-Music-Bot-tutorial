@@ -285,7 +285,7 @@ client.on('message', async message => {
             		.setDescription(`Congratulations **${message.author.username}** you leveled up to level **${nextLvl}**\n\u200b`)
 			.addField("**Rewards:**", "+ $250",true) 
 	    		.setColor(0xC76CF5)
-            		.setThumbnail(message.author.displayAvatarURL);
+            		.setThumbnail(message.author.displayAvatarURL({ format: 'jpg' }));
 			message.channel.send(embed)	
     		}	
 			
