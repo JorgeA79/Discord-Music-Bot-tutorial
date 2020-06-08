@@ -231,6 +231,11 @@ client.on('message', async message => {
     		sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
     		} else {
      		let xp = result.rows[0].xp;
+     		sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;			   		
+		}  
+		
+    		pool.query(sql, console.log);
+		let xp = result.rows[0].xp;	
 		let currLvl = result.rows[0].lvl;
 		if(currLvl === null) currLvl = 0;
 		if(currLvl === null) currLvl = 0;   
@@ -242,11 +247,6 @@ client.on('message', async message => {
 		message.channe.send(`You leveled up to ${nextLvl}`)	
     		}
 			
-     		sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;			
-    		
-		}  
-	
-    		pool.query(sql, console.log);
     		});
 	    
 	        talkedRecently.add(message.author.id);
