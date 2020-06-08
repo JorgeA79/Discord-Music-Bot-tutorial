@@ -16,11 +16,16 @@ module.exports = {
       return message.channel.send(embed);   
 	  
    }
-   let image = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTxeXc6CDMTuda_avVhbE95cPJ2QMoKLxNbHR5pvyUoB0a_y-fl&usqp=CAU";
+   let image = "https://cdn.discordapp.com/attachments/364107994339737600/719582179750969444/unknown.png";
    let search = urban(args.slice(0).join(" ")) 
     try {
     search.first(res =>{
-    if(!res) return message.channel.send("No results found for this topic.")
+    if(!res){
+	const embed = new Discord.MessageEmbed()
+      .setDescription("No results found <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
+	   }
     let {word, definition, example, thumbs_up, thumbs_down, permalink, author} = res
     const embed = new Discord.MessageEmbed()
             .setDescription(stripIndents`**Definition:** ${definition || "No definition"}
