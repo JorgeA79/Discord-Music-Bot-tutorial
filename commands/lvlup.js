@@ -13,7 +13,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
     
-    pool.query(`UPDATE usersxp SET xp = 20000 WHERE id = '${message.author.id}'`, console.log);
+    pool.query(`UPDATE usersxp SET xp = 24990 WHERE id = '${message.author.id}'`, console.log);
 
     
 }
