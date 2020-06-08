@@ -261,17 +261,32 @@ client.on('message', async message => {
 		pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
       		if(err) return err;
 		
-		let xp = result.rows[0].xp;	
+		let xp = result.rows[0].xp;
+
 		let currLvl = result.rows[0].lvl;
 		if(xp === null) xp = 0;	
 		if(currLvl === null) currLvl = 0;
 		if(currLvl === null) currLvl = 0;   
     		let nextLvlxp = (eval(currLvl) + eval(1)) * eval(5000); 	   
     		let nextLvl = eval(currLvl) + eval(1);
-		
+			
+		let money = result.rows[0].money;
+   		if(money === null) money=0;
+  
+ 		 var total = 0;
+  		total += eval(money) + eval(250); 	  
+	  
+  				  
 		if(xp > nextLvlxp){
     		pool.query(`UPDATE usersxp SET lvl = ${nextLvl} WHERE id = '${message.author.id}'`, console.log);
-		message.channel.send(`You leveled up to ${nextLvl}`)	
+		pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
+			
+			 const embed = new Discord.MessageEmbed()
+            		.setDescription(`Congratulations **${message.author.username}** you leveled up to level **${nextLvl}**\n\u200b`)
+			.addField("**Rewards:**", "+ $250",true) 
+	    		.setColor(0xC76CF5)
+            		.setThumbnail(message.author.avatarURL);
+			message.channel.send(embed)	
     		}	
 			
 		});	
