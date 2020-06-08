@@ -39,7 +39,7 @@ for (const file of cmdFiles) {
 
 
 //WHEN SOMEONE MESSAGE
-client.on("message", message => {
+client.on("message", async message => {
    if (message.author.bot) return;
   if (!message.guild) return;
   
