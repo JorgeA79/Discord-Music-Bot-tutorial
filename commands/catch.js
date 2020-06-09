@@ -93,7 +93,7 @@ module.exports = {
   //You cant catch
    message.channel.send("UwU");   
   } 
-  }
+  }else{
   if(args[0].toLowerCase() == "inv" || args[0].toLowerCase() == "inventory"){
   
   const embed = new Discord.MessageEmbed()
@@ -110,9 +110,19 @@ module.exports = {
   .setColor(0xC76CF5)
   message.channel.send(embed);
   
+  }else if(args[1].toLowerCase() =="common"){
+    
+  }else if(args[1].toLowerCase() =="normal"){
+
+  }else if(args[1].toLowerCase() =="epic"){
+
+  }else if(args[1].toLowerCase() =="legendary"){
+
+  }else if(args[1].toLowerCase() =="all"){
+
   }
       
-  
+  }
   }
   });
   
