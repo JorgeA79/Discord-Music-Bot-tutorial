@@ -3,7 +3,7 @@ const client = new discord.Client({ disableEveryone: true, disabledEvents: ["TYP
 const { readdirSync } = require("fs");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
-
+var normalizeText = require("normalize-text")
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -341,7 +341,7 @@ client.on('message', async message => {
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
 
-	ctx.font = applyText(canvas, `${target.username.normalize("NFC")}!`);
+	ctx.font = applyText(canvas, `${normalizeText.normalizeText(target.username)}!`);
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
 
