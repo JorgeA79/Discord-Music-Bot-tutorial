@@ -350,12 +350,11 @@ async function profile(member) {
   .addText(`Score: ${money}`, 241, 136)	  
   .toBuffer()
 	  
-	  )};
+	  });
 
 } catch (error) {
   await message.channel.send(`Something happened: ${error.message}`);
 }
-	
 	
 }
 
@@ -370,7 +369,7 @@ async function profile(member) {
 		  
 		  
 	  }		  
-)};
+});
 	 
     client.on('message', message => {
 	  if (message.author === client.user) return;
