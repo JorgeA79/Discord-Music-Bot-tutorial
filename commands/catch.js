@@ -34,6 +34,7 @@ module.exports = {
   pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{
   if(err) return err;  
   let money = result.rows[0].money;
+  var total =0;	    
   let ctW = result.rows[0].ctW;
   let ctN = result.rows[0].ctN;
   let ctE = result.rows[0].ctE;
@@ -53,16 +54,36 @@ module.exports = {
   const pokemonxd = get(pokemon);
   var description = "";
       
-  if(pokemonxd == "common") description = "You got a common pokemon <a:joltik:719732119844159532>";
-  if(pokemonxd == "normal") description = "You got a normal pokemon <a:zorua:719732121689784340>";
-  if(pokemonxd == "epic") description = "You got an epic pokemon <a:tyranitar:719732120939003966>";
-  if(pokemonxd == "legendary") description = "You got a legendary pokemon <a:Mew:719732117818572967>";  
+  if(pokemonxd == "common"){ 
+      description = "You got a common pokemon <a:joltik:719732119844159532>";
+      var xd = eval(ctW) + eval(1)
+      pool.query(`UPDATE usersxp SET ctW = ${xd} WHERE id = '${message.author.id}'`, console.log);
+
+  }
+  if(pokemonxd == "normal"){ 
+      description = "You got a normal pokemon <a:zorua:719732121689784340>";
+      var xd = eval(ctN) + eval(1)
+      pool.query(`UPDATE usersxp SET ctN = ${xd} WHERE id = '${message.author.id}'`, console.log);
+  }
+  if(pokemonxd == "epic"){
+      description = "You got an epic pokemon <a:tyranitar:719732120939003966>";
+      var xd = eval(ctE) + eval(1)
+      pool.query(`UPDATE usersxp SET ctE = ${xd} WHERE id = '${message.author.id}'`, console.log);
+  }
+  if(pokemonxd == "legendary"){ 
+      description = "You got a legendary pokemon <a:Mew:719732117818572967>";
+      var xd = eval(ctL) + eval(1)
+      pool.query(`UPDATE usersxp SET ctL = ${xd} WHERE id = '${message.author.id}'`, console.log);
+  }  
  
   const embed = new Discord.MessageEmbed()    
   .setTitle(`<:pokeb:716936621265518613>  |  Pokemon Catcher`)
   .setDescription(description)
   .setColor(0xC76CF5)    
   message.channel.send(embed);  
+  total = eval(money) - eval(10);
+  pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
+      
       
   //You can catch
   }else{
