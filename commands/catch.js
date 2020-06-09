@@ -106,20 +106,62 @@ module.exports = {
   
   if(!args[1]){
   const embed = new Discord.MessageEmbed()
-  .setDescription("Please specify what you want to sell: \n`p!catch sell <item>`\n -Common | <a:joltik:719732119844159532>\n -Normal | <a:zorua:719732121689784340>\n -Epic | <a:tyranitar:719732120939003966>\n -Legendary | <a:Mew:719732117818572967>\n -All | <:pokeb:716936621265518613> ")
+  .setDescription("Please specify what you want to sell: \n`p!catch sell <item>`\n -Common | <a:joltik:719732119844159532>\n -Normal | <a:zorua:719732121689784340>\n -Epic | <a:tyranitar:719732120939003966>\n -Legendary | <a:Mew:719732117818572967>")
   .setColor(0xC76CF5)
   message.channel.send(embed);
   
   }else if(args[1].toLowerCase() =="common"){
-    
+  
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:pokeb:716936621265518613> | Pokemon Bank")
+  .setDescription(`Succesfully sold ${ctW} **Common Pokemon** <a:joltik:719732119844159532>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);
+      
+   total = eval(money) + (eval(ctW)*eval(8));
+  pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET ctw = 0 WHERE id = '${message.author.id}'`, console.log);
+      
+      
   }else if(args[1].toLowerCase() =="normal"){
-
+  
+   const embed = new Discord.MessageEmbed()
+  .setTitle("<:pokeb:716936621265518613> | Pokemon Bank")
+  .setDescription(`Succesfully sold ${ctN} **Normal Pokemon** <a:zorua:719732121689784340>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed); 
+      
+      total = eval(money) + (eval(ctN)*eval(20));
+  pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET ctn = 0 WHERE id = '${message.author.id}'`, console.log);
+      
+      
   }else if(args[1].toLowerCase() =="epic"){
-
+ 
+       const embed = new Discord.MessageEmbed()
+  .setTitle("<:pokeb:716936621265518613> | Pokemon Bank")
+  .setDescription(`Succesfully sold ${ctE} **Epic Pokemon** <a:tyranitar:719732120939003966>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);
+      
+      total = eval(money) + (eval(ctE)*eval(100));
+  pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET cte = 0 WHERE id = '${message.author.id}'`, console.log);
+      
+      
   }else if(args[1].toLowerCase() =="legendary"){
-
-  }else if(args[1].toLowerCase() =="all"){
-
+      
+        const embed = new Discord.MessageEmbed()
+  .setTitle("<:pokeb:716936621265518613> | Pokemon Bank")
+  .setDescription(`Succesfully sold ${ctL} **Legendary Pokemon** <a:Mew:719732117818572967>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);
+      
+  total = eval(money) + (eval(ctL)*eval(500));
+  pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET ctl = 0 WHERE id = '${message.author.id}'`, console.log);
+      
+      
   }
       
   }
