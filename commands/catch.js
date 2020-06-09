@@ -61,7 +61,7 @@ module.exports = {
   
   const embed = new Discord.MessageEmbed()
   .setTitle("Pokemon Catch Inventory")
-  .setDescription(`<a:joltik:719732119844159532>**Common:** ${ctW}\n\u200b\n<a:zorua:719732121689784340>**Normal:** ${ctN}\n\u200b\n<a:tyranitar:719732120939003966>**Epic:** ${ctE}\n\u200b\n<a:Mew:719732117818572967>**Legendary:** ${ctL}`)
+  .setDescription(`<a:joltik:719732119844159532>**Common:** ${ctW}\n<a:zorua:719732121689784340>**Normal:** ${ctN}\n<a:tyranitar:719732120939003966>**Epic:** ${ctE}\n<a:Mew:719732117818572967>**Legendary:** ${ctL}\n\u200b`)
   .setColor(0xC76CF5)
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);
   message.channel.send(embed);
