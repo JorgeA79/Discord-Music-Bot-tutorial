@@ -63,10 +63,7 @@ module.exports = {
   .setDescription(`**Common:** ${ctW}\n**Normal:** ${ctN}\n**Epic:** ${ctE}\n**Legendary:** ${ctL}`)
   .setColor(0xC76CF5);
   message.channel.send(embed);
-  
-  }else{ 
-  return message.reply("Thats not a valid command");
-  }   
+  }  
   });
   
              }
