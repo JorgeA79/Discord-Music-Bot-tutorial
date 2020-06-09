@@ -331,7 +331,7 @@ client.on('message', async message => {
         
 	
 	ctx.drawImage(boxes, 250, 18, 450, 67);
-	ctx.drawImage(boxes, 400, 170, 300, 60);
+	ctx.drawImage(boxes, 400, 160, 300, 60);
 	ctx.drawImage(boxes, 400, 90, 300, 60);	
 	ctx.drawImage(boxes, 0, 0, 120, 250);
 
@@ -339,7 +339,7 @@ client.on('message', async message => {
 	ctx.font = '28px Bebas';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
-	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1);	
+	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.2);	
 
 	ctx.font = applyText(canvas, `${target.username.normalize("NFC")}!`);
 	ctx.fillStyle = '#ffffff';
