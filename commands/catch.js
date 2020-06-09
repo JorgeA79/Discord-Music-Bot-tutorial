@@ -49,5 +49,7 @@ module.exports = {
   }else{ 
   return message.reply("Thats not a valid command");
   }   
-  )};
-  }}
+  });
+  
+             }
+             }
