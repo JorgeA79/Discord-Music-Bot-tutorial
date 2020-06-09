@@ -20,11 +20,11 @@ module.exports = {
   let ctE = result.rows[0].ctE;
   let ctL = result.rows[0].ctL;
     
-  if(money === null) money=0;  
-  if(ctW === null) ctW=0;
-  if(ctN === null) ctN=0; 
-  if(ctE === null) ctE=0; 
-  if(ctL === null) ctL=0; 
+  if(money == null) money=0;  
+  if(ctW == null) ctW=0;
+  if(ctN == null) ctN=0; 
+  if(ctE == null) ctE=0; 
+  if(ctL == null) ctL=0; 
   //Variables  
     
     
