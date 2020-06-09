@@ -59,6 +59,7 @@ module.exports = {
   if(pokemonxd == "legendary") description = "You got a legendary pokemon <a:Mew:719732117818572967>";  
  
   const embed = new Discord.MessageEmbed()    
+  .setTitle(`<:pokeb:716936621265518613>  |  Pokemon Catcher`)
   .setDescription(description)
   .setColor(0xC76CF5)    
   message.channel.send(embed);  
