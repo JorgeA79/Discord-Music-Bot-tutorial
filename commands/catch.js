@@ -6,6 +6,25 @@ connectionString : process.env.DATABASE_URL,
 });
 pool.connect()
 
+var pokemon = {
+    common:55, // Weighted Probability
+    normal:30, // Weighted Probability
+    epic:14, // Weighted Probability
+    legendary:1
+};
+
+function get(input) {
+    var array = []; // Just Checking...
+    for(var item in input) {
+        if ( input.hasOwnProperty(item) ) { // Safety
+            for( var i=0; i<input[item]; i++ ) {
+                array.push(item);
+            }
+        }
+    }
+    // Probability Fun
+    return array[Math.floor(Math.random() * array.length)];
+}
 
 module.exports = {
   name: "catch",
@@ -30,9 +49,8 @@ module.exports = {
     
   if(!args[0]){
   //Catch
-  message.channel.send("XD"); 
   if(money > 10){
-   message.channel.send("OWO");   
+   message.channel.send(`You got a ${get(pokemon)} pokemon`);   
   //You can catch
   }else{
   //You cant catch
