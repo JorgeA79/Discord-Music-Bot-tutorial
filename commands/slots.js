@@ -100,14 +100,15 @@ pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}
      message.channel.send(embed);	
      
 	
-	talkedRecently.add(message.author.id);
+	
+
+});
+		talkedRecently.add(message.author.id);
 	    
    		setTimeout(() => {
  
  		talkedRecently.delete(message.author.id);
 		}, 30000);
-
-});
 }   
 }
 }
