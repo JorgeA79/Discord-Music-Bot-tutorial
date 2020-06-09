@@ -51,7 +51,7 @@ module.exports = {
   //Catch
   if(money > 10){
   const pokemonxd = get(pokemon);
-  const description = "";
+  var description = "";
       
   if(pokemonxd == "common") description = "You got a common pokemon <a:joltik:719732119844159532>";
   if(pokemonxd == "normal") description = "You got a normal pokemon <a:zorua:719732121689784340>";
