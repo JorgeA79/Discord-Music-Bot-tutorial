@@ -3,10 +3,14 @@ const client = new discord.Client({ disableEveryone: true, disabledEvents: ["TYP
 const { readdirSync } = require("fs");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
-const Canvasx = require('canvas');
-const { join } = require('path');
-const { registerFont } = require('canvas');
-registerFont('./fonts/Bebas.ttf', { family: 'Bebas' })
+
+
+const { Canvas } = require("canvas-constructor"); // You can't make images without this.
+const { resolve, join } = require("path"); // This is to get a font file.
+const { Attachment } = require("discord.js"); // This is to send the image via discord.
+const fetch = require("node-fetch"); 
+
+Canvas.registerFont(resolve(join(__dirname, "./fonts/Bebas.ttf")), "Bebas");
 
 client.prefix = PREFIX
 client.queue = new Map();
@@ -294,86 +298,80 @@ client.on('message', async message => {
 });
 
 
+async function profile(member) {
+  
+  try {
+  const result = await fetch(member.user.displayAvatarURL.replace(imageUrlRegex, "?size=128"));
+  if (!result.ok) throw new Error("Failed to get the avatar.");
+  pool.query(`SELECT * FROM usersxp WHERE id = '${member.id}'`,async (err, result)=>{
+  if(err) return err;
+	  
+	  
+  const avatar = await result.buffer();
+  const name = member.displayName.length > 20 ? member.displayName.substring(0, 17) + "..." : member.displayName;
+	  
+  let level = result.rows[0].lvl;
+  let money = result.rows[0].money;	  
+  if (money === null) money =0;
+  if (level === null) level =0;	  
+	  
+	  
+  return new Canvas(400, 180)
+  // Create the Blurple rectangle on the right side of the image.
+  .setColor("#7289DA")
+  .addRect(84, 0, 316, 180)
+  .setColor("#2C2F33")
+  .addRect(0, 0, 84, 180)
+  .addRect(169, 26, 231, 46)
+  .addRect(224, 108, 176, 46)
+  .setShadowColor("rgba(22, 22, 22, 1)") // This is a nice colour for a shadow.
+  .setShadowOffsetY(5) // Drop the shadow by 5 pixels.
+  .setShadowBlur(10) // Blur the shadow by 10.
+  .addCircle(84, 90, 62)
+  .addCircularImage(avatar, 20, 26, 64)
+  .save()
+  .createBeveledClip(20, 138, 128, 32, 5)
+  .setColor("#23272A")
+  .fill()
+  .restore()
+   .setTextAlign("center")
+  // I'm using a custom font, which I will show you how to add next.
+  .setTextFont("10pt Bebas")
+  // Set the colour to white, since we have a dark background for all the text boxes.
+  .setColor("#FFFFFF")
+  // Add the name variable.
+  .addText(name, 285, 54)
+  // Using template literals, you can add text and variables, we're applying the toLocaleString()
+  // to break up the number into a nice readable format.
+  .addText(`Level: ${level}`, 84, 159)
+  // Now we want to align the text to the left.
+  .setTextAlign("left")
+  // Let's add all the points!
+  .addText(`Score: ${money}`, 241, 136)	  
+  .toBuffer()
+	  
+	  )};
 
-client.on('message', async message => {
-	if (message.author === client.user) return;
-	if (message.content.startsWith(PREFIX + "profile")) {
+} catch (error) {
+  await message.channel.send(`Something happened: ${error.message}`);
+}
 	
-	var bgx = [
-	'./images/Bg1.png',
-	'./images/Bg2.png',
-	'./images/Bg3.png',
-	'./images/Bg4.png',
-	'./images/Bg5.png'	
-	]	  
-	var bg = bgx[Math.floor(Math.random() * bgx.length)];
-		
-	let target = message.mentions.users.first() || message.author;
-    
-    	pool.query(`SELECT * FROM usersxp WHERE id = '${target.id}'`,async (err, result)=>{
-    	if(err) return err;
-    	if(!result.rows[0])  return message.channel.send("Cannot show user's profile")
-      
-    	let xp = result.rows[0].xp;
-	let money = result.rows[0].money;
-	if (money === null) money =0;		
-			
-	const canvas = Canvasx.createCanvas(700, 250);
-	const ctx = canvas.getContext('2d');
-
-	const background = await Canvasx.loadImage(bg);
-	const boxes = await Canvasx.loadImage('./images/Box.png');
-	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-	ctx.strokeStyle = '#121010';
-	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-        
 	
-	ctx.drawImage(boxes, 250, 18, 450, 67);
-	ctx.drawImage(boxes, 400, 170, 300, 50);
-	ctx.drawImage(boxes, 400, 100, 300, 50);	
-	ctx.drawImage(boxes, 0, 0, 120, 250);
+}
 
-		
-	ctx.font = '28px Bebas';
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
-	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.2);	
-
-	ctx.font = applyText(canvas, `${target.username.normalize("NFC")}!`);
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
-
-	ctx.beginPath();
-	ctx.arc(125, 125, 100, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.clip();
-
-	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 25, 25, 200, 200);
-	ctx.shadowColor = '#898';
- 	ctx.shadowBlur = 20;
- 	ctx.shadowOffsetX = 20;
- 	ctx.shadowOffsetY = 20;		
-	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-	    message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
-		
-		}); 	  		
-	}
-});
-
-const applyText = (canvas, text) => {
-	const ctx = canvas.getContext('2d');
-	let fontSize = 70;
-	do {
-
-	ctx.font = `${fontSize -= 10}px Bebas`;
-	} while (ctx.measureText(text).width > canvas.width - 300);
-	return ctx.font;
-};
-
-
-
+ client.on('message', message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + "profile")) {
+		  
+		  
+ 		  let target = message.mentions.users.first() || message.author;
+		  const attachment = new discord.MessageAttachment(profile(target), 'welcome-image.png');
+		   message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
+		  
+		  
+	  }		  
+)};
+	 
     client.on('message', message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "osu")) {
