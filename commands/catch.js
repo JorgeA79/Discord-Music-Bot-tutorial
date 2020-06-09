@@ -94,15 +94,26 @@ module.exports = {
    message.channel.send("UwU");   
   } 
   }
-  if(args[0] == "inv" || args[0] == "inventory"){
+  if(args[0].toLowerCase() == "inv" || args[0].toLowerCase() == "inventory"){
   
   const embed = new Discord.MessageEmbed()
-  .setTitle("Pokemon Catch Inventory")
+  .setTitle("<:pokeb:716936621265518613> | Pokemon Catch Inventory")
   .setDescription(`<a:joltik:719732119844159532>**Common:** ${ctW}\n<a:zorua:719732121689784340>**Normal:** ${ctN}\n<a:tyranitar:719732120939003966>**Epic:** ${ctE}\n<a:Mew:719732117818572967>**Legendary:** ${ctL}\n\u200b`)
   .setColor(0xC76CF5)
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);
   message.channel.send(embed);
-  }  
+  } else if(args[0] == "sell") {
+  
+  if(!args[1].toLowerCase()){
+  const embed = new Discord.MessageEmbed()
+  .setDescription("Please specify what you want to sell: \n`p!catch sell <item>`\n -Common | <a:joltik:719732119844159532>\n -Normal | <a:zorua:719732121689784340>\n -Epic | <a:tyranitar:719732120939003966>\n -Legendary | <a:Mew:719732117818572967>\n -All | <:pokeb:716936621265518613> ")
+  .setColor(0xC76CF5)
+  message.channel.send(embed);
+  
+  }
+      
+  
+  }
   });
   
              }
