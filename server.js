@@ -339,7 +339,7 @@ client.on('message', async message => {
 	ctx.font = '28px Bebas';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
-	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.4);	
+	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1);	
 
 	ctx.font = applyText(canvas, `${target.username.normalize("NFC")}!`);
 	ctx.fillStyle = '#ffffff';
@@ -357,7 +357,7 @@ client.on('message', async message => {
  	ctx.shadowOffsetX = 20;
  	ctx.shadowOffsetY = 20;		
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
-	    message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
+	message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
 		
 		}); 	  		
 	}
