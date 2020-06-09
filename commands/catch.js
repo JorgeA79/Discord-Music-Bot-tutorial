@@ -104,7 +104,7 @@ module.exports = {
   message.channel.send(embed);
   } else if(args[0] == "sell") {
   
-  if(!args[1].toLowerCase()){
+  if(!args[1]){
   const embed = new Discord.MessageEmbed()
   .setDescription("Please specify what you want to sell: \n`p!catch sell <item>`\n -Common | <a:joltik:719732119844159532>\n -Normal | <a:zorua:719732121689784340>\n -Epic | <a:tyranitar:719732120939003966>\n -Legendary | <a:Mew:719732117818572967>\n -All | <:pokeb:716936621265518613> ")
   .setColor(0xC76CF5)
