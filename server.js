@@ -341,7 +341,7 @@ client.on('message', async message => {
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
 
-	ctx.font = applyText(canvas, `${normalizeText.normalizeText(target.username)}!`);
+	ctx.font = applyText(canvas, `${normalizeText.normalizeText(`${target.username}`).toString()}!`);
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
 
