@@ -57,8 +57,11 @@ module.exports = {
   if(pokemonxd == "normal") description = "You got a normal pokemon <a:zorua:719732121689784340>";
   if(pokemonxd == "epic") description = "You got an epic pokemon <a:tyranitar:719732120939003966>";
   if(pokemonxd == "legendary") description = "You got a legendary pokemon <a:Mew:719732117818572967>";  
-      
-  message.channel.send(description);  
+ 
+  const embed = new Discord.MessageEmbed()    
+  .setDescription(description)
+  .setColor(0xC76CF5)    
+  message.channel.send(embed);  
       
   //You can catch
   }else{
