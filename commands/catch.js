@@ -17,10 +17,10 @@ module.exports = {
   execute(client, message) {
   
   
-  pool.query('ALTER TABLE usersxp ADD COLUMN ctW INT)
-  pool.query('ALTER TABLE usersxp ADD COLUMN ctN INT)
-  pool.query('ALTER TABLE usersxp ADD COLUMN ctE INT)
-  pool.query('ALTER TABLE usersxp ADD COLUMN ctL INT)
+  pool.query('ALTER TABLE usersxp ADD COLUMN ctW INT')
+  pool.query('ALTER TABLE usersxp ADD COLUMN ctN INT')
+  pool.query('ALTER TABLE usersxp ADD COLUMN ctE INT')
+  pool.query('ALTER TABLE usersxp ADD COLUMN ctL INT')
 
   
   
