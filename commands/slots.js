@@ -57,6 +57,12 @@ const masterb = new SlotSymbol('masterb', {
     weight: 40
 });
  
+const talkedRecently = new Set();
+if (talkedRecently.has(message.author.id)) {	  
+
+	message.reply("Please wait 30 seconds for using the command again!")
+}	else{
+
 
 pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
    if(err) return err;	  
@@ -93,8 +99,15 @@ pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}
      .setColor(0xC76CF5)
      message.channel.send(embed);	
      
+	
+	talkedRecently.add(message.author.id);
+	    
+   		setTimeout(() => {
+ 
+ 		talkedRecently.delete(message.author.id);
+		}, 30000);
 
 });
-    
+}   
 }
 }
