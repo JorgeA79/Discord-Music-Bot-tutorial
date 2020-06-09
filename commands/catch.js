@@ -35,16 +35,16 @@ module.exports = {
   if(err) return err;  
   let money = result.rows[0].money;
   var total =0;	    
-  let ctW = result.rows[0].ctW;
-  let ctN = result.rows[0].ctN;
-  let ctE = result.rows[0].ctE;
-  let ctL = result.rows[0].ctL;
+  let ctW = result.rows[0].ctw;
+  let ctN = result.rows[0].ctn;
+  let ctE = result.rows[0].cte;
+  let ctL = result.rows[0].ctl;
     
-  if(money == null) money=0;  
-  if(ctW == null) ctW=0;
-  if(ctN == null) ctN=0; 
-  if(ctE == null) ctE=0; 
-  if(ctL == null) ctL=0; 
+  if(money === null) money=0;  
+  if(ctW === null) ctW=0;
+  if(ctN === null) ctN=0; 
+  if(ctE === null) ctE=0; 
+  if(ctL === null) ctL=0; 
   //Variables  
     
     
@@ -59,23 +59,23 @@ module.exports = {
   if(pokemonxd == "common"){ 
       description = "You got a common pokemon <a:joltik:719732119844159532>";
       xd = eval(ctW) + eval(1)
-      sql = `UPDATE usersxp SET ctW = ${xd} WHERE id = '${message.author.id}'`
+      pool.query(`UPDATE usersxp SET ctw = ${xd} WHERE id = '${message.author.id}'`, console.log)
 
   }
   if(pokemonxd == "normal"){ 
       description = "You got a normal pokemon <a:zorua:719732121689784340>";
       xd = eval(ctN) + eval(1)
-     sql = `UPDATE usersxp SET ctN = ${xd} WHERE id = '${message.author.id}'`
+     pool.query(`UPDATE usersxp SET ctn = ${xd} WHERE id = '${message.author.id}'`, console.log)
   }
   if(pokemonxd == "epic"){
       description = "You got an epic pokemon <a:tyranitar:719732120939003966>";
       xd = eval(ctE) + eval(1)
-      sql =`UPDATE usersxp SET ctE = ${xd} WHERE id = '${message.author.id}'`
+      pool.query(`UPDATE usersxp SET cte = ${xd} WHERE id = '${message.author.id}'`, console.log)
   }
   if(pokemonxd == "legendary"){ 
       description = "You got a legendary pokemon <a:Mew:719732117818572967>";
       xd = eval(ctL) + eval(1)
-      sql = `UPDATE usersxp SET ctL = ${xd} WHERE id = '${message.author.id}'`
+     pool.query(`UPDATE usersxp SET ctl = ${xd} WHERE id = '${message.author.id}'`, console.log);
   }  
  
   const embed = new Discord.MessageEmbed()    
@@ -85,7 +85,7 @@ module.exports = {
   message.channel.send(embed);  
   total = eval(money) - eval(10);
   pool.query(`UPDATE usersxp SET money = ${total} WHERE id = '${message.author.id}'`, console.log);
-  pool.query(sql, console.log);   
+   
       
   //You can catch
   }else{
