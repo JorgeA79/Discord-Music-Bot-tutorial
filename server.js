@@ -353,7 +353,7 @@ async function profile(member) {
 	  });
 
 } catch (error) {
-  await message.channel.send(`Something happened: ${error.message}`);
+  await console.log(error)
 }
 	
 }
