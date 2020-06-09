@@ -50,7 +50,16 @@ module.exports = {
   if(!args[0]){
   //Catch
   if(money > 10){
-   message.channel.send(`You got a ${get(pokemon)} pokemon`);   
+  const pokemon = get(pokemon);
+  const description = "";
+      
+  if(pokemon == "common") description = "You got a common pokemon <a:joltik:719732119844159532>";
+  if(pokemon == "normal") description = "You got a normal pokemon <a:zorua:719732121689784340>";
+  if(pokemon == "epic") description = "You got an epic pokemon <a:tyranitar:719732120939003966>";
+  if(pokemon == "legendary") description = "You got a legendary pokemon <a:Mew:719732117818572967>";  
+      
+  message.channel.send(description);  
+      
   //You can catch
   }else{
   //You cant catch
