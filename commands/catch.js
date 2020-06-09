@@ -51,6 +51,12 @@ module.exports = {
   if(!args[0]){
   //Catch
   if(money > 10){
+  const talkedRecently = new Set();
+    
+      if (talkedRecently.has(message.author.id)) {
+            message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+    } else { 
+        
   const pokemonxd = get(pokemon);
   var description = "";
   var xd = 0;
@@ -88,6 +94,16 @@ module.exports = {
    
       
   //You can catch
+    
+        talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 60000);
+    
+    }
+  
+  
   }else{
   //You cant catch
    message.channel.send("UwU");   
