@@ -57,7 +57,7 @@ module.exports = {
 	money = eval(money) / eval(1000);
 	ctx.fillText(`${~~money}K`, 20, 425);		
 	}else{
-	ctx.fillText(`${money}`, 20, 425);	
+	ctx.fillText(`${money}`, 45, 425);	
 	}	
 	ctx.fillText(`${lvl}`, 245,425);	
 	var name = normalizeText.normalizeText(target.username)
