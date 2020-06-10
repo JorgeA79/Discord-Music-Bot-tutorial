@@ -53,7 +53,6 @@ module.exports = {
 	//ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	//ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
 	var name = normalizeText.normalizeText(target.username)
-	const namexd = console.log(name);
 	ctx.font = applyText(canvas, `${namexd}!`);
 	ctx.drawImage(rect, 125, 240, 250, 80);	
 		
@@ -93,7 +92,7 @@ const applyText = (canvas, text) => {
 	let fontSize = 35;
 	do {
 
-	ctx.font = `${fontSize -= 10}px `;
+	ctx.font = `${fontSize -= 10}px Bebas`;
 	} while (ctx.measureText(text).width > canvas.width - 300);
 	return ctx.font;
 };
