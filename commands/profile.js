@@ -37,9 +37,11 @@ module.exports = {
 			
 	const canvas = Canvasx.createCanvas(500, 500);
 	const ctx = canvas.getContext('2d');
-
+	
+	const bg = await Canvasx.loadImage('./images/BGP.png');	
 	const background = await Canvasx.loadImage('./images/PFCard.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
+	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#121010';
