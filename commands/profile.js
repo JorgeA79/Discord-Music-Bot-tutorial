@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const discord = require("discord.js");
 const Canvasx = require('canvas');
 const { join } = require('path');
 const { registerFont } = require('canvas');
