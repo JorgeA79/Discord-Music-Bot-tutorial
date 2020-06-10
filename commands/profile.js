@@ -50,14 +50,14 @@ module.exports = {
         
 	ctx.font = '28px Bebas';
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
-	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
+	//ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
+	//ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
 	var name = normalizeText.normalizeText(target.username)
 	const namexd = console.log(name);
 	ctx.font = applyText(canvas, `${namexd}!`);
 	
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
+	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3, canvas.height / 1.5);
         
 	ctx.drawImage(rect, 125, 240, 250, 80);	
 		
@@ -88,7 +88,7 @@ module.exports = {
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
-	let fontSize = 70;
+	let fontSize = 30;
 	do {
 
 	ctx.font = `${fontSize -= 10}px Bebas`;
