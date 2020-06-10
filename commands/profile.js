@@ -31,13 +31,14 @@ module.exports = {
     	if(err) return err;
     	if(!result.rows[0])  return message.channel.send("Cannot show user's profile")
       
-  let xp = result.rows[0].xp;
+  	let xp = result.rows[0].xp;
 	let money = result.rows[0].money;
 	if (money === null) money =0;		
 			
 	const canvas = Canvasx.createCanvas(500, 500);
 	const ctx = canvas.getContext('2d');
 	
+	const rect = await Canvasx.loadImage('./images/RECTBOX.png');		
 	const bg = await Canvasx.loadImage('./images/BGP.png');	
 	const background = await Canvasx.loadImage('./images/PFCard.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
@@ -70,6 +71,9 @@ module.exports = {
  	ctx.shadowBlur = 20;
  	ctx.shadowOffsetX = 20;
  	ctx.shadowOffsetY = 20;		
+		
+	ctx.drawImage(rect, 0, 0, 205, 60);	
+		
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 	message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
 		
