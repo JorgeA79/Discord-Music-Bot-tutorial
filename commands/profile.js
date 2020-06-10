@@ -56,10 +56,10 @@ module.exports = {
 	if(money > 1000){ 
 	ctx.textAlign = "center";
 	money = eval(money) / eval(1000);
-	ctx.fillText(`${~~money}K`, 45, 425);		
+	ctx.fillText(`${~~money}K`, 65, 425);		
 	}else{
 	ctx.textAlign = "center";
-	ctx.fillText(`${money}`, 45, 425);	
+	ctx.fillText(`${money}`, 65, 425);	
 	}	
 	ctx.fillText(`${lvl}`, 245,425);	
 	var name = normalizeText.normalizeText(target.username)
