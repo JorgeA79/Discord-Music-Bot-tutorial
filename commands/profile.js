@@ -58,8 +58,9 @@ module.exports = {
 	ctx.drawImage(rect, 125, 240, 250, 80);	
 		
 	ctx.fillStyle = '#ffffff';
+	ctx.textAlign = "center";	
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3.3, canvas.height / 1.735);
-        ctx.textAlign = "center";
+       
 	
 		
 	ctx.beginPath();
