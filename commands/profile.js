@@ -55,9 +55,9 @@ module.exports = {
 	//ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	if(money > 1000){ 
 	money = eval(money) / eval(1000);
-	ctx.fillText(`${~~money}K`, canvas.width / 1.7, canvas.height / 1.25);		
+	ctx.fillText(`${~~money}K`, 20, 425);		
 	}else{
-	ctx.fillText(`${money}`, canvas.width / 1.7, canvas.height / 1.25);	
+	ctx.fillText(`${money}`, 20, 425);	
 	}	
 	ctx.fillText(`${lvl}`, 245,425);	
 	var name = normalizeText.normalizeText(target.username)
