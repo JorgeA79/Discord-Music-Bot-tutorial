@@ -50,11 +50,11 @@ module.exports = {
 	ctx.strokeStyle = '#121010';
 	ctx.strokeRect(0, 0, canvas.width, canvas.height);
         
-	ctx.font = '28px Bebas';
+	ctx.font = '35px Bebas';
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
-	ctx.fillText(`${lvl}`, 245,420);	
+	ctx.fillText(`${lvl}`, 245,425);	
 	var name = normalizeText.normalizeText(target.username)
 	ctx.font = applyText(canvas, `${name}!`);
 	ctx.drawImage(rect, 125, 240, 250, 80);	
