@@ -55,20 +55,20 @@ module.exports = {
 	if(xp > 1000){ 
 	ctx.textAlign = "center";
 	xp = eval(xp) / eval(1000);
-	ctx.fillText(`${~~xp}K`, 450, 425);		
+	ctx.fillText(`${~~xp}K`, 430, 425);		
 	}else{
 	ctx.textAlign = "center";
-	ctx.fillText(`${~~xp}`, 450, 425);	
+	ctx.fillText(`${~~xp}`, 430, 425);	
 	}	
 		
 	//ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	if(money > 1000){ 
 	ctx.textAlign = "center";
 	money = eval(money) / eval(1000);
-	ctx.fillText(`${~~money}K`, 65, 410);		
+	ctx.fillText(`${~~money}K`, 65, 425);		
 	}else{
 	ctx.textAlign = "center";
-	ctx.fillText(`${money}`, 65, 410);	
+	ctx.fillText(`${money}`, 65, 425);	
 	}	
 	ctx.fillText(`${lvl}`, 245,425);	
 	var name = normalizeText.normalizeText(target.username)
