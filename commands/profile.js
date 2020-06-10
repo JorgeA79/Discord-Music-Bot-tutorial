@@ -77,7 +77,7 @@ module.exports = {
 		
 	ctx.fillStyle = '#ffffff';
 	ctx.textAlign = "center";	
-	ctx.fillText(`${name}!`, 245, canvas.height / 1.71);
+	ctx.fillText(`${name}!`, 255, canvas.height / 1.71);
        
 	
 		
