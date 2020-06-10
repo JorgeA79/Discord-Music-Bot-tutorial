@@ -92,7 +92,7 @@ const applyText = (canvas, text) => {
 	let fontSize = 35;
 	do {
 
-	ctx.font = `${fontSize -= 10}px Bebas`;
+	ctx.font = `${fontSize -= 10}px `;
 	} while (ctx.measureText(text).width > canvas.width - 300);
 	return ctx.font;
 };
