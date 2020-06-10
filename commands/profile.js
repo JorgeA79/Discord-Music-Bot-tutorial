@@ -59,7 +59,7 @@ module.exports = {
 		
 	ctx.fillStyle = '#ffffff';
 	ctx.textAlign = "center";	
-	ctx.fillText(`${target.username}!`, canvas.width / 1.5, canvas.height / 1.735);
+	ctx.fillText(`${target.username}!`, canvas.width / 2, canvas.height / 1.735);
        
 	
 		
