@@ -54,7 +54,7 @@ module.exports = {
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	ctx.fillText(`Balance: $${money}`, canvas.width / 1.7, canvas.height / 1.25);	
-	ctx.fillText(`${lvl}`, canvas.width / 2, canvas.height / 2);	
+	ctx.fillText(`${lvl}`, canvas.width / 2, canvas.height / 0);	
 	var name = normalizeText.normalizeText(target.username)
 	ctx.font = applyText(canvas, `${name}!`);
 	ctx.drawImage(rect, 125, 240, 250, 80);	
