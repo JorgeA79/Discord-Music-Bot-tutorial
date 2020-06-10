@@ -3,6 +3,7 @@ const Canvasx = require('canvas');
 const { join } = require('path');
 const { registerFont } = require('canvas');
 registerFont('./fonts/Bebas.ttf', { family: 'Bebas' })
+var normalizeText = require("normalize-text")
 
 const pg = require('pg')
 const pool = new pg.Pool({
