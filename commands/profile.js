@@ -56,13 +56,9 @@ module.exports = {
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
 
-	ctx.beginPath();
-	ctx.arc(100, 100, 100, 0, Math.PI * 2, true);
-	ctx.closePath();
-	ctx.clip();
 
 	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 25 ,25 , 200, 200);
+	ctx.drawImage(avatar, 25 ,25 , 140, 140);
 	ctx.shadowColor = '#898';
  	ctx.shadowBlur = 20;
  	ctx.shadowOffsetX = 20;
