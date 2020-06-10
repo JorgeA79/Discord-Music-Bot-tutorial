@@ -44,15 +44,9 @@ module.exports = {
 	
 	const background = await Canvasx.loadImage('./images/PFCard.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
-	const bg = "";
+	const bg = "await Canvasx.loadImage('./images/BGDEF.png');";
 		
-	if(target.id == "304357538101723137"){
-	bg = await Canvasx.loadImage('./images/BGP.png');	
-	}else if(target.id == "206606985167110145"){
-	bg = await Canvasx.loadImage('./images/BGAMMY.png');
-	}else{
-	bg = await Canvasx.loadImage('./images/BGDEF.png');	
-	}	
+		
 		
 	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
