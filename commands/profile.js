@@ -70,14 +70,14 @@ module.exports = {
 	ctx.textAlign = "center";
 	ctx.fillText(`${money}`, 65, 425);	
 	}	
-	ctx.fillText(`${lvl}`, 245,425);	
+	ctx.fillText(`${lvl}`, 250,425);	
 	var name = normalizeText.normalizeText(target.username)
 	ctx.font = applyText(canvas, `${name}!`);
 	ctx.drawImage(rect, 125, 240, 250, 80);	
 		
 	ctx.fillStyle = '#ffffff';
 	ctx.textAlign = "center";	
-	ctx.fillText(`${name}!`, 255, canvas.height / 1.71);
+	ctx.fillText(`${name}!`, 250, canvas.height / 1.71);
        
 	
 		
