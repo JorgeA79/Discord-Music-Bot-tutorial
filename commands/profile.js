@@ -45,10 +45,18 @@ module.exports = {
 	const background = await Canvasx.loadImage('./images/PFCard.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
 	const bg = await Canvasx.loadImage('./images/BGDEF.png');
+	const bg1 = await Canvasx.loadImage('./images/BGP.png');
+	const bg2 = await Canvasx.loadImage('./images/BGAMMY.png');	
+	
+	if(target.id == "304357538101723137"){
+	ctx.drawImage(bg1, 0, 0, canvas.width, canvas.height);
+	}else if(target.id == "206606985167110145"){
+	ctx.drawImage(bg2, 0, 0, canvas.width, canvas.height);	 
+	}else{
+	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	 
+	}
 		
-	if(target.id == "304357538101723137") bg = await Canvasx.loadImage('./images/BGP.png');	
 		
-	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
 	ctx.strokeStyle = '#121010';
