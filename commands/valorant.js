@@ -42,6 +42,7 @@ module.exports = {
      .addField(`${jsonContent.agents[8].emote} **${jsonContent.agents[8].name}**`,`${jsonContent.agents[8].type}\n\u200b`, true)
      .addField(`${jsonContent.agents[9].emote} **${jsonContent.agents[9].name}**`,`${jsonContent.agents[9].type}`, true)
      .addField(`${jsonContent.agents[10].emote} **${jsonContent.agents[10].name}**`,`${jsonContent.agents[10].type}`, true)
+     .addField("\u200b", "\u200b",true)     
      .setThumbnail('https://preview.redd.it/pq2si1uks8t41.png?width=512&format=png&auto=webp&s=a86b0d7a2620b6f0d404e191d37d75f895996c23')
      .setColor(0xC76CF5);
      return message.channel.send(embed);
