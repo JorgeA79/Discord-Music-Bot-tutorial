@@ -44,7 +44,7 @@ module.exports = {
 	
 	const background = await Canvasx.loadImage('./images/PFCard.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
-	const bg = "await Canvasx.loadImage('./images/BGDEF.png');";
+	const bg = await Canvasx.loadImage('./images/BGDEF.png');
 		
 		
 		
