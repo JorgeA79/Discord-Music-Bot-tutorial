@@ -66,14 +66,12 @@ module.exports = {
 	ctx.clip();
 		
 	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
-	ctx.shadowColor = '#898';
- 	ctx.shadowBlur = 20;
- 	ctx.shadowOffsetX = 20;
- 	ctx.shadowOffsetY = 20;	
 	ctx.drawImage(avatar, 175,110 , 150, 150);
-	
+	ctx.clip();
 		
+
 	ctx.drawImage(rect, 170, 110, 205, 60);	
+		
 		
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 	message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
