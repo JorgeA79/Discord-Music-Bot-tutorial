@@ -41,9 +41,15 @@ module.exports = {
 	const ctx = canvas.getContext('2d');
 	
 	const rect = await Canvasx.loadImage('./images/RECTBOX.png');		
-	const bg = await Canvasx.loadImage('./images/BGP.png');	
+	
 	const background = await Canvasx.loadImage('./images/PFCard.png');
 	const boxes = await Canvasx.loadImage('./images/Box.png');
+	if(target.id == "304357538101723137"){
+	const bg = await Canvasx.loadImage('./images/BGP.png');	
+	}else{
+	const bg = await Canvasx.loadImage('./images/BGDEF.png');	
+	}	
+		
 	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
