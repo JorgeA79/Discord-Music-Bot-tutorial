@@ -47,11 +47,13 @@ module.exports = {
 	const bg = await Canvasx.loadImage('./images/BGDEF.png');
 	const bg1 = await Canvasx.loadImage('./images/BGP.png');
 	const bg2 = await Canvasx.loadImage('./images/BGAMMY.png');	
-	
+	const bg3 = await Canvasx.loadImage('./images/BGPIX.png');
 	if(target.id == "304357538101723137"){
 	ctx.drawImage(bg1, 0, 0, canvas.width, canvas.height);
 	}else if(target.id == "206606985167110145"){
 	ctx.drawImage(bg2, 0, 0, canvas.width, canvas.height);	 
+	}else if(target.id == "370483123848478721"){
+	ctx.drawImage(bg3, 0, 0, canvas.width, canvas.height);	 
 	}else{
 	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	 
 	}
