@@ -89,7 +89,7 @@ module.exports = {
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
-	let fontSize = 35;
+	let fontSize = 45;
 	do {
 
 	ctx.font = `${fontSize -= 10}px Bebas`;
