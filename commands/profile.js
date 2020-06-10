@@ -55,11 +55,12 @@ module.exports = {
 	var name = normalizeText.normalizeText(target.username)
 	const namexd = console.log(name);
 	ctx.font = applyText(canvas, `${namexd}!`);
-	
+	ctx.drawImage(rect, 125, 240, 250, 80);	
+		
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3, canvas.height / 1.8);
         
-	ctx.drawImage(rect, 125, 240, 250, 80);	
+	
 		
 	ctx.beginPath();
 	ctx.arc(250, 185, 75, 0, Math.PI * 2, true);
