@@ -48,7 +48,8 @@ module.exports = {
 	const bg1 = await Canvasx.loadImage('./images/BGP.png');
 	const bg2 = await Canvasx.loadImage('./images/BGAMMY.png');	
 	const bg3 = await Canvasx.loadImage('./images/BGPIX.png');
-	const bg4 = await Canvasx.loadImage('./images/BGCHUUNI.png');	
+	const bg4 = await Canvasx.loadImage('./images/BGCHUUNI.png');
+	const bg5 = await Canvasx.loadImage('./images/BGRII.png');	
 	if(target.id == "304357538101723137"){
 	ctx.drawImage(bg1, 0, 0, canvas.width, canvas.height);
 	}else if(target.id == "206606985167110145"){
@@ -57,6 +58,8 @@ module.exports = {
 	ctx.drawImage(bg3, 0, 0, canvas.width, canvas.height);	 
 	}else if(target.id == "437210034166956032"){
 	ctx.drawImage(bg4, 0, 0, canvas.width, canvas.height);	 
+	}else if(target.id == "306367704934252546"){
+	ctx.drawImage(bg5, 0, 0, canvas.width, canvas.height);	 
 	}else{
 	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	 
 	}
