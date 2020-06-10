@@ -58,7 +58,7 @@ module.exports = {
 	ctx.drawImage(rect, 125, 240, 250, 80);	
 		
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3, canvas.height / 1.8);
+	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3, canvas.height / 1.75);
         
 	
 		
@@ -89,11 +89,11 @@ module.exports = {
 
 const applyText = (canvas, text) => {
 	const ctx = canvas.getContext('2d');
-	let fontSize = 30;
+	let fontSize = 35;
 	do {
 
 	ctx.font = `${fontSize -= 10}px Bebas`;
-	} while (ctx.measureText(text).width > canvas.width - 300);
+	} while (ctx.measureText(text).width > canvas.width - 150);
 	return ctx.font;
 };
 	 
