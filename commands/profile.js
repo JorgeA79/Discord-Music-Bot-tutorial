@@ -58,7 +58,7 @@ module.exports = {
 
 
 	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 160 ,110 , 140, 140);
+	ctx.drawImage(avatar, 170 ,115 , 140, 140);
 	ctx.shadowColor = '#898';
  	ctx.shadowBlur = 20;
  	ctx.shadowOffsetX = 20;
