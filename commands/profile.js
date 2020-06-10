@@ -46,7 +46,7 @@ module.exports = {
 	const boxes = await Canvasx.loadImage('./images/Box.png');
 	const bg = await Canvasx.loadImage('./images/BGDEF.png');
 		
-		
+	if(target.id == "304357538101723137") bg = await Canvasx.loadImage('./images/BGP.png');	
 		
 	ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);	
 	ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
