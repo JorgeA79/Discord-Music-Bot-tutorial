@@ -59,7 +59,7 @@ module.exports = {
 		
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3.3, canvas.height / 1.735);
-        
+        ctx.textAlign = "center";
 	
 		
 	ctx.beginPath();
