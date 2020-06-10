@@ -55,10 +55,10 @@ module.exports = {
 	if(xp > 1000){ 
 	ctx.textAlign = "center";
 	xp = eval(xp) / eval(1000);
-	ctx.fillText(`${~~xp}K`, 430, 425);		
+	ctx.fillText(`${~~xp}K`, 435, 425);		
 	}else{
 	ctx.textAlign = "center";
-	ctx.fillText(`${~~xp}`, 430, 425);	
+	ctx.fillText(`${~~xp}`, 435, 425);	
 	}	
 		
 	//ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
@@ -77,7 +77,7 @@ module.exports = {
 		
 	ctx.fillStyle = '#ffffff';
 	ctx.textAlign = "center";	
-	ctx.fillText(`${name}!`, canvas.width / 2, canvas.height / 1.71);
+	ctx.fillText(`${name}!`, 245, canvas.height / 1.71);
        
 	
 		
