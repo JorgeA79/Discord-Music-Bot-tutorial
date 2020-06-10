@@ -58,7 +58,9 @@ module.exports = {
 	
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
-
+        
+		
+	ctx.beginPath();
 	ctx.arc(250, 185, 75, 0, Math.PI * 2, true);
 	// Put the pen down
 	ctx.closePath();
@@ -67,8 +69,7 @@ module.exports = {
 		
 	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 175,110 , 150, 150);
-	ctx.clip();
-		
+
 
 	ctx.drawImage(rect, 170, 110, 205, 60);	
 		
