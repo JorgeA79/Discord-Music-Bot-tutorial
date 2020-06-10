@@ -56,14 +56,14 @@ module.exports = {
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
 
-	ctx.arc(245, 185, 70, 0, Math.PI * 2, true);
+	ctx.arc(245, 185, 75, 0, Math.PI * 2, true);
 	// Put the pen down
 	ctx.closePath();
 	// Clip off the region you drew on
 	ctx.clip();
 		
 	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
-	ctx.drawImage(avatar, 170,110 , 145, 145);
+	ctx.drawImage(avatar, 170,110 , 150, 150);
 	ctx.shadowColor = '#898';
  	ctx.shadowBlur = 20;
  	ctx.shadowOffsetX = 20;
