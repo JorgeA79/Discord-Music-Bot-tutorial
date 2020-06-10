@@ -56,7 +56,7 @@ module.exports = {
 	ctx.fillStyle = '#ffffff';
 	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 2.5, canvas.height / 3.5);
 
-	ctx.arc(125, 125, 70, 0, Math.PI * 2, true);
+	ctx.arc(165, 155, 70, 0, Math.PI * 2, true);
 	// Put the pen down
 	ctx.closePath();
 	// Clip off the region you drew on
