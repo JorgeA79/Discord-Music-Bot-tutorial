@@ -70,7 +70,13 @@ module.exports = {
 	const avatar = await Canvasx.loadImage(target.displayAvatarURL({ format: 'jpg' }));
 	ctx.drawImage(avatar, 175,110 , 150, 150);
 
-
+	ctx.beginPath();
+	ctx.arc(250, 185, 500, 0, Math.PI * 2, true);
+	// Put the pen down
+	ctx.closePath();
+	// Clip off the region you drew on
+	ctx.clip();
+		
 	ctx.drawImage(rect, 170, 110, 205, 60);	
 		
 		
