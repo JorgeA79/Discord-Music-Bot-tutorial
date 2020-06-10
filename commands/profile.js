@@ -72,7 +72,7 @@ module.exports = {
  	ctx.shadowOffsetX = 20;
  	ctx.shadowOffsetY = 20;		
 		
-	ctx.drawImage(rect, 0, 0, 205, 60);	
+	ctx.drawImage(rect, 170, 110, 205, 60);	
 		
 	const attachment = new discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png');
 	message.channel.send(`:round_pushpin:  |  Profile card of ${target.username}`, attachment);	
