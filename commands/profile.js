@@ -12,7 +12,7 @@ const pool = new pg.Pool({
 pool.connect()
 
 module.exports = {
-  name: "xdxd",
+  name: "profile",
   description: "Pinging the bot",
   execute(client, message) {
  
