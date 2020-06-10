@@ -57,7 +57,7 @@ module.exports = {
 	ctx.font = applyText(canvas, `${namexd}!`);
 	
 	ctx.fillStyle = '#ffffff';
-	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3, canvas.height / 1.5);
+	ctx.fillText(`${target.username.normalize("NFC")}!`, canvas.width / 3, canvas.height / 1.8);
         
 	ctx.drawImage(rect, 125, 240, 250, 80);	
 		
