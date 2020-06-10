@@ -54,9 +54,11 @@ module.exports = {
 	ctx.fillStyle = '#ffffff';
 	//ctx.fillText(`XP: ${xp}`, canvas.width / 1.7, canvas.height / 1.8);
 	if(money > 1000){ 
+	ctx.textAlign = "center";
 	money = eval(money) / eval(1000);
-	ctx.fillText(`${~~money}K`, 20, 425);		
+	ctx.fillText(`${~~money}K`, 45, 425);		
 	}else{
+	ctx.textAlign = "center";
 	ctx.fillText(`${money}`, 45, 425);	
 	}	
 	ctx.fillText(`${lvl}`, 245,425);	
