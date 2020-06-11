@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 var pickaxe1 = "<:woodenPix1:720518856694824960>";
 var pickaxe2 = "<:woodenPix2:720518856480784435>";
-var pickaxe = "1";
+var pickaxe = "3";
 
 
 
@@ -94,6 +94,47 @@ module.exports = {
    setTimeout(function(){ 
     
        //Get mineral
+      let testValues = [{
+      value : 'Coal',
+      probability: 0.1
+      },
+      {
+      value : 'Iron',
+      probability: 0.3
+      },
+      {
+      value : 'Diamond',
+      probability: '*'
+      }]
+
+
+      const randomizer = (values) => {
+      let i, pickedValue,
+            randomNr = Math.random(),
+            threshold = 0;
+
+       for (i = 0; i < values.length; i++) {
+        if (values[i].probability === '*') {
+            continue;
+        }
+
+       threshold += values[i].probability;
+       if (threshold > randomNr) {
+                pickedValue = values[i].value;
+                break;
+       }
+
+       if (!pickedValue) {
+            //nothing found based on probability value, so pick element marked with wildcard
+            pickedValue = values.filter((value) => value.probability === '*');
+       }
+       }
+
+       return pickedValue;
+       }    
+     
+       console.log(randomizer(testValues));
+     
        let counter = (Math.floor(Math.random() * mineralsx.length))
        var text =""; 
        if(mineralsx[counter] == mineralsx[0]) text = "Coal";
