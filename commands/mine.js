@@ -28,7 +28,7 @@ module.exports = {
       probability: 0.2
       },
       {
-      value : 'Gold Ingot',
+      value : 'Gold',
       probability: 0.2
       },
       {
@@ -81,7 +81,7 @@ module.exports = {
       probability: 0.2
       },
       {
-      value : 'Gold Ingot',
+      value : 'Gold',
       probability: 0.2
       },
       {
@@ -104,7 +104,7 @@ module.exports = {
       probability: 0.2
       },
       {
-      value : 'Gold Ingot',
+      value : 'Gold',
       probability: 0.2
       },
       {
@@ -164,31 +164,24 @@ module.exports = {
    setTimeout(function(){ 
     
        //Get mineral
-
-
-
       const randomizer = (values) => {
       let i, pickedValue,
             randomNr = Math.random(),
             threshold = 0;
-
        for (i = 0; i < values.length; i++) {
         if (values[i].probability === '*') {
             continue;
-        }
-
+       }
        threshold += values[i].probability;
        if (threshold > randomNr) {
                 pickedValue = values[i].value;
                 break;
        }
-
        if (!pickedValue) {
             //nothing found based on probability value, so pick element marked with wildcard
             pickedValue = values.filter((value) => value.probability === '*');
        }
        }
-
        return pickedValue;
        }    
      
@@ -204,11 +197,17 @@ module.exports = {
      
      
      
+      var emote = ":coal:720523944548892732";
+      var textx = randomizer(testValues);
      
-       var textx = randomizer(testValues);
+      if(textx == "Coal") emote = ":coal:720523944548892732";
+      if(textx == "Iron") emote = ":iron_ingot:720528333879771197";
+      if(textx == "Gold") emote = ":gold_ingot:720528333879640134";
+      if(textx == "Diamond") emote = ":diamond:720528333732839477";  
+     
       const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${textx}\n\u200b`)
-      .setDescription(`${anim4}<${mineralsx[counter]}>\n\u200b`)
+      .setDescription(`${anim4}<${emote}>\n\u200b`)
       .setFooter(`${message.author.username} mined some ${textx}`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
