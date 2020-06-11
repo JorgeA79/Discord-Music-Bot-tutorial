@@ -18,11 +18,7 @@ module.exports = {
   //Minar
   
   
-  var mineralsx = [
-  ":coal:720523944548892732",
-  ":iron_ingot:720528333879771197", 
-  ":gold_ingot:720528333879640134",
-  ":diamond:720528333732839477"];  
+  var mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197", ":gold_ingot:720528333879640134",":diamond:720528333732839477"];  
     
     
   if(pickaxe == "0"){
