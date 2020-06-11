@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 var pickaxe1 = "<:woodenPix1:720518856694824960>";
 var pickaxe2 = "<:woodenPix2:720518856480784435>";
-var pickaxe = "0";
+var pickaxe = "2";
 
 
 var minerals = [
