@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 var pickaxe1 = "<:woodenPix1:720518856694824960>";
 var pickaxe2 = "<:woodenPix2:720518856480784435>";
-var pickaxe = "3";
+var pickaxe = "1";
 
 
 
@@ -15,10 +15,7 @@ module.exports = {
   execute(client, message, args) {
   
   if(!args[0]){
-  //Minar
-  var mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197", ":gold_ingot:720528333879640134",":diamond:720528333732839477","<:emerald:720528333862993991>"];  
-      
-    
+
       let testValues = [{
       value : 'Coal',
       probability: 0.5
@@ -74,11 +71,11 @@ module.exports = {
     
     testValues = [{
       value : 'Coal',
-      probability: 0.5
+      probability: 0.2
       },
       {
       value : 'Iron',
-      probability: 0.2
+      probability: 0.5
       },
       {
       value : 'Gold',
@@ -97,11 +94,11 @@ module.exports = {
     
     testValues = [{
       value : 'Coal',
-      probability: 0.5
+      probability: 0.1
       },
       {
       value : 'Iron',
-      probability: 0.2
+      probability: 0.4
       },
       {
       value : 'Gold',
@@ -109,7 +106,7 @@ module.exports = {
       },
       {
       value : 'Diamond',
-      probability: 0.1
+      probability: 0.3
       }]
   }   
    
@@ -118,16 +115,12 @@ module.exports = {
   var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
   var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
    
-    
-
-    
   const embedU = new Discord.MessageEmbed()
   .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
   .setDescription(`<:steve:720530349121208357>${pickaxe1}<:stone:720518856635973712>\n\u200b`)
   .setFooter(`${message.author.username} is mining...`)
   .setColor(0xC76CF5);
-  message.channel.send(embedU).then((sentMessage) => {
-    
+  message.channel.send(embedU).then((sentMessage) => {    
     
     //First Animation
     setTimeout(function(){ 
@@ -137,8 +130,7 @@ module.exports = {
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed) 
-    }, 1000);
-    
+    }, 1000);  
     
     //Second animation
     setTimeout(function(){ 
@@ -185,18 +177,6 @@ module.exports = {
        return pickedValue;
        }    
      
-       
-     
-       let counter = (Math.floor(Math.random() * mineralsx.length))
-       var text =""; 
-       if(mineralsx[counter] == mineralsx[0]) text = "Coal";
-       if(mineralsx[counter] == mineralsx[1]) text = "Iron"; 
-       if(mineralsx[counter] == mineralsx[2]) text = "Gold";
-       if(mineralsx[counter] == mineralsx[3]) text = "Diamond"; 
-     
-     
-     
-     
       var emote = ":coal:720523944548892732";
       var textx = randomizer(testValues);
      
@@ -212,7 +192,7 @@ module.exports = {
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
     }, 4000);
-  })
+    })
   
   }
   if(args[0]== "inv" ||args[0] == "inventory"){
