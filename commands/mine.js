@@ -56,11 +56,11 @@ module.exports = {
     
     testValues = [{
       value : 'Coal',
-      probability: 0.7
+      probability: 0.5
       },
       {
       value : 'Iron',
-      probability: 0.3
+      probability: 0.5
       }]
   } 
     
