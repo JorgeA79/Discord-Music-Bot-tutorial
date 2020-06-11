@@ -55,7 +55,7 @@ module.exports = {
   }   
   
     
-    
+  console.dir(minerals)  
     
   var anim1 = `<:steve:720530349121208357>${pickaxe2}<:stone1:720518856350892119>`;
   var anim2 = `<:steve:720530349121208357>${pickaxe1}<:stone2:720518856694693889>`;
