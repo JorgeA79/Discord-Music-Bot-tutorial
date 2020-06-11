@@ -9,7 +9,12 @@ module.exports = {
   if(!args[0]){
   //Minar
   
-  message.channel.send("<:woodenPix1:720518856694824960><:stone:720518856635973712>").then((sentMessage) => sentMessage.edit("<:woodenPix2:720518856480784435><:stone1:720518856350892119>"))
+  message.channel.send("<:woodenPix1:720518856694824960><:stone:720518856635973712>").then((sentMessage) => {
+
+    sentMessage.edit("<:woodenPix2:720518856480784435><:stone1:720518856350892119>")
+    sentMessage.edit("<:woodenPix1:720518856694824960><:stone2:720518856694693889>")
+    sentMessage.edit("<:woodenPix2:720518856480784435><:stone3:720518856707407942>")
+  })
   
   }
   if(args[0]== "inv" ||args[0] == "inventory"){
