@@ -100,11 +100,11 @@ module.exports = {
       },
       {
       value : 'Iron',
-      probability: 0.3
+      probability: 0.5
       },
       {
       value : 'Diamond',
-      probability: '*'
+      probability: 0.4
       }]
 
 
