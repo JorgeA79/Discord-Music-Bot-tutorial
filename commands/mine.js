@@ -19,7 +19,9 @@ module.exports = {
     setTimeout(function(){ 
     sentMessage.edit("<:woodenPix2:720518856480784435><:stone3:720518856707407942>")
     }, 3000);
-   
+   setTimeout(function(){ 
+    sentMessage.edit("<:woodenPix1:720518856694824960><:coal:720523944548892732>")
+    }, 4000);
   })
   
   }
