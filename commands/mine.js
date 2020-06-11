@@ -23,29 +23,30 @@ module.exports = {
   
   if(!args[0]){
   //Minar
+  var selectM = minerals[Math.floor(Math.random() * 1)];
     
   if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>";
   pickaxe2 = "<:woodenPix2:720518856480784435>";
-  var selectM = minerals[Math.floor(Math.random() * 1)];
+  selectM = minerals[Math.floor(Math.random() * 1)];
   } 
   
   if(pickaxe == "1"){
   pickaxe1 = "<:StoneP2:720617209851805752>";
   pickaxe2 = "<:stoneP:720616972944932865>"; 
-  var selectM = minerals[Math.floor(Math.random() * 2)];
+  selectM = minerals[Math.floor(Math.random() * 2)];
   } 
     
   if(pickaxe == "2"){
   pickaxe1 = "<:ironP2:720617209797279777>";
   pickaxe2 = "<:ironP:720616972995526676>";
-  var selectM = minerals[Math.floor(Math.random() * 5)];  
+  selectM = minerals[Math.floor(Math.random() * 5)];  
   }  
     
   if(pickaxe == "3"){
   pickaxe1 = "<:pickaxeD2:720589176214519848>";
   pickaxe2 = "<:pickaxeD:720589176210325514>";
-  var selectM = minerals[Math.floor(Math.random() * 5)];
+  selectM = minerals[Math.floor(Math.random() * 5)];
   }   
   
     
