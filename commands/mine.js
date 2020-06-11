@@ -8,11 +8,7 @@ var pickaxe = "0";
 
 
 var minerals = [
-"<:coal:720523944548892732>",
-"<:iron_ingot:720528333879771197>",
-"<:gold_ingot:720528333879640134>",
-"<:diamond:720528333732839477>",
-"<:emerald:720528333862993991>"
+"<:coal:720523944548892732>"
 ];
 
 module.exports = {
@@ -26,48 +22,34 @@ module.exports = {
   if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>";
   pickaxe2 = "<:woodenPix2:720518856480784435>";
-    
-  minerals = [
-  "<:coal:720523944548892732>"  
-  ]; 
+
   } 
   
   if(pickaxe == "1"){
   pickaxe1 = "<:StoneP2:720617209851805752>";
   pickaxe2 = "<:stoneP:720616972944932865>"; 
-    
-  minerals = [
-  "<:coal:720523944548892732>",
-  "<:iron_ingot:720528333879771197>"
-  ];  
-    
+  minerals.push("<:iron_ingot:720528333879771197>"); 
   } 
     
   if(pickaxe == "2"){
   pickaxe1 = "<:ironP2:720617209797279777>";
   pickaxe2 = "<:ironP:720616972995526676>"; 
     
-  minerals = [
-  "<:coal:720523944548892732>",
-  "<:iron_ingot:720528333879771197>",
-  "<:gold_ingot:720528333879640134>",
-  "<:diamond:720528333732839477>",
-  "<:emerald:720528333862993991>"
-  ];  
-    
+
+  minerals.push("<:gold_ingot:720528333879640134>");
+  minerals.push("<:diamond:720528333732839477>");
+  minerals.push("<:emerald:720528333862993991>");  
+  
+  
   }  
     
   if(pickaxe == "3"){
   pickaxe1 = "<:pickaxeD2:720589176214519848>";
   pickaxe2 = "<:pickaxeD:720589176210325514>";
     
-  minerals = [
-  "<:coal:720523944548892732>",
-  "<:iron_ingot:720528333879771197>",
-  "<:gold_ingot:720528333879640134>",
-  "<:diamond:720528333732839477>",
-  "<:emerald:720528333862993991>"
-  ];  
+  minerals.push("<:gold_ingot:720528333879640134>");
+  minerals.push("<:diamond:720528333732839477>");
+  minerals.push("<:emerald:720528333862993991>"); 
     
   }   
   
