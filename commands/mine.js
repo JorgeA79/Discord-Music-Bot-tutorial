@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 var pickaxe1 = "<:woodenPix1:720518856694824960>";
 var pickaxe2 = "<:woodenPix2:720518856480784435>";
-var pickaxe = 0;
+var pickaxe = "0";
 
 
 var minerals = [
@@ -22,15 +22,18 @@ module.exports = {
   
   if(!args[0]){
   //Minar
-  if(pickaxe = 0){
+    
+  if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>"
   pickaxe2 = "<:woodenPix2:720518856480784435>"  
-  }     
-  if(pickaxe = 4){
+  } 
+    
+  if(pickaxe == "4"){
   pickaxe1 = "<:pickaxeD2:720589176214519848>"
   pickaxe2 = "<:pickaxeD:720589176210325514>"  
   }   
   
+    
     
     
   var anim1 = `<:steve:720530349121208357>${pickaxe2}<:stone1:720518856350892119>`;
