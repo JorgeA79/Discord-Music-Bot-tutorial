@@ -29,7 +29,7 @@ module.exports = {
       },
       {
       value : 'Gold Ingot',
-      probability: 0.1
+      probability: 0.2
       },
       {
       value : 'Diamond',
@@ -82,7 +82,7 @@ module.exports = {
       },
       {
       value : 'Gold Ingot',
-      probability: 0.1
+      probability: 0.2
       },
       {
       value : 'Diamond',
@@ -105,7 +105,7 @@ module.exports = {
       },
       {
       value : 'Gold Ingot',
-      probability: 0.1
+      probability: 0.2
       },
       {
       value : 'Diamond',
