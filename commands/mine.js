@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "ping",
+  name: "mine",
   description: "Pinging the bot",
   execute(client, message, args) {
   
