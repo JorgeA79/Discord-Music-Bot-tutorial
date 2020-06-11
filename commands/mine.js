@@ -30,39 +30,39 @@ module.exports = {
   if(selectM = minerals[4]) text = "Emerald";
     
   const embedU = new Discord.MessageEmbed()
-  .setTitle("<:lucky:720574567571128341> | Mining.")
-  .setDescription("<:steve:720530349121208357><:woodenPix1:720518856694824960><:stone:720518856635973712>")
+  .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
+  .setDescription("<:steve:720530349121208357><:woodenPix1:720518856694824960><:stone:720518856635973712>\n\u200b")
   .setFooter(`${message.author.username} is mining...`)
   .setColor(0xC76CF5);
   message.channel.send(embedU).then((sentMessage) => {
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
-      .setTitle("<:lucky:720574567571128341> | Mining..")
-      .setDescription(`${anim1}`)
+      .setTitle("<:lucky:720574567571128341> | Mining..\n\u200b")
+      .setDescription(`${anim1}\n\u200b`)
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed) 
     }, 1000);
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
-      .setTitle("<:lucky:720574567571128341> | Mining...")
-      .setDescription(`${anim2}`)
+      .setTitle("<:lucky:720574567571128341> | Mining...\n\u200b")
+      .setDescription(`${anim2}\n\u200b`)
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
       sentMessage.edit(embed)
     }, 2000);
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
-      .setTitle("<:lucky:720574567571128341> | Mining.")
-      .setDescription(`${anim3}`)
+      .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
+      .setDescription(`${anim3}\n\u200b`)
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
     }, 3000);
    setTimeout(function(){ 
      const embed = new Discord.MessageEmbed()
-      .setTitle(`<:lucky:720574567571128341> | You got ${text}`)
-      .setDescription(`${anim4}${selectM}`)
+      .setTitle(`<:lucky:720574567571128341> | You got ${text}\n\u200b`)
+      .setDescription(`${anim4}${selectM}\n\u200b`)
       .setFooter(`${message.author.username} mined some ${text}`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
