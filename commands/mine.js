@@ -8,10 +8,10 @@ var pickaxe = "1";
 
 
 var mineralsx = [
-"<:coal:720523944548892732>",
-"<:iron_ingot:720528333879771197>", 
-"<:gold_ingot:720528333879640134>",
-"<:diamond:720528333732839477>"];
+":coal:720523944548892732",
+":iron_ingot:720528333879771197", 
+":gold_ingot:720528333879640134",
+":diamond:720528333732839477"];
 
 
 module.exports = {
@@ -93,7 +93,7 @@ module.exports = {
    setTimeout(function(){ 
      const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${text}\n\u200b`)
-      .setDescription(`${anim4}${selecthugGif}\n\u200b`)
+      .setDescription(`${anim4}<${selecthugGif}>\n\u200b`)
       .setFooter(`${message.author.username} mined some ${text}`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
