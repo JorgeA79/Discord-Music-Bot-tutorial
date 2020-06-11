@@ -23,7 +23,7 @@ module.exports = {
   //Minar
   var selectM = minerals[Math.floor(Math.random() * minerals.length)];
   const embedU = new Discord.MessageEmbed()
-  .setDescription("<:woodenPix1:720518856694824960><:stone:720518856635973712>")
+  .setDescription("<:steve:720530349121208357><:woodenPix1:720518856694824960><:stone:720518856635973712>")
   .setFooter(`${message.author.username} is mining...`)
   .setColor(0xC76CF5);
   message.channel.send(embedU).then((sentMessage) => {
