@@ -36,17 +36,18 @@ module.exports = {
   pickaxe1 = "<:StoneP2:720617209851805752>";
   pickaxe2 = "<:stoneP:720616972944932865>"; 
     
-  var minerals = [
+  minerals = [
   "<:coal:720523944548892732>",
   "<:iron_ingot:720528333879771197>"
   ];  
+    
   } 
     
   if(pickaxe == "2"){
   pickaxe1 = "<:ironP2:720617209797279777>";
   pickaxe2 = "<:ironP:720616972995526676>"; 
     
-  var minerals = [
+  minerals = [
   "<:coal:720523944548892732>",
   "<:iron_ingot:720528333879771197>",
   "<:gold_ingot:720528333879640134>",
@@ -60,7 +61,7 @@ module.exports = {
   pickaxe1 = "<:pickaxeD2:720589176214519848>";
   pickaxe2 = "<:pickaxeD:720589176210325514>";
     
-  var minerals = [
+  minerals = [
   "<:coal:720523944548892732>",
   "<:iron_ingot:720528333879771197>",
   "<:gold_ingot:720528333879640134>",
