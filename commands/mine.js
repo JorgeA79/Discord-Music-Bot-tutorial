@@ -61,8 +61,9 @@ module.exports = {
   var anim2 = `<:steve:720530349121208357>${pickaxe1}<:stone2:720518856694693889>`;
   var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
   var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
-  
-  var selectM = minerals[Math.floor(Math.random() * minerals.length)];
+  var x = Math.floor(Math.random() * minerals.length)  
+  var selectM = minerals[x];
+  console.log(x)
   var text ="";  
   if(selectM = minerals[0]) text = "Coal";
   if(selectM = minerals[1]) text = "Iron"; 
