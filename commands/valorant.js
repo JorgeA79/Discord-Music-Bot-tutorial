@@ -99,7 +99,7 @@ module.exports = {
      
     const embed = new Discord.MessageEmbed()  
     .setTitle(`Valorant Maps: ${map.name}`)
-    .setDescription(`Here's all the details for the ${map.name} map!\n\u200b`)
+    .setDescription(`Here's all the details for the ${map.name} map!     \n\u200b`)
     .addField("Plan:", `\u200b`, true)
     .setThumbnail(map.thumbnail)
     .setImage(map.plan)
