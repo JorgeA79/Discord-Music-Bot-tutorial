@@ -43,7 +43,7 @@ module.exports = {
   var anim2 = `<:steve:720530349121208357>${pickaxe1}<:stone2:720518856694693889>`;
   var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
   var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
-  var text ="";  
+   
     
 
     
@@ -91,12 +91,11 @@ module.exports = {
     
        //Get mineral
        let counter = (Math.floor(Math.random() * mineralsx.length))
-     
-       if(mineralsx[counter] = mineralsx[0]) text = "Coal";
-       if(mineralsx[counter] = mineralsx[1]) text = "Iron"; 
-       if(mineralsx[counter] = mineralsx[2]) text = "Gold";
-       if(mineralsx[counter] = mineralsx[3]) text = "Diamond"; 
-       if(mineralsx[counter] = mineralsx[4]) text = "Emerald";
+       var text =""; 
+       if(mineralsx[counter] == mineralsx[0]) text = "Coal";
+       if(mineralsx[counter] == mineralsx[1]) text = "Iron"; 
+       if(mineralsx[counter] == mineralsx[2]) text = "Gold";
+       if(mineralsx[counter] == mineralsx[3]) text = "Diamond"; 
      
       const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${text}\n\u200b`)
