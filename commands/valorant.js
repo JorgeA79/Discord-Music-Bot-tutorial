@@ -23,7 +23,7 @@ module.exports = {
     
     
     
-    if(args[0].toLowerCase() =="agent" || args[0].lenght >=1){
+    if(args[0].toLowerCase() =="agent"){
     
     var agent = jsonContent.agents[0]; 
     if(!args[1]){ 
@@ -73,6 +73,27 @@ module.exports = {
     .setColor(0xC76CF5);
     message.channel.send(embed);
       
+    }else if(args[0].toLowerCase() =="map"){
+     if(!args[1]){ 
+      
+     }
+        const embed = new Discord.MessageEmbed()
+     .setTitle("Valorant Maps")
+     .setDescription(`This are all the available maps in Valorant:\n\u200b`)
+     .addField(`**Maps:**`,`${jsonContent.maps[0].emote} ${jsonContent.maps[0].name}`, true)
+     .addField("\u200b", `${jsonContent.maps[1].emote} ${jsonContent.maps[1].name}`,true) 
+     .addField("\u200b", `${jsonContent.maps[2].emote} ${jsonContent.maps[2].name}`,true)    
+     .addField("\u200b", `${jsonContent.maps[3].emote} ${jsonContent.maps[3].name}`,true)   
+     .addField("\u200b", "\u200b",true)     
+     .addField("\u200b", "\u200b",true)        
+     .setThumbnail('https://preview.redd.it/pq2si1uks8t41.png?width=512&format=png&auto=webp&s=a86b0d7a2620b6f0d404e191d37d75f895996c23')
+     .setImage("https://cdn.discordapp.com/attachments/396942894487044099/720423754550738944/unknown.png")
+     .setFooter('Chack map plan with p!valorant map <map-name>')
+     .setColor(0xC76CF5);
+     return message.channel.send(embed);
+    
+    
+    
     }else{
      const embed = new Discord.MessageEmbed()
      .setTitle("Valorant Commands")
