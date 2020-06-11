@@ -22,6 +22,13 @@ module.exports = {
   if(!args[0]){
   //Minar
   var selectM = minerals[Math.floor(Math.random() * minerals.length)];
+  var text ="";  
+  if(selectM = minerals[0]) text = "Coal";
+  if(selectM = minerals[1]) text = "Iron"; 
+  if(selectM = minerals[2]) text = "Gold";
+  if(selectM = minerals[3]) text = "Diamond"; 
+  if(selectM = minerals[4]) text = "Emerald";
+    
   const embedU = new Discord.MessageEmbed()
   .setTitle("<:lucky:720574567571128341> | Mining.")
   .setDescription("<:steve:720530349121208357><:woodenPix1:720518856694824960><:stone:720518856635973712>")
@@ -54,9 +61,9 @@ module.exports = {
     }, 3000);
    setTimeout(function(){ 
      const embed = new Discord.MessageEmbed()
-      .setTitle("<:lucky:720574567571128341> | You got owo")
+      .setTitle(`<:lucky:720574567571128341> | You got ${text}`)
       .setDescription(`${anim4}${selectM}`)
-      .setFooter(`${message.author.username} mined some owo`)
+      .setFooter(`${message.author.username} mined some ${text}`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
     }, 4000);
