@@ -1,10 +1,15 @@
 //FIRST TEST HANDLER IS WORKING OR NOT
 const Discord = require("discord.js");
 //Wooden animation
-var anim1 = "<:steve:720530349121208357><:pickaxeD:720589176210325514><:stone1:720518856350892119>";
-var anim2 = "<:steve:720530349121208357><:pickaxeD2:720589176214519848><:stone2:720518856694693889>";
-var anim3 = "<:steve:720530349121208357><:pickaxeD:720589176210325514><:stone3:720518856707407942>";
-var anim4 = "<:steve:720530349121208357><:pickaxeD2:720589176214519848>";
+
+var pickaxe1 = "<:woodenPix1:720518856694824960>";
+var pickaxe2 = "<:woodenPix2:720518856480784435>";
+var pickaxe = 4;
+
+var anim1 = `<:steve:720530349121208357>${pickaxe2}<:stone1:720518856350892119>`;
+var anim2 = `<:steve:720530349121208357>${pickaxe1}<:stone2:720518856694693889>`;
+var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
+var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
 
 var minerals = [
 "<:coal:720523944548892732>",
@@ -21,6 +26,12 @@ module.exports = {
   
   if(!args[0]){
   //Minar
+    
+  if(pickaxe == 4){
+  pickaxe1 = "<:pickaxeD2:720589176214519848>"
+  pickaxe2 = "<:pickaxeD:720589176210325514>"  
+  }   
+    
   var selectM = minerals[Math.floor(Math.random() * minerals.length)];
   var text ="";  
   if(selectM = minerals[0]) text = "Coal";
@@ -31,7 +42,7 @@ module.exports = {
     
   const embedU = new Discord.MessageEmbed()
   .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
-  .setDescription("<:steve:720530349121208357><:pickaxeD2:720589176214519848><:stone:720518856635973712>\n\u200b")
+  .setDescription(`<:steve:720530349121208357>${pickaxe1}<:stone:720518856635973712>\n\u200b`)
   .setFooter(`${message.author.username} is mining...`)
   .setColor(0xC76CF5);
   message.channel.send(embedU).then((sentMessage) => {
