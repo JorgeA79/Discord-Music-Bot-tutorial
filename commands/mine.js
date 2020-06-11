@@ -23,12 +23,14 @@ module.exports = {
   //Minar
   var selectM = minerals[Math.floor(Math.random() * minerals.length)];
   const embedU = new Discord.MessageEmbed()
+  .setTitle("<:lucky:720574567571128341> | Mining.")
   .setDescription("<:steve:720530349121208357><:woodenPix1:720518856694824960><:stone:720518856635973712>")
   .setFooter(`${message.author.username} is mining...`)
   .setColor(0xC76CF5);
   message.channel.send(embedU).then((sentMessage) => {
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
+      .setTitle("<:lucky:720574567571128341> | Mining..")
       .setDescription(`${anim1}`)
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
@@ -36,6 +38,7 @@ module.exports = {
     }, 1000);
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
+      .setTitle("<:lucky:720574567571128341> | Mining...")
       .setDescription(`${anim2}`)
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
@@ -43,6 +46,7 @@ module.exports = {
     }, 2000);
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
+      .setTitle("<:lucky:720574567571128341> | Mining.")
       .setDescription(`${anim3}`)
       .setFooter(`${message.author.username} is mining...`)
       .setColor(0xC76CF5);  
@@ -50,8 +54,9 @@ module.exports = {
     }, 3000);
    setTimeout(function(){ 
      const embed = new Discord.MessageEmbed()
+      .setTitle("<:lucky:720574567571128341> | You got owo")
       .setDescription(`${anim4}${selectM}`)
-      .setFooter(`${message.author.username} is mining...`)
+      .setFooter(`${message.author.username} mined some owo`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
     }, 4000);
