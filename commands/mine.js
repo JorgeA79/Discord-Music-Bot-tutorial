@@ -1,10 +1,10 @@
 //FIRST TEST HANDLER IS WORKING OR NOT
 const Discord = require("discord.js");
 //Wooden animation
-var anim1 = "<:woodenPix2:720518856480784435><:stone1:720518856350892119>";
-var anim2 = "<:woodenPix1:720518856694824960><:stone2:720518856694693889>";
-var anim3 = "<:woodenPix2:720518856480784435><:stone3:720518856707407942>";
-var anim4 = "<:woodenPix1:720518856694824960>";
+var anim1 = "<:steve:720530349121208357><:woodenPix2:720518856480784435><:stone1:720518856350892119>";
+var anim2 = "<:steve:720530349121208357><:woodenPix1:720518856694824960><:stone2:720518856694693889>";
+var anim3 = "<:steve:720530349121208357><:woodenPix2:720518856480784435><:stone3:720518856707407942>";
+var anim4 = "<:steve:720530349121208357><:woodenPix1:720518856694824960>";
 
 var minerals = [
 "<:coal:720523944548892732>",
