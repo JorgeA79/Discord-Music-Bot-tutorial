@@ -8,7 +8,8 @@ var pickaxe = "0";
 
 
 var minerals = [
-"<:coal:720523944548892732>"
+"<:coal:720523944548892732>",
+"<:coal:720523944548892732>"  
 ];
 
 module.exports = {
@@ -61,7 +62,7 @@ module.exports = {
   var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
   var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
   
-  var selectM = minerals[Math.floor(Math.random() * minerals.length)-1];
+  var selectM = minerals[Math.floor(Math.random() * minerals.length)];
   var text ="";  
   if(selectM = minerals[0]) text = "Coal";
   if(selectM = minerals[1]) text = "Iron"; 
