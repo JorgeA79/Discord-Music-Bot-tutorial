@@ -75,9 +75,7 @@ module.exports = {
       
     }else if(args[0].toLowerCase() =="map"){
      if(!args[1]){ 
-      
-     }
-        const embed = new Discord.MessageEmbed()
+      const embed = new Discord.MessageEmbed()
      .setTitle("Valorant Maps")
      .setDescription(`This are all the available maps in Valorant:\n\u200b`)
      .addField(`**Maps:**`,`${jsonContent.maps[0].emote} ${jsonContent.maps[0].name}`, true)
@@ -90,10 +88,24 @@ module.exports = {
      .setImage("https://cdn.discordapp.com/attachments/396942894487044099/720423754550738944/unknown.png")
      .setFooter('Chack map plan with p!valorant map <map-name>')
      .setColor(0xC76CF5);
-     return message.channel.send(embed);
-    
-    
-    
+     return message.channel.send(embed); 
+     }   
+     var map = jsonContent.maps[0]; 
+     if(args[1].toLowerCase() == "ascent") map = jsonContent.maps[0]; 
+     if(args[1].toLowerCase() == "bind") map = jsonContent.maps[1];
+     if(args[1].toLowerCase() == "haven") map = jsonContent.maps[2]; 
+     if(args[1].toLowerCase() == "split") map = jsonContent.maps[3]; 
+     
+    const embed = new Discord.MessageEmbed()  
+    .setTitle(`Valorant Maps: ${map.name}`)
+    .setDescription(`Here's all the details for the ${map.name} map!\n\u200b`)
+    .addField("Plan:", `\u200b`, true)
+    .setThumbnail(map.thumbnail)
+    .setImage(map.plan)
+    .setFooter('Plan from Mobalytics.gg')  
+    .setColor(0xC76CF5);
+    message.channel.send(embed); 
+      
     }else{
      const embed = new Discord.MessageEmbed()
      .setTitle("Valorant Commands")
