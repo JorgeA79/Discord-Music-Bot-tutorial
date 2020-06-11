@@ -7,13 +7,12 @@ var pickaxe2 = "<:woodenPix2:720518856480784435>";
 var pickaxe = "1";
 
 
-var minerals = [
+var mineralsx = [
 "<:coal:720523944548892732>",
 "<:iron_ingot:720528333879771197>", 
 "<:gold_ingot:720528333879640134>",
 "<:diamond:720528333732839477>",
-"<:emerald:720528333862993991>"  
-];
+"<:emerald:720528333862993991>"];
 
 
 module.exports = {
@@ -45,8 +44,9 @@ module.exports = {
   }   
   
     
-  console.dir(minerals)  
-  var selectM = minerals[Math.floor(Math.random() * minerals.length)];  
+  var selecthugGif = mineralsx[Math.floor(Math.random() * mineralsx.length)];
+    
+    
   var anim1 = `<:steve:720530349121208357>${pickaxe2}<:stone1:720518856350892119>`;
   var anim2 = `<:steve:720530349121208357>${pickaxe1}<:stone2:720518856694693889>`;
   var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
@@ -55,11 +55,11 @@ module.exports = {
 
   var text ="";  
     
-  if(selectM = minerals[0]) text = "Coal";
-  if(selectM = minerals[1]) text = "Iron"; 
-  if(selectM = minerals[2]) text = "Gold";
-  if(selectM = minerals[3]) text = "Diamond"; 
-  if(selectM = minerals[4]) text = "Emerald";
+  if(selecthugGif = mineralsx[0]) text = "Coal";
+  if(selecthugGif = mineralsx[1]) text = "Iron"; 
+  if(selecthugGif = mineralsx[2]) text = "Gold";
+  if(selecthugGif = mineralsx[3]) text = "Diamond"; 
+  if(selecthugGif = mineralsx[4]) text = "Emerald";
     
   const embedU = new Discord.MessageEmbed()
   .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
@@ -94,7 +94,7 @@ module.exports = {
    setTimeout(function(){ 
      const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${text}\n\u200b`)
-      .setDescription(`${anim4}${selectM}\n\u200b`)
+      .setDescription(`${anim4}${selecthugGif}\n\u200b`)
       .setFooter(`${message.author.username} mined some ${text}`)
       .setColor(0xC76CF5);  
     sentMessage.edit(embed)
