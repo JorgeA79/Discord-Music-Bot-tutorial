@@ -104,25 +104,25 @@
      {
     "name":"Ascent",
     "emote":"<:Sentinel:718673625703776327>",
-    "plan":"https://mobalytics.gg/wp-content/uploads/2020/04/ascent.jpg",
+    "plan":"https://cdn.discordapp.com/attachments/396942894487044099/720431469214040104/ascent.png",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720425929045704744/unknown.png"  
     },
     {
     "name":"Bind",
     "emote":"<:Controller:718449661534273546>",
-    "plan":"https://mobalytics.gg/wp-content/uploads/2020/04/bind_map_callouts.jpg",
+    "plan":"https://cdn.discordapp.com/attachments/396942894487044099/720431313567612948/bind_map_callouts.png",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720424766699208704/unknown.png"  
     },
      {
     "name":"Haven",
     "emote":"<:Initiator:718595576773476372>",
-    "plan":"https://mobalytics.gg/wp-content/uploads/2020/04/haven_callouts.jpg",
+    "plan":"https://cdn.discordapp.com/attachments/396942894487044099/720431379250413709/haven_callouts.png",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720425539269165127/unknown.png"  
     },
     {
     "name":"Split",
     "emote":"<:Duelist:718449661517758494>",
-    "plan":"https://mobalytics.gg/wp-content/uploads/2020/04/split_callouts.jpg",
+    "plan":"https://cdn.discordapp.com/attachments/396942894487044099/720431354986365018/split_callouts.png",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720426804288159844/unknown.png"  
     }
   ]
