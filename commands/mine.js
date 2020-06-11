@@ -10,10 +10,16 @@ module.exports = {
   //Minar
   
   message.channel.send("<:woodenPix1:720518856694824960><:stone:720518856635973712>").then((sentMessage) => {
-
-    sentMessage.edit("<:woodenPix2:720518856480784435><:stone1:720518856350892119>")
+    setTimeout(function(){ 
+    sentMessage.edit("<:woodenPix2:720518856480784435><:stone1:720518856350892119>") 
+    }, 3000);
+    setTimeout(function(){ 
     sentMessage.edit("<:woodenPix1:720518856694824960><:stone2:720518856694693889>")
+    }, 3000);
+    setTimeout(function(){ 
     sentMessage.edit("<:woodenPix2:720518856480784435><:stone3:720518856707407942>")
+    }, 3000);
+   
   })
   
   }
