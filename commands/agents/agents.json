@@ -119,7 +119,8 @@
     "plan":"https://mobalytics.gg/wp-content/uploads/2020/04/haven_callouts.jpg",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720425539269165127/unknown.png"  
     },
-   "name":"Split",
+    {
+    "name":"Split",
     "emote":"<:Duelist:718449661517758494>",
     "plan":"https://mobalytics.gg/wp-content/uploads/2020/04/split_callouts.jpg",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720426804288159844/unknown.png"  
