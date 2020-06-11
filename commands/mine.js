@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 var pickaxe1 = "<:woodenPix1:720518856694824960>";
 var pickaxe2 = "<:woodenPix2:720518856480784435>";
-var pickaxe = "3";
+var pickaxe = "1";
 
 
 
@@ -16,27 +16,31 @@ module.exports = {
   
   if(!args[0]){
   //Minar
-  var mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197", ":gold_ingot:720528333879640134",":diamond:720528333732839477"];  
+  var mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197", ":gold_ingot:720528333879640134",":diamond:720528333732839477","<:emerald:720528333862993991>"];  
   
     
   if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>";
   pickaxe2 = "<:woodenPix2:720518856480784435>";
+  mineralsx = [":coal:720523944548892732",":coal:720523944548892732"];    
   } 
   
   if(pickaxe == "1"){
   pickaxe1 = "<:StoneP2:720617209851805752>";
   pickaxe2 = "<:stoneP:720616972944932865>"; 
+  mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197"];    
   } 
     
   if(pickaxe == "2"){
   pickaxe1 = "<:ironP2:720617209797279777>";
   pickaxe2 = "<:ironP:720616972995526676>";
+  mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197", ":gold_ingot:720528333879640134",":diamond:720528333732839477","<:emerald:720528333862993991>"];    
   }  
     
   if(pickaxe == "3"){
   pickaxe1 = "<:pickaxeD2:720589176214519848>";
   pickaxe2 = "<:pickaxeD:720589176210325514>";
+  mineralsx = [":coal:720523944548892732",":iron_ingot:720528333879771197", ":gold_ingot:720528333879640134",":diamond:720528333732839477","<:emerald:720528333862993991>"];    
   }   
    
   var anim1 = `<:steve:720530349121208357>${pickaxe2}<:stone1:720518856350892119>`;
