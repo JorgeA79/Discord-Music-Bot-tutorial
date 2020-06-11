@@ -7,11 +7,6 @@ var pickaxe2 = "<:woodenPix2:720518856480784435>";
 var pickaxe = "1";
 
 
-var mineralsx = [
-":coal:720523944548892732",
-":iron_ingot:720528333879771197", 
-":gold_ingot:720528333879640134",
-":diamond:720528333732839477"];
 
 
 module.exports = {
@@ -21,6 +16,14 @@ module.exports = {
   
   if(!args[0]){
   //Minar
+  
+  
+  var mineralsx = [
+  ":coal:720523944548892732",
+  ":iron_ingot:720528333879771197", 
+  ":gold_ingot:720528333879640134",
+  ":diamond:720528333732839477"];  
+    
     
   if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>";
