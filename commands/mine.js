@@ -45,11 +45,7 @@ module.exports = {
   var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
   var text ="";  
     
-  if(selecthugGif = mineralsx[0]) text = "Coal";
-  if(selecthugGif = mineralsx[1]) text = "Iron"; 
-  if(selecthugGif = mineralsx[2]) text = "Gold";
-  if(selecthugGif = mineralsx[3]) text = "Diamond"; 
-  if(selecthugGif = mineralsx[4]) text = "Emerald";
+
     
   const embedU = new Discord.MessageEmbed()
   .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
@@ -57,6 +53,9 @@ module.exports = {
   .setFooter(`${message.author.username} is mining...`)
   .setColor(0xC76CF5);
   message.channel.send(embedU).then((sentMessage) => {
+    
+    
+    //First Animation
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
       .setTitle("<:lucky:720574567571128341> | Mining..\n\u200b")
@@ -65,6 +64,9 @@ module.exports = {
       .setColor(0xC76CF5);  
     sentMessage.edit(embed) 
     }, 1000);
+    
+    
+    //Second animation
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
       .setTitle("<:lucky:720574567571128341> | Mining...\n\u200b")
@@ -73,6 +75,10 @@ module.exports = {
       .setColor(0xC76CF5);  
       sentMessage.edit(embed)
     }, 2000);
+    
+    
+    
+    //Third animation
     setTimeout(function(){ 
       const embed = new Discord.MessageEmbed()
       .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
@@ -82,8 +88,17 @@ module.exports = {
     sentMessage.edit(embed)
     }, 3000);
    setTimeout(function(){ 
-     let counter = (Math.floor(Math.random() * mineralsx.length))
-     const embed = new Discord.MessageEmbed()
+    
+       //Get mineral
+       let counter = (Math.floor(Math.random() * mineralsx.length))
+     
+       if(mineralsx[counter] = mineralsx[0]) text = "Coal";
+       if(mineralsx[counter] = mineralsx[1]) text = "Iron"; 
+       if(mineralsx[counter] = mineralsx[2]) text = "Gold";
+       if(mineralsx[counter] = mineralsx[3]) text = "Diamond"; 
+       if(mineralsx[counter] = mineralsx[4]) text = "Emerald";
+     
+      const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${text}\n\u200b`)
       .setDescription(`${anim4}<${mineralsx[counter]}>\n\u200b`)
       .setFooter(`${message.author.username} mined some ${text}`)
