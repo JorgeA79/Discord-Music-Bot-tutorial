@@ -111,7 +111,8 @@ module.exports = {
      .setTitle("Valorant Commands")
     .setDescription(`This are all the commmands related to valorant game!, ${message.author}\n\u200b`)
     .addField("p!valorant agent/p!valorant agent [agent-name]:", `<:valorant:718659131917074504> Get all the agents in game/ or the info about one in specific`, false)
-     .setImage('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
+    .addField("p!valorant map/p!valorant map [agent-name]:", `<:valorant:718659131917074504> Get all the maps in game/ or the info about one in specific`, false)
+    .setImage('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
     .setColor(0xC76CF5);
     return message.channel.send(embed);
     }  
