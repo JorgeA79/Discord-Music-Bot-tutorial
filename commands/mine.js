@@ -333,7 +333,7 @@ module.exports = {
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
   .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2} for ${price}?\n` + "`Answer with <yes> or <no>`")
   .setColor(0xC76CF5)
-  return message.channel.send(embed) 
+  message.channel.send(embed) 
   const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
   console.log(collector)
   collector.on('collect', m => {
@@ -343,14 +343,14 @@ module.exports = {
                const embed = new Discord.MessageEmbed()
                .setDescription(`yes`)
 	        .setColor(0xC76CF5)  
-	        return m.channel.send(embed);
+	        m.channel.send(embed);
 	  	collector.stop('Collector stopped manually');
      }else if (m.content.toLowerCase() == "no") {
 	
   	 	const embed = new Discord.MessageEmbed()
                 .setDescription(`no`)
 	        .setColor(0xC76CF5)
-	        return m.channel.send(embed);
+	        m.channel.send(embed);
 		collector.stop('Collector stopped manually'); 
           
             } 
