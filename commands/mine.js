@@ -30,8 +30,17 @@ module.exports = {
       let money = result.rows[0].money;
       let pickaxe = result.rows[0].pickaxe;
       if(pickaxe === null) pickaxe = 0;
-
-     
+      let coal = result.rows[0].coal;
+      let iron = result.rows[0].iron;
+      let gold = result.rows[0].gold;
+      let diamond = result.rows[0].diamond;
+      let emerald = result.rows[0].emerald;
+      if(coal === null) coal=0;
+      if(iron === null) iron=0; 
+      if(gold === null) gold=0; 
+      if(diamond === null) diamond=0;
+      if(emerald === null) emerald=0;      
+      var xd = 0;
       let testValues = [{
       value : 'Coal',
       probability: 0.5
@@ -196,10 +205,26 @@ module.exports = {
       var emote = ":coal:720523944548892732";
       var textx = randomizer(testValues);
      
-      if(textx == "Coal") emote = ":coal:720523944548892732";
-      if(textx == "Iron") emote = ":iron_ingot:720528333879771197";
-      if(textx == "Gold") emote = ":gold_ingot:720528333879640134";
-      if(textx == "Diamond") emote = ":diamond:720528333732839477";  
+      if(textx == "Coal"){ 
+        emote = ":coal:720523944548892732";
+        xd = eval(coal) + eval(1)
+        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }
+      if(textx == "Iron"){ 
+        emote = ":iron_ingot:720528333879771197";
+        xd = eval(iron) + eval(1)
+        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }
+      if(textx == "Gold"){ 
+        emote = ":gold_ingot:720528333879640134";
+        xd = eval(gold) + eval(1)
+        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }
+      if(textx == "Diamond"){ 
+        emote = ":diamond:720528333732839477";
+        xd = eval(diamond) + eval(1)
+        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }
      
       const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${textx}\n\u200b`)
@@ -209,15 +234,39 @@ module.exports = {
     sentMessage.edit(embed)
     }, 4000);
     })
-  
-     
-     
-     
+      
    }); 
   }
   if(args[0]== "inv" ||args[0] == "inventory"){
+    
   //Inventario de minerales
+  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{  
+ 
+    let money = result.rows[0].money;
+      let pickaxe = result.rows[0].pickaxe;
+      if(pickaxe === null) pickaxe = 0;
+      let coal = result.rows[0].coal;
+      let iron = result.rows[0].iron;
+      let gold = result.rows[0].gold;
+      let diamond = result.rows[0].diamond;
+      let emerald = result.rows[0].emerald;
+      if(coal === null) coal=0;
+      if(iron === null) iron=0; 
+      if(gold === null) gold=0; 
+      if(diamond === null) diamond=0;
+      if(emerald === null) emerald=0;  
+    
+    
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:pokeb:716936621265518613> | Pokemon Catch Inventory")
+  .setDescription(`**Coal:** ${coal}\n**Iron:** ${iron}\n**Gold:** ${gold}\n**Diamond:** ${diamond}\n\u200b`)
+  .setColor(0xC76CF5)
+  .setFooter('Have a nice day!', process.env.BOT_AVATAR);
+  message.channel.send(embed);  
+    
+  });  
   }
+    
   if(args[0]== "sell"){
   //Vender minerales
   }
