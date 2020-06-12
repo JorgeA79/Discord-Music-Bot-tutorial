@@ -417,7 +417,7 @@ module.exports = {
      }else if (m.content.toLowerCase() == "no") {
 	
   	 	const embed = new Discord.MessageEmbed()
-                .setDescription(`no`)
+                .setDescription(`<:pickaxeD:720589176210325514> | Offer Rejected`)
 	        .setColor(0xC76CF5)
 	        m.channel.send(embed);
 		collector.stop('Collector stopped manually'); 
