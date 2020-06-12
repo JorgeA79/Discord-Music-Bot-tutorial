@@ -327,7 +327,7 @@ module.exports = {
     
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
-  .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2}\n\u200b`)
+  .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2}?\n` + "`Answer with <yes> or <no>`")
   .setColor(0xC76CF5)
   return message.channel.send(embed);    
      
