@@ -248,17 +248,17 @@ module.exports = {
       if(textx == "Iron"){ 
         emote = ":iron_ingot:720528333879771197";
         xd = eval(iron) + eval(1)
-        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+        pool.query(`UPDATE usersxp SET iron = ${xd} WHERE id = '${message.author.id}'`, console.log)
       }
       if(textx == "Gold"){ 
         emote = ":gold_ingot:720528333879640134";
         xd = eval(gold) + eval(1)
-        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+        pool.query(`UPDATE usersxp SET gold = ${xd} WHERE id = '${message.author.id}'`, console.log)
       }
       if(textx == "Diamond"){ 
         emote = ":diamond:720528333732839477";
         xd = eval(diamond) + eval(1)
-        pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
+        pool.query(`UPDATE usersxp SET diamond = ${xd} WHERE id = '${message.author.id}'`, console.log)
       }
       if(textx == "Emerald"){ 
         emote = ":emerald:720528333862993991";
