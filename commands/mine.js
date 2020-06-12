@@ -284,26 +284,30 @@ module.exports = {
   let pickaxe = result.rows[0].pickaxe;
   var text = "";  
   var text2 = "";
+  var price = 500;
   if(pickaxe === null) pickaxe = 0;  
   if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>";
   pickaxe2 = "<:woodenPix2:720518856480784435>";
   text = "Wooden Pickaxe";
-  text2 = "Stone Pickaxe";    
+  text2 = "Stone Pickaxe";
+  price = 500;  
   } 
   
   if(pickaxe == "1"){
   pickaxe1 = "<:StoneP2:720617209851805752>";
   pickaxe2 = "<:stoneP:720616972944932865>"; 
   text = "Stone Pickaxe";
-  text2 = "Iron Pickaxe";   
+  text2 = "Iron Pickaxe";
+  price = 1500;  
   } 
     
   if(pickaxe == "2"){
   pickaxe1 = "<:ironP2:720617209797279777>";
   pickaxe2 = "<:ironP:720616972995526676>";
   text = "Iron Pickaxe";
-  text2 = "Diamond Pickaxe";   
+  text2 = "Diamond Pickaxe";
+  price = 3000;
   }  
     
   if(pickaxe == "3"){
@@ -327,7 +331,7 @@ module.exports = {
     
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
-  .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2}?\n` + "`Answer with <yes> or <no>`")
+  .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2} for ${price}?\n` + "`Answer with <yes> or <no>`")
   .setColor(0xC76CF5)
   return message.channel.send(embed);    
      
