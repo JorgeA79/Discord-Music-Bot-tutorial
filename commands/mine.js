@@ -337,6 +337,14 @@ module.exports = {
     
   if(args[0]== "sell"){
   //Vender minerales
+   if(!args[1]){
+  const embed = new Discord.MessageEmbed()
+  .setDescription("Please specify what you want to sell: \n`p!mine sell <item>`\n<:coal:720523944548892732> | Coal\n<:iron_ingot:720528333879771197> | Iron\n<:BlueDye:720890039738957934> | Lapiz\n<:Redstone:720890039751671868> | Redstone\n<:gold_ingot:720528333879640134> | Gold\n<:diamond:720528333732839477> | Diamond\n<:emerald:720528333862993991> | Emerald")
+  .setColor(0xC76CF5)
+  return message.channel.send(embed); 
+  }
+	  
+	  
   }
   if(args[0] == "help"){
   //Menu de ayuda
