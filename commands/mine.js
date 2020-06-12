@@ -45,6 +45,16 @@ module.exports = {
       if(lapiz === null) lapiz=0;
       if(redstone === null) redstone=0;  	   
       var xd = 0;
+	   
+      if(money < 10){	
+      const embed = new Discord.MessageEmbed()
+  	.setTitle("<:pickaxeD:720589176210325514> | Mining")
+  	.setDescription(`\u200b\n${pickaxe2} You don't have enough money!**Required:** 10\n\u200b`)
+  	.setColor(0xC76CF5)
+  	return message.channel.send(embed);
+      }    
+	   
+	   
       let testValues = [{
       value : 'Coal',
       probability: 0.3
@@ -175,6 +185,11 @@ module.exports = {
   var anim3 = `<:steve:720530349121208357>${pickaxe2}<:stone3:720518856707407942>`;
   var anim4 = `<:steve:720530349121208357>${pickaxe1}`;
    
+	   
+  var totalplay = eval(money) - eval(10)	   
+	   
+  pool.query(`UPDATE usersxp SET money = ${totalplay} WHERE id = '${message.author.id}'`, console.log);	   
+	   
   const embedU = new Discord.MessageEmbed()
   .setTitle("<:lucky:720574567571128341> | Mining.\n\u200b")
   .setDescription(`<:steve:720530349121208357>${pickaxe1}<:stone:720518856635973712>\n\u200b`)
