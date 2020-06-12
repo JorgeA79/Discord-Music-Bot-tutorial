@@ -405,9 +405,10 @@ module.exports = {
   collector.on('collect', m => {
 	  
 	if (m.content.toLowerCase() == "yes") { 
-       
+	       var totalxd = eval(pickaxe) + eval(1);
+               pool.query(`UPDATE usersxp SET pickaxe = ${totalxd} WHERE id = '${message.author.id}'`, console.log);
                const embed = new Discord.MessageEmbed()
-               .setDescription(`yes`)
+               .setDescription(`Pickaxe upgraded`)
 	        .setColor(0xC76CF5)  
 	        m.channel.send(embed);
 	  	collector.stop('Collector stopped manually');
