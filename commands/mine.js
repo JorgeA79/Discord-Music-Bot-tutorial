@@ -304,7 +304,7 @@ module.exports = {
   } 
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Your pickaxe")
-  .setDescription(`\n\u200b${pickaxe2} You have a ${text}\n\u200b`)
+  .setDescription(`\u200b\n${pickaxe2} You have a ${text}\n\u200b`)
   .setColor(0xC76CF5)
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);
   message.channel.send(embed);    
