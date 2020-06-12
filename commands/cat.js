@@ -15,7 +15,7 @@ module.exports = {
     
     const embed = new Discord.MessageEmbed()
     .setDescription(`:cat: | Here is your image!`)
-    .setColor(0xC76CF5);
+    .setColor(0xC76CF5)
     .setImage(body.file)
     .setFooter('Have a nice day!', process.env.BOT_AVATAR)
     message.channel.send(embed);
