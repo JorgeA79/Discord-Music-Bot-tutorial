@@ -35,11 +35,15 @@ module.exports = {
       let gold = result.rows[0].gold;
       let diamond = result.rows[0].diamond;
       let emerald = result.rows[0].emerald;
+      let lapiz = result.rows[0].lapiz;
+      let redstone = result.rows[0].redstone; 	   
       if(coal === null) coal=0;
       if(iron === null) iron=0; 
       if(gold === null) gold=0; 
       if(diamond === null) diamond=0;
-      if(emerald === null) emerald=0;      
+      if(emerald === null) emerald=0;
+      if(lapiz === null) lapiz=0;
+      if(redstone === null) redstone=0;  	   
       var xd = 0;
       let testValues = [{
       value : 'Coal',
@@ -85,12 +89,16 @@ module.exports = {
     
     testValues = [{
       value : 'Coal',
-      probability: 0.5
+      probability: 0.4
       },
       {
       value : 'Iron',
-      probability: 0.5
-      }]
+      probability: 0.4
+      },
+      {
+      value : 'Lapiz',
+      probability: 0.2
+      }	 ]
   } 
     
   if(pickaxe == "2"){
@@ -100,11 +108,11 @@ module.exports = {
     
     testValues = [{
       value : 'Coal',
-      probability: 0.2
+      probability: 0.1
       },
       {
       value : 'Iron',
-      probability: 0.4
+      probability: 0.3
       },
       {
       value : 'Gold',
@@ -117,7 +125,15 @@ module.exports = {
       {
       value : 'Emerald',
       probability: 0.1
-      }]
+      },
+      {
+      value : 'Lapiz',
+      probability: 0.2
+      },{
+      value : 'Redstone',
+      probability: 0.2
+      }		
+		 ]
   }  
     
   if(pickaxe == "3"){
@@ -144,6 +160,13 @@ module.exports = {
       {
       value : 'Emerald',
       probability: 0.1
+      },
+      {
+      value : 'Lapiz',
+      probability: 0.2
+      },{
+      value : 'Redstone',
+      probability: 0.2
       }]
   }   
    
@@ -242,6 +265,16 @@ module.exports = {
         xd = eval(emerald) + eval(1)
         pool.query(`UPDATE usersxp SET emerald = ${xd} WHERE id = '${message.author.id}'`, console.log)
       }
+      if(textx == "Lapiz"){ 
+        emote = ":BlueDye:720890039738957934";
+        xd = eval(lapiz) + eval(1)
+        pool.query(`UPDATE usersxp SET lapiz = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }	
+      if(textx == "Redstone"){ 
+        emote = ":Redstone:720890039751671868";
+        xd = eval(redstone) + eval(1)
+        pool.query(`UPDATE usersxp SET redstone = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }	    
 	   
       const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${textx}\n\u200b`)
@@ -272,11 +305,14 @@ module.exports = {
       if(gold === null) gold=0; 
       if(diamond === null) diamond=0;
       if(emerald === null) emerald=0;  
-    
-    
+      let lapiz = result.rows[0].lapiz;
+      let redstone = result.rows[0].redstone; 	  
+      if(lapiz === null) lapiz=0;
+      if(redstone === null) redstone=0;  
+	  
   const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Mining Inventory")
-  .setDescription(`<:coal:720523944548892732>**Coal:** ${coal}\n<:iron_ingot:720528333879771197>**Iron:** ${iron}\n<:gold_ingot:720528333879640134>**Gold:** ${gold}\n<:diamond:720528333732839477>**Diamond:** ${diamond}\n<:emerald:720528333862993991>**Emeralds:** ${emerald}\n\u200b`)
+  .setDescription(`<:coal:720523944548892732>**Coal:** ${coal}\n<:BlueDye:720890039738957934>**Lapiz:** ${lapiz}\n<:Redstone:720890039751671868>**Redstone:** ${redstone}\n<:iron_ingot:720528333879771197>**Iron:** ${iron}\n<:gold_ingot:720528333879640134>**Gold:** ${gold}\n<:diamond:720528333732839477>**Diamond:** ${diamond}\n<:emerald:720528333862993991>**Emeralds:** ${emerald}\n\u200b`)
   .setColor(0xC76CF5)
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);
   message.channel.send(embed);  
