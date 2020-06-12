@@ -324,7 +324,7 @@ module.exports = {
       let redstone = result.rows[0].redstone; 	  
       if(lapiz === null) lapiz=0;
       if(redstone === null) redstone=0;  
-	  
+      
   const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Mining Inventory")
   .setDescription(`<:coal:720523944548892732>**Coal:** ${coal}\n<:BlueDye:720890039738957934>**Lapiz:** ${lapiz}\n<:Redstone:720890039751671868>**Redstone:** ${redstone}\n<:iron_ingot:720528333879771197>**Iron:** ${iron}\n<:gold_ingot:720528333879640134>**Gold:** ${gold}\n<:diamond:720528333732839477>**Diamond:** ${diamond}\n<:emerald:720528333862993991>**Emeralds:** ${emerald}\n\u200b`)
@@ -337,11 +337,42 @@ module.exports = {
     
   if(args[0]== "sell"){
   //Vender minerales
+	  
+   let money = result.rows[0].money;
+      let pickaxe = result.rows[0].pickaxe;
+      if(pickaxe === null) pickaxe = 0;
+      let coal = result.rows[0].coal;
+      let iron = result.rows[0].iron;
+      let gold = result.rows[0].gold;
+      let diamond = result.rows[0].diamond;
+      let emerald = result.rows[0].emerald;
+      if(coal === null) coal=0;
+      if(iron === null) iron=0; 
+      if(gold === null) gold=0; 
+      if(diamond === null) diamond=0;
+      if(emerald === null) emerald=0;  
+      let lapiz = result.rows[0].lapiz;
+      let redstone = result.rows[0].redstone; 	  
+      if(lapiz === null) lapiz=0;
+      if(redstone === null) redstone=0;  	  
+	var minTotal = 0;    
+	  
+	  
    if(!args[1]){
   const embed = new Discord.MessageEmbed()
   .setDescription("Please specify what you want to sell: \n`p!mine sell <item>`\n<:coal:720523944548892732> | Coal\n<:iron_ingot:720528333879771197> | Iron\n<:BlueDye:720890039738957934> | Lapiz\n<:Redstone:720890039751671868> | Redstone\n<:gold_ingot:720528333879640134> | Gold\n<:diamond:720528333732839477> | Diamond\n<:emerald:720528333862993991> | Emerald")
   .setColor(0xC76CF5)
   return message.channel.send(embed); 
+  } 
+  else if(args[1].toLowerCase() =="coal"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${coal} **Coal** <:coal:720523944548892732>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(coal)*eval(8));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET coal = 0 WHERE id = '${message.author.id}'`, console.log);   
   }
 	  
 	  
