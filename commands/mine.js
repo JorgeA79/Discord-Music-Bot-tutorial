@@ -406,9 +406,11 @@ module.exports = {
 	  
 	if (m.content.toLowerCase() == "yes") { 
 	       var totalxd = eval(pickaxe) + eval(1);
+	       var totalm = eval(money) - eval(price);	
+	       pool.query(`UPDATE usersxp SET money = ${totalm} WHERE id = '${message.author.id}'`, console.log);	
                pool.query(`UPDATE usersxp SET pickaxe = ${totalxd} WHERE id = '${message.author.id}'`, console.log);
                const embed = new Discord.MessageEmbed()
-               .setDescription(`Pickaxe upgraded`)
+               .setDescription(`Pickaxe upgraded **Balance:** ${money} - ${price}`)
 	        .setColor(0xC76CF5)  
 	        m.channel.send(embed);
 	  	collector.stop('Collector stopped manually');
@@ -434,7 +436,7 @@ module.exports = {
    
   const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
-  .setDescription(`\u200b\n${pickaxe2} You don't have enough money!\n\u200b`)
+  .setDescription(`\u200b\n${pickaxe2} You don't have enough money!**Required:** ${price}\n\u200b`)
   .setColor(0xC76CF5)
   message.channel.send(embed);
   
