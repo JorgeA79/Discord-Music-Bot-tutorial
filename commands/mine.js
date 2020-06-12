@@ -28,7 +28,8 @@ module.exports = {
     
      
       let money = result.rows[0].money;
-      let pickaxe = result.rows[0].money;
+      let pickaxe = result.rows[0].pickaxe;
+      if(pickaxe === null) pickaxe = 0;
 
      
       let testValues = [{
