@@ -9,7 +9,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message, args) {
   
-  var randomQuote = jsonContent.quotes[Math.floor(Math.random() * quotes.length)];
+  var randomQuote = jsonContent.quotes[Math.floor(Math.random() * jsonContent.quotes.length)];
   
             const embed = new Discord.MessageEmbed()
             .setDescription(`${randomQuote.quote} by ${randomQuote.author}`)
