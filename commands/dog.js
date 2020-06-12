@@ -13,7 +13,7 @@ module.exports = {
             if(!body) return message.reply(" whoops. I broke, try again!")
 
               const embed = new Discord.MessageEmbed()
-              .setDescription(`:cat: | Here is your image!`)
+              .setDescription(`:dog: | Here is your image!`)
               .setColor(0xC76CF5)
               .setImage(body.message)
               .setFooter('Have a nice day!', process.env.BOT_AVATAR)
