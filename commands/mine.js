@@ -275,6 +275,41 @@ module.exports = {
   }
   if(args[0] == "pickaxe"){
   //Menu y mejoras del pico
+  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{ 
+  let pickaxe = result.rows[0].pickaxe;
+  var text = "";  
+  if(pickaxe === null) pickaxe = 0;  
+  if(pickaxe == "0"){
+  pickaxe1 = "<:woodenPix1:720518856694824960>";
+  pickaxe2 = "<:woodenPix2:720518856480784435>";
+  text = "Wooden Pickaxe";  
+  } 
+  
+  if(pickaxe == "1"){
+  pickaxe1 = "<:StoneP2:720617209851805752>";
+  pickaxe2 = "<:stoneP:720616972944932865>"; 
+  text = "Stone Pickaxe";   
+  } 
+    
+  if(pickaxe == "2"){
+  pickaxe1 = "<:ironP2:720617209797279777>";
+  pickaxe2 = "<:ironP:720616972995526676>";
+  text = "Iron Pickaxe";   
+  }  
+    
+  if(pickaxe == "3"){
+  pickaxe1 = "<:pickaxeD2:720589176214519848>";
+  pickaxe2 = "<:pickaxeD:720589176210325514>";
+  text = "Diamond Pickaxe";   
+  } 
+   const embed = new Discord.MessageEmbed()
+  .setTitle("<:pickaxeD:720589176210325514> | Your pickaxe")
+  .setDescription(`${pickaxe2} ${text}\n\u200b`)
+  .setColor(0xC76CF5)
+  .setFooter('Have a nice day!', process.env.BOT_AVATAR);
+  message.channel.send(embed);    
+     
+  });
   }
   
   
