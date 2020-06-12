@@ -275,26 +275,35 @@ module.exports = {
   }
   if(args[0] == "pickaxe"){
   //Menu y mejoras del pico
+    
+    
+    
   pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{ 
+    
+
   let pickaxe = result.rows[0].pickaxe;
   var text = "";  
+  var text2 = "";
   if(pickaxe === null) pickaxe = 0;  
   if(pickaxe == "0"){
   pickaxe1 = "<:woodenPix1:720518856694824960>";
   pickaxe2 = "<:woodenPix2:720518856480784435>";
-  text = "Wooden Pickaxe";  
+  text = "Wooden Pickaxe";
+  text2 = "Stone Pickaxe";    
   } 
   
   if(pickaxe == "1"){
   pickaxe1 = "<:StoneP2:720617209851805752>";
   pickaxe2 = "<:stoneP:720616972944932865>"; 
-  text = "Stone Pickaxe";   
+  text = "Stone Pickaxe";
+  text2 = "Iron Pickaxe";   
   } 
     
   if(pickaxe == "2"){
   pickaxe1 = "<:ironP2:720617209797279777>";
   pickaxe2 = "<:ironP:720616972995526676>";
-  text = "Iron Pickaxe";   
+  text = "Iron Pickaxe";
+  text2 = "Diamond Pickaxe";   
   }  
     
   if(pickaxe == "3"){
@@ -302,6 +311,30 @@ module.exports = {
   pickaxe2 = "<:pickaxeD:720589176210325514>";
   text = "Diamond Pickaxe";   
   } 
+    
+  if(args[1] == "upgrade"){
+  
+    
+   if(pickaxe >= 3){
+   
+    const embed = new Discord.MessageEmbed()
+  .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
+  .setDescription(`\u200b\n${pickaxe2} You can't upgrade your ${text} anymore!\n\u200b`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);
+     
+   }
+    
+   const embed = new Discord.MessageEmbed()
+  .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
+  .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2}\n\u200b`)
+  .setColor(0xC76CF5)
+  return message.channel.send(embed);    
+     
+  
+  }    
+    
+    
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Your pickaxe")
   .setDescription(`\u200b\n${pickaxe2} You have a ${text}\n\u200b`)
