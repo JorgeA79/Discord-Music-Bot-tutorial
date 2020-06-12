@@ -11,9 +11,7 @@ module.exports = {
   description: "Pinging the bot",
   execute(client, message) {
 
-pool.query(`ALTER TABLE usersxp ADD COLUMN lapiz INT`, console.log);
-pool.query(`ALTER TABLE usersxp ADD COLUMN redstone INT`, console.log);
-
+ pool.query(`UPDATE usersxp SET pickaxe = 2 WHERE id = '${message.author.id}'`, console.log)
 
 }
 }
