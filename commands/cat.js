@@ -9,8 +9,6 @@ module.exports = {
   execute(client, message) {
    
    
-   let msg = await message.channel.send("Generating...")
-    
    let {body} = await superagent
    .get('http://aws.random.cat/meow')
     
