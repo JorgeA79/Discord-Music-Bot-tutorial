@@ -364,7 +364,7 @@ module.exports = {
   .setColor(0xC76CF5)
   return message.channel.send(embed); 
   } 
-  else if(args[1].toLowerCase() =="coal"){
+  	else if(args[1].toLowerCase() =="coal"){
   const embed = new Discord.MessageEmbed()
   .setTitle("<:diamond:720528333732839477> | Minerals Bank")
   .setDescription(`Succesfully sold ${coal} **Coal** <:coal:720523944548892732>`)
@@ -373,7 +373,68 @@ module.exports = {
   minTotal = eval(money) + (eval(coal)*eval(8));
   pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
   pool.query(`UPDATE usersxp SET coal = 0 WHERE id = '${message.author.id}'`, console.log);   
+  } 
+	  else if(args[1].toLowerCase() =="iron"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${iron} **Iron** <:iron_ingot:720528333879771197>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(iron)*eval(12));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET iron = 0 WHERE id = '${message.author.id}'`, console.log);   
+  } 
+	  else if(args[1].toLowerCase() =="lapiz"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${lapiz} **Lapiz** <:BlueDye:720890039738957934>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(lapiz)*eval(20));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET lapiz = 0 WHERE id = '${message.author.id}'`, console.log);   
+  } 
+	  else if(args[1].toLowerCase() =="redstone"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${redstone} **Redstone** <:Redstone:720890039751671868>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(redstone)*eval(20));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET redstone = 0 WHERE id = '${message.author.id}'`, console.log);   
+  } 
+	  else if(args[1].toLowerCase() =="gold"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${gold} **Gold** <:gold_ingot:720528333879640134>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(gold)*eval(50));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET gold = 0 WHERE id = '${message.author.id}'`, console.log);   
   }
+	  else if(args[1].toLowerCase() =="diamond"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${diamond} **Diamond** <:diamond:720528333732839477>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(diamond)*eval(100));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET diamond = 0 WHERE id = '${message.author.id}'`, console.log);   
+  } 
+	  else if(args[1].toLowerCase() =="emerald"){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:diamond:720528333732839477> | Minerals Bank")
+  .setDescription(`Succesfully sold ${emerald} **Emerald** <:emerald:720528333862993991>`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);	  	  
+  minTotal = eval(money) + (eval(emerald)*eval(300));
+  pool.query(`UPDATE usersxp SET money = ${minTotal} WHERE id = '${message.author.id}'`, console.log);
+  pool.query(`UPDATE usersxp SET emerald = 0 WHERE id = '${message.author.id}'`, console.log);   
+  }
+	  
 	  
   });	  
   }
