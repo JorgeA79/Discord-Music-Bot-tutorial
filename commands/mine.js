@@ -315,13 +315,17 @@ module.exports = {
   pickaxe2 = "<:pickaxeD:720589176210325514>";
   text = "Diamond Pickaxe";   
   } 
-    
+  
+   if(!args[1]){  
+	   
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Your pickaxe")
   .setDescription(`\u200b\n${pickaxe2} You have a ${text}\n\u200b`)
   .setColor(0xC76CF5)
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);
-  message.channel.send(embed); 
+  return message.channel.send(embed); 
+	   
+  }
 	  
   if(args[1] == "upgrade"){
   
@@ -335,7 +339,9 @@ module.exports = {
   message.channel.send(embed);
      
    }
-    
+   
+	  
+	  
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
   .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2} for ${price}?\n` + "`Answer with <yes> or <no>`")
