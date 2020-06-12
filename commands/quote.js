@@ -14,6 +14,7 @@ module.exports = {
             const embed = new Discord.MessageEmbed()
 	    .setAuthor(`Quote by ${randomQuote.author}`, 'https://cdn.discordapp.com/avatars/206606985167110145/9313172c11dd84b380d703f1e3855256.png?size=256')
             .setDescription(`${randomQuote.quote}`)
+	    .setThumbnail("https://cdn.discordapp.com/attachments/396942894487044099/721134327622139933/quote.png")
 	    .setColor(0xC76CF5)
 	    .setFooter('Have a nice day!', process.env.BOT_AVATAR);  
 	    message.channel.send(embed);
