@@ -316,6 +316,13 @@ module.exports = {
   text = "Diamond Pickaxe";   
   } 
     
+   const embed = new Discord.MessageEmbed()
+  .setTitle("<:pickaxeD:720589176210325514> | Your pickaxe")
+  .setDescription(`\u200b\n${pickaxe2} You have a ${text}\n\u200b`)
+  .setColor(0xC76CF5)
+  .setFooter('Have a nice day!', process.env.BOT_AVATAR);
+  message.channel.send(embed); 
+	  
   if(args[1] == "upgrade"){
   
     
@@ -365,13 +372,7 @@ module.exports = {
     
   }    
     
-    
-   const embed = new Discord.MessageEmbed()
-  .setTitle("<:pickaxeD:720589176210325514> | Your pickaxe")
-  .setDescription(`\u200b\n${pickaxe2} You have a ${text}\n\u200b`)
-  .setColor(0xC76CF5)
-  .setFooter('Have a nice day!', process.env.BOT_AVATAR);
-  message.channel.send(embed);    
+     
      
   });
   }
