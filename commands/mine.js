@@ -440,6 +440,19 @@ module.exports = {
   }
   if(args[0] == "help"){
   //Menu de ayuda
+	  
+    const embed = new Discord.MessageEmbed()
+    .setTitle("Mining Commands")
+    .setDescription(`This are all the commmands related to the Minecraft mining minigame!, ${message.author}\n\u200b`)
+    .addField("p!mine:", `<:Chest:720931331084779541> Mine one random mineral`, false)
+    .setImage('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f920779b-7247-49d5-b7f5-3483dab93123/d3d4y5a-f1458401-fe81-4c49-8bd6-cb864337e4ea.png/v1/fill/w_1748,h_457,q_70,strp/minecraft_panorama_by_liliotheone_d3d4y5a-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD00OTgiLCJwYXRoIjoiXC9mXC9mOTIwNzc5Yi03MjQ3LTQ5ZDUtYjdmNS0zNDgzZGFiOTMxMjNcL2QzZDR5NWEtZjE0NTg0MDEtZmU4MS00YzQ5LThiZDYtY2I4NjQzMzdlNGVhLnBuZyIsIndpZHRoIjoiPD0xOTAzIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.VyU2vuvmLhQJrNoKFn2nzz2bt8Py_2bDdJ4G1sxbUvA')
+    .addField("p!mine inv || p!mine inventory:", `<:Chest:720931331084779541> Get your inventory of mining`, false)
+    .addField("p!mine pickaxe", `<:Chest:720931331084779541> Get your actual pickaxe`, false)
+    .addField("p!mine pickaxe upgrade", `<:Chest:720931331084779541> Upgrade your actual pickaxe`, false)
+    .addField("p!mine sell <item-name>", `<:Chest:720931331084779541> Sell your minerals`, false)
+    .setColor(0xC76CF5);
+    return message.channel.send(embed);	  
+	  
   }
   if(args[0] == "pickaxe"){
   //Menu y mejoras del pico
