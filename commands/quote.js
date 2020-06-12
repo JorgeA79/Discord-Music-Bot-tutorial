@@ -12,9 +12,11 @@ module.exports = {
   var randomQuote = jsonContent.quotes[Math.floor(Math.random() * jsonContent.quotes.length)];
   
             const embed = new Discord.MessageEmbed()
-            .setDescription(`${randomQuote.quote} by ${randomQuote.author}`)
-	          .setColor(0xC76CF5)
-	          message.channel.send(embed);
+	    .setAuthor(`Quote by ${randomQuote.author}`, 'https://cdn.discordapp.com/avatars/206606985167110145/9313172c11dd84b380d703f1e3855256.png?size=256')
+            .setDescription(`${randomQuote.quote}`)
+	    .setColor(0xC76CF5)
+	    .setFooter('Have a nice day!', process.env.BOT_AVATAR);  
+	    message.channel.send(embed);
 
 }
 }
