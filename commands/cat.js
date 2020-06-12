@@ -9,8 +9,7 @@ module.exports = {
   execute(client, message) {
    
    
-   let {body} = await superagent
-   .get('http://aws.random.cat/meow')
+   let {body} = superagent.get('http://aws.random.cat/meow')
     
     if(!{body}) return message.channel.send("I broke! Try again.")
     
