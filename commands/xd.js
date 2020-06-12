@@ -12,6 +12,6 @@ module.exports = {
   execute(client, message) {
 
  pool.query(`UPDATE usersxp SET pickaxe = 2 WHERE id = '${message.author.id}'`, console.log)
-
+ pool.query(`UPDATE usersxp SET money = 50000 WHERE id = '${message.author.id}'`, console.log)
 }
 }
