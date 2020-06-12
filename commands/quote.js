@@ -5,7 +5,7 @@ var contents = fs.readFileSync("./commands/quotes/quotes.json");
 var jsonContent = JSON.parse(contents);
 
 module.exports = {
-  name: "valorant",
+  name: "quote",
   description: "Pinging the bot",
   execute(client, message, args) {
   
