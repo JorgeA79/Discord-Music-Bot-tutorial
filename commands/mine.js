@@ -337,7 +337,7 @@ module.exports = {
     
   if(args[0]== "sell"){
   //Vender minerales
-	  
+  pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{ 	  
    let money = result.rows[0].money;
       let pickaxe = result.rows[0].pickaxe;
       if(pickaxe === null) pickaxe = 0;
@@ -375,7 +375,7 @@ module.exports = {
   pool.query(`UPDATE usersxp SET coal = 0 WHERE id = '${message.author.id}'`, console.log);   
   }
 	  
-	  
+  });	  
   }
   if(args[0] == "help"){
   //Menu de ayuda
