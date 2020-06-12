@@ -43,11 +43,11 @@ module.exports = {
       var xd = 0;
       let testValues = [{
       value : 'Coal',
-      probability: 0.5
+      probability: 0.3
       },
       {
       value : 'Iron',
-      probability: 0.2
+      probability: 0.3
       },
       {
       value : 'Gold',
@@ -55,6 +55,10 @@ module.exports = {
       },
       {
       value : 'Diamond',
+      probability: 0.1
+      },
+      {
+      value : 'Emerald',
       probability: 0.1
       }]
     
@@ -100,7 +104,7 @@ module.exports = {
       },
       {
       value : 'Iron',
-      probability: 0.5
+      probability: 0.4
       },
       {
       value : 'Gold',
@@ -108,6 +112,10 @@ module.exports = {
       },
       {
       value : 'Diamond',
+      probability: 0.1
+      },
+      {
+      value : 'Emerald',
       probability: 0.1
       }]
   }  
@@ -123,7 +131,7 @@ module.exports = {
       },
       {
       value : 'Iron',
-      probability: 0.4
+      probability: 0.3
       },
       {
       value : 'Gold',
@@ -132,6 +140,10 @@ module.exports = {
       {
       value : 'Diamond',
       probability: 0.3
+      },
+      {
+      value : 'Emerald',
+      probability: 0.1
       }]
   }   
    
@@ -225,7 +237,12 @@ module.exports = {
         xd = eval(diamond) + eval(1)
         pool.query(`UPDATE usersxp SET coal = ${xd} WHERE id = '${message.author.id}'`, console.log)
       }
-     
+      if(textx == "Emerald"){ 
+        emote = ":emerald:720528333862993991";
+        xd = eval(emerald) + eval(1)
+        pool.query(`UPDATE usersxp SET emerald = ${xd} WHERE id = '${message.author.id}'`, console.log)
+      }
+	   
       const embed = new Discord.MessageEmbed()
       .setTitle(`<:lucky:720574567571128341> | You got ${textx}\n\u200b`)
       .setDescription(`${anim4}<${emote}>\n\u200b`)
