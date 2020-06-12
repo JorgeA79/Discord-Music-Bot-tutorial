@@ -276,7 +276,7 @@ module.exports = {
     
   const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Mining Inventory")
-  .setDescription(`<:coal:720523944548892732>**Coal:** ${coal}\n<:iron_ingot:720528333879771197>**Iron:** ${iron}\n<:gold_ingot:720528333879640134>**Gold:** ${gold}\n<:diamond:720528333732839477>**Diamond:** ${diamond}\n\u200b`)
+  .setDescription(`<:coal:720523944548892732>**Coal:** ${coal}\n<:iron_ingot:720528333879771197>**Iron:** ${iron}\n<:gold_ingot:720528333879640134>**Gold:** ${gold}\n<:diamond:720528333732839477>**Diamond:** ${diamond}\n<:emerald:720528333862993991>**Emeralds:** ${emerald}\n\u200b`)
   .setColor(0xC76CF5)
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);
   message.channel.send(embed);  
