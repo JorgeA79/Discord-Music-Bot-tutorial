@@ -333,7 +333,7 @@ module.exports = {
     
   pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{ 
     
-
+  let money = result.rows[0].money;
   let pickaxe = result.rows[0].pickaxe;
   var text = "";  
   var text2 = "";
@@ -389,12 +389,12 @@ module.exports = {
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
   .setDescription(`\u200b\n${pickaxe2} You can't upgrade your ${text} anymore!\n\u200b`)
   .setColor(0xC76CF5)
-  message.channel.send(embed);
+  return message.channel.send(embed);
      
    }
    
 	  
-	  
+  if(money > price){	  
    const embed = new Discord.MessageEmbed()
   .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
   .setDescription(`\u200b\n${pickaxe2} Do you want to upgrade your ${text} to a ${text2} for ${price}?\n` + "`Answer with <yes> or <no>`")
@@ -422,7 +422,17 @@ module.exports = {
           
             } 
            });
-    
+  }else{
+   
+  const embed = new Discord.MessageEmbed()
+  .setTitle("<:pickaxeD:720589176210325514> | Pickaxe Store")
+  .setDescription(`\u200b\n${pickaxe2} You don't have enough money!\n\u200b`)
+  .setColor(0xC76CF5)
+  message.channel.send(embed);
+  
+  }
+	  
+	  
     collector.on('end', collected => {
 	  if(collected.size === 0){
 	  return message.reply("No one replied");
