@@ -1,10 +1,17 @@
 //FIRST TEST HANDLER IS WORKING OR NOT
 const Discord = require("discord.js");
+const pg = require('pg');
+
+const pool = new pg.Pool({
+connectionString : process.env.DATABASE_URL,
+});
+pool.connect()
+
 //Wooden animation
 
 var pickaxe1 = "<:woodenPix1:720518856694824960>";
 var pickaxe2 = "<:woodenPix2:720518856480784435>";
-var pickaxe = "3";
+
 
 
 
@@ -16,6 +23,14 @@ module.exports = {
   
   if(!args[0]){
 
+    
+   pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`,(err, result)=>{
+    
+     
+      let money = result.rows[0].money;
+      let pickaxe = result.rows[0].money;
+
+     
       let testValues = [{
       value : 'Coal',
       probability: 0.5
@@ -194,6 +209,10 @@ module.exports = {
     }, 4000);
     })
   
+     
+     
+     
+   }); 
   }
   if(args[0]== "inv" ||args[0] == "inventory"){
   //Inventario de minerales
