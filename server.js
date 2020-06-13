@@ -374,8 +374,8 @@ client.on('message',async message => {
 		
 		const args = message.content.slice(PREFIX.length).trim().split(/ +/) //removing prefix from args
     		
-		if(!args[0]) return message.channel.send("Please supply a username.");
-        	if(!args[1]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
+		if(!args[1]) return message.channel.send("Please supply a username.");
+        	if(!args[2]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
 
         	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
         	const platform = platformCheck[args[1].toLowerCase()];
