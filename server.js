@@ -5,7 +5,7 @@ const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text")
 const API = require("apextab-api"), ApexTab  = API.Apextab_API;
-
+const { stripIndents } = require("common-tags");
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -406,6 +406,7 @@ client.on('message',async message => {
 			   message.channel.send(embed)
                  	}
         		}catch(err) {
+			console.log(err)	
             		return message.channel.send("Can't find a player by that")
         		}
 		
