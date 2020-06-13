@@ -375,7 +375,7 @@ client.on('message',async message => {
 		const args = message.content.slice(PREFIX.length).split(` `);
     		
 		if(!args[1]) return message.channel.send("Please supply a username.");
-        	if(args[2] && !["lifetime", "solo", "duo", "squad"].includes(args[2])) return message.channel.send("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad");
+        	if(!args[2]) return message.channel.send("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad");
         	let gametype = args[2] ? args[2].toLowerCase() : "lifetime";
 
         	let data = await clientF.find(args[1])
