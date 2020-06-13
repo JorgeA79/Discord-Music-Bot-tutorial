@@ -322,7 +322,7 @@ client.on('message', async message => {
             	.setColor(0xC76CF5)
             	return message.channel.send(embed);
  		}
-		if(args[1] == "osu"){
+		if(args[1].toLowerCase() == "osu"){
 
     		const embed = new discord.MessageEmbed()
            	.setTitle(`${titlexd}'s Signature`)
@@ -331,7 +331,7 @@ client.on('message', async message => {
      		message.channel.send(embed);
     
  		 }
-		else if(args[1] == "taiko"){
+		else if(args[1].toLowerCase() == "taiko"){
 
     		const embed = new discord.MessageEmbed()
            	.setTitle(`${titlexd}'s Signature`)
@@ -340,7 +340,7 @@ client.on('message', async message => {
      		message.channel.send(embed);
     
  		 }
-		 else if(args[1] == "ctb"){
+		 else if(args[1].toLowerCase() == "ctb"){
 
     		const embed = new discord.MessageEmbed()
            	.setTitle(`${titlexd}'s Signature`)
@@ -349,7 +349,7 @@ client.on('message', async message => {
      		message.channel.send(embed);
     
  		 }
-		else if(args[1] == "mania"){
+		else if(args[1].toLowerCase() == "mania"){
 
     		const embed = new discord.MessageEmbed()
            	.setTitle(`${titlexd}'s Signature`)
