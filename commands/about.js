@@ -14,6 +14,7 @@ module.exports = {
     .addField("\u200b", ":credit_card:  Economy", true)
     .addField("\u200b", ":8ball: Fun & Games", true)
     .addField("\u200b", "<:kannaheart:712714267056537641> Roleplay", true)
+    .addField("\u200b", ":musical_note: Music", true)
     .addField("\u200b", "<:pokeb:716936621265518613> Anime", true)
     .addField("\u200b", ":video_game: Gaming", true)
     .addField("\u200b", "⚙️ Utility", true)
