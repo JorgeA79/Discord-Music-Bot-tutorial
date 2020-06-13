@@ -9,9 +9,9 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
     .setTitle(`Pixel Bot`)
     .setDescription(`xd`)
-    .addField("Helpers & Staff:", "<:Pixel:721279438406418503>", true)
-    .addField("\u200b", "<:Rii:721279439056666635>", true)
-    .addField("\u200b", "<:Ammy:721279438192377895>", true)
+    .addField("\u200b", "<:Pixel:721279438406418503> PixelEdits#8890", true)
+    .addField("Helpers & Staff:", "<:Rii:721279439056666635> RiiDaPeanut#4066", true)
+    .addField("\u200b", "<:Ammy:721279438192377895> AmmyZeru#4409", true)
     .setColor(0xC76CF5);
     message.channel.send(embed);
     
