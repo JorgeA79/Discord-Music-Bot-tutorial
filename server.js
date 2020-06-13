@@ -385,8 +385,8 @@ client.on('message',async message => {
 
                 const embed = new discord.MessageEmbed()
                     .setColor(0xC76CF5)
-                    .setAuthor(`Epic Games (Fortnite) | ${username}`, image)
-                    .setThumbnail(image)
+                    .setAuthor(`Epic Games (Fortnite) | ${username}`, 'https://vignette.wikia.nocookie.net/fortnite/images/5/57/Battle_Star_-_Icon_-_Fortnite.png/revision/latest/scale-to-width-down/340?cb=20191012143616')
+                    .setThumbnail('https://www.fortniteboards.com/wp-content/uploads/2020/01/rF1ASHnY_400x400-1-768x768.jpg')
                     .setDescription(stripIndents`**Gamemode:** ${gametype.slice(0, 1).toUpperCase() + gametype.slice(1)}
                     **Kills:** ${kills || 0}
                     **Score:** ${score || 0}
