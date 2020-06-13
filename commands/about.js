@@ -8,7 +8,6 @@ module.exports = {
   
     const embed = new Discord.MessageEmbed()
     .setTitle(`Pixel Bot`)
-    .setThumbnail(process.env.BOT_AVATAR)
     .setImage("https://media.discordapp.net/attachments/396942894487044099/719703607963942994/unknown.png")
     .setDescription(`PixelBot is a bot with several functions and games for having some fun and spending time on discord, we hope you to like our bot!`)
     .addField("Functions:", "<:discord_bot_dev:719520819771998289> Core\n:gem: Social\n:credit_card:  Economy\n", true)
