@@ -4,7 +4,7 @@ const { readdirSync } = require("fs");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text");
-const fortnite = require("simple-fortnite-api"), clientF = new fortnite("75a8798f-dd48-4ccb-9844-32f1055a5d2e");
+const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e07-38e2-443c-b527-9ad74704f222");
 const { stripIndents } = require("common-tags");
 
 const Canvasx = require('canvas');
