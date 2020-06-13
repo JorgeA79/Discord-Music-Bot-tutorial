@@ -37,7 +37,7 @@
     "common-tags":"1.8.0",
     "normalize-text":"2.1.3",
     "superagent":"5.2.2",
-    "apextab-api":"1.0.5"
+    "simple-fortnite-api":"0.1.9"
   },
   "engines": {
     "node": "12.x"
