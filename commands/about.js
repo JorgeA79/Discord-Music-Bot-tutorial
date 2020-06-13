@@ -19,6 +19,7 @@ module.exports = {
     .addField("\u200b", "<:Pixel:721279438406418503> PixelEdits\u200b\u200b", true)
     .addField("Helpers & Staff:", "<:Rii:721279439056666635> RiiDaPeanut\u200b\u200b", true)
     .addField("\u200b", "<:Ammy:721279438192377895> AmmyZeru\u200b\u200b", true)
+    .addFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setColor(0xC76CF5);
     message.channel.send(embed);
     
