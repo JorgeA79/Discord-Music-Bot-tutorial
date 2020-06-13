@@ -374,8 +374,18 @@ client.on('message',async message => {
 		
 		const args = message.content.slice(PREFIX.length).split(` `);
     		
-		if(!args[1]) return message.channel.send("Please supply a username.");
-        	if(args[2] && !["lifetime", "solo", "duo", "squad"].includes(args[2])) return message.channel.send("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad");
+		if(!args[1]){ 
+			const embed = new discord.MessageEmbed()
+            		.setDescription("Please supply a username.")
+            		.setColor(0xC76CF5)
+			return message.channel.send(embed);
+		}
+        	if(args[2] && !["lifetime", "solo", "duo", "squad"].includes(args[2])){
+			const embed = new discord.MessageEmbed()
+            		.setDescription("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad")
+            		.setColor(0xC76CF5)
+			return message.channel.send(embed);
+		}
         	let gametype = args[2] ? args[2].toLowerCase() : "lifetime";
 
         	let data = await clientF.find(args[1])
