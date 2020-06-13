@@ -4,6 +4,8 @@ const { readdirSync } = require("fs");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text")
+const API = require("apextab-api"), ApexTab  = API.Apextab_API;
+
 
 const Canvasx = require('canvas');
 const { join } = require('path');
