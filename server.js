@@ -6,6 +6,7 @@ const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text");
 const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e07-38e2-443c-b527-9ad74704f222");
 const { stripIndents } = require("common-tags");
+const API = require("apextab-api"), ApexTab  = API.Apextab_API;
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -370,45 +371,44 @@ client.on('message', async message => {
 
 client.on('message',async message => {
 	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + "fortnite")) {
+	  if (message.content.startsWith(PREFIX + "apex")) {
 		
 		const args = message.content.slice(PREFIX.length).split(` `);
     		
-		if(!args[1]){ 
-			const embed = new discord.MessageEmbed()
-            		.setDescription("Please supply a username.")
-            		.setColor(0xC76CF5)
-			return message.channel.send(embed);
-		}
-        	if(args[2] && !["lifetime", "solo", "duo", "squad"].includes(args[2])){
-			const embed = new discord.MessageEmbed()
-            		.setDescription("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad")
-            		.setColor(0xC76CF5)
-			return message.channel.send(embed);
-		}
-        	let gametype = args[2] ? args[2].toLowerCase() : "lifetime";
+		if(!args[1]) return message.channel.send("Please supply a username.");
+        	if(!args[2]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
 
-        	let data = await clientF.find(args[1])
-        	if(data && data.code === 404) return message.channel.send("Unable to find a user with that username.")
-           	 const { image, url, username } = data;
-           	 const { scorePerMin, winPercent, kills, score, wins, kd, matches } = data[gametype]
+        	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
+        	const platform = platformCheck[args[2].toLowerCase()];
 
-                const embed = new discord.MessageEmbed()
-                    .setColor(0xC76CF5)
-                    .setAuthor(`Epic Games (Fortnite) | ${username}`, 'https://vignette.wikia.nocookie.net/fortnite/images/5/57/Battle_Star_-_Icon_-_Fortnite.png/revision/latest/scale-to-width-down/340?cb=20191012143616')
-                    .setThumbnail('https://www.fortniteboards.com/wp-content/uploads/2020/01/rF1ASHnY_400x400-1-768x768.jpg')
-                    .setDescription(stripIndents`<:FEMOTE2:721227395473866765> | **Gamemode:** ${gametype.slice(0, 1).toUpperCase() + gametype.slice(1)}\n\u200b\n <:FEMOTE3:721227395310551050> | **Stats:**`)
-                    .addField(`Kills: `, `${kills || 0}`, true)
-                    .addField(`Score: `, `${score || 0}`, true)
-                    .addField(`Score Per Min: `, `${scorePerMin || 0}`, true)
-                    .addField(`Wins: `, `${wins || 0}`, true)
-                    .addField(`Win Ratio: `, `${winPercent || "0%"}`, true)
-                    .addField(`Kill/Death Ratio:`, `${kd || 0}`, true)
-                    .addField(`Matches Played: `, `${matches || 0}`, true)
-                    .addField(`<:FEMOTE1:721227395780313188> | Link: `, `[link to profile](${url})`, false)
-                    .setTimestamp()
-		    .setFooter(`Have a nice day!`, process.env.BOT_AVATAR)
-                    message.channel.send(embed)
+        	try {
+            	const results = await ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC)
+            
+                for (let playerResult of results.results) {
+                    const player = await ApexTab.getPlayerById(playerResult.aid)
+                    const { name, skillratio, visits, avatar, legend, level, kills, headshots, matches, globalrank, utime } = player;
+
+                    const embed = new discord.MessageEmbed()
+                            .setColor(cyan)
+                            .setAuthor(`Origin (Apex Legends) | ${name}`, avatar)
+                            .setThumbnail(avatar)
+                            .setDescription(stripIndents`
+                            **Active Legend:** ${legend || "Not Found."}
+                            **Global Rank:** ${globalrank || "Not Ranked."}
+                            **level:** ${level || 0}
+                            **Skill Ratio:** ${skillratio || "0%"}
+                            **Matches:** ${matches || 0}
+                            **Kills:** ${kills || 0}
+                            **Headshots:** ${headshots || 0}
+                            **Visits:** ${visits || 0}
+                            **PlayTime:** ${Math.ceil(utime / (1000 * 60 * 60 * 24)) || 0} days
+                            `)
+                            .setTimestamp();
+                            message.channel.send(embed)
+                	    }
+                            } catch(err) {
+            			return message.channel.send("Can't find a player by that")
+       			    }
 		
 	}
 });
