@@ -378,7 +378,7 @@ client.on('message',async message => {
         	if(!args[2]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
 
         	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
-        	const platform = platformCheck[args[1].toLowerCase()];
+        	const platform = platformCheck[args[2].toLowerCase()];
 			
 		try {
                 const results = await ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC)
