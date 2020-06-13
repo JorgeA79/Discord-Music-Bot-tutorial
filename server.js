@@ -381,7 +381,7 @@ client.on('message',async message => {
         	const platform = platformCheck[args[1].toLowerCase()];
 			
 		try {
-                const results = await ApexTab.searchPlayer(args[0], platform ? platform : API.Platform.PC)
+                const results = await ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC)
             
                 for (let playerResult of results.results) {
                     const player = await ApexTab.getPlayerById(playerResult.aid)
