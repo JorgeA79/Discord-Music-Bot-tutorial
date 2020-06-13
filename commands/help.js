@@ -19,7 +19,7 @@ module.exports = {
   .addField(":musical_note: Music", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`\n\u200b", true)
   .addField("<:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
   .addField(":video_game: Gaming", "\`osu\` \`valorant\`\n\u200b",true) 
-  .addField("⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\`\n\u200b",true)     
+  .addField("⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\` \`quote\`\n\u200b",true)     
     .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed)
