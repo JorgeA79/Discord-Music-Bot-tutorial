@@ -389,7 +389,7 @@ client.on('message',async message => {
                     const { name, skillratio, visits, avatar, legend, level, kills, headshots, matches, globalrank, utime } = player;
 
                     const embed = new discord.MessageEmbed()
-                            .setColor(cyan)
+                            .setColor(0xC76CF5)
                             .setAuthor(`Origin (Apex Legends) | ${name}`, avatar)
                             .setThumbnail(avatar)
                             .setDescription(stripIndents`
