@@ -387,7 +387,7 @@ client.on('message',async message => {
                     .setColor(0xC76CF5)
                     .setAuthor(`Epic Games (Fortnite) | ${username}`, 'https://vignette.wikia.nocookie.net/fortnite/images/5/57/Battle_Star_-_Icon_-_Fortnite.png/revision/latest/scale-to-width-down/340?cb=20191012143616')
                     .setThumbnail('https://www.fortniteboards.com/wp-content/uploads/2020/01/rF1ASHnY_400x400-1-768x768.jpg')
-                    .setDescription(stripIndents`<:FEMOTE2:721227395473866765> | **Gamemode:** ${gametype.slice(0, 1).toUpperCase() + gametype.slice(1)}\n <:FEMOTE3:721227395310551050> | **Stats:**`)
+                    .setDescription(stripIndents`<:FEMOTE2:721227395473866765> | **Gamemode:** ${gametype.slice(0, 1).toUpperCase() + gametype.slice(1)}\n\u200b\n <:FEMOTE3:721227395310551050> | **Stats:**`)
                     .addField(`Kills: `, `${kills || 0}`, true)
                     .addField(`Score: `, `${score || 0}`, true)
                     .addField(`Score Per Min: `, `${scorePerMin || 0}`, true)
