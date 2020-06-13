@@ -372,8 +372,8 @@ client.on('message',async message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "apex")) {
 		
-		const args = message.content.slice(PREFIX.length).split(` `);
-		
+		const args = message.content.slice(PREFIX.length).trim().split(/ +/) //removing prefix from args
+    		
 		if(!args[0]) return message.channel.send("Please supply a username.");
         	if(!args[1]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
 
