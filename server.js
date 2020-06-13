@@ -3,8 +3,8 @@ const client = new discord.Client({ disableEveryone: true, disabledEvents: ["TYP
 const { readdirSync } = require("fs");
 const { TOKEN, PREFIX } = require("./config.json")
 const oakdexPokedex = require('oakdex-pokedex');
-var normalizeText = require("normalize-text")
-const API = require("apextab-api"), ApexTab  = API.Apextab_API;
+var normalizeText = require("normalize-text");
+const fortnite = require("simple-fortnite-api"), clientF = new fortnite("75a8798f-dd48-4ccb-9844-32f1055a5d2e");
 const { stripIndents } = require("common-tags");
 
 const Canvasx = require('canvas');
@@ -370,45 +370,35 @@ client.on('message', async message => {
 
 client.on('message',async message => {
 	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + "apex")) {
+	  if (message.content.startsWith(PREFIX + "fortnite")) {
 		
 		const args = message.content.slice(PREFIX.length).split(` `);
     		
 		if(!args[1]) return message.channel.send("Please supply a username.");
-        	if(!args[2]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
+        	if(args[2] && !["lifetime", "solo", "duo", "squad"].includes(args[2])) return message.channel.send("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad");
+        	let gametype = args[2] ? args[2].toLowerCase() : "lifetime";
 
-        	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
-        	const platform = platformCheck[args[2].toLowerCase()];
-			
-		try {
-                const results = await ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC)
-            
-                for (let playerResult of results.results) {
-                    const player = await ApexTab.getPlayerById(playerResult.aid)
-                    const { name, skillratio, visits, avatar, legend, level, kills, headshots, matches, globalrank, utime } = player;
+        	let data = await clientF.find(args[1])
+        	if(data && data.code === 404) return message.channel.send("Unable to find a user with that username.")
+           	 const { image, url, username } = data;
+           	 const { scorePerMin, winPercent, kills, score, wins, kd, matches } = data[gametype]
 
-                     const embed = new discord.MessageEmbed()
-                            .setColor(0xC76CF5)
-                            .setAuthor(`Origin (Apex Legends) | ${name}`, avatar)
-                            .setThumbnail(avatar)
-                            .setDescription(stripIndents`
-                                **Active Legend:** ${legend || "Not Found."}
-                                **Global Rank:** ${globalrank || "Not Ranked."}
-                                **level:** ${level || 0}
-                                **Skill Ratio:** ${skillratio || "0%"}
-                                **Matches:** ${matches || 0}
-                                **Kills:** ${kills || 0}
-                                **Headshots:** ${headshots || 0}
-                                **Visits:** ${visits || 0}
-                                **PlayTime:** ${Math.ceil(utime / (1000 * 60 * 60 * 24)) || 0} days
-                            `)
-                            .setTimestamp()
-			   message.channel.send(embed)
-                 	}
-        		}catch(err) {
-			console.log(err)	
-            		return message.channel.send("Can't find a player by that")
-        		}
+                const embed = new discord.MessageEmbed()
+                    .setColor(0xC76CF5)
+                    .setAuthor(`Epic Games (Fortnite) | ${username}`, image)
+                    .setThumbnail(image)
+                    .setDescription(stripIndents`**Gamemode:** ${gametype.slice(0, 1).toUpperCase() + gametype.slice(1)}
+                    **Kills:** ${kills || 0}
+                    **Score:** ${score || 0}
+                    **Score Per Min:** ${scorePerMin || 0}
+                    **Wins:** ${wins || 0}
+                    **Win Ratio:** ${winPercent || "0%"}
+                    **Kill/Death Ratio:** ${kd || 0}
+                    **Matches Played:** ${matches || 0}
+                    **Link:** [link to profile](${url})`)
+                    .setTimestamp()
+
+                    message.channel.send(embed)
 		
 	}
 });
