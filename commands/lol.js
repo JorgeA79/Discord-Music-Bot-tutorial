@@ -36,20 +36,43 @@ module.exports = {
     
   fetch(site)
   .then(res => res.json()).then(body => {
-   
+  var champ1 =0;
+  var champ2 =0; 
+  var champ3 =0;  
+    
+    
+  const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
+  fetch(site1)
+  .then(res => res.json()).then(bodyR => {  
   request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, body) {
-
+    
+    champ1 = bodyR[0].championId;
+    champ2 = bodyR[1].championId;
+    champ3 = bodyR[2].championId;
+    
     let list = JSON.parse(body);
     let championList = list.data;
 
     for (var i in championList) {
 
-      if (championList[i].key == 51) {
+      if (championList[i].key == champ1) {
         message.channel.send(championList[i].id)
-      } 
+      }
+      
+      if (championList[i].key == champ2) {
+        message.channel.send(championList[i].id)
+      }
+      
+      if (championList[i].key == champ3) {
+        message.channel.send(championList[i].id)
+      }
+           
     }
     });
     
+    
+    
+   })  
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
