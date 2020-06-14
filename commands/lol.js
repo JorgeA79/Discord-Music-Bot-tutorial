@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const fetch = require("node-fetch");
 const apikey = process.env.LOL_API;
 var request = require('request');
+const normalizeUrl = require('normalize-url');
 
 const tiers = {
    IRON: "<:IRON:721790435319611463>",
@@ -49,7 +50,7 @@ module.exports = {
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
 
     
-  fetch(site)
+  fetch(normalizeUrl(site))
   .then(res => res.json()).then(body => {
   
    var champT1 = "";
