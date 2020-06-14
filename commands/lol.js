@@ -75,7 +75,7 @@ module.exports = {
      stats = "";    
         
    }else if(bodyR.length == 1){
-    emoteR = tiers[bodyR[0].tier.toString()].toString();
+    emoteR = tiers[bodyR[0].tier];
     rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
