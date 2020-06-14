@@ -4,15 +4,15 @@ const apikey = process.env.LOL_API;
 var request = require('request');
 
 const tiers = {
-   IRON: "br1.api.riotgames.com",
-   BRONCE: "eun1.api.riotgames.com",
-   SILVER: "euw1.api.riotgames.com",
-   GOLD: "jp1.api.riotgames.com",
-   PLATINUM: "kr.api.riotgames.com",
-   DIAMOND: "la1.api.riotgames.com",
-   MASTER: "la2.api.riotgames.com",
-   GRANDMASTER: "na1.api.riotgames.com",
-   CHALLENGER: "oc1.api.riotgames.com"
+   IRON: "<:IRON:721790435319611463>",
+   BRONCE: "<:BRONZE:721790433373454367>",
+   SILVER: "<:SILVER:721790432752959589>",
+   GOLD: "<:GOLD:721790435567337519>",
+   PLATINUM: "<:PLATINUM:721790435705618582>",
+   DIAMOND: "<:DIAMOND:721671835560706128>",
+   MASTER: "<:MASTER:721790435529457767>",
+   GRANDMASTER: "<:GRANDMASTER:721790435802087434>",
+   CHALLENGER: "<:CHALLENGER:721790435596566568>"
    }
 
 
@@ -70,11 +70,12 @@ module.exports = {
    var emoteR = "";
      
    if(bodyR.length < 1){
+     emoteR = "";
      tierX = "Unranked";
      stats = "";    
         
    }else if(bodyR.length == 1){
-   
+    emoteR = tiers[bodyR[0].tier.toString()].toString();
     rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
@@ -82,6 +83,7 @@ module.exports = {
     winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
     stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
    }else{       
+    emoteR = tiers[bodyR[0].tier.toString()].toString();  
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
@@ -126,7 +128,7 @@ module.exports = {
     .addField('Level/Region', `${body.summonerLevel} / ${argsx[0].toUpperCase()}`, false)
     .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
-    .addField('Rank', `<:DIAMOND:721671835560706128> **${tierX}**${stats}`, true)  
+    .addField('Rank', `${emoteR} **${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
