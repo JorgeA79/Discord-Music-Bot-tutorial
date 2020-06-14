@@ -87,13 +87,13 @@ module.exports = {
 
     for (var i in championList) {
       if (championList[i].key == champ1) {
-        champT1 = `1. ${championList[i].name}: ${bodyM[0].championPoints}`
+        champT1 = `**[${bodyM[0].championLevel}]** 1. ${championList[i].name}: ${bodyM[0].championPoints}`
       }      
       if (championList[i].key == champ2) {
-        champT2 = `2. ${championList[i].name}: ${bodyM[1].championPoints}`
+        champT2 = `**[${bodyM[1].championLevel}]** 2. ${championList[i].name}: ${bodyM[1].championPoints}`
       }      
       if (championList[i].key == champ3) {
-        champT3 = `3. ${championList[i].name}: ${bodyM[2].championPoints}`
+        champT3 = `**[${bodyM[2].championLevel}]** 3. ${championList[i].name}: ${bodyM[2].championPoints}`
       }        
     }
 
@@ -106,7 +106,8 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, false)
-    .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true)  
+    .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
+    .addField('\u200b', `\u200b`, true)  
     .addField('Rank', `**${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
