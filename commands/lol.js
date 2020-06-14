@@ -16,19 +16,19 @@ module.exports = {
   const api = `?api_key=${apikey}`;
   const protocol = "https://";
   const regions = {
-   br: "br1.api.riotgames.com",
-   eun: "eun1.api.riotgames.com",
-   euw: "euw1.api.riotgames.com",
-   jp: "jp1.api.riotgames.com",
-   kr: "kr.api.riotgames.com",
-   lan: "la1.api.riotgames.com",
-   las: "la2.api.riotgames.com",
-   na: "na1.api.riotgames.com",
-   oce: "oc1.api.riotgames.com",
-   tr: "tr1.api.riotgames.com",
-   ru: "ru.api.riotgames.com"
+   BR: "br1.api.riotgames.com",
+   EUN: "eun1.api.riotgames.com",
+   EUW: "euw1.api.riotgames.com",
+   JP: "jp1.api.riotgames.com",
+   KR: "kr.api.riotgames.com",
+   LAN: "la1.api.riotgames.com",
+   LAS: "la2.api.riotgames.com",
+   NA: "na1.api.riotgames.com",
+   OCE: "oc1.api.riotgames.com",
+   TR: "tr1.api.riotgames.com",
+   RU: "ru.api.riotgames.com"
    }
-   const region = regions[argsx[0].toLowerCase()];
+   const region = regions[argsx[0].toUpperCase()];
    var name = argsx[1];
    name = name.replace(/\s+/g, '%20').toLowerCase();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
@@ -105,7 +105,7 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
-    .addField('Level', `${body.summonerLevel}`, false)
+    .addField('Level/Region', `${body.summonerLevel} / Soon`, false)
     .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField('Rank', `**${tierX}**${stats}`, true)  
