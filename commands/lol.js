@@ -108,7 +108,7 @@ module.exports = {
     .addField('Level/Region', `${body.summonerLevel} / Soon`, false)
     .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
-    .addField('Rank', `**${tierX}**${stats}`, true)  
+    .addField('Rank', `<:DIAMOND:721671835560706128> **${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
