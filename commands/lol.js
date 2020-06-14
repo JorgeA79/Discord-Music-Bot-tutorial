@@ -42,8 +42,8 @@ module.exports = {
 }
 
 async function getData(site) {
-  const response = await fetch(site);
-  const data = await response.json();
+  const response = fetch(site);
+  const data = response.json();
   return data
 }
 
