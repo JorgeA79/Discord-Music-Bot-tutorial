@@ -52,7 +52,7 @@ module.exports = {
      tierX = "Unranked";
      stats = "";
    }else{  
-    rank = bodyR[1].rank.toString; 
+    rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
     tierX = tierM + tierR + " " + rank ; 
