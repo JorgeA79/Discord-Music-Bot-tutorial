@@ -29,7 +29,7 @@ module.exports = {
    RU: "ru.api.riotgames.com"
    }
    const region = regions[argsx[0]];
-   const name = args[1];
+   const name = argsx[1];
    message.channel.send(`${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`)
    
    
