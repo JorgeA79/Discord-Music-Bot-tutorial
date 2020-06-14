@@ -78,7 +78,7 @@ module.exports = {
      emoteR = "";
      tierX = "Unranked";
      stats = "";    
-     q = qU[2];   
+     q = qU[UNRANKED];   
    }else if(bodyR.length == 1){
     emoteR = tiers[bodyR[0].tier.toString()];
     q = qU[bodyR[0].queueType];
