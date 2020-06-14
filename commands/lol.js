@@ -68,21 +68,23 @@ module.exports = {
    var stats = ""; 
    var rank = "";  
    var emoteR = "";
-     
+   var q = "";  
    if(bodyR.length < 1){
      emoteR = "";
      tierX = "Unranked";
      stats = "";    
-        
+     q ="";   
    }else if(bodyR.length == 1){
     emoteR = tiers[bodyR[0].tier.toString()];
+      q = "Flex";
     rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
     tierX = tierM + tierR + " " + rank ; 
     winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
     stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
-   }else{       
+   }else{    
+    q = "Solo/Duo";  
     emoteR = tiers[bodyR[1].tier.toString()].toString();  
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
@@ -128,7 +130,7 @@ module.exports = {
     .addField('Level/Region', `${body.summonerLevel} / ${argsx[0].toUpperCase()}`, false)
     .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
-    .addField('Rank', `${emoteR} **${tierX}**${stats}`, true)  
+    .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
