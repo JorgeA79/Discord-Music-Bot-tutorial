@@ -27,7 +27,6 @@ module.exports = {
   if(!args[1]) return message.channel.send("You need to specify a username");  
   const argsowo = args.splice(1).join(" ");  
      
-  message.channel.send(argsowo);  
    //Site Variables 
    const api = `?api_key=${apikey}`;
    const protocol = "https://";
