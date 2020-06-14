@@ -40,7 +40,7 @@ module.exports = {
    fetch("http://ddragon.leagueoflegends.com/cdn/10.9.1/data/en_US/champion.json") 
    .then(res => res.json()).then(bodyR => { 
      
-   message.channel.send(bodyR.find(x => x.id === '51').id);  
+   message.channel.send(bodyR.find(x => x.key === '51').id);  
    })
     
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
