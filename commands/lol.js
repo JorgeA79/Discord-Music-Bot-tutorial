@@ -23,10 +23,10 @@ module.exports = {
   execute(client, message, args) {
   const argsx = args.join(" ").split(' , ');
   
-  if(!argsx[0]) return message.channel.send("You need to specify a region");
-  if(!argsx[1]) return message.channel.send("You need to specify a username");
-  
+  if(!args[0]) return message.channel.send("You need to specify a region");
+  if(!args[1]) return message.channel.send("You need to specify a username");  
   const argsowo = args.splice(1).join(" ");  
+     
   message.channel.send(argsowo);  
    //Site Variables 
    const api = `?api_key=${apikey}`;
@@ -45,7 +45,7 @@ module.exports = {
    RU: "ru.api.riotgames.com"
    }
    const region = regions[args[0].toUpperCase()];
-   var name = argsx[1];
+   var name = argsowo;
    name = name.replace(/\s+/g, '%20').toString();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
    
