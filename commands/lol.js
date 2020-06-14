@@ -56,15 +56,15 @@ module.exports = {
     for (var i in championList) {
 
       if (championList[i].key == champ1) {
-        message.channel.send(championList[i].id)
+        message.channel.send(championList[i].name)
       }
       
       if (championList[i].key == champ2) {
-        message.channel.send(championList[i].id)
+        message.channel.send(championList[i].name)
       }
       
       if (championList[i].key == champ3) {
-        message.channel.send(championList[i].id)
+        message.channel.send(championList[i].name)
       }
            
     }
