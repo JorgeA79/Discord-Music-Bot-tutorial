@@ -16,19 +16,19 @@ module.exports = {
   const api = `?api_key=${apikey}`;
   const protocol = "https://";
   const regions = {
-   BR1: "br1.api.riotgames.com",
-   EUN1: "eun1.api.riotgames.com",
-   EUW1: "euw1.api.riotgames.com",
-   JP1: "jp1.api.riotgames.com",
-   KR: "kr.api.riotgames.com",
-   LA1: "la1.api.riotgames.com",
-   LA2: "la2.api.riotgames.com",
-   NA1: "na1.api.riotgames.com",
-   OC1: "oc1.api.riotgames.com",
-   TR1: "tr1.api.riotgames.com",
-   RU: "ru.api.riotgames.com"
+   br: "br1.api.riotgames.com",
+   eun: "eun1.api.riotgames.com",
+   euw: "euw1.api.riotgames.com",
+   jp: "jp1.api.riotgames.com",
+   kr: "kr.api.riotgames.com",
+   lan: "la1.api.riotgames.com",
+   las: "la2.api.riotgames.com",
+   na: "na1.api.riotgames.com",
+   oce: "oc1.api.riotgames.com",
+   tr: "tr1.api.riotgames.com",
+   ru: "ru.api.riotgames.com"
    }
-   const region = regions[argsx[0]];
+   const region = regions[argsx[0].toLowerCase()];
    var name = argsx[1];
    name = name.replace(/\s+/g, '%20').toLowerCase();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
@@ -39,13 +39,11 @@ module.exports = {
   .then(res => res.json()).then(body => {
   const embed = new Discord.MessageEmbed()
 
-    .setColor(0x00AE86)
+    .setColor(0xC76CF5)
     .setTitle("Profile: " + body.name)
-    .setDescription("Here you go, summoner!")
-    .addField('\u200b', '\u200b')
-    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+    .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
-    .setFooter("Jon and Ric")
+    .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
     
