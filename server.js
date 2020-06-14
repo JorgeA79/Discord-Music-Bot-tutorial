@@ -369,7 +369,7 @@ client.on('message', async message => {
 });
 
 
-client.on('message', message => {
+client.on('message',async message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "apex")) {
 		
@@ -377,7 +377,7 @@ client.on('message', message => {
     		
 		if(!args[1]) return message.channel.send("Please supply a username.");
 
-
+		try{
         	ApexTab.searchPlayer(args[1], API.Platform.PC).then((results) => {
  
     		 results.results.forEach((playerResult) => {
@@ -405,7 +405,9 @@ client.on('message', message => {
 		})	
 		});
 			       	   
-		
+		}catch(err){
+ return message.channel.send("xd")
+		}	
 	}
 });
 
