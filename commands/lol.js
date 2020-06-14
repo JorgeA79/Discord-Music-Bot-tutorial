@@ -42,20 +42,30 @@ module.exports = {
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
     
-   var tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
-   var tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
-   var tierX = tierM + tierR; 
-    
-   var winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100))
+   var tierM = "";  
+   var tierR = ""; 
+   var tierX = ""; 
+   var winR = 0;
+   var stats = ""; 
      
-  const embed = new Discord.MessageEmbed()
+   if(bodyR[1].length < 1){
+     tierX = "Unranked";
+     stats = "";
+   }else{  
+    tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
+    tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
+    tierX = tierM + tierR + " " +  bodyR[1].rank.toString; 
+    stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;
+    winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100))
+   }   
+   const embed = new Discord.MessageEmbed()
 
     .setColor(0xC76CF5)
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
-    .addField('Rank', `**${tierX} ${bodyR[1].rank}**\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`, true)
+    .addField('Rank', `**${tierX}**${stats}`, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
