@@ -40,20 +40,24 @@ module.exports = {
 }
 
 async function getData(site) {
-  const response = fetch(site);
-  const data = response.json();
-  return data
+
+  fetch(site)
+  .then(res => res.json()).then(body => {
+    
+    return body
+    
+  }) 
 }
 
 function getEmbed(info){
   const embed = new Discord.MessageEmbed()
 
     .setColor(0x00AE86)
-    .setTitle("Profile: " + info[0].name)
+    .setTitle("Profile: " + info.name)
     .setDescription("Here you go, summoner!")
     .addField('\u200b', '\u200b')
     .setThumbnail('https://i.imgur.com/wSTFkRM.png')
-    .addField('Level', `${info[0].summonerLevel}`, true)
+    .addField('Level', `${info.summonerLevel}`, true)
     .setFooter("Jon and Ric")
     .setTimestamp()
 
