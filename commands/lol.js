@@ -50,7 +50,7 @@ module.exports = {
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
 
     
-  fetch(normalizeUrl(site))
+  fetch(site)
   .then(res => res.json()).then(body => {
   
    var champT1 = "";
