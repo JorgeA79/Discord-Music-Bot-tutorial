@@ -32,42 +32,25 @@ module.exports = {
    var name = argsx[1];
    name = name.replace(/\s+/g, '%20').toLowerCase();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
-
-      
-   sendEmbed(message, site);
-   
-}
-}
-
-async function getData(site) {
-
+   message.channel.send(site)
+    
+    
   fetch(site)
   .then(res => res.json()).then(body => {
-    
-    return body
-    
-  }) 
-}
-
-function getEmbed(info){
   const embed = new Discord.MessageEmbed()
 
     .setColor(0x00AE86)
-    .setTitle("Profile: " + info.name)
+    .setTitle("Profile: " + body.name)
     .setDescription("Here you go, summoner!")
     .addField('\u200b', '\u200b')
     .setThumbnail('https://i.imgur.com/wSTFkRM.png')
-    .addField('Level', `${info.summonerLevel}`, true)
+    .addField('Level', `${body.summonerLevel}`, true)
     .setFooter("Jon and Ric")
-    .setTimestamp()
-
-    return embed
+    .setTimestamp()  
+    message.channel.send(embed)
+    
+  })     
+   
+   
 }
-
-async function sendEmbed(message, site){
-
-      const  info =  await getData(site);
-      const  embed = await getEmbed(info);
-      message.channel.send(embed);
-
 }
