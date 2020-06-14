@@ -369,7 +369,7 @@ client.on('message', async message => {
 });
 
 
-client.on('message',async message => {
+client.on('message', async message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "apex")) {
 		
@@ -398,15 +398,19 @@ client.on('message',async message => {
                             **Visits:** ${playerResult.visits || 0}
                             **PlayTime:** ${Math.ceil(playerResult.utime / (1000 * 60 * 60 * 24)) || 0} days
                             `)
-                            .setTimestamp();
+                            .setTimestamp()
                             message.channel.send(embed)
 			
 			
 		})	
-		});
+		})} catch (err) {
+			console.log(err);
+		 return message.channel.send("xd");
+		}	
 			       	   
-		}catch(err){
- return message.channel.send("xd")
+		} catch (err) {
+			console.log(err);
+		 return message.channel.send("xd");
 		}	
 	}
 });
