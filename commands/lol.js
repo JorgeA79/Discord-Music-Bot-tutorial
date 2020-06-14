@@ -26,7 +26,8 @@ module.exports = {
   if(!argsx[0]) return message.channel.send("You need to specify a region");
   if(!argsx[1]) return message.channel.send("You need to specify a username");
   
-    
+  const argsowo = args.splice(1).join(" ");  
+  message.channel.send(argsowo);  
    //Site Variables 
    const api = `?api_key=${apikey}`;
    const protocol = "https://";
@@ -47,7 +48,7 @@ module.exports = {
    var name = argsx[1];
    name = name.replace(/\s+/g, '%20').toString();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
-
+   
 
   fetch(normalizeUrl(site))
   .then(res => res.json()).then(body => {
