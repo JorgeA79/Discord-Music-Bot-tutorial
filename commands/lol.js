@@ -33,10 +33,8 @@ module.exports = {
    name = name.replace(/\s+/g, '%20').toLowerCase();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
 
-      const  info =  getData(site);
-      const  embed = getEmbed(info);
-      message.channel.send(embed);
-   
+      
+   sendEmbed(message, site);
    
 }
 }
@@ -62,3 +60,10 @@ function getEmbed(info){
     return embed
 }
 
+async function sendEmbed(message, site){
+
+      const  info =  await getData(site);
+      const  embed = await getEmbed(info);
+      message.channel.send(embed);
+
+}
