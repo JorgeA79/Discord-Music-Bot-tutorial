@@ -37,7 +37,7 @@ module.exports = {
   fetch(site)
   .then(res => res.json()).then(body => {
    
-  request('http://ddragon.leagueoflegends.com/cdn/' + version + '/data/de_DE/champion.json', function (error, response, body) {
+  request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, body) {
 
     let list = JSON.parse(body);
     let championList = list.data;
