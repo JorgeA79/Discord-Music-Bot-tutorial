@@ -40,10 +40,10 @@ module.exports = {
    fetch("http://ddragon.leagueoflegends.com/cdn/10.9.1/data/en_US/champion.json") 
    .then(res => res.json()).then(bodyR => { 
      
-   for (var i = 0; i < bodyR.length; i++){
+   for (var i = 0; i < bodyR.data.length; i++){
       // look for the entry with a matching `code` value
-      if (bodyR[i].key === "51"){  
-      message.channel.send(bodyR[i].id);
+      if (bodyR.data[i].key === "51"){  
+      message.channel.send(bodyR.data[i].id);
       }
     }
      
