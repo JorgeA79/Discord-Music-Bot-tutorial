@@ -42,9 +42,9 @@ module.exports = {
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
     
-    
-    
-    
+   var tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
+   var tierR = bodyR[1].tier.toString().slice(1); 
+   var tierX = tierM + tierR; 
     
   const embed = new Discord.MessageEmbed()
 
@@ -53,7 +53,7 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
-    .addField('Rank', `${bodyR[1].tier} ${bodyR[1].rank}`, true)
+    .addField('Rank', `**${tierX} ${bodyR[1].rank}**\n**${bodyR.leaguePoints}LP** / ${bodyR.wins}W ${bodyR.losses}L`, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
