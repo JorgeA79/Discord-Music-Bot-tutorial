@@ -21,11 +21,10 @@ module.exports = {
   name: "lol",
   description: "Pinging the bot",
   execute(client, message, args) {
-  const argsx = args.splice(1).join("%20")
-  //const argsx = args.join(" ").split(' , ');
+  const argsx = args.join(" ").split(' , ');
   
-  if(!args[0]) return message.channel.send("You need to specify a region");
-  if(!argsx) return message.channel.send("You need to specify a username");
+  if(!argsx[0]) return message.channel.send("You need to specify a region");
+  if(!argsx[1]) return message.channel.send("You need to specify a username");
   
     
    //Site Variables 
@@ -45,8 +44,8 @@ module.exports = {
    RU: "ru.api.riotgames.com"
    }
    const region = regions[args[0].toUpperCase()];
-   var name = argsx;
-   //name = name.replace(/\s+/g, '%20').toString();
+   var name = argsx[1];
+   name = name.replace(/\s+/g, '%20').toString();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
 
     
