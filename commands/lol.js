@@ -29,7 +29,8 @@ module.exports = {
    RU: "ru.api.riotgames.com"
    }
    const region = regions[argsx[0]];
-   const name = argsx[1].join("%20").split(' ');;
+   const name = argsx[1];
+   name = name.replace(/\s+/g, '%20').toLowerCase();
    message.channel.send(`<:surprisedpikachu:656255380619264000> ${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`)
    
    
