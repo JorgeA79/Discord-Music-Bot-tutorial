@@ -42,7 +42,7 @@ module.exports = {
      
    for (var i = 0; i < bodyR.length; i++){
       // look for the entry with a matching `code` value
-      if (bodyR[i].key == "51"){  
+      if (bodyR[i].key === "51"){  
       message.channel.send(bodyR[i].id);
       }
     }
