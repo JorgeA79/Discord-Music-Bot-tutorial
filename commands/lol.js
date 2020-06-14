@@ -84,7 +84,7 @@ module.exports = {
     winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
     stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
    }else{       
-    emoteR = tiers[bodyR[0].tier.toString()].toString();  
+    emoteR = tiers[bodyR[1].tier.toString()].toString();  
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
