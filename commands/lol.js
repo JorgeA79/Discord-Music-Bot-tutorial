@@ -68,15 +68,20 @@ module.exports = {
    var stats = ""; 
    var rank = "";  
    var emoteR = "";
-   var q = "";  
+   var q ="";   
+   var qU = {
+   RANKED_FLEX_SR:"Flex",
+   RANKED_SOLO_5x5:"Solo/Duo",
+   UNRANKED:""
+   }  
    if(bodyR.length < 1){
      emoteR = "";
      tierX = "Unranked";
      stats = "";    
-     q ="";   
+     q = qU[2];   
    }else if(bodyR.length == 1){
     emoteR = tiers[bodyR[0].tier.toString()];
-      q = "Flex";
+    q = qU[bodyR[0].queueType];
     rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
@@ -84,7 +89,7 @@ module.exports = {
     winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
     stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
    }else{    
-    q = "Solo/Duo";  
+    q = qU[bodyR[0].queueType];  
     emoteR = tiers[bodyR[1].tier.toString()].toString();  
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
