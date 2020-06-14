@@ -405,7 +405,7 @@ client.on('message',async message => {
                             .setTimestamp();
                             message.channel.send(embed)
 			
-			
+		})	
 		})	
 		});
 			       	   
