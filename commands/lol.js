@@ -133,7 +133,7 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
-    .addField('Level/Region', `${body.summonerLevel} / ${argsx[0].toUpperCase()}`, false)
+    .addField('Level/Region', `${body.summonerLevel} / ${args[0].toUpperCase()}`, false)
     .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)  
