@@ -42,7 +42,6 @@ module.exports = {
    var champT3 = "";  
     
   
-   })  
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
