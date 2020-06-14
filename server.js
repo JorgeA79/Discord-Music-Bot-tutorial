@@ -381,11 +381,11 @@ client.on('message',async message => {
         	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
         	const platform = platformCheck[args[2].toLowerCase()];
 
-        	ApexTab_API.searchPlayer(args[1], platform ? platform : API.Platform.PC).then((results) => {
+        	ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC).then((results) => {
  
     		 results.results.forEach((playerResult) => {
 
-		 ApexTab_API.getPlayerById(playerResult.aid).then((player) => {	
+		 ApexTab.getPlayerById(playerResult.aid).then((player) => {	
 			 
 			const embed = new discord.MessageEmbed()
                             .setColor(0xC76CF5)
