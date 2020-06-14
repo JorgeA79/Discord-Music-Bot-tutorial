@@ -41,33 +41,7 @@ module.exports = {
    var champT2 = ""; 
    var champT3 = "";  
     
-  const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
-  fetch(site1)
-  .then(res => res.json()).then(bodyR => {  
-  request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, body) {
-    
-    var champ1 = bodyR[0].championId;
-    var champ2 = bodyR[1].championId;
-    var champ3 = bodyR[2].championId;
-    
-    let list = JSON.parse(body);
-    let championList = list.data;
-
-    for (var i in championList) {
-      if (championList[i].key == champ1) {
-        champT1 = `1. ${championList[i].name}: ${bodyR[0].championPoints}`
-      }      
-      if (championList[i].key == champ2) {
-        champT2 = `2. ${championList[i].name}: ${bodyR[1].championPoints}`
-      }      
-      if (championList[i].key == champ3) {
-        champT3 = `3. ${championList[i].name}: ${bodyR[2].championPoints}`
-      }        
-    }
-    });
-    
-    
-    
+  
    })  
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
    fetch(site2)
@@ -97,12 +71,34 @@ module.exports = {
     tierX = tierM + tierR + " " + rank ; 
     winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100)) 
     stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;   
-   }   
+   }  
+     
+     
+   const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
+   fetch(site1)
+   .then(res => res.json()).then(bodyM => {  
+   request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, body) {
     
-     
-     
+    var champ1 = bodyM[0].championId;
+    var champ2 = bodyM[1].championId;
+    var champ3 = bodyM[2].championId;
     
-     
+    let list = JSON.parse(body);
+    let championList = list.data;
+
+    for (var i in championList) {
+      if (championList[i].key == champ1) {
+        champT1 = `1. ${championList[i].name}: ${bodyM[0].championPoints}`
+      }      
+      if (championList[i].key == champ2) {
+        champT2 = `2. ${championList[i].name}: ${bodyM[1].championPoints}`
+      }      
+      if (championList[i].key == champ3) {
+        champT3 = `3. ${championList[i].name}: ${bodyM[2].championPoints}`
+      }        
+    }
+
+    
     //Send Profile 
     const embed = new Discord.MessageEmbed()
 
@@ -116,7 +112,10 @@ module.exports = {
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
-    }) 
+    
+       });
+   }) 
+   })        
   })     
    
    
