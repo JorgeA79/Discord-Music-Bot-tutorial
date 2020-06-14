@@ -43,7 +43,7 @@ module.exports = {
    .then(res => res.json()).then(bodyR => {
     
    var tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
-   var tierR = bodyR[1].tier.toString().slice(1); 
+   var tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
    var tierX = tierM + tierR; 
     
   const embed = new Discord.MessageEmbed()
