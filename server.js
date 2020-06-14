@@ -6,8 +6,7 @@ const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text");
 const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e07-38e2-443c-b527-9ad74704f222");
 const { stripIndents } = require("common-tags");
-const API = require("apextab-api");
-const ApexTab  = API.Apextab_API;
+
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -369,8 +368,10 @@ client.on('message', async message => {
 	}
 });
 
+const API = require("apextab-api");
+const ApexTab_API  = API.Apextab_API;
 
-client.on('message', async message => {
+client.on('message', message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "apex")) {
 		
