@@ -16,9 +16,9 @@ const tiers = {
    CHALLENGER: "<:CHALLENGER:721790435596566568>"
    }
 const champs = {
-   Ahri: "<:AhriSquare:721850183314440284>",
-   Caitlyn: "<:CaitlynSquare:721850192520937582>",
-   Pyke:"<:PykeSquare:721853178076725349> "
+   "Ahri": "<:AhriSquare:721850183314440284>",
+   "Caitlyn": "<:CaitlynSquare:721850192520937582>",
+   "Pyke":"<:PykeSquare:721853178076725349> "
    }
 
 module.exports = {
