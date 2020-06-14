@@ -13,9 +13,11 @@ module.exports = {
   if(!argsx[0]) return message.channel.send("You need to specify a region");
   if(!argsx[1]) return message.channel.send("You need to specify a username");
   
-  const api = `?api_key=${apikey}`;
-  const protocol = "https://";
-  const regions = {
+    
+   //Site Variables 
+   const api = `?api_key=${apikey}`;
+   const protocol = "https://";
+   const regions = {
    BR: "br1.api.riotgames.com",
    EUN: "eun1.api.riotgames.com",
    EUW: "euw1.api.riotgames.com",
@@ -41,7 +43,7 @@ module.exports = {
    var champT2 = ""; 
    var champT3 = "";  
     
-  
+   //Ranked Stats
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
@@ -72,7 +74,7 @@ module.exports = {
     stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;   
    }  
      
-     
+   //Masteries  
    const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
    fetch(site1)
    .then(res => res.json()).then(bodyM => {  
@@ -105,7 +107,7 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
-    .addField('Level/Region', `${body.summonerLevel} / Soon`, false)
+    .addField('Level/Region', `${body.summonerLevel} / ${argsx[0].toUpperCase()}`, false)
     .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField('Rank', `<:DIAMOND:721671835560706128> **${tierX}**${stats}`, true)  
