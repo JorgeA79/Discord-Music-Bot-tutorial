@@ -368,19 +368,8 @@ client.on('message', async message => {
 	}
 });
 
-const API = require("apextab-api");
-const ApexTab_API  = API.Apextab_API;
-
-
-		
-		ApexTab_API.searchPlayer("Anno",API.Platform.PC).then((results) => {
-    			// do something
-    			console.log(results);
-		});
 
 	
-	
-
 
 
 client.login(process.env.BOT_TOKEN)
