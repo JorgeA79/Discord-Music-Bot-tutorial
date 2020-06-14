@@ -128,6 +128,7 @@ module.exports = {
         champT2 = `**[${bodyM[1].championLevel}]** 2. ${championList[i].name}: ${numberWithCommas(bodyM[1].championPoints)}`
       }      
       if (championList[i].key == champ3) {
+        emoteC3 = champs[championList[i].name]; 
         champT3 = `**[${bodyM[2].championLevel}]** 3. ${championList[i].name}: ${numberWithCommas(bodyM[2].championPoints)}`
       }        
     }
@@ -141,7 +142,7 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level/Region', `${body.summonerLevel} / ${args[0].toUpperCase()}`, false)
-    .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${champT3}`, true) 
+    .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${emoteC3}${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
