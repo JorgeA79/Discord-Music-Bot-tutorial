@@ -48,10 +48,10 @@ module.exports = {
    name = name.replace(/\s+/g, '%20').toString();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
 
-    
+  console.log(site)  
   fetch(site)
   .then(res => res.json()).then(body => {
-  
+ 
    var champT1 = "";
    var champT2 = ""; 
    var champT3 = "";  
