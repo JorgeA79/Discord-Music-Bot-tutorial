@@ -368,8 +368,51 @@ client.on('message', async message => {
 	}
 });
 
-
+	 
+    client.on('message', message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + "fortnite")) {
 	
+ 
+		  const args = message.content.slice(PREFIX.length).split(` `);
+		  if(!args[1]){ 
+			const embed = new discord.MessageEmbed()
+            		.setDescription("Please supply a username.")
+            		.setColor(0xC76CF5)
+			return message.channel.send(embed);
+		}
+        	if(args[2] && !["lifetime", "solo", "duo", "squad"].includes(args[2])){
+			const embed = new discord.MessageEmbed()
+            		.setDescription("Usage: `!fortnite <username> <gametype>`\nGameTypes: Lifetime, Solo, Duo, Squad")
+            		.setColor(0xC76CF5)
+			return message.channel.send(embed);
+		}
+        	let gametype = args[2] ? args[2].toLowerCase() : "lifetime";
+
+        	let data = await clientF.find(args[1])
+        	if(data && data.code === 404) return message.channel.send("Unable to find a user with that username.")
+           	 const { image, url, username } = data;
+           	 const { scorePerMin, winPercent, kills, score, wins, kd, matches } = data[gametype]
+
+                const embed = new discord.MessageEmbed()
+                    .setColor(0xC76CF5)
+                    .setAuthor(`Epic Games (Fortnite) | ${username}`, 'https://vignette.wikia.nocookie.net/fortnite/images/5/57/Battle_Star_-_Icon_-_Fortnite.png/revision/latest/scale-to-width-down/340?cb=20191012143616')
+                    .setThumbnail('https://www.fortniteboards.com/wp-content/uploads/2020/01/rF1ASHnY_400x400-1-768x768.jpg')
+                    .setDescription(stripIndents`<:FEMOTE2:721227395473866765> | **Gamemode:** ${gametype.slice(0, 1).toUpperCase() + gametype.slice(1)}\n\u200b\n <:FEMOTE3:721227395310551050> | **Stats:**`)
+                    .addField(`Kills: `, `${kills || 0}`, true)
+                    .addField(`Score: `, `${score || 0}`, true)
+                    .addField(`Score Per Min: `, `${scorePerMin || 0}`, true)
+                    .addField(`Wins: `, `${wins || 0}`, true)
+                    .addField(`Win Ratio: `, `${winPercent || "0%"}`, true)
+                    .addField(`Kill/Death Ratio:`, `${kd || 0}`, true)
+                    .addField(`Matches Played: `, `${matches || 0}`, true)
+                    .addField(`<:FEMOTE1:721227395780313188> | Link: `, `[link to profile](${url})`, false)
+                    .setTimestamp()
+		    .setFooter(`Have a nice day!`, process.env.BOT_AVATAR)
+                    message.channel.send(embed)
+		  
+}
+});
 
 
 client.login(process.env.BOT_TOKEN)
