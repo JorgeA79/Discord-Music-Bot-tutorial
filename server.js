@@ -371,18 +371,16 @@ client.on('message', async message => {
 const API = require("apextab-api");
 const ApexTab_API  = API.Apextab_API;
 
-client.on('message', message => {
-	  if (message.author === client.user) return;
-	  if (message.content.startsWith(PREFIX + "apex")) {
+
 		
-		ApexTab_API.searchPlayer("Zednim",API.Platform.PC).then((results) => {
+		ApexTab_API.searchPlayer("Anno",API.Platform.PC).then((results) => {
     			// do something
     			console.log(results);
 		});
 
 	
-	}
-});
+	
+
 
 
 client.login(process.env.BOT_TOKEN)
