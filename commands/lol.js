@@ -53,7 +53,7 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
-    .addField('Rank', `**${tierX} ${bodyR[1].rank}**\n**${bodyR.leaguePoints}LP** / ${bodyR.wins}W ${bodyR.losses}L`, true)
+    .addField('Rank', `**${tierX} ${bodyR[1].rank}**\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L`, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
