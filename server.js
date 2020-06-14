@@ -386,7 +386,7 @@ client.on('message',async message => {
 			 
 			const embed = new discord.MessageEmbed()
                             .setColor(0xC76CF5)
-                            .setAuthor(`Origin (Apex Legends) | ${player.name}`, avatar)
+                            .setAuthor(`Origin (Apex Legends) | ${player.name}`, player.avatar)
                             .setThumbnail(player.avatar)
                             .setDescription(stripIndents`
                             **Active Legend:** ${player.legend || "Not Found."}
@@ -402,7 +402,7 @@ client.on('message',async message => {
                             .setTimestamp();
                             message.channel.send(embed)
 			
-		})	
+			
 		})	
 		});
 			       	   
