@@ -376,12 +376,9 @@ client.on('message',async message => {
 		const args = message.content.slice(PREFIX.length).split(` `);
     		
 		if(!args[1]) return message.channel.send("Please supply a username.");
-        	if(!args[2]) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `ps4`");
 
-        	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
-        	const platform = platformCheck[args[2].toLowerCase()];
 
-        	ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC).then((results) => {
+        	ApexTab.searchPlayer(args[1], API.Platform.PC).then((results) => {
  
     		 results.results.forEach((playerResult) => {
 
