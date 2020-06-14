@@ -76,13 +76,13 @@ module.exports = {
    const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
    fetch(site1)
    .then(res => res.json()).then(bodyM => {  
-   request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, body) {
+   request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
     
     var champ1 = bodyM[0].championId;
     var champ2 = bodyM[1].championId;
     var champ3 = bodyM[2].championId;
     
-    let list = JSON.parse(body);
+    let list = JSON.parse(bodyN);
     let championList = list.data;
 
     for (var i in championList) {
@@ -105,8 +105,8 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
-    .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true)
     .addField('Level', `${body.summonerLevel}`, false)
+    .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true)  
     .addField('Rank', `**${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
