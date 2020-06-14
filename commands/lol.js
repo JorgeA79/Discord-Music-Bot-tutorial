@@ -31,15 +31,34 @@ module.exports = {
    const region = regions[argsx[0]];
    var name = argsx[1];
    name = name.replace(/\s+/g, '%20').toLowerCase();
-   message.channel.send(`<:surprisedpikachu:656255380619264000> ${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`)
-   
+   const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
+
+      const  info = await getData(site);
+      const  embed = getEmbed(info);
+      message.channel.send(embed);
    
    
 }
 }
 
-async function getData() {
+async function getData(site) {
   const response = await fetch(site);
   const data = await response.json();
   return data
 }
+
+function getEmbed(info){
+  const embed = new Discord.MessageEmbed()
+
+    .setColor(0x00AE86)
+    .setTitle("Profile: " + info[0].name)
+    .setDescription("Here you go, summoner!")
+    .addField('\u200b', '\u200b')
+    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+    .addField('Level', `${info[0].summonerLevel}`, true)
+    .setFooter("Jon and Ric")
+    .setTimestamp()
+
+    return embed
+}
+
