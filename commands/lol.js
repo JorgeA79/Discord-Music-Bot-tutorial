@@ -3,6 +3,19 @@ const fetch = require("node-fetch");
 const apikey = process.env.LOL_API;
 var request = require('request');
 
+const tiers = {
+   IRON: "br1.api.riotgames.com",
+   BRONCE: "eun1.api.riotgames.com",
+   SILVER: "euw1.api.riotgames.com",
+   GOLD: "jp1.api.riotgames.com",
+   PLATINUM: "kr.api.riotgames.com",
+   DIAMOND: "la1.api.riotgames.com",
+   MASTER: "la2.api.riotgames.com",
+   GRANDMASTER: "na1.api.riotgames.com",
+   CHALLENGER: "oc1.api.riotgames.com"
+   }
+
+
 module.exports = {
   name: "lol",
   description: "Pinging the bot",
@@ -54,17 +67,28 @@ module.exports = {
    var winR = 0;
    var stats = ""; 
    var rank = "";  
-        
+   var emoteR = "";
+     
    if(bodyR.length < 1){
      tierX = "Unranked";
      stats = "";    
+        
    }else if(bodyR.length == 1){
+   
     rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
     tierX = tierM + tierR + " " + rank ; 
     winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
     stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
+   }else if(bodyR[0].tier == "GRANDMASTER"){    
+    rank = bodyR[1].rank.toString(); 
+    tierX = "GrandMaster";
+    stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;     
+   }else if(bodyR[1].tier == "GRANDMASTER"){  
+    rank = bodyR[1].rank.toString();  
+    tierX = "GrandMaster";
+    stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;    
    }else{       
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
