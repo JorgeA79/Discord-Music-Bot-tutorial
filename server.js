@@ -381,34 +381,34 @@ client.on('message',async message => {
         	const platformCheck = { pc: API.Platform.PC, xbox: API.Platform.XBOX_ONE, ps4: API.Platform.PS4 };
         	const platform = platformCheck[args[2].toLowerCase()];
 
-        	try {
-            	const results = await ApexTab.searchPlayer(args[1], platform ? platform : API.Platform.PC)
-            
-                for (let playerResult of results.results) {
-                    const player = await ApexTab.getPlayerById(playerResult.aid)
-                    const { name, skillratio, visits, avatar, legend, level, kills, headshots, matches, globalrank, utime } = player;
+        	ApexTab_API.searchPlayer(args[1], platform ? platform : API.Platform.PC).then((results) => {
+ 
+    		 results.results.forEach((playerResult) => {
 
-                    const embed = new discord.MessageEmbed()
+		 ApexTab_API.getPlayerById(playerResult.aid).then((player) => {	
+			 
+			const embed = new discord.MessageEmbed()
                             .setColor(0xC76CF5)
-                            .setAuthor(`Origin (Apex Legends) | ${name}`, avatar)
-                            .setThumbnail(avatar)
+                            .setAuthor(`Origin (Apex Legends) | ${player.name}`, avatar)
+                            .setThumbnail(player.avatar)
                             .setDescription(stripIndents`
-                            **Active Legend:** ${legend || "Not Found."}
-                            **Global Rank:** ${globalrank || "Not Ranked."}
-                            **level:** ${level || 0}
-                            **Skill Ratio:** ${skillratio || "0%"}
-                            **Matches:** ${matches || 0}
-                            **Kills:** ${kills || 0}
-                            **Headshots:** ${headshots || 0}
-                            **Visits:** ${visits || 0}
-                            **PlayTime:** ${Math.ceil(utime / (1000 * 60 * 60 * 24)) || 0} days
+                            **Active Legend:** ${player.legend || "Not Found."}
+                            **Global Rank:** ${player.globalrank || "Not Ranked."}
+                            **level:** ${player.level || 0}
+                            **Skill Ratio:** ${player.skillratio || "0%"}
+                            **Matches:** ${player.matches || 0}
+                            **Kills:** ${player.kills || 0}
+                            **Headshots:** ${player.headshots || 0}
+                            **Visits:** ${player.visits || 0}
+                            **PlayTime:** ${Math.ceil(player.utime / (1000 * 60 * 60 * 24)) || 0} days
                             `)
                             .setTimestamp();
                             message.channel.send(embed)
-                	    }
-                            } catch(err) {
-            			return message.channel.send("Can't find a player by that")
-       			    }
+			
+			
+		})	
+		});
+			       	   
 		
 	}
 });
