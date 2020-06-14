@@ -6,7 +6,8 @@ const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text");
 const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e07-38e2-443c-b527-9ad74704f222");
 const { stripIndents } = require("common-tags");
-const API = require("apextab-api"), ApexTab  = API.Apextab_API;
+const API = require("apextab-api");
+const ApexTab  = API.Apextab_API;
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -373,45 +374,12 @@ client.on('message', async message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "apex")) {
 		
-		const args = message.content.slice(PREFIX.length).split(` `);
-    		
-		if(!args[1]) return message.channel.send("Please supply a username.");
+		ApexTab_API.searchPlayer("Zednim",API.Platform.PC).then((results) => {
+    			// do something
+    			console.log(results);
+		});
 
-		try{
-        	ApexTab.searchPlayer(args[1], API.Platform.PC).then((results) => {
- 
-    		 results.results.forEach((playerResult) => {
-
-			 
-			const embed = new discord.MessageEmbed()
-                            .setColor(0xC76CF5)
-                            .setAuthor(`Origin (Apex Legends) | ${playerResult.name}`, playerResult.avatar)
-                            .setThumbnail(playerResult.avatar)
-                            .setDescription(stripIndents`
-                            **Active Legend:** ${playerResult.legend || "Not Found."}
-                            **Global Rank:** ${playerResult.globalrank || "Not Ranked."}
-                            **level:** ${playerResult.level || 0}
-                            **Skill Ratio:** ${playerResult.skillratio || "0%"}
-                            **Matches:** ${playerResult.matches || 0}
-                            **Kills:** ${playerResult.kills || 0}
-                            **Headshots:** ${playerResult.headshots || 0}
-                            **Visits:** ${playerResult.visits || 0}
-                            **PlayTime:** ${Math.ceil(playerResult.utime / (1000 * 60 * 60 * 24)) || 0} days
-                            `)
-                            .setTimestamp()
-                            message.channel.send(embed)
-			
-			
-		})	
-		})} catch (err) {
-			console.log(err);
-		 return message.channel.send("xd");
-		}	
-			       	   
-		} catch (err) {
-			console.log(err);
-		 return message.channel.send("xd");
-		}	
+	
 	}
 });
 
