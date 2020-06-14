@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fetch = require("node-fetch");
 const apikey = process.env.LOL_API;
-
+var request = require('request');
 
 module.exports = {
   name: "lol",
@@ -37,17 +37,18 @@ module.exports = {
   fetch(site)
   .then(res => res.json()).then(body => {
    
-   fetch("http://ddragon.leagueoflegends.com/cdn/10.9.1/data/en_US/champion.json") 
-   .then(res => res.json()).then(bodyR => { 
-     
-   for (var i = 0; i < bodyR.data.length; i++){
-      // look for the entry with a matching `code` value
-      if (bodyR.data[i].key === "51"){  
-      message.channel.send(bodyR.data[i].id);
-      }
+  request('http://ddragon.leagueoflegends.com/cdn/' + version + '/data/de_DE/champion.json', function (error, response, body) {
+
+    let list = JSON.parse(body);
+    let championList = list.data;
+
+    for (var i in championList) {
+
+      if (championList[i].key == 51) {
+        message.channel.send(championList[i].id)
+      } 
     }
-     
-   })
+    });
     
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
    fetch(site2)
