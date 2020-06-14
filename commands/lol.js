@@ -47,14 +47,15 @@ module.exports = {
    var tierX = ""; 
    var winR = 0;
    var stats = ""; 
-     
+   var rank = "";  
    if(bodyR.length < 1){
      tierX = "Unranked";
      stats = "";
    }else{  
+    rank = bodyR[1].rank.toString; 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
-    tierX = tierM + tierR + " " +  bodyR[1].rank.toString; 
+    tierX = tierM + tierR + " " + rank ; 
     stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;
     winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100))
    }   
