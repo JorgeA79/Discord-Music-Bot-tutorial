@@ -79,7 +79,7 @@ module.exports = {
 
     .setColor(0xC76CF5)
     .setTitle("Profile: " + body.name)
-    .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/profileicon/${body.profileIconId}.png`)
+    .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
     .addField('Rank', `**${tierX}**${stats}`, true)
