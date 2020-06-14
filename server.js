@@ -369,7 +369,7 @@ client.on('message', async message => {
 });
 
 	 
-    client.on('message', message => {
+    client.on('message', async message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "fortnite")) {
 	
