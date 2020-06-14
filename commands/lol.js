@@ -45,8 +45,8 @@ module.exports = {
    RU: "ru.api.riotgames.com"
    }
    const region = regions[argsx[0].toUpperCase()];
-   var name = `${argsx[1]}`;
-   name = name.replace(/\s+/g, '%20');
+   var name = argsx[1];
+   name = name.replace(/\s+/g, '%20').toString();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
 
     
