@@ -369,7 +369,7 @@ client.on('message', async message => {
 });
 
 
-client.on('message',async message => {
+client.on('message', message => {
 	  if (message.author === client.user) return;
 	  if (message.content.startsWith(PREFIX + "apex")) {
 		
@@ -382,27 +382,26 @@ client.on('message',async message => {
  
     		 results.results.forEach((playerResult) => {
 
-		 ApexTab.getPlayerById(playerResult.aid).then((player) => {	
 			 
 			const embed = new discord.MessageEmbed()
                             .setColor(0xC76CF5)
-                            .setAuthor(`Origin (Apex Legends) | ${player.name}`, player.avatar)
-                            .setThumbnail(player.avatar)
+                            .setAuthor(`Origin (Apex Legends) | ${playerResult.name}`, playerResult.avatar)
+                            .setThumbnail(playerResult.avatar)
                             .setDescription(stripIndents`
-                            **Active Legend:** ${player.legend || "Not Found."}
-                            **Global Rank:** ${player.globalrank || "Not Ranked."}
-                            **level:** ${player.level || 0}
-                            **Skill Ratio:** ${player.skillratio || "0%"}
-                            **Matches:** ${player.matches || 0}
-                            **Kills:** ${player.kills || 0}
-                            **Headshots:** ${player.headshots || 0}
-                            **Visits:** ${player.visits || 0}
-                            **PlayTime:** ${Math.ceil(player.utime / (1000 * 60 * 60 * 24)) || 0} days
+                            **Active Legend:** ${playerResult.legend || "Not Found."}
+                            **Global Rank:** ${playerResult.globalrank || "Not Ranked."}
+                            **level:** ${playerResult.level || 0}
+                            **Skill Ratio:** ${playerResult.skillratio || "0%"}
+                            **Matches:** ${playerResult.matches || 0}
+                            **Kills:** ${playerResult.kills || 0}
+                            **Headshots:** ${playerResult.headshots || 0}
+                            **Visits:** ${playerResult.visits || 0}
+                            **PlayTime:** ${Math.ceil(playerResult.utime / (1000 * 60 * 60 * 24)) || 0} days
                             `)
                             .setTimestamp();
                             message.channel.send(embed)
 			
-		})	
+			
 		})	
 		});
 			       	   
