@@ -48,16 +48,32 @@ module.exports = {
    var winR = 0;
    var stats = ""; 
    var rank = "";  
+     
+     
    if(bodyR.length < 1){
      tierX = "Unranked";
      stats = "";
+     
+     
+   }else if(bodyR.length == 1){
+   
+   rank = bodyR[0].rank.toString(); 
+    tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
+    tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
+    tierX = tierM + tierR + " " + rank ; 
+    winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
+    stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
+    
+     
    }else{  
+      
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
     tierX = tierM + tierR + " " + rank ; 
+    winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100)) 
     stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;
-    winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100))
+   
    }   
    const embed = new Discord.MessageEmbed()
 
