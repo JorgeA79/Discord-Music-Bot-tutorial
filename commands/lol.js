@@ -36,6 +36,16 @@ module.exports = {
     
   fetch(site)
   .then(res => res.json()).then(body => {
+    
+   const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
+   
+   fetch(site2)
+   .then(res => res.json()).then(bodyR => {
+    
+    
+    
+    
+    
   const embed = new Discord.MessageEmbed()
 
     .setColor(0xC76CF5)
@@ -43,10 +53,11 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
+    .addField('Rank', `${bodyR[1].tier}`, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
-    
+    }) 
   })     
    
    
