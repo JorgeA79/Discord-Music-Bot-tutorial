@@ -15,7 +15,10 @@ const tiers = {
    GRANDMASTER: "<:GRANDMASTER:721790435802087434>",
    CHALLENGER: "<:CHALLENGER:721790435596566568>"
    }
-
+const champs = {
+   Caitlyn: "<:CaitlynSquare:721850192520937582>",
+   Pyke:"<:PykeSquare:721853178076725349> "
+   }
 
 module.exports = {
   name: "lol",
@@ -109,15 +112,19 @@ module.exports = {
     var champ1 = bodyM[0].championId;
     var champ2 = bodyM[1].championId;
     var champ3 = bodyM[2].championId;
-    
+    var emoteC1 = "";
+    var emoteC2 = "";
+    var emoteC3 = "";  
     let list = JSON.parse(bodyN);
     let championList = list.data;
 
     for (var i in championList) {
       if (championList[i].key == champ1) {
+        emoteC1 = champs[championList[i].name]; 
         champT1 = `**[${bodyM[0].championLevel}]** 1. ${championList[i].name}: ${numberWithCommas(bodyM[0].championPoints)}`
       }      
       if (championList[i].key == champ2) {
+        emoteC2 = champs[championList[i].name];  
         champT2 = `**[${bodyM[1].championLevel}]** 2. ${championList[i].name}: ${numberWithCommas(bodyM[1].championPoints)}`
       }      
       if (championList[i].key == champ3) {
@@ -134,7 +141,7 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level/Region', `${body.summonerLevel} / ${args[0].toUpperCase()}`, false)
-    .addField('Top Champions', `${champT1}\n${champT2}\n${champT3}`, true) 
+    .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
