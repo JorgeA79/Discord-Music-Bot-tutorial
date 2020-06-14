@@ -46,7 +46,7 @@ module.exports = {
    var tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
    var tierX = tierM + tierR; 
     
-   var winR = ((eval(bodyR[1].wins) + eval(bodyR[1].losses) / eval(bodyR[1].wins))* eval(100))
+   var winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100))
      
   const embed = new Discord.MessageEmbed()
 
@@ -55,7 +55,7 @@ module.exports = {
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.9.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level', `${body.summonerLevel}`, true)
-    .addField('Rank', `**${tierX} ${bodyR[1].rank}**\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${winR}%`, true)
+    .addField('Rank', `**${tierX} ${bodyR[1].rank}**\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
