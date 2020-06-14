@@ -60,7 +60,7 @@ module.exports = {
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
-    
+   console.log(site2) 
    var tierM = "";  
    var tierR = ""; 
    var tierX = ""; 
@@ -75,7 +75,7 @@ module.exports = {
      stats = "";    
         
    }else if(bodyR.length == 1){
-    emoteR = tiers[bodyR[0].tier];
+    emoteR = tiers[bodyR[0].tier.toString()];
     rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
