@@ -32,8 +32,7 @@ module.exports = {
    var name = argsx[1];
    name = name.replace(/\s+/g, '%20').toLowerCase();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
-   message.channel.send(site)
-    
+
     
   fetch(site)
   .then(res => res.json()).then(body => {
