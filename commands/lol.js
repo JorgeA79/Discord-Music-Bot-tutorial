@@ -115,13 +115,13 @@ module.exports = {
 
     for (var i in championList) {
       if (championList[i].key == champ1) {
-        champT1 = `**[${bodyM[0].championLevel}]** 1. ${championList[i].name}: ${bodyM[0].championPoints}`
+        champT1 = `**[${bodyM[0].championLevel}]** 1. ${championList[i].name}: ${numberWithCommas(bodyM[0].championPoints)}`
       }      
       if (championList[i].key == champ2) {
-        champT2 = `**[${bodyM[1].championLevel}]** 2. ${championList[i].name}: ${bodyM[1].championPoints}`
+        champT2 = `**[${bodyM[1].championLevel}]** 2. ${championList[i].name}: ${numberWithCommas(bodyM[1].championPoints)}`
       }      
       if (championList[i].key == champ3) {
-        champT3 = `**[${bodyM[2].championLevel}]** 3. ${championList[i].name}: ${bodyM[2].championPoints}`
+        champT3 = `**[${bodyM[2].championLevel}]** 3. ${championList[i].name}: ${numberWithCommas(bodyM[2].championPoints)}`
       }        
     }
 
@@ -148,4 +148,7 @@ module.exports = {
    
    
 }
+}
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
