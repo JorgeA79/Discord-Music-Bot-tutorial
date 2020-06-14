@@ -48,7 +48,7 @@ module.exports = {
    var winR = 0;
    var stats = ""; 
      
-   if(bodyR[1].length < 1){
+   if(bodyR.length < 1){
      tierX = "Unranked";
      stats = "";
    }else{  
