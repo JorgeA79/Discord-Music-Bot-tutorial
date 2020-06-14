@@ -36,9 +36,14 @@ module.exports = {
     
   fetch(site)
   .then(res => res.json()).then(body => {
+   
+   fetch("http://ddragon.leagueoflegends.com/cdn/10.9.1/data/en_US/champion.json") 
+   .then(res => res.json()).then(bodyR => { 
+     
+   message.channel.send(bodyR.find(x => x.id === '51').id);  
+   })
     
    const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
-   
    fetch(site2)
    .then(res => res.json()).then(bodyR => {
     
@@ -48,34 +53,32 @@ module.exports = {
    var winR = 0;
    var stats = ""; 
    var rank = "";  
-     
-     
+        
    if(bodyR.length < 1){
      tierX = "Unranked";
-     stats = "";
-     
-     
+     stats = "";    
    }else if(bodyR.length == 1){
-   
-   rank = bodyR[0].rank.toString(); 
+    rank = bodyR[0].rank.toString(); 
     tierM = bodyR[0].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[0].tier.toString().slice(1).toLowerCase(); 
     tierX = tierM + tierR + " " + rank ; 
     winR = (eval(bodyR[0].wins) / (eval(bodyR[0].wins) + eval(bodyR[0].losses))* eval(100)) 
     stats = `\n**${bodyR[0].leaguePoints}LP** / ${bodyR[0].wins}W ${bodyR[0].losses}L\nWinrate: ${~~winR}%`;
-    
-     
-   }else{  
-      
+   }else{       
     rank = bodyR[1].rank.toString(); 
     tierM = bodyR[1].tier.toString().charAt(0).toUpperCase();  
     tierR = bodyR[1].tier.toString().slice(1).toLowerCase(); 
     tierX = tierM + tierR + " " + rank ; 
     winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100)) 
-    stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;
-   
+    stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;   
    }   
-   const embed = new Discord.MessageEmbed()
+    
+     
+     
+    
+     
+    //Send Profile 
+    const embed = new Discord.MessageEmbed()
 
     .setColor(0xC76CF5)
     .setTitle("Profile: " + body.name)
