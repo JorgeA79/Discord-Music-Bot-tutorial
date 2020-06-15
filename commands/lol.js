@@ -203,7 +203,7 @@ module.exports = {
  
      
      
-   response.json().catch(error => {
+   res.json().catch(error => {
             message.channel.send("Couldn't find that player");
         });    
      
