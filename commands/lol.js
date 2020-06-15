@@ -342,7 +342,7 @@ module.exports = {
    .then(res => res.json()).then(bodyM => {  
        
       
-   request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
+   request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyNN) {
     
     var champ1 = bodyM[0].championId;
     var champ2 = bodyM[1].championId;
@@ -350,25 +350,25 @@ module.exports = {
     var emoteC1 = "";
     var emoteC2 = "";
     var emoteC3 = "";  
-    let list = JSON.parse(bodyN);
-    let championList = list.data;
+    let list = JSON.parse(bodyNN);
+    let championListxd = list.data;
     if(bodyM.length < 3){
     champT1 = `**Not enough champions to display**`;
     champT2 = "";
     champT3 = "";   
     }else{
-    for (var i in championList) {
-      if (championList[i].key == champ1) {
-        emoteC1 = champs[championList[i].name]; 
-        champT1 = `**[${bodyM[0].championLevel}]** 1. ${championList[i].name}: ${numberWithCommas(bodyM[0].championPoints)}`
+    for (var i in championListxd) {
+      if (championListxd[i].key == champ1) {
+        emoteC1 = champs[championListxd[i].name]; 
+        champT1 = `**[${bodyM[0].championLevel}]** 1. ${championListxd[i].name}: ${numberWithCommas(bodyM[0].championPoints)}`
       }      
-      if (championList[i].key == champ2) {
-        emoteC2 = champs[championList[i].name];  
-        champT2 = `**[${bodyM[1].championLevel}]** 2. ${championList[i].name}: ${numberWithCommas(bodyM[1].championPoints)}`
+      if (championListxd[i].key == champ2) {
+        emoteC2 = champs[championListxd[i].name];  
+        champT2 = `**[${bodyM[1].championLevel}]** 2. ${championListxd[i].name}: ${numberWithCommas(bodyM[1].championPoints)}`
       }      
-      if (championList[i].key == champ3) {
-        emoteC3 = champs[championList[i].name]; 
-        champT3 = `**[${bodyM[2].championLevel}]** 3. ${championList[i].name}: ${numberWithCommas(bodyM[2].championPoints)}`
+      if (championListxd[i].key == champ3) {
+        emoteC3 = champs[championListxd[i].name]; 
+        champT3 = `**[${bodyM[2].championLevel}]** 3. ${championListxd[i].name}: ${numberWithCommas(bodyM[2].championPoints)}`
       }        
     }
     }
