@@ -332,7 +332,7 @@ module.exports = {
 
                }
                     
-               
+            
                
                
                
@@ -389,11 +389,12 @@ module.exports = {
     .setTimestamp()  
     message.channel.send(embed)
          
+          
+       });
+   })
          }       
         });  
-       })  
-       });
-   }) 
+       })             
    })        
   })
   }catch(err){
