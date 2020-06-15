@@ -310,7 +310,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl2, function (error, response, bodyN) {
@@ -322,7 +322,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl3, function (error, response, bodyN) {
@@ -334,7 +334,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl4, function (error, response, bodyN) {
@@ -346,7 +346,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl5, function (error, response, bodyN) {
@@ -358,7 +358,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl6, function (error, response, bodyN) {
@@ -370,7 +370,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl7, function (error, response, bodyN) {
@@ -382,7 +382,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl8, function (error, response, bodyN) {
@@ -394,7 +394,7 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
       request(wl9, function (error, response, bodyN) {
@@ -406,10 +406,21 @@ module.exports = {
                   winsxd += eval(winsxd) + eval(1);
                   }else{
                   losesxd += eval(losesxd) + eval(1);
-                  }
+                  }}
             }
       });
-         
+      request(wl10, function (error, response, bodyN) {
+         let list = JSON.parse(bodyN);
+         let championList = list.data;
+         for (var i in championList) {
+            if (championList[i].championId == champUsed) {
+                  if(championList[i].stats.win === true){
+                  winsxd += eval(winsxd) + eval(1);
+                  }else{
+                  losesxd += eval(losesxd) + eval(1);
+                  }}
+            }
+      });   
       }else{
     
       }  
