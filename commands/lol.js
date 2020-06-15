@@ -198,30 +198,29 @@ module.exports = {
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
    
   try {
-     
-     
-  fetch(normalizeUrl(site))
-  .then(res => res.json()).then(body => {
+        
+            fetch(normalizeUrl(site))
+            .then(res => res.json()).then(body => {
  
      
-   var champT1 = "";
-   var champT2 = ""; 
-   var champT3 = "";  
+            var champT1 = "";
+             var champT2 = ""; 
+            var champT3 = "";  
     
-   //Ranked Stats
-   const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
-   fetch(site2)
-   .then(res => res.json()).then(bodyR => {
-   console.log(site2) 
-   var tierM = "";  
-   var tierR = ""; 
-   var tierX = ""; 
-   var winR = 0;
-   var stats = ""; 
-   var rank = "";  
-   var emoteR = "";
-   var q ="";   
-   var qU = {
+            //Ranked Stats
+            const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
+            fetch(site2)
+            .then(res => res.json()).then(bodyR => {
+            console.log(site2) 
+            var tierM = "";  
+            var tierR = ""; 
+            var tierX = ""; 
+            var winR = 0;
+            var stats = ""; 
+            var rank = "";  
+            var emoteR = "";
+            var q ="";   
+            var qU = {
    RANKED_FLEX_SR:"Flex",
    RANKED_SOLO_5x5:"Solo/Duo",
    UNRANKED:""
@@ -256,6 +255,29 @@ module.exports = {
    const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
    fetch(site1)
    .then(res => res.json()).then(bodyM => {  
+      
+   const site4 = `${protocol}${region}/lol/match/v4/matchlists/by-account/${body.accountId}${api}`    
+   fetch(site4)
+   .then(res => res.json()).then(bodyX => {    
+      var champUsed = bodyX.matches[0].champion; 
+      const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
+      
+      
+      fetch(site5)
+      .then(res => res.json()).then(bodyD => { 
+      request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
+         for (var i in championList) {
+            if (championList[i].key == champ1) {
+            var emoteC1 = champs[championList[i].name]; 
+            var champT = championList[i].name;
+               
+               message.channel.send(`Last game ${emoteC1}${champT}`)
+               
+               }           
+        });  
+       })
+   })
+      
    request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
     
     var champ1 = bodyM[0].championId;
@@ -297,7 +319,8 @@ module.exports = {
     .addField('Level/Region', `${body.summonerLevel} / ${args[0].toUpperCase()}`, false)
     .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${emoteC3}${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
-    .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)  
+    .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)
+    .addField(`Last Game:`, ``, false)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
@@ -306,7 +329,7 @@ module.exports = {
    }) 
    })        
   })
-      }catch(err){
+  }catch(err){
       const embed = new Discord.MessageEmbed()
       .setDescription("Couldn't find anything <a:x_:713677703756251147>")
       .setColor(0xC76CF5);
