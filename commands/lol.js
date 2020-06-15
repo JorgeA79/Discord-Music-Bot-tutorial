@@ -331,11 +331,8 @@ module.exports = {
                
 
                }
-                    
-            
-               
-               
-               
+             }         
+                       
    //Masteries  
    const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
    fetch(site1)
@@ -392,7 +389,7 @@ module.exports = {
           
        });
    })
-         }       
+              
         });  
        })             
    })        
