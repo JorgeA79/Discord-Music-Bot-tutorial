@@ -284,8 +284,9 @@ module.exports = {
               var assists = championList[i].stats.assists
               var win = championList[i].win;
               var textW =""; 
-              if(win == true) textW= "Winned"; 
-              if(win == false) textW= "Lost";  
+              if(win === true) textW= "Winned"; 
+              if(win === false) textW= "Lost";  
+               
                message.channel.send(`${textW} last game ${kills}/${deaths}/${assists}`)
                }
           }
