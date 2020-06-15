@@ -272,7 +272,7 @@ module.exports = {
             var champT = championList[i].name;
                
                message.channel.send(`Last game ${emoteC1}${champT}`)
-               
+               }
                }           
         });  
        })
