@@ -222,6 +222,17 @@ module.exports = {
             var champT2 = ""; 
             var champT3 = "";  
             var lastGameT = "";
+               
+               
+              var killsxd = "";
+              var deathsxd = ""; 
+              var assistsxd = "";
+              var csxd = "";
+              var textWxd =""; 
+              var modexdxd = "";  
+              var champT  = "";
+              var emoteC1 = ""; 
+               
             //Ranked Stats
             const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
             fetch(site2)
@@ -272,8 +283,7 @@ module.exports = {
    .then(res => res.json()).then(bodyX => {    
       var champUsed = bodyX.matches[0].champion; 
       const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
-      var champT  = "";
-      var emoteC1 = "";
+     
       console.log(site5);
       request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
             
@@ -307,9 +317,16 @@ module.exports = {
               var textW =""; 
               var modexd = modes[gameMode]; 
               if(win === true) textW= "🟢"; 
-              if(win === false) textW= "🔴";  
-               var txtxd = `**${textW} ${modexd}** game as **${emoteC1}${champT}** with **${kills}/${deaths}/${assists}** and **${cs}CS**`;
-               lastGameT = txtxd.toString();
+              if(win === false) textW= "🔴";
+               
+               modexdxd = modexd.toString();
+               killsxd = kills.toString();
+               deathsxd = deaths.toString();
+               assistsxd = assists.toString();
+               csxd = cs.toString();
+               textWxd = textW.toString();
+               
+
                }
           }
          
@@ -368,7 +385,7 @@ module.exports = {
     .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${emoteC3}${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)
-    .addField(`Last Game:`, `${lastGameT}`, false)  
+    .addField(`Last Game:`, `**${textWxd} ${modexdxd}** game as **${emoteC1}${champT}** with **${killsxd}/${deathsxd}/${assistsxd}** and **${csxd}CS**`, false)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
