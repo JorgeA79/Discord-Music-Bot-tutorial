@@ -282,7 +282,7 @@ module.exports = {
               var kills = championList[i].stats.kills 
               var deaths = championList[i].stats.deaths 
               var assists = championList[i].stats.assists
-              var win = championList[i].win;
+              var win = championList[i].stats.win;
               var textW =""; 
               if(win === true) textW= "Winned"; 
               if(win === false) textW= "Lost";  
