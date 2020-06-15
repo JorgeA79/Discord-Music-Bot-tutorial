@@ -257,7 +257,9 @@ module.exports = {
    .then(res => res.json()).then(bodyX => {    
       var champUsed = bodyX.matches[0].champion; 
       const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
-
+      var champT  = "";
+      var emoteC1 = "";
+      
       request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
             
          let list = JSON.parse(bodyN);
@@ -265,9 +267,8 @@ module.exports = {
          
          for (var i in championList) {
             if (championList[i].key == champUsed) {
-            var emoteC1 = champs[championList[i].name]; 
-            var champT = championList[i].name;              
-               message.channel.send(`Last game ${emoteC1}${champT}`)
+            emoteC1 = champs[championList[i].name]; 
+            champT = championList[i].name;              
                }
           }
         });  
@@ -283,11 +284,12 @@ module.exports = {
               var deaths = championList[i].stats.deaths 
               var assists = championList[i].stats.assists
               var win = championList[i].stats.win;
+              var cs = championList[i].stats.totalMinionsKilled;
               var textW =""; 
               if(win === true) textW= "Winned"; 
               if(win === false) textW= "Lost";  
                
-               message.channel.send(`${textW} last game ${kills}/${deaths}/${assists}`)
+               message.channel.send(`${textW} last game as ${emoteC1}${champT} with ${kills}/${deaths}/${assists} and ${cs}CS`)
                }
           }
          
