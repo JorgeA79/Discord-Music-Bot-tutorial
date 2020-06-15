@@ -379,7 +379,6 @@ module.exports = {
     .setDescription(`Here you go, ${body.name}!`)
     .addField('Level/Region', `${body.summonerLevel} / ${args[0].toUpperCase()}`, false)
     .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${emoteC3}${champT3}`, true) 
-    .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)
     .addField(`Last Game:`, `**${textWxd} ${modexdxd}** game as **${emoteC1xd}${champT}** with **${killsxd}/${deathsxd}/${assistsxd}** and **${csxd}CS**`, false)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
