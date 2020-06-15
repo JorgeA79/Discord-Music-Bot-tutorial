@@ -307,9 +307,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -319,9 +319,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -331,9 +331,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -343,9 +343,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -355,9 +355,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -367,9 +367,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -379,9 +379,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -391,9 +391,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -403,9 +403,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });
@@ -415,9 +415,9 @@ module.exports = {
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
-                  winsxd += eval(winsxd) + eval(1);
+                  winsxd = eval(winsxd) + eval(1);
                   }else{
-                  losesxd += eval(losesxd) + eval(1);
+                  losesxd = eval(losesxd) + eval(1);
                   }}
             }
       });   
