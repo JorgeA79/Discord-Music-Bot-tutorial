@@ -250,13 +250,9 @@ module.exports = {
     winR = (eval(bodyR[1].wins) / (eval(bodyR[1].wins) + eval(bodyR[1].losses))* eval(100)) 
     stats = `\n**${bodyR[1].leaguePoints}LP** / ${bodyR[1].wins}W ${bodyR[1].losses}L\nWinrate: ${~~winR}%`;   
    }  
-     
-   //Masteries  
-   const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
-   fetch(site1)
-   .then(res => res.json()).then(bodyM => {  
-      
-   const site4 = `${protocol}${region}/lol/match/v4/matchlists/by-account/${body.accountId}${api}`    
+  
+               
+   const site4 = `${protocol}${region}/lol/match/v4/matchlists/by-account/${body.accountId}${api}`;    
    fetch(site4)
    .then(res => res.json()).then(bodyX => {    
       var champUsed = bodyX.matches[0].champion; 
@@ -267,16 +263,24 @@ module.exports = {
       .then(res => res.json()).then(bodyD => { 
       request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
          for (var i in championList) {
-            if (championList[i].key == champ1) {
+            if (championList[i].key == champUsed) {
             var emoteC1 = champs[championList[i].name]; 
-            var champT = championList[i].name;
-               
+            var champT = championList[i].name;              
                message.channel.send(`Last game ${emoteC1}${champT}`)
                }
-               }           
+          }           
         });  
        })
-   })
+       })            
+               
+               
+               
+               
+   //Masteries  
+   const site1 = `${protocol}${region}/lol/champion-mastery/v4/champion-masteries/by-summoner/${body.id}${api}`   
+   fetch(site1)
+   .then(res => res.json()).then(bodyM => {  
+       
       
    request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
     
