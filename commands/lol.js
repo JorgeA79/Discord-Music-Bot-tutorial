@@ -201,6 +201,12 @@ module.exports = {
   fetch(normalizeUrl(site))
   .then(res => res.json()).then(body => {
  
+     
+     
+   response.json().catch(error => {
+            message.channel.send("Couldn't find that player");
+        });    
+     
    var champT1 = "";
    var champT2 = ""; 
    var champT3 = "";  
@@ -302,7 +308,8 @@ module.exports = {
        });
    }) 
    })        
-  })     
+  }) 
+ 
    
    
 }
