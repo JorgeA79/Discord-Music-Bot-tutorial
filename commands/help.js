@@ -18,7 +18,7 @@ module.exports = {
   .addField("<:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
   .addField(":musical_note: Music", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`\n\u200b", true)
   .addField("<:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
-  .addField(":video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\`\n\u200b",true) 
+  .addField(":video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\`\n\u200b",true) 
   .addField("⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\` \`fox\` \`quote\`\n\u200b",true)     
     .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
