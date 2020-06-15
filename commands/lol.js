@@ -270,7 +270,7 @@ module.exports = {
                message.channel.send(`Last game ${emoteC1}${champT}`)
                }
           }
-         
+        });  
         request(site5, function (error, response, bodyN) {
             
          let list = JSON.parse(bodyN);
