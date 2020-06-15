@@ -21,6 +21,81 @@ const champs = {
    "Akali":"<:AkaliSquare:721850184023408640>",
    "Allistar":"<:AlistarSquare:721850191128559667>",
    "Amumu":"<:AmumuSquare:721850191849979991>",
+1
+const Discord = require("discord.js");
+2
+const fetch = require("node-fetch");
+3
+const apikey = process.env.LOL_API;
+4
+var request = require('request');
+5
+const normalizeUrl = require('normalize-url');
+6
+​
+7
+const tiers = {
+8
+   IRON: "<:IRON:721790435319611463>",
+9
+   BRONZE: "<:BRONZE:721790433373454367>",
+10
+   SILVER: "<:SILVER:721790432752959589>",
+11
+   GOLD: "<:GOLD:721790435567337519>",
+12
+   PLATINUM: "<:PLATINUM:721790435705618582>",
+13
+   DIAMOND: "<:DIAMOND:721671835560706128>",
+14
+   MASTER: "<:MASTER:721790435529457767>",
+15
+   GRANDMASTER: "<:GRANDMASTER:721790435802087434>",
+16
+   CHALLENGER: "<:CHALLENGER:721790435596566568>"
+17
+   }
+18
+const champs = {
+19
+   "Aatrox":"<:AatroxSquare:721850183306182677>",
+20
+   "Ahri": "<:AhriSquare:721850183314440284>",
+21
+   "Akali":"<:AkaliSquare:721850184023408640>",
+22
+   "Allistar":"<:AlistarSquare:721850191128559667>",
+23
+   "Amumu":"<:AmumuSquare:721850191849979991>",
+24
+   "Anivia":"<:AniviaSquare:721850195612270673>",
+25
+   "Annie":"<:AnnieSquare:721850192952819742>",
+26
+   "Aphelios":"<:ApheliosSquare:721850188406456411>",
+27
+   "Ashe":"<:AsheSquare:721850193544347698>",
+28
+   "Aurelion Sol":"<:Aurelion_SolSquare:721850195440304171>",
+29
+   "Azir":"<:AzirSquare:721850191740928081>",
+30
+   "Bard":"<:BardSquare:721850193573576714>",
+31
+   "Blitzcrank":"<:BlitzcrankSquare:721850193263460413>",
+32
+   "Brand":"<:BrandSquare:721850193246683147>",
+33
+   "Braum":"<:BraumSquare:721850191644328068>",
+34
+   "Caitlyn":"<:CaitlynSquare:721850192520937582>",
+35
+   "Camille":"<:CamilleSquare:721850198007218238>",
+36
+   "Cassiopeia":"<:CassiopeiaSquare:721850192306897008>",
+37
+   "Cho'Gath":"<:ChoGathSquare:721850193309466626>",
+
    "Anivia":"<:AniviaSquare:721850195612270673>",
    "Annie":"<:AnnieSquare:721850192952819742>",
    "Aphelios":"<:ApheliosSquare:721850188406456411>",
@@ -262,6 +337,10 @@ module.exports = {
       fetch(site5)
       .then(res => res.json()).then(bodyD => { 
       request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
+         
+         let list = JSON.parse(bodyN);
+         let championList = list.data;
+         
          for (var i in championList) {
             if (championList[i].key == champUsed) {
             var emoteC1 = champs[championList[i].name]; 
