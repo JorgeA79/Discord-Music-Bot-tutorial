@@ -308,8 +308,10 @@ module.exports = {
             if (championList[i].championId == champUsed) {
                   if(championList[i].stats.win === true){
                   winsxd = eval(winsxd) + eval(1);
+                  console.log(`${winsxd}W`);
                   }else{
                   losesxd = eval(losesxd) + eval(1);
+                  console.log(`${losesxd}L`);   
                   }}
             }
       });
