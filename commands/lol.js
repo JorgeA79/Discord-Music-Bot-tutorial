@@ -17,7 +17,7 @@ const tiers = {
    }
 
 const modes = {
-   67:  "ARAM"
+   67:  "ARAM",
    420: "Ranked Solo/Duo",
    430: "Normal",
    440: "Ranked Flex",
