@@ -282,7 +282,11 @@ module.exports = {
               var kills = championList[i].stats.kills 
               var deaths = championList[i].stats.deaths 
               var assists = championList[i].stats.assists
-               message.channel.send(`Last game ${kills}/${deaths}/${assists}`)
+              var win = championList[i].win;
+              var textW =""; 
+              if(win == true) textW= "Winned"; 
+              if(win == false) textW= "Lost";  
+               message.channel.send(`${textW} last game ${kills}/${deaths}/${assists}`)
                }
           }
          
