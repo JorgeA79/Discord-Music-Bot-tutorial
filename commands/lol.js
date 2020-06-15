@@ -259,7 +259,7 @@ module.exports = {
       const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
       var champT  = "";
       var emoteC1 = "";
-      
+      console.log(site5);
       request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
             
          let list = JSON.parse(bodyN);
