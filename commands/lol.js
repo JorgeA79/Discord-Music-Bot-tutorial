@@ -267,8 +267,11 @@ module.exports = {
          
          for (var i in championList) {
             if (championList[i].key == champUsed) {
-            emoteC1 = champs[championList[i].name]; 
-            champT = championList[i].name;              
+            var emoteC1x = champs[championList[i].name]; 
+            var champTx = championList[i].name;
+               
+             champT = champTx.toString();
+             emoteC1 = emoteC1x.toString();  
                }
           }
         });  
