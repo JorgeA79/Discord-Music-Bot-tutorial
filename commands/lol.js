@@ -263,7 +263,11 @@ module.exports = {
     var emoteC3 = "";  
     let list = JSON.parse(bodyN);
     let championList = list.data;
-
+    if(bodyM.length < 3){
+    champT1 = `**Not enough champions to display**`;
+    champT2 = "";
+    champT3 = "";   
+    }else{
     for (var i in championList) {
       if (championList[i].key == champ1) {
         emoteC1 = champs[championList[i].name]; 
@@ -278,7 +282,7 @@ module.exports = {
         champT3 = `**[${bodyM[2].championLevel}]** 3. ${championList[i].name}: ${numberWithCommas(bodyM[2].championPoints)}`
       }        
     }
-
+    }
     
     //Send Profile 
     const embed = new Discord.MessageEmbed()
