@@ -292,7 +292,7 @@ module.exports = {
               if(win === true) textW= "Winned"; 
               if(win === false) textW= "Lost";  
                
-               message.channel.send(`${textW} last game as ${emoteC1}${champT} with ${kills}/${deaths}/${assists} and ${cs}CS`)
+               message.channel.send(`**${textW}** last game as **${emoteC1}${champT}** with **${kills}/${deaths}/${assists}** and **${cs}CS**`)
                }
           }
          
