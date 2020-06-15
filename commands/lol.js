@@ -280,8 +280,9 @@ module.exports = {
             if (championList[i].championId == champUsed) {
             
               var kills = championList[i].stats.kills 
-               
-               message.channel.send(`Last game ${kills}`)
+              var deaths = championList[i].stats.deaths 
+              var assists = championList[i].stats.assists
+               message.channel.send(`Last game ${kills}/${deaths}/${assists}`)
                }
           }
          
