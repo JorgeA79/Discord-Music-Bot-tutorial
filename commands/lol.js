@@ -282,7 +282,7 @@ module.exports = {
               var textWxd =""; 
               var modexdxd = "";  
               var champT  = "";
-              var emoteC1 = ""; 
+              var emoteC1xd = ""; 
       
       
       const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
@@ -299,7 +299,7 @@ module.exports = {
             var champTx = championList[i].name;
                
              champT = champTx.toString();
-             emoteC1 = emoteC1x.toString();  
+             emoteC1xd = emoteC1x.toString();  
                }
           }
         });  
@@ -384,10 +384,10 @@ module.exports = {
     .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${emoteC3}${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)
-    .addField(`Last Game:`, `**${textWxd} ${modexdxd}** game as **${emoteC1}${champT}** with **${killsxd}/${deathsxd}/${assistsxd}** and **${csxd}CS**`, false)  
+    .addField(`Last Game:`, `**${textWxd} ${modexdxd}** game as **${emoteC1xd}${champT}** with **${killsxd}/${deathsxd}/${assistsxd}** and **${csxd}CS**`, false)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
-    message.channel.send(embed)
+    return message.channel.send(embed)
          
           
        });
