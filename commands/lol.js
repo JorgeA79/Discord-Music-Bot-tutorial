@@ -202,11 +202,6 @@ module.exports = {
   .then(res => res.json()).then(body => {
  
      
-     
-   res.json().catch(error => {
-            message.channel.send("Couldn't find that player");
-        });    
-     
    var champT1 = "";
    var champT2 = ""; 
    var champT3 = "";  
