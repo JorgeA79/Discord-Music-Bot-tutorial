@@ -224,14 +224,7 @@ module.exports = {
             var lastGameT = "";
                
                
-              var killsxd = "";
-              var deathsxd = ""; 
-              var assistsxd = "";
-              var csxd = "";
-              var textWxd =""; 
-              var modexdxd = "";  
-              var champT  = "";
-              var emoteC1 = ""; 
+
                
             //Ranked Stats
             const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
@@ -282,6 +275,16 @@ module.exports = {
    fetch(site4)
    .then(res => res.json()).then(bodyX => {    
       var champUsed = bodyX.matches[0].champion; 
+              var killsxd = "";
+              var deathsxd = ""; 
+              var assistsxd = "";
+              var csxd = "";
+              var textWxd =""; 
+              var modexdxd = "";  
+              var champT  = "";
+              var emoteC1 = ""; 
+      
+      
       const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
      
       console.log(site5);
@@ -328,11 +331,7 @@ module.exports = {
                
 
                }
-          }
-         
-         
-        });  
-       })            
+                    
                
                
                
@@ -389,7 +388,10 @@ module.exports = {
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
-    
+         
+         }       
+        });  
+       })  
        });
    }) 
    })        
