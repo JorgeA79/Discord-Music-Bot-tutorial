@@ -15,6 +15,21 @@ const tiers = {
    GRANDMASTER: "<:GRANDMASTER:721790435802087434>",
    CHALLENGER: "<:CHALLENGER:721790435596566568>"
    }
+
+const modes = {
+   67:  "ARAM"
+   420: "Ranked Solo/Duo",
+   430: "Normal",
+   440: "Ranked Flex",
+   450: "ARAM",
+   830: "Normal",
+   840: "Normal",
+   850: "Normal",
+   900: "URF",
+   1090: "TFT",
+   1100: "Ranked TFT"
+}
+
 const champs = {
    "Aatrox":"<:AatroxSquare:721850183306182677>",
    "Ahri": "<:AhriSquare:721850183314440284>",
@@ -279,7 +294,8 @@ module.exports = {
             
          let list = JSON.parse(bodyN);
          let championList = list.participants;
-         
+         let gameMode = list.queueId;
+           
          for (var i in championList) {
             if (championList[i].championId == champUsed) {
             
@@ -289,10 +305,11 @@ module.exports = {
               var win = championList[i].stats.win;
               var cs = championList[i].stats.totalMinionsKilled;
               var textW =""; 
-              if(win === true) textW= "Winned"; 
-              if(win === false) textW= "Lost";  
+              var modexd = modes[gameMode]; 
+              if(win === true) textW= "🟢"; 
+              if(win === false) textW= "🔴";  
                
-               message.channel.send(`**${textW}** last game as **${emoteC1}${champT}** with **${kills}/${deaths}/${assists}** and **${cs}CS**`)
+               message.channel.send(`**${textW} ${modexd}** game as **${emoteC1}${champT}** with **${kills}/${deaths}/${assists}** and **${cs}CS**`)
                }
           }
          
