@@ -197,7 +197,7 @@ module.exports = {
    name = name.replace(/\s+/g, '%20').toString();
    const site = `${protocol}${region}/lol/summoner/v4/summoners/by-name/${name}${api}`; 
    
-
+  try {
   fetch(normalizeUrl(site))
   .then(res => res.json()).then(body => {
  
@@ -303,7 +303,13 @@ module.exports = {
        });
    }) 
    })        
-  }) 
+  })
+  }catch(e){
+    const embed = new Discord.MessageEmbed()
+      .setDescription("Couldn't find anything <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
+    } 
  
    
    
