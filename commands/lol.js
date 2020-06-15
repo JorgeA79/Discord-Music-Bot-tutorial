@@ -257,12 +257,9 @@ module.exports = {
    .then(res => res.json()).then(bodyX => {    
       var champUsed = bodyX.matches[0].champion; 
       const site5 = `${protocol}${region}/lol/match/v4/matches/${bodyX.matches[0].gameId}${api}`
-      
-      
-      fetch(site5)
-      .then(res => res.json()).then(bodyD => { 
+
       request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, bodyN) {
-         
+            
          let list = JSON.parse(bodyN);
          let championList = list.data;
          
@@ -272,9 +269,24 @@ module.exports = {
             var champT = championList[i].name;              
                message.channel.send(`Last game ${emoteC1}${champT}`)
                }
-          }           
+          }
+         
+        request(site5, function (error, response, bodyN) {
+            
+         let list = JSON.parse(bodyN);
+         let championList = list.participants;
+         
+         for (var i in championList) {
+            if (championList[i].championId == champUsed) {
+            
+              var kills = championList[i].stats.kills 
+               
+               message.channel.send(`Last game ${kills}`)
+               }
+          }
+         
+         
         });  
-       })
        })            
                
                
