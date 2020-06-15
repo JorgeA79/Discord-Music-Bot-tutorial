@@ -219,9 +219,9 @@ module.exports = {
  
      
             var champT1 = "";
-             var champT2 = ""; 
+            var champT2 = ""; 
             var champT3 = "";  
-    
+            var lastGameT = "";
             //Ranked Stats
             const site2 = `${protocol}${region}/lol/league/v4/entries/by-summoner/${body.id}${api}` 
             fetch(site2)
@@ -308,8 +308,8 @@ module.exports = {
               var modexd = modes[gameMode]; 
               if(win === true) textW= "🟢"; 
               if(win === false) textW= "🔴";  
-               
-               message.channel.send(`**${textW} ${modexd}** game as **${emoteC1}${champT}** with **${kills}/${deaths}/${assists}** and **${cs}CS**`)
+               var txtxd = `**${textW} ${modexd}** game as **${emoteC1}${champT}** with **${kills}/${deaths}/${assists}** and **${cs}CS**`;
+               lastGameT = txtxd.toString();
                }
           }
          
@@ -368,7 +368,7 @@ module.exports = {
     .addField('Top Champions', `${emoteC1}${champT1}\n${emoteC2}${champT2}\n${emoteC3}${champT3}`, true) 
     .addField('\u200b', `\u200b`, true)  
     .addField(`Rank: ${q}`, `${emoteR} **${tierX}**${stats}`, true)
-    .addField(`Last Game:`, `xd`, false)  
+    .addField(`Last Game:`, `${lastGameT}`, false)  
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp()  
     message.channel.send(embed)
