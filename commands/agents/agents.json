@@ -197,7 +197,20 @@
     "leg":"47",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/722579612659482644/unknown.png"
     }
-  
+    {
+    "name":"Stinger",
+    "price":"1000",
+    "type":"SMG",
+    "mode":"Full-Automatic",
+    "magazine":"20",
+    "range":"20m", 
+    "fire":"18 rounds/sec",
+    "penetration":"Low",
+    "head":"67",
+    "body":"27",
+    "leg":"23",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722585083185463336/unknown.png"
+    }
   ]
 }
 
