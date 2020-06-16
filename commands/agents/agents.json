@@ -139,7 +139,7 @@
     "head":"78",
     "body":"26",
     "leg":"22",
-    "image":""  
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722579243921440958/unknown.png"  
     },
     {
     "name":"Shorty",
@@ -153,7 +153,7 @@
     "head":"24",
     "body":"8",
     "leg":"6",
-    "image":""
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722579321604014200/unknown.png"
     },
     {
     "name":"Frenzy",
@@ -167,7 +167,7 @@
     "head":"78",
     "body":"26",
     "leg":"22",
-    "image":""
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722579400939274370/unknown.png"
     },
     {
     "name":"Ghost",
@@ -181,7 +181,7 @@
     "head":"105",
     "body":"30",
     "leg":"26",
-    "image":""
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722579502093303828/unknown.png"
     },
     {
     "name":"Sheriff",
@@ -195,7 +195,7 @@
     "head":"160",
     "body":"55",
     "leg":"47",
-    "image":""
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722579612659482644/unknown.png"
     }
   
   ]
