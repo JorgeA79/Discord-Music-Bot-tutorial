@@ -20,12 +20,25 @@ var Pokedex = require('pokedex'),
     pokedex = new Pokedex();
 
 
-
+let statuses = [`**${client.guilds.cache.size}** servers! | p!help`,
+	        `with Jorgy | p!help`,
+	        `with Ammy | p!help`,
+	        `with Rii | p!help`,
+	        `with Pixel | p!help`,
+		`with Jelly | p!help`,
+	        `with Chuuni | p!help`,
+	        `in Japan | p!help`];
 
 //CLIENT EVENTS
 client.on("ready", () => {
+	
+setInterval(function(){
+	
+  let status = statuses[Math.floor(Math.random()*statuses.length)];
+	
   console.log('Ready TO play some soft songs')
-  client.user.setActivity("in Japan | p!help")
+  client.user.setActivity(status)
+	},10000)	
 })
 
 client.on("warn", info => console.log(info));
