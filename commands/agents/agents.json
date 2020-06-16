@@ -125,6 +125,79 @@
     "plan":"https://cdn.discordapp.com/attachments/396942894487044099/720431354986365018/split_callouts.png",
     "thumbnail":"https://cdn.discordapp.com/attachments/396942894487044099/720426804288159844/unknown.png"  
     }
+  ],
+  "weapons":[
+    {
+    "name":"Classic",
+    "price":"0",
+    "type":"Sidearm",
+    "mode":"Semi-Automatic",
+    "magazine":"12",
+    "range":"30m", 
+    "fire":"6.75 rounds/sec",
+    "penetration":"Low",
+    "head":"78",
+    "body":"26",
+    "leg":"22",
+    "image":""  
+    },
+    {
+    "name":"Shorty",
+    "price":"200",
+    "type":"Sidearm",
+    "mode":"Semi-Automatic",
+    "magazine":"2",
+    "range":"9-15m", 
+    "fire":"3.3 rounds/sec",
+    "penetration":"Low",
+    "head":"24",
+    "body":"8",
+    "leg":"6",
+    "image":""
+    },
+    {
+    "name":"Frenzy",
+    "price":"400",
+    "type":"Sidearm",
+    "mode":"Full-Automatic",
+    "magazine":"13",
+    "range":"20m", 
+    "fire":"10 rounds/sec",
+    "penetration":"Low",
+    "head":"78",
+    "body":"26",
+    "leg":"22",
+    "image":""
+    },
+    {
+    "name":"Ghost",
+    "price":"500",
+    "type":"Sidearm",
+    "mode":"Semi-Automatic",
+    "magazine":"15",
+    "range":"20m", 
+    "fire":"6.75 rounds/sec",
+    "penetration":"Medium",
+    "head":"105",
+    "body":"30",
+    "leg":"26",
+    "image":""
+    },
+    {
+    "name":"Sheriff",
+    "price":"800",
+    "type":"Sidearm",
+    "mode":"Semi-Automatic",
+    "magazine":"6",
+    "range":"30m", 
+    "fire":"4 rounds/sec",
+    "penetration":"High",
+    "head":"160",
+    "body":"55",
+    "leg":"47",
+    "image":""
+    },
+  
   ]
 }
 
