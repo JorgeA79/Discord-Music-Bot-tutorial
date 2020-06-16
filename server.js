@@ -38,7 +38,7 @@ setInterval(function(){
 	
   console.log('Ready TO play some soft songs')
   client.user.setActivity(status)
-	},300000)	
+	},60000)	
 })
 
 client.on("warn", info => console.log(info));
