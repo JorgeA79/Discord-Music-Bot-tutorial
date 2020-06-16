@@ -74,10 +74,10 @@ module.exports = {
        
      ], true)
      .addField('Presence',[
-     `**> Online:** ${members.filter(member => members.presence.status === 'online').size}`,
-     `**> Idle:** ${members.filter(member => members.presence.status === 'idle').size}`,
-     `**> Do not Disturb:** ${members.filter(member => members.presence.status === 'dnd').size}`,
-     `**> Offline:** ${members.filter(member => members.presence.status === 'offline').size}`,
+     `**> Online:** ${members.filter(member => member.presence.status === 'online').size}`,
+     `**> Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
+     `**> Do not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
+     `**> Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
      ], true)  
     
     .addField(`Roles [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? trimArray(roles) : 'None')
