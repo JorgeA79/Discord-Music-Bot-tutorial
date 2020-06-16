@@ -149,6 +149,7 @@ module.exports = {
     .addField("Heatshot Dmg:", `${weapons[args[1].toUpperCase()].head}`, true)
     .addField("Bodyshot Dmg:", `${weapons[args[1].toUpperCase()].body}`, true)
     .addField("Legshot Dmg:", `${weapons[args[1].toUpperCase()].leg}\n\u200b`, true)
+    .setImage(weapons[args[1].toUpperCase()].image)
     .setColor(0xC76CF5);
     message.channel.send(embed);  
     
