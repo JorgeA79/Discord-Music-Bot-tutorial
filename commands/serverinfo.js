@@ -5,13 +5,13 @@ const Discord = require("discord.js");
 const filterLevels = {
  DISABLED: 'Off',
  MEMBERS_WITHOUT_ROLES: 'No Role',
- ALL_MEMBERS; 'Everyone'
+ ALL_MEMBERS: 'Everyone'
 };
 
 const verificationLevels = {
  NONE: 'None',
  LOW: 'Low',
- MEDIUM; 'Medium',
+ MEDIUM: 'Medium',
  HIGH: '(╯°□°）╯︵ ┻━┻',
  VERY_HIGH: '┻━┻ ︵ヽ(`□´)ﾉ︵ ┻━┻'
 };
