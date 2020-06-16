@@ -145,6 +145,11 @@ module.exports = {
     .addField("Range:", `${weapons[args[1].toUpperCase()].range}`, true)
     .addField("Fire Rate:", `${weapons[args[1].toUpperCase()].fire}`, true)
     .addField("Penetration:", `${weapons[args[1].toUpperCase()].penetration}`, true)
+    .addField("Penetration:", `${weapons[args[1].toUpperCase()].penetration}\n\u200b`, true)
+    .addField("\u200b", `\u200b\n\u200b`, true)   
+    .addField("Heatshot Dmg:", `${weapons[args[1].toUpperCase()].head}`, true)
+    .addField("Bodyshot Dmg:", `${weapons[args[1].toUpperCase()].body}`, true)
+    .addField("Legshot Dmg:", `${weapons[args[1].toUpperCase()].leg}\n\u200b`, true)
     .setColor(0xC76CF5);
     message.channel.send(embed);  
     
