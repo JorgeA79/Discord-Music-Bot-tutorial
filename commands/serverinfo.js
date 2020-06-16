@@ -46,7 +46,7 @@ module.exports = {
   
     const embed = new Discord.MessageEmbed()
     .setDescription(`**Guild information for _${message.guild.name}_**`)
-    .setColor(0xC76CF5);
+    .setColor(0xC76CF5)
     .setThumbnail(message.guild.iconURL({ dynamic: true}))
     .addField('General'. [
        `**> Name:** ${message.guild.name}`,
