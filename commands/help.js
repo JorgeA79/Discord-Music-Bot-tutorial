@@ -10,26 +10,28 @@ module.exports = {
    .setColor(0xC76CF5)
    .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761> \n\u200b")
    .setThumbnail(process.env.BOT_AVATAR)
-  .addField("<:discord_bot_dev:719520819771998289> Core", "\`help\` \`ping\` \`server\` \`invite\` \`support\` \`serverinfo\`\n\u200b", true)
-  .addField(":gem: Social", "\`profile\` \`marry\` \`mymarry\` \`divorce\` \`level\`\n\u200b", true)
-  .addField(":credit_card:  Economy", "\`balance\` \`daily\` \`slots\` \`catch sell\` \`mine sell\`\n\u200b", true)      
-  .addField(":8ball: Fun & Games", "\`8ball\` \`flip\` \`head\` or \`tail\` \`ship\` \`slots\` \`ratewaifu\` \`catch\` \`mine\`\n\u200b", true)   
-  .addField("<:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
-  .addField(":musical_note: Music", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`\n\u200b", true)
-  .addField("<:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
-  .addField(":video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\`\n\u200b",true) 
-  .addField("⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\` \`fox\` \`quote\`\n\u200b",true)     
+  .addField("1️⃣ - <:discord_bot_dev:719520819771998289> Core", "\`help\` \`ping\` \`server\` \`invite\` \`support\` \`serverinfo\`\n\u200b", true)
+  .addField("2️⃣ - :gem: Social", "\`profile\` \`marry\` \`mymarry\` \`divorce\` \`level\`\n\u200b", true)
+  .addField("3️⃣ - :credit_card:  Economy", "\`balance\` \`daily\` \`slots\` \`catch sell\` \`mine sell\`\n\u200b", true)      
+  .addField("4️⃣ - :8ball: Fun & Games", "\`8ball\` \`flip\` \`head\` or \`tail\` \`ship\` \`slots\` \`ratewaifu\` \`catch\` \`mine\`\n\u200b", true)   
+  .addField("5️⃣ - <:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
+  .addField("6️⃣ - :musical_note: Music", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`\n\u200b", true)
+  .addField("7️⃣ - <:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
+  .addField("8️⃣ - :video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\`\n\u200b",true) 
+  .addField("9️⃣ - ⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\` \`fox\` \`quote\`\n\u200b",true)     
   .setTimestamp()  
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);   
 	  
-  const embed2 = new Discord.MessageEmbed()
+  const embed1 = new Discord.MessageEmbed()
    .setTitle("Pixel's Commands")
    .setColor(0xC76CF5)
-   .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761> \n\u200b")
+   .setDescription("Here you can find <:discord_bot_dev:719520819771998289> Core commands <a:__:713677852289269761> \n\u200b")
    .setThumbnail(process.env.BOT_AVATAR)
-  .addField("<:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
-  .addField("<:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
-  .addField(":video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\`\n\u200b",true)   
+   .addField("p!ping", "<:pokeb:716936621265518613> Get the time it took the bot to reply.", false)
+   .addField("p!server", "<:pokeb:716936621265518613> JAPAN's Discord invite.", false)
+   .addField("p!invite", "<:pokeb:716936621265518613> Invite the bot to your server.", false)
+   .addField("p!support", "<:pokeb:716936621265518613> Support's Bot server", false)
+   .addField("p!serverinfo", "<:pokeb:716936621265518613> Get the info of the server", false)
   .setTimestamp()  
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);    	  
 	  
@@ -45,9 +47,9 @@ module.exports = {
 	                        .then(collected => {
 		                      const reaction = collected.first();
 		                      if (reaction.emoji.name === '1️⃣') {
-			              msg.edit(embed)     
+			              msg.edit(embed1)     
 		                      }else if (reaction.emoji.name === '2️⃣') {
-			              msg.edit(embed2)          
+			                     
 		                      }
 	                        })
 	                        .catch(collected => {
