@@ -72,12 +72,37 @@ module.exports = {
    .addField("p!mine", ":8ball: Play minecraft mining, use **p!mine help** for more.", false)
    .setTimestamp()  
    .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
+
+  const embed5 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **<:kannaheart:712714267056537641> Roleplay** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!hug <@person>", "<:kannaheart:712714267056537641> Hug someone.", false)
+   .addField("p!slap <@person>", "<:kannaheart:712714267056537641> Slap someone.", false)
+   .addField("p!kiss <@person>", "<:kannaheart:712714267056537641> Kiss someone.", false) 
+   .addField("p!shoot <@person>", "<:kannaheart:712714267056537641> Shoot someone.", false)
+   .addField("p!protect <@person>", "<:kannaheart:712714267056537641> Protect someone.", false) 
+   .addField("p!wave <@person>", "<:kannaheart:712714267056537641> Wave at someone.", false)
+   .addField("p!date <@person>", "<:kannaheart:712714267056537641> Date someone.", false)
+   .addField("p!dance <@person>", "<:kannaheart:712714267056537641> Dance with someone.", false)
+   .addField("p!pat <@person>", "<:kannaheart:712714267056537641> Pat someone.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
+	  	  
 	  
   message.channel.send(embed)
     .then(msg => { msg.react('1️⃣')
                    msg.react('2️⃣')
+		   msg.react('3️⃣')
+		   msg.react('4️⃣')
+		   msg.react('5️⃣')
+		   msg.react('6️⃣')
+		   msg.react('7️⃣')
+		   msg.react('8️⃣')
+		   msg.react('9️⃣')
                   const filter = (reaction, user) => {
-	                return ['1️⃣','2️⃣','3️⃣','4️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
+	                return ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
                   };
                   
                    msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
@@ -91,6 +116,8 @@ module.exports = {
 			              msg.edit(embed3)        
 		                      }else if (reaction.emoji.name === '4️⃣') {
 			              msg.edit(embed4)        
+		                      }else if (reaction.emoji.name === '5️⃣') {
+			              msg.edit(embed5)        
 		                      }
 			   
 	                        })
