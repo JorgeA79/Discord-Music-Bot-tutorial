@@ -127,7 +127,7 @@
     }
   ],
   "weapons":[
-    "CLASSIC":{
+    {
     "name":"Classic",
     "price":"0",
     "type":"Sidearm",
@@ -141,7 +141,7 @@
     "leg":"22",
     "image":""  
     },
-    "SHORTY":{
+    {
     "name":"Shorty",
     "price":"200",
     "type":"Sidearm",
@@ -155,7 +155,7 @@
     "leg":"6",
     "image":""
     },
-    "FRENZY":{
+    {
     "name":"Frenzy",
     "price":"400",
     "type":"Sidearm",
@@ -169,7 +169,7 @@
     "leg":"22",
     "image":""
     },
-    "GHOST":{
+    {
     "name":"Ghost",
     "price":"500",
     "type":"Sidearm",
@@ -183,7 +183,7 @@
     "leg":"26",
     "image":""
     },
-    "SHERIFF":{
+    {
     "name":"Sheriff",
     "price":"800",
     "type":"Sidearm",
