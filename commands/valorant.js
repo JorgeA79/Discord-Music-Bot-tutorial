@@ -144,7 +144,6 @@ module.exports = {
     .addField("Magazine Size:", `${weapons[args[1].toUpperCase()].magazine}`, true)
     .addField("Range:", `${weapons[args[1].toUpperCase()].range}`, true)
     .addField("Fire Rate:", `${weapons[args[1].toUpperCase()].fire}`, true)
-    .addField("Penetration:", `${weapons[args[1].toUpperCase()].penetration}`, true)
     .addField("Penetration:", `${weapons[args[1].toUpperCase()].penetration}\n\u200b`, true)
     .addField("\u200b", `\u200b\n\u200b`, true)   
     .addField("Heatshot Dmg:", `${weapons[args[1].toUpperCase()].head}`, true)
