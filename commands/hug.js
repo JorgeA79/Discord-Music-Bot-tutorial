@@ -8,16 +8,7 @@ module.exports = {
 	    	"https://media.tenor.com/images/b6d0903e0d54e05bb993f2eb78b39778/tenor.gif",
  	    	"https://i.pinimg.com/originals/85/dc/ef/85dcef131af84b515106955e142df54e.gif",
  	    	"https://i.imgur.com/r9aU2xv.gif",
- 	    	"https://i.pinimg.com/originals/4d/89/d7/4d89d7f963b41a416ec8a55230dab31b.gif",
-      		"https://tenor.com/uIU6.gif",
-      		"https://tenor.com/xNZi.gif",
-      		"https://tenor.com/biBl3.gif",
-      		"https://tenor.com/biMNv.gif",
-      		"https://tenor.com/FQN7.gif",
-      		"https://tenor.com/FQNP.gif",
-      		"https://tenor.com/MLKl.gif",
-      		"https://tenor.com/7lZ6.gif",
-      		"https://tenor.com/PM3W.gif"];
+ 	    	"https://i.pinimg.com/originals/4d/89/d7/4d89d7f963b41a416ec8a55230dab31b.gif"];
 	
  	   var ahugifs =  [
 	    "https://media0.giphy.com/media/ArLxZ4PebH2Ug/200.gif",
