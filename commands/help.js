@@ -48,12 +48,36 @@ module.exports = {
    .setTimestamp()  
    .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
 	  
+  const embed3 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **:credit_card: Economy** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!balance/p!balance <@someone>", ":credit_card: Get your balance/Get someones balance.", false)
+   .addField("p!daily", ":credit_card: Claim your daily $250.", false)
+   .addField("p!slots", ":credit_card: Play slots.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR); 
+
+  const embed4 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **:8ball: Fun & Games** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!8ball <question>", ":8ball: Answers yes or no questions.", false)
+   .addField("p!flip <head/tail>", ":8ball: Play with a coin.", false)
+   .addField("p!ship <@tag1> <@tag2>", ":8ball: Ship two people.", false)
+   .addField("p!ratewaifu <waifu>", ":8ball: Rate your waifu.", false)
+   .addField("p!catch", ":8ball: Play catching pokemon, use **p!catch help** for more.", false)
+   .addField("p!mine", ":8ball: Play minecraft mining, use **p!mine help** for more.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
 	  
   message.channel.send(embed)
     .then(msg => { msg.react('1️⃣')
                    msg.react('2️⃣')
                   const filter = (reaction, user) => {
-	                return ['1️⃣','2️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
+	                return ['1️⃣','2️⃣','3️⃣','4️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
                   };
                   
                    msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
@@ -63,7 +87,12 @@ module.exports = {
 			              msg.edit(embed1)     
 		                      }else if (reaction.emoji.name === '2️⃣') {
 			              msg.edit(embed2)        
+		                      }else if (reaction.emoji.name === '3️⃣') {
+			              msg.edit(embed3)        
+		                      }else if (reaction.emoji.name === '4️⃣') {
+			              msg.edit(embed4)        
 		                      }
+			   
 	                        })
 	                        .catch(collected => {
 		                      
