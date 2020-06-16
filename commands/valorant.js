@@ -124,12 +124,30 @@ module.exports = {
      .setFooter('Chack more of the weapon using p!valorant weapon <weapon-name>')
      .setColor(0xC76CF5);
      return message.channel.send(embed); 
-    
-    
-    
+ 
     }
-    
-
+    const weapons = [
+      "CLASSIC":jsonContent.weapons[0],
+      "SHORTY": jsonContent.weapons[1],
+      "FRENZY": jsonContent.weapons[2],
+      "GHOST":  jsonContent.weapons[3],
+      "SHERIFF":jsonContent.weapons[4]
+    ];
+     
+    const embed = new Discord.MessageEmbed()
+    .setTitle("Valorant Agents")
+    .setDescription(`Here's **${weapons[args[1].toUpperCase()].name}'s** weapon stats and info!`)
+    .addField("Name:", `${weapons[args[1].toUpperCase()].name}`, true)
+    .addField("Cost:", `${weapons[args[1].toUpperCase()].price}`, true)
+    .addField("Type:", `${weapons[args[1].toUpperCase()].type}`, true)
+    .addField("Mode:", `${weapons[args[1].toUpperCase()].mode}`, true)
+    .addField("Magazine Size:", `${weapons[args[1].toUpperCase()].magazine}`, true)
+    .addField("Range:", `${weapons[args[1].toUpperCase()].range}`, true)
+    .addField("Fire Rate:", `${weapons[args[1].toUpperCase()].fire}`, true)
+    .addField("Penetration:", `${weapons[args[1].toUpperCase()].penetration}`, true)
+    .setImage(agent.image)
+    .setColor(0xC76CF5);
+    message.channel.send(embed);  
     
     
     }else{
