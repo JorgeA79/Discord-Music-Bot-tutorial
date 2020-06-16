@@ -89,7 +89,61 @@ module.exports = {
    .addField("p!pat <@person>", "<:kannaheart:712714267056537641> Pat someone.", false)
    .setTimestamp()  
    .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
-	  	  
+
+ const embed6 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **:musical_note: Music** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!play <Your song's link or name>", ":musical_note: Play a song.", false)
+   .addField("p!stop", ":musical_note: Stop queue.", false)
+   .addField("p!np", ":musical_note: What's now playing.", false)
+   .addField("p!queue", ":musical_note: Get current list.", false)
+   .addField("p!pause", ":musical_note: Pause current song.", false)
+   .addField("p!resume", ":musical_note: Resume current song.", false)
+   .addField("p!lyrics", ":musical_note: Lyrics of current song.", false)
+   .addField("p!skip", ":musical_note: Skip current song.", false)
+   .addField("p!clear", ":musical_note: Clear queue.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR); 
+
+const embed7 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **<:pokeb:716936621265518613> Anime** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!pokedex <pokemon>", "<:pokeb:716936621265518613> Get a Pokemon's info.", false)
+   .addField("p!anime <anime-name>", "<:pokeb:716936621265518613> Get an Anime description.", false)
+   .addField("p!scrap <anime-name> | <episode>", "<:pokeb:716936621265518613> Get an anime episode's link to watch.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR);	
+	  
+const embed8 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **:video_game: Gaming** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!osu <mode> <username>", ":video_game: Osu signature profile.", false)
+   .addField("p!valorant", ":video_game: Get valorant commands.", false)
+   .addField("p!fortnite <username>", ":video_game: Get a Fortnite user's stats.", false)
+   .addField("p!lol <region> <username>", ":video_game: Get a LOL profile stats like masteries or Ranked stats.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR);	  
+
+const embed9 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **:gear: Utility** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!urban <word>", ":gear: Get a word's definition.", false)
+   .addField("p!avatar", ":gear: Get someone's profile picture.", false)
+   .addField("p!cat", ":gear: Cat images.", false)
+   .addField("p!dog", ":gear: Dog images.", false)
+   .addField("p!fox", ":gear: Fox images.", false)
+   .addField("p!quote", ":gear: Random quotes.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR);		  
+	  
 	  
   message.channel.send(embed)
     .then(msg => { msg.react('1️⃣')
@@ -102,10 +156,10 @@ module.exports = {
 		   msg.react('8️⃣')
 		   msg.react('9️⃣')
                   const filter = (reaction, user) => {
-	                return ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
+	                return ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
                   };
                   
-                   msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+                   msg.awaitReactions(filter, { max: 15, time: 60000, errors: ['time'] })
 	                        .then(collected => {
 		                      const reaction = collected.first();
 		                      if (reaction.emoji.name === '1️⃣') {
@@ -118,6 +172,14 @@ module.exports = {
 			              msg.edit(embed4)        
 		                      }else if (reaction.emoji.name === '5️⃣') {
 			              msg.edit(embed5)        
+		                      }else if (reaction.emoji.name === '6️⃣') {
+			              msg.edit(embed6)        
+		                      }else if (reaction.emoji.name === '7️⃣') {
+			              msg.edit(embed7)        
+		                      }else if (reaction.emoji.name === '8️⃣') {
+			              msg.edit(embed8)        
+		                      }else if (reaction.emoji.name === '9️⃣') {
+			              msg.edit(embed9)        
 		                      }
 			   
 	                        })
