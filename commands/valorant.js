@@ -145,7 +145,6 @@ module.exports = {
     .addField("Range:", `${weapons[args[1].toUpperCase()].range}`, true)
     .addField("Fire Rate:", `${weapons[args[1].toUpperCase()].fire}`, true)
     .addField("Penetration:", `${weapons[args[1].toUpperCase()].penetration}`, true)
-    .setImage(agent.image)
     .setColor(0xC76CF5);
     message.channel.send(embed);  
     
