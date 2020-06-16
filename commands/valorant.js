@@ -126,13 +126,13 @@ module.exports = {
      return message.channel.send(embed); 
  
     }
-    const weapons = [
+    const weapons = {
       "CLASSIC":jsonContent.weapons[0],
       "SHORTY": jsonContent.weapons[1],
       "FRENZY": jsonContent.weapons[2],
       "GHOST":  jsonContent.weapons[3],
       "SHERIFF":jsonContent.weapons[4]
-    ];
+    };
      
     const embed = new Discord.MessageEmbed()
     .setTitle("Valorant Agents")
