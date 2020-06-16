@@ -50,34 +50,34 @@ module.exports = {
     .setColor(0xC76CF5)
     .setThumbnail(message.guild.iconURL({ dynamic: true}))
     .addField('General', [
-       `**> Name:** ${message.guild.name}`,
-       `**> ID:** ${message.guild.id}`,
-       `**> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
-       `**> Region:** ${regions[message.guild.region]}`,
-       `**> Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
-       `**> Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
-       `**> Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
-       `**> Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('Ll')} ${moment(message.guild.createdTimestamp).fromNow()}`,
+       `** Name:** ${message.guild.name}`,
+       `** ID:** ${message.guild.id}`,
+       `** Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
+       `** Region:** ${regions[message.guild.region]}`,
+       `** Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
+       `** Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
+       `** Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
+       `** Time Created:** ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('Ll')} ${moment(message.guild.createdTimestamp).fromNow()}`,
        '\u200b'
     ])
     .addField('Statistics', [
-       `**> Roles:** ${roles.length}`,
-       `**> Emojis:** ${emojis.size}`,
-       `**> Regular Emojis:** ${emojis.filter(emoji => !emoji.animated).size}`,
-       `**> Animated Emojis:** ${emojis.filter(emoji => emoji.animated).size}`,
-       `**> Members Count:** ${message.guild.memberCount}`,
-       `**> Human:** ${members.filter(member => !member.user.bot).size}`,
-       `**> Bots:** ${members.filter(member => member.user.bot).size}`,
-       `**> Text Channels:** ${channels.filter(channel => channel.type === 'text').size}`,
-       `**> Voice Channel:** ${channels.filter(channel => channel.type === 'voice').size}`,
-       `**> Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
+       `** Roles:** ${roles.length}`,
+       `** Emojis:** ${emojis.size}`,
+       `** Regular Emojis:** ${emojis.filter(emoji => !emoji.animated).size}`,
+       `** Animated Emojis:** ${emojis.filter(emoji => emoji.animated).size}`,
+       `** Members Count:** ${message.guild.memberCount}`,
+       `** Human:** ${members.filter(member => !member.user.bot).size}`,
+       `** Bots:** ${members.filter(member => member.user.bot).size}`,
+       `** Text Channels:** ${channels.filter(channel => channel.type === 'text').size}`,
+       `** Voice Channel:** ${channels.filter(channel => channel.type === 'voice').size}`,
+       `** Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}`,
        
      ], true)
      .addField('Presence',[
-     `**> Online:** ${members.filter(member => member.presence.status === 'online').size}`,
-     `**> Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
-     `**> Do not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
-     `**> Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
+     `** Online:** ${members.filter(member => member.presence.status === 'online').size}`,
+     `** Idle:** ${members.filter(member => member.presence.status === 'idle').size}`,
+     `** Do not Disturb:** ${members.filter(member => member.presence.status === 'dnd').size}`,
+     `** Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
      ], true)  
     
     .addField(`Roles [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? trimArray(roles) : 'None')
