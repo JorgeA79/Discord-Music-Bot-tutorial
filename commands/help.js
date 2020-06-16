@@ -25,15 +25,28 @@ module.exports = {
   const embed1 = new Discord.MessageEmbed()
    .setTitle("Pixel's Commands")
    .setColor(0xC76CF5)
-   .setDescription("Here you can find <:discord_bot_dev:719520819771998289> Core commands <a:__:713677852289269761> \n\u200b")
+   .setDescription("Here you can find **<:discord_bot_dev:719520819771998289> Core** commands <a:__:713677852289269761> \n\u200b")
    .setThumbnail(process.env.BOT_AVATAR)
-   .addField("p!ping", "<:pokeb:716936621265518613> Get the time it took the bot to reply.", false)
-   .addField("p!server", "<:pokeb:716936621265518613> JAPAN's Discord invite.", false)
-   .addField("p!invite", "<:pokeb:716936621265518613> Invite the bot to your server.", false)
-   .addField("p!support", "<:pokeb:716936621265518613> Support's Bot server", false)
-   .addField("p!serverinfo", "<:pokeb:716936621265518613> Get the info of the server", false)
-  .setTimestamp()  
-  .setFooter('Have a nice day!', process.env.BOT_AVATAR);    	  
+   .addField("p!ping", "<:discord_bot_dev:719520819771998289> Get the time it took the bot to reply.", false)
+   .addField("p!server", "<:discord_bot_dev:719520819771998289> JAPAN's Discord invite.", false)
+   .addField("p!invite", "<:discord_bot_dev:719520819771998289> Invite the bot to your server.", false)
+   .addField("p!support", "<:discord_bot_dev:719520819771998289> Support's Bot server", false)
+   .addField("p!serverinfo", "<:discord_bot_dev:719520819771998289> Get the info of the server", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR);    	  
+
+  const embed2 = new Discord.MessageEmbed()
+   .setTitle("Pixel's Commands")
+   .setColor(0xC76CF5)
+   .setDescription("Here you can find **:gem: Social** commands <a:__:713677852289269761> \n\u200b")
+   .setThumbnail(process.env.BOT_AVATAR)
+   .addField("p!profile/p!profile <@someone>", ":gem: Get your profile's Image/Get someones profile's Image.", false)
+   .addField("p!marry <@someone>", ":gem: Ask to marry with someone.", false)
+   .addField("p!mymarry", ":gem: Your current wife or husband.", false)
+   .addField("p!divorce", ":gem: Divorce of your current marry.", false)
+   .addField("p!level", ":gem: Get level card.", false)
+   .setTimestamp()  
+   .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
 	  
 	  
   message.channel.send(embed)
@@ -49,7 +62,7 @@ module.exports = {
 		                      if (reaction.emoji.name === '1️⃣') {
 			              msg.edit(embed1)     
 		                      }else if (reaction.emoji.name === '2️⃣') {
-			                     
+			              msg.edit(embed2)        
 		                      }
 	                        })
 	                        .catch(collected => {
