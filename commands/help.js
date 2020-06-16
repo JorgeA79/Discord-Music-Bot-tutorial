@@ -23,16 +23,16 @@ module.exports = {
     .setTimestamp()  
   	.setFooter('Have a nice day!', process.env.BOT_AVATAR);      
   message.channel.send(embed)
-    .then(msg => { msg.react(':one:')
-                  
+    .then(msg => { msg.react('1️⃣')
+                   msg.react('2️⃣')
                   const filter = (reaction, user) => {
-	                return [':one:'].includes(reaction.emoji.name) && user.id === message.author.id;
+	                return ['1️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
                   };
                   
                    msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	                        .then(collected => {
 		                      const reaction = collected.first();
-		                      if (reaction.emoji.name === '▶️') {
+		                      if (reaction.emoji.name === '1️⃣') {
 			                    
 		                      }
 	                        })
