@@ -107,6 +107,32 @@ module.exports = {
     .setColor(0xC76CF5);
     message.channel.send(embed); 
       
+    }else if(args[0].toLowerCase() =="weapon"){
+    
+    if(!args[1]){ 
+     
+     const embed = new Discord.MessageEmbed()
+     .setTitle("Valorant Weapons")
+     .setDescription(`This are all the available weapons in Valorant:\n\u200b`)
+     .addField(`**<:Sidearm:722560967363264574> Sidearm:**`,`xd`, true)
+     .addField("**<:SMGS:722560967728169050> SMG**", `xd`,true) 
+     .addField("**<:Rifles:722560966839238657> Rifles**", `xd`,true)    
+     .addField("**<:Shotguns:722560966801489953> Shotguns**", `xd`,true)   
+     .addField("**<:Heavy:722560966906085466> Heavy**", "xd",true)     
+     .addField("**<:Snipers:722560967430504449> Snipers**", "xd",true)        
+     .setThumbnail('https://preview.redd.it/pq2si1uks8t41.png?width=512&format=png&auto=webp&s=a86b0d7a2620b6f0d404e191d37d75f895996c23')
+     .setImage("https://cdn.discordapp.com/attachments/396942894487044099/720423754550738944/unknown.png")
+     .setFooter('Chack map plan with p!valorant map <map-name>')
+     .setColor(0xC76CF5);
+     return message.channel.send(embed); 
+    
+    
+    
+    }
+    
+
+    
+    
     }else{
      const embed = new Discord.MessageEmbed()
      .setTitle("Valorant Commands")
