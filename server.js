@@ -20,7 +20,7 @@ var Pokedex = require('pokedex'),
     pokedex = new Pokedex();
 
 
-let statuses = [`**${client.guilds.cache.size}** servers! | p!help`,
+let statuses = [
 	        `with Jorgy | p!help`,
 	        `with Ammy | p!help`,
 	        `with Rii | p!help`,
