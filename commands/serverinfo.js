@@ -48,7 +48,7 @@ module.exports = {
     .setDescription(`**Guild information for _${message.guild.name}_**`)
     .setColor(0xC76CF5)
     .setThumbnail(message.guild.iconURL({ dynamic: true}))
-    .addField('General'. [
+    .addField('General', [
        `**> Name:** ${message.guild.name}`,
        `**> ID:** ${message.guild.id}`,
        `**> Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
