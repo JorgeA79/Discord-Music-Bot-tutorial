@@ -159,41 +159,30 @@ const embed9 = new Discord.MessageEmbed()
 	                return ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
                   };
                   
-                   msg.awaitReactions(filter, { max:1, time: 60000, errors: ['time'] })
+                   msg.awaitReactions(filter, { time: 60000 })
 	                        .then(collected => {
 		                      const reaction = collected.first();
-		                      if (reaction.emoji.name === '1️⃣') {
-				      msg.clearReactions();      
+		                      if (reaction.emoji.name === '1️⃣') {         
 			              msg.edit(embed1)     
 		                      }else if (reaction.emoji.name === '2️⃣') {
-				      msg.clearReactions();  	      
 			              msg.edit(embed2)        
-		                      }else if (reaction.emoji.name === '3️⃣') {
-				      msg.clearReactions();  
+		                      }else if (reaction.emoji.name === '3️⃣') {		       
 			              msg.edit(embed3)        
 		                      }else if (reaction.emoji.name === '4️⃣') {
 			              msg.edit(embed4)        
-		                      }else if (reaction.emoji.name === '5️⃣') {
-				      msg.clearReactions();  
+		                      }else if (reaction.emoji.name === '5️⃣') {  
 			              msg.edit(embed5)        
-		                      }else if (reaction.emoji.name === '6️⃣') {
-				      msg.clearReactions();  
+		                      }else if (reaction.emoji.name === '6️⃣') { 
 			              msg.edit(embed6)        
-		                      }else if (reaction.emoji.name === '7️⃣') {
-				      msg.clearReactions();  
+		                      }else if (reaction.emoji.name === '7️⃣') {	       
 			              msg.edit(embed7)        
-		                      }else if (reaction.emoji.name === '8️⃣') {
-				      msg.clearReactions();  
+		                      }else if (reaction.emoji.name === '8️⃣') {      
 			              msg.edit(embed8)        
-		                      }else if (reaction.emoji.name === '9️⃣') {
-				      msg.clearReactions();  
+		                      }else if (reaction.emoji.name === '9️⃣') {		       
 			              msg.edit(embed9)        
 		                      }
 			   
 	                        })
-	                        .catch(collected => {
-		                      
-	                        }); 
                  })
 
   }
