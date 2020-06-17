@@ -7,7 +7,12 @@ module.exports = {
       var hugifs =  [
 	    "https://media1.tenor.com/images/b6d8a83eb652a30b95e87cf96a21e007/tenor.gif?itemid=10426943",
  	    "https://media.giphy.com/media/Zau0yrl17uzdK/giphy.gif",
- 	    "https://i.pinimg.com/originals/4e/9e/a1/4e9ea150354ad3159339b202cbc6cad9.gif"];
+ 	    "https://i.pinimg.com/originals/4e/9e/a1/4e9ea150354ad3159339b202cbc6cad9.gif",
+      		"https://giphy.com/gifs/slap-yuru-yuri-Zau0yrl17uzdK",
+      		"https://giphy.com/gifs/Gf3AUz3eBNbTW",
+      		"https://giphy.com/gifs/food-sailor-moon-RXGNsyRb1hDJm",
+      		"https://giphy.com/gifs/slapping-crying-tX29X2Dx3sAXS",
+      		"https://giphy.com/gifs/love-lab-m6etefcEsTANa"];
 		
     
 	    let member = message.mentions.members.first();
