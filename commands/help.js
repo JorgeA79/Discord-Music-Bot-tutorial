@@ -155,6 +155,7 @@ const embed9 = new Discord.MessageEmbed()
 		   msg.react('7️⃣')
 		   msg.react('8️⃣')
 		   msg.react('9️⃣')
+		   msg.react('↩')
                  
 		  const oneFilter = (reaction, user) => reaction.emoji.name === '1️⃣' && user.id === message.author.id
     		  const twoFilter = (reaction, user) => reaction.emoji.name === '2️⃣' && user.id === message.author.id
@@ -165,6 +166,7 @@ const embed9 = new Discord.MessageEmbed()
 		  const sevenFilter = (reaction, user) => reaction.emoji.name === '7️⃣' && user.id === message.author.id
     		  const eigthFilter = (reaction, user) => reaction.emoji.name === '8️⃣' && user.id === message.author.id
 		  const nineFilter = (reaction, user) => reaction.emoji.name === '9️⃣' && user.id === message.author.id
+		  const homeFilter = (reaction, user) => reaction.emoji.name === '↩' && user.id === message.author.id
 		  
 		  const one = msg.createReactionCollector(oneFilter, {timer: 6000})
     		  const two = msg.createReactionCollector(twoFilter, {timer: 6000})
@@ -175,6 +177,7 @@ const embed9 = new Discord.MessageEmbed()
 		  const seven = msg.createReactionCollector(sevenFilter, {timer: 6000})
     		  const eight = msg.createReactionCollector(eigthFilter, {timer: 6000})
 		  const nine = msg.createReactionCollector(nineFilter, {timer: 6000})
+		  const home = msg.createReactionCollector(homeFilter, {timer: 6000})
 		  
 		   one.on('collect', (r, u) => {
         		msg.edit(embed1)
@@ -212,7 +215,10 @@ const embed9 = new Discord.MessageEmbed()
         		msg.edit(embed9)
         		r.users.remove(r.users.cache.filter(u => u === message.author).first())
     			})
-		  
+		  home.on('collect', (r, u) => {
+        		msg.edit(embed)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
                  })
 
   }
