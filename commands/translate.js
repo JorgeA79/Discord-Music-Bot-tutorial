@@ -6,7 +6,7 @@ const translate = require('translate');
 module.exports = {
   name: "translate",
   description: "Pinging the bot",
-  execute(client, message) {
+  execute(client, message, args) {
   
   if(!args[0]) return message.channel.send('You need to specify a language');
   if(!args[1]) return message.channel.send('You need to specify a word');
