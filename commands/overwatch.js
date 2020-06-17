@@ -23,13 +23,13 @@ module.exports = {
                         .setColor(0xC76CF5)
                         .setAuthor(`Blizzard (Overwatch) | ${username}`, portrait)
                         .setThumbnail(portrait)
-                        .addField("General:", stripIndents`
+                        .addField("General:", `
                         **Level:** ${level || 0}
                         **Sportsmanship:** ${sportsmanship.rate || 0} / 100
                         **Shotcaller:** ${shotcaller.rate || 0} / 100
                         **Teammate:** ${teammate.rate  || 0} / 100
                         `)
-                        .addField("Competitive:", stripIndents`
+                        .addField("Competitive:", `
                         **Played:** ${played || 0}
                         **Won:** ${won || 0}
                         **Draw:** ${draw || 0}
@@ -37,7 +37,7 @@ module.exports = {
                         **Win Rate:** ${win_rate || 0}
                         **Playtime:** ${competitive || 0}
                         `, true)
-                        .addField("QuickPlay:", stripIndents`
+                        .addField("QuickPlay:", `
                         **Played:** ${games.quickplay.played || "N/A"}
                         **Won:** ${games.quickplay.won || 0}
                         **Playtime:** ${quickplay || 0}
