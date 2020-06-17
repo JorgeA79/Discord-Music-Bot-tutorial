@@ -158,10 +158,23 @@ const embed9 = new Discord.MessageEmbed()
                  
 		  const oneFilter = (reaction, user) => reaction.emoji.name === '1️⃣' && user.id === message.author.id
     		  const twoFilter = (reaction, user) => reaction.emoji.name === '2️⃣' && user.id === message.author.id
-		  
+		  const threeFilter = (reaction, user) => reaction.emoji.name === '3️⃣' && user.id === message.author.id
+    		  const fourFilter = (reaction, user) => reaction.emoji.name === '4️⃣' && user.id === message.author.id
+		  const fiveFilter = (reaction, user) => reaction.emoji.name === '5️⃣' && user.id === message.author.id
+    		  const sixFilter = (reaction, user) => reaction.emoji.name === '6️⃣' && user.id === message.author.id
+		  const sevenFilter = (reaction, user) => reaction.emoji.name === '7️⃣' && user.id === message.author.id
+    		  const eigthFilter = (reaction, user) => reaction.emoji.name === '8️⃣' && user.id === message.author.id
+		  const nineFilter = (reaction, user) => reaction.emoji.name === '9️⃣' && user.id === message.author.id
 		  
 		  const one = msg.createReactionCollector(oneFilter, {timer: 6000})
     		  const two = msg.createReactionCollector(twoFilter, {timer: 6000})
+		  const three = msg.createReactionCollector(threeFilter, {timer: 6000})
+    		  const four = msg.createReactionCollector(fourFilter, {timer: 6000})
+		  const five = msg.createReactionCollector(fiveFilter, {timer: 6000})
+    		  const six = msg.createReactionCollector(sixFilter, {timer: 6000})
+		  const seven = msg.createReactionCollector(sevenFilter, {timer: 6000})
+    		  const eight = msg.createReactionCollector(eigthFilter, {timer: 6000})
+		  const nine = msg.createReactionCollector(nineFilter, {timer: 6000})
 		  
 		   one.on('collect', (r, u) => {
         		msg.edit(embed1)
@@ -169,6 +182,34 @@ const embed9 = new Discord.MessageEmbed()
     			})
 		  two.on('collect', (r, u) => {
         		msg.edit(embed2)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  three.on('collect', (r, u) => {
+        		msg.edit(embed3)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  four.on('collect', (r, u) => {
+        		msg.edit(embed4)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  five.on('collect', (r, u) => {
+        		msg.edit(embed5)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  six.on('collect', (r, u) => {
+        		msg.edit(embed6)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  seven.on('collect', (r, u) => {
+        		msg.edit(embed7)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  eight.on('collect', (r, u) => {
+        		msg.edit(embed8)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  nine.on('collect', (r, u) => {
+        		msg.edit(embed9)
         		r.users.remove(r.users.cache.filter(u => u === message.author).first())
     			})
 		  
