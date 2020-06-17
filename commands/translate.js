@@ -14,17 +14,22 @@ module.exports = {
     const texttot = args.splice(1).join(" '");
     const language = args[0].toLowerCase();
     
-    try{
+    message.channel.send(translate(texttot, language));
+}
+}
+
+async function translate(texttot, language){
+try{
     const text = await translate(texttot, language);  
     const embed = new Discord.MessageEmbed()
     .setDescription(`${text}`)
     .setColor(0xC76CF5);
-    message.channel.send(embed);
-    }
-    catch(e){
-    
+    return embed; 
+   }
+  
+    catch(e){ 
     console.log(e);
-    
+    var errorxd = "I broke!";
+    return errorxd;  
     }
-}
 }
