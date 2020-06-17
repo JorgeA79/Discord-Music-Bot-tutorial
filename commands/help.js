@@ -164,21 +164,29 @@ const embed9 = new Discord.MessageEmbed()
 		                      const reaction = collected.last();
 		                      if (reaction.emoji.name === '1️⃣') {         
 			              msg.edit(embed1)     
-		                      }else if (reaction.emoji.name === '2️⃣') {
+		                      }
+			   if (reaction.emoji.name === '2️⃣') {
 			              msg.edit(embed2)        
-		                      }else if (reaction.emoji.name === '3️⃣') {		       
+		                      }
+			   if (reaction.emoji.name === '3️⃣') {		       
 			              msg.edit(embed3)        
-		                      }else if (reaction.emoji.name === '4️⃣') {
+		                      }
+			   if (reaction.emoji.name === '4️⃣') {
 			              msg.edit(embed4)        
-		                      }else if (reaction.emoji.name === '5️⃣') {  
+		                      }
+			   if (reaction.emoji.name === '5️⃣') {  
 			              msg.edit(embed5)        
-		                      }else if (reaction.emoji.name === '6️⃣') { 
+		                      }
+			   if (reaction.emoji.name === '6️⃣') { 
 			              msg.edit(embed6)        
-		                      }else if (reaction.emoji.name === '7️⃣') {	       
+		                      }
+			   if (reaction.emoji.name === '7️⃣') {	       
 			              msg.edit(embed7)        
-		                      }else if (reaction.emoji.name === '8️⃣') {      
+		                      }
+			   if (reaction.emoji.name === '8️⃣') {      
 			              msg.edit(embed8)        
-		                      }else if (reaction.emoji.name === '9️⃣') {		       
+		                      }
+			   if (reaction.emoji.name === '9️⃣') {		       
 			              msg.edit(embed9)        
 		                      }
 			   
