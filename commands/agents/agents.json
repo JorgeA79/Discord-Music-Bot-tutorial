@@ -210,6 +210,76 @@
     "body":"27",
     "leg":"23",
     "image":"https://cdn.discordapp.com/attachments/396942894487044099/722585083185463336/unknown.png"
+    },
+    {
+    "name":"Spectre",
+    "price":"1600",
+    "type":"SMG",
+    "mode":"Full-Automatic",
+    "magazine":"30",
+    "range":"20m", 
+    "fire":"13.33 rounds/sec",
+    "penetration":"Medium",
+    "head":"78",
+    "body":"26",
+    "leg":"22",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722607811787227620/unknown.png"
+    },
+    {
+    "name":"Bucky",
+    "price":"900",
+    "type":"Shotgun",
+    "mode":"Semi-Automatic",
+    "magazine":"8",
+    "range":"8/12/50m", 
+    "fire":"1.1 rounds/sec",
+    "penetration":"Low",
+    "head":"44",
+    "body":"22",
+    "leg":"19",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722608802838347847/unknown.png"
+    },
+    {
+     "name":"Judge",
+    "price":"1500",
+    "type":"Shotgun",
+    "mode":"Full-Automatic",
+    "magazine":"7",
+    "range":"20/50m", 
+    "fire":"3.5 rounds/sec",
+    "penetration":"Medium",
+    "head":"26",
+    "body":"23",
+    "leg":"11",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722609074667257946/unknown.png"
+    },
+    {
+    "name":"Marshall",
+    "price":"1100",
+    "type":"Sniper",
+    "mode":"Semi-Automatic",
+    "magazine":"5",
+    "range":"50m", 
+    "fire":"1.5 rounds/sec",
+    "penetration":"Medium",
+    "head":"202",
+    "body":"101",
+    "leg":"85",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722610105475923968/unknown.png"
+    },
+    {
+     "name":"Operator",
+    "price":"4500",
+    "type":"Sniper",
+    "mode":"Semi-Automatic",
+    "magazine":"5",
+    "range":"50m", 
+    "fire":"1.5 rounds/sec",
+    "penetration":"High",
+    "head":"255",
+    "body":"150",
+    "leg":"127",
+    "image":"https://cdn.discordapp.com/attachments/396942894487044099/722610180017225778/unknown.png"
     }
   ]
 }
