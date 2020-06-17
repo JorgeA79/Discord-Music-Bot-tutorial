@@ -155,42 +155,23 @@ const embed9 = new Discord.MessageEmbed()
 		   msg.react('7️⃣')
 		   msg.react('8️⃣')
 		   msg.react('9️⃣')
-                  const filter = (reaction, user) => {
-	                return ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
-                  };
-                  
-                   msg.awaitReactions(filter, { max:1, time: 60000, errors: ['time'] })
-	                        .then(collected => {
-		                      const reaction = collected.last();
-		                      if (reaction.emoji.name === '1️⃣') {         
-			              msg.edit(embed1)     
-		                      }
-			   if (reaction.emoji.name === '2️⃣') {
-			              msg.edit(embed2)        
-		                      }
-			   if (reaction.emoji.name === '3️⃣') {		       
-			              msg.edit(embed3)        
-		                      }
-			   if (reaction.emoji.name === '4️⃣') {
-			              msg.edit(embed4)        
-		                      }
-			   if (reaction.emoji.name === '5️⃣') {  
-			              msg.edit(embed5)        
-		                      }
-			   if (reaction.emoji.name === '6️⃣') { 
-			              msg.edit(embed6)        
-		                      }
-			   if (reaction.emoji.name === '7️⃣') {	       
-			              msg.edit(embed7)        
-		                      }
-			   if (reaction.emoji.name === '8️⃣') {      
-			              msg.edit(embed8)        
-		                      }
-			   if (reaction.emoji.name === '9️⃣') {		       
-			              msg.edit(embed9)        
-		                      }
-			   
-	                        })
+                 
+		  const oneFilter = (reaction, user) => reaction.emoji.name === '1️⃣' && user.id === message.author.id
+    		  const twoFilter = (reaction, user) => reaction.emoji.name === '2️⃣' && user.id === message.author.id
+		  
+		  
+		  const one = msg.createReactionCollector(oneFilter, {timer: 6000})
+    		  const two = msg.createReactionCollector(twoFilter, {timer: 6000})
+		  
+		   one.on('collect', (r, u) => {
+        		msg.edit(embed1)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  two.on('collect', (r, u) => {
+        		msg.edit(embed2)
+        		r.users.remove(r.users.cache.filter(u => u === message.author).first())
+    			})
+		  
                  })
 
   }
