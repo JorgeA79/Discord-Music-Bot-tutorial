@@ -18,6 +18,7 @@ module.exports = {
     .addField("p!valorant agent/p!valorant agent [agent-name]:", `<:valorant:718659131917074504> Get all the agents in game/ or the info about one in specific`, false)
     .setImage('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
     .addField("p!valorant map/p!valorant map [map-name]:", `<:valorant:718659131917074504> Get all the maps in game/ or the info about one in specific`, false)
+    .addField("p!valorant weapon/p!valorant weapon [weapon-name]:", `<:valorant:718659131917074504> Get all the weapons in game/ or the info about one in specific`, false) 
     .setColor(0xC76CF5);
     return message.channel.send(embed);
     } 
@@ -141,7 +142,7 @@ module.exports = {
       "ARES":jsonContent.weapons[11],
       "ODIN":jsonContent.weapons[12],
       "BULLDOG":  jsonContent.weapons[13],
-      "GUADIAN":  jsonContent.weapons[14],
+      "GUARDIAN":  jsonContent.weapons[14],
       "PHANTOM":jsonContent.weapons[15],
       "VANDAL":jsonContent.weapons[16]
     };
@@ -172,6 +173,7 @@ module.exports = {
     .setDescription(`This are all the commmands related to valorant game!, ${message.author}\n\u200b`)
     .addField("p!valorant agent/p!valorant agent [agent-name]:", `<:valorant:718659131917074504> Get all the agents in game/ or the info about one in specific`, false)
     .addField("p!valorant map/p!valorant map [map-name]:", `<:valorant:718659131917074504> Get all the maps in game/ or the info about one in specific`, false)
+    .addField("p!valorant weapon/p!valorant weapon [weapon-name]:", `<:valorant:718659131917074504> Get all the weapons in game/ or the info about one in specific`, false) 
     .setImage('https://cdn.discordapp.com/attachments/396942894487044099/718659478500671568/unknown.png')
     .setColor(0xC76CF5);
     return message.channel.send(embed);
