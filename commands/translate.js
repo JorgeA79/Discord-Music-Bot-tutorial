@@ -14,11 +14,11 @@ module.exports = {
     const texttot = args.splice(1).join(" '");
     const language = args[0].toLowerCase();
     
-    message.channel.send(translate(texttot, language));
+    message.channel.send(translatexd(texttot, language));
 }
 }
 
-async function translate(texttot, language){
+async function translatexd(texttot, language){
 try{
     const text = await translate(texttot, language);  
     const embed = new Discord.MessageEmbed()
