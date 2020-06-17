@@ -1,5 +1,4 @@
-  
-const { RichEmbed } = require("discord.js");
+const Discord = require("discord.js");  
 const { stripIndents } = require("common-tags");
 const overwatch = require("overwatch-api");
 
@@ -20,7 +19,7 @@ module.exports = {
 
                 if(private) return message.channel.send("This users stats are private and cant be seen by anyone.");
                         
-                    const embed = new RichEmbed()
+                    const embed = new Discord.MessageEmbed()
                         .setColor(0xC76CF5)
                         .setAuthor(`Blizzard (Overwatch) | ${username}`, portrait)
                         .setThumbnail(portrait)
