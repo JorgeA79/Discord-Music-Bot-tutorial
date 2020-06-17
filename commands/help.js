@@ -163,22 +163,30 @@ const embed9 = new Discord.MessageEmbed()
 	                        .then(collected => {
 		                      const reaction = collected.first();
 		                      if (reaction.emoji.name === '1️⃣') {
+				      msg.clearReactions();      
 			              msg.edit(embed1)     
 		                      }else if (reaction.emoji.name === '2️⃣') {
+				      msg.clearReactions();  	      
 			              msg.edit(embed2)        
 		                      }else if (reaction.emoji.name === '3️⃣') {
+				      msg.clearReactions();  
 			              msg.edit(embed3)        
 		                      }else if (reaction.emoji.name === '4️⃣') {
 			              msg.edit(embed4)        
 		                      }else if (reaction.emoji.name === '5️⃣') {
+				      msg.clearReactions();  
 			              msg.edit(embed5)        
 		                      }else if (reaction.emoji.name === '6️⃣') {
+				      msg.clearReactions();  
 			              msg.edit(embed6)        
 		                      }else if (reaction.emoji.name === '7️⃣') {
+				      msg.clearReactions();  
 			              msg.edit(embed7)        
 		                      }else if (reaction.emoji.name === '8️⃣') {
+				      msg.clearReactions();  
 			              msg.edit(embed8)        
 		                      }else if (reaction.emoji.name === '9️⃣') {
+				      msg.clearReactions();  
 			              msg.edit(embed9)        
 		                      }
 			   
