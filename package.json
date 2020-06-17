@@ -40,7 +40,7 @@
     "simple-fortnite-api":"0.1.9",
     "normalize-url":"5.0.0",
     "moment": "2.26.0",
-    "translate":"1.1.2"
+    "overwatch-api":"0.8.2"
   },
   "engines": {
     "node": "12.x"
