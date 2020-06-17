@@ -215,13 +215,9 @@ module.exports = {
   try {
         
             fetch(normalizeUrl(site))
-            .then((err, res) => {
-            if (err) return message.channel.send("Unable to find a user with that username.");   
-            res.json()
+            .then( res =>  res.json()).then(body => {
             
-            }).then(body => {
             
-     
             var champT1 = "";
             var champT2 = ""; 
             var champT3 = "";  
