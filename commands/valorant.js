@@ -132,7 +132,12 @@ module.exports = {
       "FRENZY": jsonContent.weapons[2],
       "GHOST":  jsonContent.weapons[3],
       "SHERIFF":jsonContent.weapons[4],
-      "STINGER":jsonContent.weapons[5]
+      "STINGER":jsonContent.weapons[5],
+      "SPECTRE":jsonContent.weapons[6],
+      "BUCKY":  jsonContent.weapons[7],
+      "JUDGE":  jsonContent.weapons[8],
+      "MARSHALL":jsonContent.weapons[9],
+      "OPERATOR":jsonContent.weapons[10],
     };
      
     const embed = new Discord.MessageEmbed()
