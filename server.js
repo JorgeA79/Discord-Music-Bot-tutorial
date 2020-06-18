@@ -483,11 +483,11 @@ client.on('message', async message => {
                     **Kills/Deaths Ratio:** ${(pvp.general.kills / pvp.general.deaths).toFixed(2)}
                     **Playtime:** ${Math.round(pvp.general.playtime / 3600)} hours
                 `)
+	        .addField("Terroist Hunt:", stripIndents`
                     **Wins:** ${pve.general.wins} 
                     **Losses:** ${pve.general.losses}
                     **Win/Loss Ratio:** ${(pve.general.wins / pve.general.matches * 100).toFixed(2)}%
-                    **Kills:** ${pve.general.kills} 
-                .addField("Terroist Hunt:", stripIndents`
+                    **Kills:** ${pve.general.kills}             
                     **Deaths:** ${pve.general.deaths}
                     **Kills/Deaths Ratio:** ${(pve.general.kills / pve.general.deaths).toFixed(2)}
                     **Playtime:** ${Math.round(pve.general.playtime / 3600)} hours
