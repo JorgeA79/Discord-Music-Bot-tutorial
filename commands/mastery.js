@@ -52,12 +52,17 @@ module.exports = {
     .setDescription(`Here are your masteries, ${body.name}!`)
     .addField(`Masteries [${masteries.length - 1}]`, masteries.length < 10 ? masteries.join('\n') : masteries.length > 10 ? trimArray(masteries) : 'None')
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
-    .setTimestamp()
+    .setTimestamp();
     message.channel.send(embed)
   })
   })
   }
-  }
+  }catch(err){
+      const embed = new Discord.MessageEmbed()
+      .setDescription("Couldn't find anything <a:x_:713677703756251147>")
+      .setColor(0xC76CF5);
+      return message.channel.send(embed);
+ } 
   
 function trimArray(arr, maxLen = 10){
 if(arr.length > maxLen){
