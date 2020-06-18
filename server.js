@@ -8,6 +8,8 @@ const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e0
 const { stripIndents } = require("common-tags");
 const R6API = require("r6api.js");
 const { getId, getLevel, getRank, getStats } = new R6API('yimaja8111@wkernl.com', 'D23exp11');
+const overwatch = require("overwatch-api");
+
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -481,11 +483,11 @@ client.on('message', async message => {
                     **Kills/Deaths Ratio:** ${(pvp.general.kills / pvp.general.deaths).toFixed(2)}
                     **Playtime:** ${Math.round(pvp.general.playtime / 3600)} hours
                 `)
-                .addField("Terroist Hunt:", stripIndents`
                     **Wins:** ${pve.general.wins} 
                     **Losses:** ${pve.general.losses}
                     **Win/Loss Ratio:** ${(pve.general.wins / pve.general.matches * 100).toFixed(2)}%
                     **Kills:** ${pve.general.kills} 
+                .addField("Terroist Hunt:", stripIndents`
                     **Deaths:** ${pve.general.deaths}
                     **Kills/Deaths Ratio:** ${(pve.general.kills / pve.general.deaths).toFixed(2)}
                     **Playtime:** ${Math.round(pve.general.playtime / 3600)} hours
@@ -498,6 +500,51 @@ client.on('message', async message => {
 	  }
 	  });
 	  
-	  
+    client.on('message', async message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + "overwatch")) {
+		  
+	  const args = message.content.slice(PREFIX.length).split(` `);
+		  
+	 if(!args[1]) return message.channel.send("Please supply a username.");
+         if(!args[2] || (args[2] && !["pc", "xbl", "psn"].includes(args[1]))) return message.channel.send("Please supply a platform to check. `pc`, `xbox` or `psn`");
+         if(args[1].includes("#")) args[1] = args[1].replace(/#/g, "-");
+
+            overwatch.getProfile(args[1], "global", args[0], (err, json) => {
+                if (err) return message.channel.send("Unable to find a user with that username.");
+                const { games, level, portrait, username, playtime: { competitive, quickplay }, private } = json;
+                const { sportsmanship, shotcaller, teammate } = json.endorsement;
+                const { won, draw, played, lost, win_rate } = json.games.competitive;
+
+                if(private) return message.channel.send("This users stats are private and cant be seen by anyone.");
+                        
+                    const embed = new discord.MessageEmbed()
+                        .setColor(0xC76CF5)
+                        .setAuthor(`Blizzard (Overwatch) | ${username}`, portrait)
+                        .setThumbnail(portrait)
+                        .addField("General:", stripIndents`
+                        **Level:** ${level || 0}
+                        **Sportsmanship:** ${sportsmanship.rate || 0} / 100
+                        **Shotcaller:** ${shotcaller.rate || 0} / 100
+                        **Teammate:** ${teammate.rate  || 0} / 100
+                        `)
+                        .addField("Competitive:", stripIndents`
+                        **Played:** ${played || 0}
+                        **Won:** ${won || 0}
+                        **Draw:** ${draw || 0}
+                        **Lost:** ${lost || 0}
+                        **Win Rate:** ${win_rate || 0}
+                        **Playtime:** ${competitive || 0}
+                        `, true)
+                        .addField("QuickPlay:", stripIndents`
+                        **Played:** ${games.quickplay.played || "N/A"}
+                        **Won:** ${games.quickplay.won || 0}
+                        **Playtime:** ${quickplay || 0}
+                        `, true)
+                        .setTimestamp();
+
+                    message.channel.send(embed);
+	  }
+	  });	  
 
 client.login(process.env.BOT_TOKEN)
