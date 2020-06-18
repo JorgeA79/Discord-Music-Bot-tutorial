@@ -6,7 +6,8 @@ const oakdexPokedex = require('oakdex-pokedex');
 var normalizeText = require("normalize-text");
 const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e07-38e2-443c-b527-9ad74704f222");
 const { stripIndents } = require("common-tags");
-
+const R6API = require("r6api.js");
+const { getId, getLevel, getRank, getStats } = new R6API('yimaja8111@wkernl.com', 'D23exp11');
 
 const Canvasx = require('canvas');
 const { join } = require('path');
@@ -426,6 +427,77 @@ client.on('message', async message => {
 		  
 }
 });
+    client.on('message', async message => {
+	  if (message.author === client.user) return;
+	  if (message.content.startsWith(PREFIX + "rb")) {
+	  const args = message.content.slice(PREFIX.length).split(` `);
+		  
+		   const platforms = { pc: "UPLAY", xbox: "XBL", ps4: "PSN" };
+		const regions = { eu: "emea", na: "ncsa", as: "apac" };
 
+		let player, platform, region;
+
+		if (!args[1]) return message.reply("please specify a player to search!");
+		else player = args[1];
+
+		args[2] && [ "pc", "xbox", "ps4" ].includes(args[2].toLowerCase()) ? platform = platforms[args[2].toLowerCase()] : platform = platforms["pc"];
+        args[3] && [ "eu", "na", "as" ].includes(args[3].toLowerCase()) ? region = regions[args[3].toLowerCase()] : region = regions["eu"];
+
+		if (platform === "XBL") player = player.replace("_", " ");
+
+		player = await getId(platform, player);
+		if (!player.length) return message.reply("Couldn't fetch results for that player.");
+		player = player[0];
+
+		const playerRank = await getRank(platform, player.id);
+		const playerStats = await getStats(platform, player.id);
+		const playerGame = await getLevel(platform, player.id);
+
+		if (!playerRank.length || !playerStats.length || !playerGame.length) return message.channel.send("I was unable to fetch some of the data. Try again!");
+
+		const { current, max, lastMatch } = playerRank[0].seasons[Object.keys(playerRank[0].seasons)[0]].regions[ region ];
+		const { pvp, pve } = playerStats[0];
+		const { level, xp } = playerGame[0];
+
+		platform = Object.keys(platforms).find((key) => platforms[key] === platform).toUpperCase();
+		region = Object.keys(regions).find((key) => regions[key] === region).toUpperCase();
+
+            const embed = new discord.MessageEmbed()
+                .setColor(0xC76CF5)
+                .setAuthor(player.username, client.user.displayAvatarURL)
+                .setDescription(`Stats for the **${region}** region on ${platform}.`)
+                .setThumbnail(current.image)
+                .addField("General:", stripIndents`
+                    **Level:** ${level} (${xp} xp)
+                    **Rank:** ${current.name} (Max: ${max.name})
+                    **MMR:** ${current.mmr}
+                `)
+                .addField("Statistics:", stripIndents`
+                    **Wins:** ${pvp.general.wins} 
+                    **Losses:** ${pvp.general.losses}
+                    **Win/Loss Ratio:** ${(pvp.general.wins /  pvp.general.matches * 100).toFixed(2)}%
+                    **Kills:** ${pvp.general.kills}
+                    **Deaths:** ${pvp.general.deaths}
+                    **Kills/Deaths Ratio:** ${(pvp.general.kills / pvp.general.deaths).toFixed(2)}
+                    **Playtime:** ${Math.round(pvp.general.playtime / 3600)} hours
+                `)
+                .addField("Terroist Hunt:", stripIndents`
+                    **Wins:** ${pve.general.wins} 
+                    **Losses:** ${pve.general.losses}
+                    **Win/Loss Ratio:** ${(pve.general.wins / pve.general.matches * 100).toFixed(2)}%
+                    **Kills:** ${pve.general.kills} 
+                    **Deaths:** ${pve.general.deaths}
+                    **Kills/Deaths Ratio:** ${(pve.general.kills / pve.general.deaths).toFixed(2)}
+                    **Playtime:** ${Math.round(pve.general.playtime / 3600)} hours
+                `)
+                .setTimestamp()
+                .setFooter(client.user.username);
+
+            message.channel.send(embed).catch((e) => message.channel.send(`There was an error: ${e.message}`));
+		  
+	  }
+	  });
+	  
+	  
 
 client.login(process.env.BOT_TOKEN)
