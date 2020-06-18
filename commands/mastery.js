@@ -50,7 +50,7 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here are your masteries, ${body.name}!`)
-    .addField(`Masteries [${masteries.length - 1}]`, masteries.length < 10 ? masteries.championId.join('\n') : masteries.length > 10 ? trimArray(masteries.championId) : 'None')
+    .addField(`Masteries [${masteries.length - 1}]`, masteries.length < 10 ? masteries.championId.join('\n') : masteries.length > 10 ? trimArray(masteries) : 'None')
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
@@ -63,7 +63,7 @@ function trimArray(arr, maxLen = 10){
 if(arr.length > maxLen){
 const len = arr.length - maxLen;
 arr = arr.slice(0, maxLen);
-arr.push(`${len} more...`) ;
+
 }
-return arr;
+return arr.ChampionId;
 }  
