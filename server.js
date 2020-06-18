@@ -449,7 +449,7 @@ client.on('message', async message => {
 		if (!player.length) return message.reply("Couldn't fetch results for that player.");
 		player = player[0];
 
-		const playerRank = await getRank(platform, player.id, { regions: ['apac'] });
+		const playerRank = await getRank(platform, player.id);
 		const playerStats = await getStats(platform, player.id);
 		const playerGame = await getLevel(platform, player.id);
 
