@@ -449,13 +449,13 @@ client.on('message', async message => {
 		if (!player.length) return message.reply("Couldn't fetch results for that player.");
 		player = player[0];
 
-		const playerRank = await getRank(platform, player.id);
+		const playerRank = await getRank(platform, player.id, { regions: [ region ] });
 		const playerStats = await getStats(platform, player.id);
 		const playerGame = await getLevel(platform, player.id);
 
 		if (!playerRank.length || !playerStats.length || !playerGame.length) return message.channel.send("I was unable to fetch some of the data. Try again!");
 
-		const { current, max, lastMatch } = playerRank[0].seasons[Object.keys(playerRank[0].seasons)[0]].regions[ region ];
+		const { current, max, lastMatch } = playerRank[0].seasons[Object.keys(playerRank[0].seasons)[0]];
 		const { pvp, pve } = playerStats[0];
 		const { level, xp } = playerGame[0];
 
