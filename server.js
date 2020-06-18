@@ -8,7 +8,6 @@ const fortnite = require("simple-fortnite-api"), clientF = new fortnite("f3309e0
 const { stripIndents } = require("common-tags");
 const R6API = require("r6api.js");
 const { getId, getLevel, getRank, getStats } = new R6API('yimaja8111@wkernl.com', 'D23exp11');
-const overwatch = require("overwatch-api");
 
 
 const Canvasx = require('canvas');
