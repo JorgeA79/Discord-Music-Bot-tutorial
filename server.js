@@ -449,7 +449,7 @@ client.on('message', async message => {
 		if (!player.length) return message.reply("Couldn't fetch results for that player.");
 		player = player[0];
 
-		const playerRank = await getRank(platform, player.id, { regions: region });
+		const playerRank = await getRank(platform, player.id, { regions: ['apac'] });
 		const playerStats = await getStats(platform, player.id);
 		const playerGame = await getLevel(platform, player.id);
 
@@ -464,7 +464,7 @@ client.on('message', async message => {
 
             const embed = new discord.MessageEmbed()
                 .setColor(0xC76CF5)
-                .setAuthor(player.username, client.user.displayAvatarURL)
+                .setAuthor(player.username, process.env.BOT_AVATAR)
                 .setDescription(`Stats for the **${region}** region on ${platform}.`)
                 .setThumbnail(current.image)
                 .addField("General:", stripIndents`
