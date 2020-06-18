@@ -23,13 +23,13 @@ module.exports = {
 
 		if (platform === "XBL") player = player.replace("_", " ");
 
-		player = await getId(platform, player);
+		player = getPlayer(platform, player);
 		if (!player.length) return message.reply("Couldn't fetch results for that player.");
 		player = player[0];
 
-		const playerRank = await getRank(platform, player.id);
-		const playerStats = await getStats(platform, player.id);
-		const playerGame = await getLevel(platform, player.id);
+		const playerRank = getRankU(platform, player);
+		const playerStats = getStatsU(platform, player.id);
+		const playerGame = getLevelU(platform, player.id);
 
 		if (!playerRank.length || !playerStats.length || !playerGame.length) return message.channel.send("I was unable to fetch some of the data. Try again!");
 
@@ -75,4 +75,21 @@ module.exports = {
   
     
 }
+}
+
+async function getPlayer(platform, player){
+let playerid = await getId(platform, player);
+return playerid
+}
+async function getRankU(platform, player){
+let playerank = await getRank(platform, player.id);
+return playerank
+}
+async function getStatsU(platform, player){
+let playerank = await getStats(platform, player.id);
+return playerank
+}
+async function getLevelU(platform, player){
+let playerank = await getLevel(platform, player.id);
+return playerank
 }
