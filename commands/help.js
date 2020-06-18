@@ -17,7 +17,7 @@ module.exports = {
   .addField("5️⃣ - <:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
   .addField("6️⃣ - :musical_note: Music", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`\n\u200b", true)
   .addField("7️⃣ - <:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
-  .addField("8️⃣ - :video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\`\n\u200b",true) 
+  .addField("8️⃣ - :video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\` \`r6stats\`\n\u200b",true) 
   .addField("9️⃣ - ⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\` \`fox\` \`quote\`\n\u200b",true)     
   .setTimestamp()  
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);   
@@ -127,6 +127,7 @@ const embed8 = new Discord.MessageEmbed()
    .addField("p!valorant", ":video_game: Get valorant commands.", false)
    .addField("p!fortnite <username>", ":video_game: Get a Fortnite user's stats.", false)
    .addField("p!lol <region> <username>", ":video_game: Get a LOL profile stats like masteries or Ranked stats.", false)
+   .addField("p!r6stats <username> <platform> <region>", ":video_game: Get your Rainbow Six Siege Stats.", false)
    .setTimestamp()  
    .setFooter('Have a nice day!', process.env.BOT_AVATAR);	  
 
