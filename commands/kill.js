@@ -6,7 +6,7 @@ module.exports = {
   execute(client, message, args) {
       var hugifs = [
 	 "https://pa1.narvii.com/5748/8c6805c5fb2172cfdc445ef193a4527f4492012a_hq.gif",
- 	 "https://i.chzbgr.com/full/8442235648/h5122C918/whats-the-name-of-that-anime"
+ 	 "https://i.chzbgr.com/full/8442235648/h5122C918/whats-the-name-of-that-anime",
  	 "http://img0.joyreactor.com/pics/post/anime-gif-anime-chuunibyou-demo-koi-ga-shitai%21-1388378.gif"];
 
 		
