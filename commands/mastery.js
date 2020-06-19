@@ -62,8 +62,8 @@ module.exports = {
 function trimArray(arr, maxLen = 10){
 if(arr.length > maxLen){
 const len = arr.length - maxLen;
-arr = arr.slice(0, maxLen);
+arr = arr.slice(0, maxLen).championId;
 
 }
-return arr.ChampionId;
+return arr;
 }  
