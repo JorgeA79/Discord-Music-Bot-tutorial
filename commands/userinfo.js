@@ -17,10 +17,10 @@ module.exports = {
         .addField("**ID:**", `${target.id}`, true)
         .addField("**Status:**", `${target.presence.status}`, true)
         .addField("**Created At:**", `${target.createdAt}`, true)
-        .setFooter(`PixelBot | Footer`, bot.user.displayAvatarURL);
+        .setFooter(`PixelBot | Footer`, client.user.displayAvatarURL);
 
     message.channel.send(uEmbed);
     
 }
 }
-© 2020 GitHub, Inc.
+
