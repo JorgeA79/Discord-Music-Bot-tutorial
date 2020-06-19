@@ -64,7 +64,13 @@ module.exports = {
    });
    var chestArray = masteries.slice(0, 10).map((item) => {
        var emote = chestEmote[item.chestGranted]
-       var text = `${emote}`
+       var status = "";
+       if(item.championLevel == 7){
+       status = "Mastered";
+       }else{
+       status = `${item.tokensEarned} Tokens`;
+       }
+       var text = `${emote} - ${status}`
        return text;
    }); 
     
@@ -75,8 +81,8 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here are your masteries, ${body.name}!`)
-    .addField(`Masteries [${masteries.length - 1}]`, masteryArray, true)
-    .addField(`Chest`, chestArray, true)
+    .addField(`Masteries/Points [${masteries.length - 1}]`, masteryArray, true)
+    .addField(`Chest/Status`, chestArray, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
