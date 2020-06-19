@@ -118,7 +118,7 @@ const champs = {
    "Aatrox":"<:AatroxSquare:721850183306182677>",
    "Ahri": "<:AhriSquare:721850183314440284>",
    "Akali":"<:AkaliSquare:721850184023408640>",
-   "Allistar":"<:AlistarSquare:721850191128559667>",
+   "Alistar":"<:AlistarSquare:721850191128559667>",
    "Amumu":"<:AmumuSquare:721850191849979991>",
    "Anivia":"<:AniviaSquare:721850195612270673>",
    "Annie":"<:AnnieSquare:721850192952819742>",
