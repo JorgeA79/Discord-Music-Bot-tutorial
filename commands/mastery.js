@@ -42,6 +42,10 @@ module.exports = {
   fetch(site1)
   .then(res => res.json()).then(masteries => {  
   
+   var size = 10; 
+   var masteryArray = masteries.slice(0, size).map(i => {
+    return masteries[i].championId;
+   }
   
   
    const embed = new Discord.MessageEmbed()
@@ -50,7 +54,7 @@ module.exports = {
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here are your masteries, ${body.name}!`)
-    .addField(`Masteries [${masteries.length - 1}]`, masteries.length < 10 ? masteries.championId.join('\n') : masteries.length > 10 ? trimArray(masteries) : 'None')
+    .addField(`Masteries [${masteries.length - 1}]`, masteryArray)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
