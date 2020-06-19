@@ -7,7 +7,7 @@ module.exports = {
  
     let target = message.mentions.users.first() || message.author;
  
-    let uEmbed = new discord.MessageEmbed()
+    let uEmbed = new Discord.MessageEmbed()
         .setColor(0xC76CF5)
         .setTitle("User Info")
         .setThumbnail(message.guild.iconURL)
