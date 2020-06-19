@@ -62,7 +62,7 @@ module.exports = {
    });
     
   console.dir(masteryArray)
-  });  
+ 
     
    const embed = new Discord.MessageEmbed()
 
@@ -74,6 +74,7 @@ module.exports = {
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
+  });  
   })
   })
   }
