@@ -45,7 +45,7 @@ module.exports = {
    var size = 10; 
    var masteryArray = masteries.slice(0, size).map(i => {
     return masteries[i].championId;
-   }
+   })
   
   
    const embed = new Discord.MessageEmbed()
