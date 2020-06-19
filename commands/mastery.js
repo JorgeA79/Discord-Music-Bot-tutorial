@@ -43,9 +43,12 @@ module.exports = {
   .then(res => res.json()).then(masteries => {  
   
    var size = 10; 
-   var masteryArray = masteries.slice(0, size)
-  
-  
+   var masteryArray = masteries.slice(0, size).map((item) => {
+        return item.championId;
+      });
+  console.dir(masteryArray)
+    
+    
    const embed = new Discord.MessageEmbed()
 
     .setColor(0xC76CF5)
