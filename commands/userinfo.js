@@ -10,14 +10,14 @@ module.exports = {
     let uEmbed = new Discord.MessageEmbed()
         .setColor(0xC76CF5)
         .setTitle("User Info")
-        .setThumbnail(message.guild.iconURL)
-        .setAuthor(`${target.username} Info`, target.displayAvatarURL)
+        .setThumbnail(message.guild.iconURL({ format: 'jpg' }))
+        .setAuthor(`${target.username} Info`, target.displayAvatarURL({ format: 'jpg' }))
         .addField("**Username:**", `${target.username}`, true)
         .addField("**Discriminator:**", `${target.discriminator}`, true)
         .addField("**ID:**", `${target.id}`, true)
         .addField("**Status:**", `${target.presence.status}`, true)
         .addField("**Created At:**", `${target.createdAt}`, true)
-        .setFooter(`PixelBot | Footer`, client.user.displayAvatarURL);
+        .setFooter(`PixelBot | Have a nice day!`, process.env.BOT_AVATAR);
 
     message.channel.send(uEmbed);
     
