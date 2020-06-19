@@ -55,7 +55,7 @@ module.exports = {
        var emote = champs[championList[i].name];   
        var id = championList[i].name;  
        var lvl = item.championLevel; 
-       var points = item.championPoints;
+       var points = numberWithCommas(item.championPoints);
        var text = `**[${lvl}] ${emote} ${id}** - ${points}`
        return text;
      }   
@@ -80,7 +80,9 @@ module.exports = {
   })
   }
   };
-  
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}  
 const champs = {
    "Aatrox":"<:AatroxSquare:721850183306182677>",
    "Ahri": "<:AhriSquare:721850183314440284>",
