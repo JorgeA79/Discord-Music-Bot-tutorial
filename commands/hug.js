@@ -8,7 +8,12 @@ module.exports = {
 	    	"https://media.tenor.com/images/b6d0903e0d54e05bb993f2eb78b39778/tenor.gif",
  	    	"https://i.pinimg.com/originals/85/dc/ef/85dcef131af84b515106955e142df54e.gif",
  	    	"https://i.imgur.com/r9aU2xv.gif",
- 	    	"https://i.pinimg.com/originals/4d/89/d7/4d89d7f963b41a416ec8a55230dab31b.gif"];
+ 	    	"https://i.pinimg.com/originals/4d/89/d7/4d89d7f963b41a416ec8a55230dab31b.gif",
+      		"https://acegif.com/wp-content/gif/anime-hug-14.gif",
+      		"https://acegif.com/wp-content/gif/anime-hug-86.gif",
+      		"https://acegif.com/wp-content/gif/anime-hug-49.gif",
+      		"https://acegif.com/wp-content/gif/anime-hug-59.gif",
+     		"https://acegif.com/wp-content/gif/anime-hug-38.gif"];
 	
  	   var ahugifs =  [
 	    "https://media0.giphy.com/media/ArLxZ4PebH2Ug/200.gif",
