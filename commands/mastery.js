@@ -44,7 +44,11 @@ module.exports = {
   
    var size = 10; 
    var masteryArray = masteries.slice(0, size).map((item) => {
-        return item.championId;
+       var id = item.championId;  
+       var lvl = item.championLevel; 
+       var points = item.championPoints;
+       var text = `${id},${lvl},${points}`
+       return text;
       });
   console.dir(masteryArray)
     
