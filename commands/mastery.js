@@ -47,8 +47,9 @@ module.exports = {
     let list = JSON.parse(champions);
     let championList = list.data;
     
-    var size = 10; 
-   var masteryArray = masteries.slice(0, size).map((item) => {
+    
+    
+   var masteryArray = masteries.slice(0, 10).map((item) => {
       
      for (var i in championList) {
        if (championList[i].key == item.championId) {   
@@ -61,17 +62,21 @@ module.exports = {
      }   
      }
    });
+   var chestArray = masteries.slice(0, 10).map((item) => {
+       var emote = chestEmote[item.chestGranted]
+       var text = `${emote}`
+       return text;
+   }); 
     
-  console.dir(masteryArray)
- 
-    
+  
    const embed = new Discord.MessageEmbed()
 
     .setColor(0xC76CF5)
     .setTitle("Profile: " + body.name)
     .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setDescription(`Here are your masteries, ${body.name}!`)
-    .addField(`Masteries [${masteries.length - 1}]`, masteryArray)
+    .addField(`Masteries [${masteries.length - 1}]`, masteryArray, true)
+    .addField(`Chest`, chestArray, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
@@ -83,7 +88,10 @@ module.exports = {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }  
-
+const chestEmote = {
+true:"<:chsetclaimed:723350808313200714>",
+false:"<:chest:723350808405606470>"  
+}
 const masteryEmote = {
    1: "<:Mastery1:723348590088552479>",
    2: "<:Mastery2:723348590650458152>",
