@@ -89,6 +89,7 @@ module.exports = {
     .setDescription(`Here are your masteries, ${body.name}!`)
     .addField(`Masteries/Points [${masteries.length - 1}]`, masteryArray, true)
     .addField(`Chest/Status`, chestArray, true)
+    .addField(`Last Played`, timeArray, true)
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
