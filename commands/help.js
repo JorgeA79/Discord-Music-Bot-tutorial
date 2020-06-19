@@ -14,11 +14,11 @@ module.exports = {
   .addField("2️⃣ - :gem: Social", "\`profile\` \`marry\` \`mymarry\` \`divorce\` \`level\`\n\u200b", true)
   .addField("3️⃣ - :credit_card:  Economy", "\`balance\` \`daily\` \`slots\` \`catch sell\` \`mine sell\`\n\u200b", true)      
   .addField("4️⃣ - :8ball: Fun & Games", "\`8ball\` \`flip\` \`head\` or \`tail\` \`ship\` \`slots\` \`ratewaifu\` \`catch\` \`mine\`\n\u200b", true)   
-  .addField("5️⃣ - <:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\`\n\u200b", true)
+  .addField("5️⃣ - <:kannaheart:712714267056537641> Roleplay", "\`hug\` \`slap\` \`kiss\` \`shoot\` \`protect\` \`wave\` \`date\` \`dance\` \`pat\` \`stare\` \`kill\` \`poke\` \`more...\`\n\u200b", true)
   .addField("6️⃣ - :musical_note: Music", "\`play\` \`stop\` \`np\` \`queue\` \`pause\` \`resume\` \`lyrics\` \`skip\` \`clear\`\n\u200b", true)
   .addField("7️⃣ - <:pokeb:716936621265518613> Anime", "\`pokedex\` \`anime\` \`scrap\`\n\u200b",true)
   .addField("8️⃣ - :video_game: Gaming", "\`osu\` \`valorant\` \`fortnite\` \`lol\` \`mastery\` \`r6stats\`\n\u200b",true) 
-  .addField("9️⃣ - ⚙️ Utility", " \`urban\` \`avatar\` \`say\` \`cat\` \`dog\` \`fox\` \`quote\`\n\u200b",true)     
+  .addField("9️⃣ - ⚙️ Utility", " \`urban\` \`avatar\` \`user\` \`say\` \`cat\` \`dog\` \`fox\` \`quote\`\n\u200b",true)     
   .setTimestamp()  
   .setFooter('Have a nice day!', process.env.BOT_AVATAR);   
 	  
@@ -87,6 +87,10 @@ module.exports = {
    .addField("p!date <@person>", "<:kannaheart:712714267056537641> Date someone.", false)
    .addField("p!dance <@person>", "<:kannaheart:712714267056537641> Dance with someone.", false)
    .addField("p!pat <@person>", "<:kannaheart:712714267056537641> Pat someone.", false)
+   .addField("p!stare <@person>", "<:kannaheart:712714267056537641> Stare at someone.", false)
+   .addField("p!kill <@person>", "<:kannaheart:712714267056537641> Kill someone.", false)
+   .addField("p!nom <@person>", "<:kannaheart:712714267056537641> Nom nom someone.", false)
+   .addField("p!poke <@person>", "<:kannaheart:712714267056537641> Poke someone.", false)
    .setTimestamp()  
    .setFooter('Have a nice day!', process.env.BOT_AVATAR); 	  
 
@@ -139,6 +143,7 @@ const embed9 = new Discord.MessageEmbed()
    .setThumbnail(process.env.BOT_AVATAR)
    .addField("p!urban <word>", ":gear: Get a word's definition.", false)
    .addField("p!avatar", ":gear: Get someone's profile picture.", false)
+   .addField("p!user", ":gear: Get someone's profile info.", false)
    .addField("p!cat", ":gear: Cat images.", false)
    .addField("p!dog", ":gear: Dog images.", false)
    .addField("p!fox", ":gear: Fox images.", false)
