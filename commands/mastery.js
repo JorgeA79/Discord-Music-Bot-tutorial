@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const apikey = process.env.LOL_API;
 var request = require('request');
 const normalizeUrl = require('normalize-url');
-
+const moment = require('moment');
 
 module.exports = {
   name: "mastery",
@@ -73,8 +73,14 @@ module.exports = {
        var text = `${emote} - ${status}`
        return text;
    }); 
+   var timeArray = masteries.slice(0, 10).map((item) => {
+       var time =  moment(item.lastPlayTime).fromNow();
+       var text = `${time}`
+       return text;
+   }); 
+ 
     
-  
+    
    const embed = new Discord.MessageEmbed()
 
     .setColor(0xC76CF5)
