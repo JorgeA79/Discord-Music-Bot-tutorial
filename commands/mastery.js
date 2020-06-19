@@ -54,9 +54,9 @@ module.exports = {
        if (championList[i].key == item.championId) {   
        var emote = champs[championList[i].name];   
        var id = championList[i].name;  
-       var lvl = item.championLevel; 
+       var lvl = masteryEmote[item.championLevel]; 
        var points = numberWithCommas(item.championPoints);
-       var text = `**[${lvl}] ${emote} ${id}** - ${points}`
+       var text = `**${lvl} ${emote} ${id}** - ${points}`
        return text;
      }   
      }
@@ -83,6 +83,17 @@ module.exports = {
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }  
+
+const masteryEmote = {
+   1: "<:Mastery1:723348590088552479>",
+   2: "<:Mastery2:723348590650458152>",
+   3: "<:Mastery3:723348590499725332>",
+   4: "<:Mastery4:723348590088552481>",
+   5: "<:Mastery5:723348590298398751>",
+   6: "<:Mastery6:723348590445068409>",
+   7: "<:Mastery7:723348591111962685>"
+}
+
 const champs = {
    "Aatrox":"<:AatroxSquare:721850183306182677>",
    "Ahri": "<:AhriSquare:721850183314440284>",
