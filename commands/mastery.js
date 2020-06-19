@@ -78,21 +78,18 @@ module.exports = {
        var text = `${time}`
        return text;
    }); 
- var totalArray = masteries.slice(0, 10).map((item) => {
-       eval(item.championLevel.join('+'))
-       var text = `**Champions:** · **Mastery Levels:** · **Mastery Points:** `
-       return text;
-   }); 
-   console.log(totalArray) 
+
     
    const embed = new Discord.MessageEmbed()
-    .setAuthor(`${body.name} Masteries`, `http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
+    .setAuthor(`${body.name} Masteries`, process.env.BOT_AVATAR)
     .setColor(0xC76CF5)
+    .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setTitle("Profile: " + body.name)
     .setDescription(`Here are your masteries, ${body.name}!`)
     .addField(`Masteries/Points [${masteries.length - 1}]`, masteryArray, true)
     .addField(`Chest/Status`, chestArray, true)
     .addField(`Last Played`, timeArray, true)
+    .setImage('https://d1mt9jmphk9kik.cloudfront.net/teamdignitas/image1566790968.png')
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
     message.channel.send(embed)
