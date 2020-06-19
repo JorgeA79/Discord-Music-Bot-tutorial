@@ -10,7 +10,6 @@ module.exports = {
  	 "https://media1.tenor.com/images/88290d24dc21e2e8f07825fdd8823760/tenor.gif?itemid=9780126",
  	 "https://thumbs.gfycat.com/EnchantingHandyCusimanse-size_restricted.gif",
    "https://media1.tenor.com/images/1b42b934b2cb4a4d68004056762514d0/tenor.gif?itemid=12387055",
-   "https://media1.giphy.com/media/l1rDFht4dIHni/source.gif",
    "https://i.pinimg.com/originals/d1/0f/56/d10f561068060b7175ba14b9ebef409e.gif"];
 
 		
