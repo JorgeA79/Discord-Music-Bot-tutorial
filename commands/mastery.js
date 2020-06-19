@@ -42,16 +42,27 @@ module.exports = {
   fetch(site1)
   .then(res => res.json()).then(masteries => {  
   
-   var size = 10; 
+    
+  request('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/de_DE/champion.json', function (error, response, champions) {  
+    let list = JSON.parse(champions);
+    let championList = list.data;
+    
+    var size = 10; 
    var masteryArray = masteries.slice(0, size).map((item) => {
-       var id = item.championId;  
+      
+     for (var i in championList) {
+       if (championList[i].key == item.championId) {   
+       var id = championList[i].name;  
        var lvl = item.championLevel; 
        var points = item.championPoints;
        var text = `${id},${lvl},${points}`
        return text;
-      });
-  console.dir(masteryArray)
+     }   
+     }
+   });
     
+  console.dir(masteryArray)
+  });  
     
    const embed = new Discord.MessageEmbed()
 
