@@ -253,7 +253,7 @@ const champs = {
    "Wukong":"<:WukongSquare:721856053247213588>",
    "Xayah":"<:Xayah:721856439156605018>",
    "Xerath":"<:XerathSquare:721856055528652921>",
-   "Xin Zao":"<:Xin_ZhaoSquare:721856052785840158>",
+   "Xin Zhao":"<:Xin_ZhaoSquare:721856052785840158>",
    "Yasuo":"<:YasuoSquare:721856055990026310>",
    "Yorick":"<:YorickSquare1:721856333590298768>",
    "Yuumi":"<:YuumiSquare:721856052819394620>",
