@@ -81,9 +81,8 @@ module.exports = {
 
     
    const embed = new Discord.MessageEmbed()
-    .setAuthor(`${body.name} Masteries`, process.env.BOT_AVATAR)
+    .setAuthor(`${body.name} Masteries`, `http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setColor(0xC76CF5)
-    .setThumbnail(`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setTitle("Profile: " + body.name)
     .setDescription(`Here are your masteries, ${body.name}!`)
     .addField(`Masteries/Points [${masteries.length - 1}]`, masteryArray, true)
