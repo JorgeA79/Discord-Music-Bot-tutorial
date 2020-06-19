@@ -78,8 +78,12 @@ module.exports = {
        var text = `${time}`
        return text;
    }); 
- 
-    
+ var totalArray = masteries.slice(0, 10).map((item) => {
+       eval(item.championLevel.join('+'))
+       var text = `**Champions:** · **Mastery Levels:** · **Mastery Points:** `
+       return text;
+   }); 
+   console.log(totalArray) 
     
    const embed = new Discord.MessageEmbed()
     .setAuthor(`${body.name} Masteries`, `http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
