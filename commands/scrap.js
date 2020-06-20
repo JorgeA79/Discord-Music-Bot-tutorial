@@ -76,7 +76,7 @@ const cmd = args.join(" ").split(' | ');
     .addField(episode.videoLinks[3].name, `[LINK 4](${episode.videoLinks[3].url})`, true)
     .addField(episode.videoLinks[4].name, `[LINK 5](${episode.videoLinks[4].url})`, true);     
     message.channel.send(embed)
-    }else if(episode.videoLinks.length == 6){        
+    }else if(episode.videoLinks.length >= 6){        
     let embed = new Discord.MessageEmbed()
     .setTitle(`${pokemonX}, Episode ${cmd[1]}`)
     .setColor(0xC76CF5)
