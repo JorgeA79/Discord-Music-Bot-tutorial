@@ -22,6 +22,7 @@ const modes = {
    430: "Normal",
    440: "Ranked Flex",
    450: "ARAM",
+   700: "Clash Games",
    830: "Normal",
    840: "Normal",
    850: "Normal",
