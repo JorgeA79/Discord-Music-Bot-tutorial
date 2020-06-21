@@ -73,7 +73,7 @@ module.exports = {
        var text = `${emote} - ${status}`
        return text;
    }); 
-   var timeArray = masteries.slice(0, 10).map((item) => {
+   var timeArray = masteries.slice(0, 15).map((item) => {
        var time =  moment(item.lastPlayTime).fromNow();
        var text = `${time}`
        return text;
