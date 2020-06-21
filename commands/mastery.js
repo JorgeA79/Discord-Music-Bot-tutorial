@@ -49,7 +49,7 @@ module.exports = {
     
     
     
-   var masteryArray = masteries.slice(0, 10).map((item) => {
+   var masteryArray = masteries.slice(0, 15).map((item) => {
       
      for (var i in championList) {
        if (championList[i].key == item.championId) {   
@@ -62,7 +62,7 @@ module.exports = {
      }   
      }
    });
-   var chestArray = masteries.slice(0, 10).map((item) => {
+   var chestArray = masteries.slice(0, 15).map((item) => {
        var emote = chestEmote[item.chestGranted]
        var status = "";
        if(item.championLevel == 7){
