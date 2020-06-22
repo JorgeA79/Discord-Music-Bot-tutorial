@@ -33,12 +33,12 @@ let statuses = [
 
 //CLIENT EVENTS
 client.on("ready", () => {
-	
+ console.log('Ready TO play some soft songs')	
 setInterval(function(){
 	
   let status = statuses[Math.floor(Math.random()*statuses.length)];
 	
-  console.log('Ready TO play some soft songs')
+ 
   client.user.setActivity(status)
 	},60000)	
 })
@@ -240,6 +240,7 @@ const talkedRecently = new Set();
 client.on('message', async message => {
 	 if (message.author === client.user) return;
  	 if(message.channel.type === "dm") return;
+	 if (message.author.bot) return;
 	 if (talkedRecently.has(message.author.id)) {
            
  } else {
@@ -247,11 +248,14 @@ client.on('message', async message => {
 		pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
       		if(err) return err;
    		let sql;  
+			
     		if(!result.rows[0]){
     		sql = `INSERT INTO usersxp (id,xp) VALUES ('${message.author.id}', ${generateXp()})`;
     		} else {
+			
      		let xp = result.rows[0].xp;
-     		sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;			   		
+     		sql = `UPDATE usersxp SET xp = ${xp + generateXp()} WHERE id = '${message.author.id}'`;	
+			
 		}  
 		
     		pool.query(sql, console.log);
@@ -278,11 +282,10 @@ return Math.floor(Math.random()*(max - min+1)) + 10;
 client.on('message', async message => {
 	 if (message.author === client.user) return;
  	 if(message.channel.type === "dm") return;
+	 if (message.author.bot) return;
 		pool.query(`SELECT * FROM usersxp WHERE id = '${message.author.id}'`, (err,result) =>{
       		if(err) return err;
-		
 		let xp = result.rows[0].xp;
-
 		let currLvl = result.rows[0].lvl;
 		if(xp === null) xp = 0;	
 		if(currLvl === null) currLvl = 0;
