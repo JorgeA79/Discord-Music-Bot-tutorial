@@ -16,7 +16,7 @@ Pixel Bot Commands:
 |serverinfo|`Get the info of the server` |<p!serverinfo>  |
  #
 ![alt text for screen readers](./images/CORE.png "MarineGEO logo").
- 
+ #
  
 |💎 - Social                |Description                         |Use                         |
 |----------------|-------------------------------|-----------------------------|
@@ -26,6 +26,9 @@ Pixel Bot Commands:
 |divorce|`Divorce of your current marry.` |<p!divorce>  |
 |level|`Get level card.` |<p!level>  
 #
+![alt text for screen readers](./images/Social.png "MarineGEO logo").
+#
+
 |💳 - Economy              |Description                         |Use                         |
 |----------------|-------------------------------|-----------------------------|
 |balance|`Get your balance/Get someones balance.`|<p!balance/p!balance <@someone>> |
