@@ -6,6 +6,8 @@ Pixel Bot is a pretty cool bot filled with funny stuff & gaming related stuff al
 
 Pixel Bot Commands:
 
+
+![MarineGEO circle logo](./images/BGP.png "MarineGEO logo")
 |📎 - Core                |Description                         |Use                         |
 |----------------|-------------------------------|-----------------------------|
 |ping|`'Get the time it took the bot to reply.`|<p!ping> |
