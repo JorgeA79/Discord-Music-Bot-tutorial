@@ -6,7 +6,7 @@ Pixel Bot is a pretty cool bot filled with funny stuff & gaming related stuff al
 
 Pixel Bot Commands:
 
-![alt text for screen readers](./images/BGP.png "MarineGEO logo").
+
 |📎 - Core                |Description                         |Use                         |
 |----------------|-------------------------------|-----------------------------|
 |ping|`'Get the time it took the bot to reply.`|<p!ping> |
@@ -15,6 +15,9 @@ Pixel Bot Commands:
 |support|`'Support's Bot server` |<p!support>  |
 |serverinfo|`Get the info of the server` |<p!serverinfo>  |
  #
+![alt text for screen readers](./images/CORE.png "MarineGEO logo").
+ 
+ 
 |💎 - Social                |Description                         |Use                         |
 |----------------|-------------------------------|-----------------------------|
 |profile|`Get your profile's Image/Get someones profile's Image.`|<p!profile/p!profile <@someone>> |
