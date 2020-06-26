@@ -8,7 +8,7 @@ module.exports = {
    const embed = new Discord.MessageEmbed()
    .setTitle("Pixel's Commands")
    .setColor(0xC76CF5)
-   .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761>\n -`p!<command>` \n\u200b")
+   .setDescription("Here you can find the main commands of the bot so you wont get confused <a:__:713677852289269761>\n -`p!<command> <args>` \n\u200b")
    .setThumbnail(process.env.BOT_AVATAR)
   .addField("1️⃣ - <:discord_bot_dev:719520819771998289> Core", "\`help\` \`ping\` \`server\` \`invite\` \`support\` \`serverinfo\`\n\u200b", true)
   .addField("2️⃣ - :gem: Social", "\`profile\` \`marry\` \`mymarry\` \`divorce\` \`level\`\n\u200b", true)
