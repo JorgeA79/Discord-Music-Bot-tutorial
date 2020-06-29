@@ -17,5 +17,23 @@
 "hh-item":"",
 "image":"https://pm1.narvii.com/6993/0c33e8b61567eb156ff3cefd52d3e7fbc00e442br1-234-272v2_00.jpg"
 }
-]
+],
+"hunters":[
+{
+"name":"Leo Black",
+"alias":"Hell Ember",  
+"career":"Factory owner",
+"bg":"Leo Beck was once the owner of a small textile factory. After taking the advice of his friend Freddy Riley, he bought a small gun factory that was severely in debt. Before Leo realized the poor conditions of the factory, his wife and Freddy Riley made off with all his possessions and disappeared. Drowning in debt, Leo Beck burned down the factory.",
+"abilities":[
+  {"name":"Awaken",
+   "description":"Tap the skill button to awaken phantom of resentment that will pursue nearby survivors for 20 seconds; Hold down the skill button to transmit fury to your puppet and order it to pursue nearby survivors. If you change places with your puppet, its anger will be quenched."},
+  {"name":"Puppet Control",
+   "description":"For an unknown reason, Hell Ember is connected with his puppet. After tapping Deploy or Cast, the puppet can detect surrounding survivors and alert Hell Ember. Hell Ember can switch positions with the puppet, gaining an acceleration boost for a short period. The puppet can be dismantled by survivors, during which time Hell Ember is unable to switch positions."},
+  {"name":"Multiple Puppet Control",
+   "description":"After a successful hunt, Hell Ember acquires a second puppet covered in red stains."},
+  {"name":"Infernal Soul",
+   "description":"When Hell Ember pursues a survivor, is stunned or when the survivors decode a cipher machine with none of the survivors incapacitated, he becomes furious. When he has accumulated enough Fury, it will turn to Resentment, and he can use it to activate his Fury Transmission skill."}],
+"image":"https://vignette.wikia.nocookie.net/identity-v/images/6/6f/LB_charSelect_portrait.png/revision/latest/scale-to-width-down/340?cb=20180722000240"
+}
+]  
 }
