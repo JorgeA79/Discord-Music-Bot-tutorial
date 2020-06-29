@@ -26,6 +26,8 @@ module.exports = {
     .addField("Name:", `idv[argsowo.toUpperCase()].name`, true)
     .setImage(idv[argsowo.toUpperCase()].image)
     .setColor(0xC76CF5);
+    
+    message.channel.send(embed);
   }
   }else{
   return message.reply("no xd");
