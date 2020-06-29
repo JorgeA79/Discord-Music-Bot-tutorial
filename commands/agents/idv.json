@@ -5,7 +5,15 @@
 "name":"Emma Woods",
 "career":"Gardener",
 "bg":"Having found 'the one,' Emma can finally focus on perfecting her gardening skills. Maybe dear Mr. Scarecrow still needs some new duds. Replace the rotten straw, throw on a new hat. Of course, appearance isn't the only thing she cares about. But, hey, what's wrong with dressing up your dream lover? As long as you have the money.",
-"abilities":["Ingenuity","Mech Expert","Confidence","Veterans"],
+"abilities":[
+  {"name":"Ingenuity",
+   "description":"Carries around a toolkit that is used to destroy rocket chairs. The more active rocket chairs that remain, the faster her destroying speed is. Due to her basic repair skills, toolkits are not depleted when used."},
+  {"name":"Mech Expert",
+   "description":"Possesses certain repair skills. When a calibration is triggered, the scope of success is increased by 50%, and the chance of triggering one is decreased by 50%. Thanks to her, all teammates' scope of success is increased by 5%, and chance of triggering a calibration is decreased by 5%."},
+  {"name":"Confidence",
+   "description":"Due to her familiarity with the structure of rocket chairs, she is less scared and the rocket chair countdown is decreased by 10%"},
+  {"name":"Veterans",
+   "description":"Veterans are more vigilant than novices and gain an additional 2s boost when hit."}],
 "hh-item":"",
 "image":"https://pm1.narvii.com/6993/0c33e8b61567eb156ff3cefd52d3e7fbc00e442br1-234-272v2_00.jpg"
 }
