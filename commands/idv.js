@@ -30,6 +30,7 @@ module.exports = {
     .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[2].name}:**\n${idv[argsowo.toUpperCase()].abilities[2].description}`, false)
     .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[3].name}:**\n${idv[argsowo.toUpperCase()].abilities[3].description}`, false)
     .setThumbnail(idv[argsowo.toUpperCase()].image)
+    .setImage("https://cdn.discordapp.com/attachments/396942894487044099/727026641230102589/unknown.png")
     .setColor(0xC76CF5);
     
     message.channel.send(embed);
