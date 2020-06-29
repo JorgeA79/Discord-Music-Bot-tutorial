@@ -24,7 +24,7 @@ module.exports = {
     .setDescription(`Here's **idv[argsowo.toUpperCase()].name** Background Story and abilities!`)
     .addField("Name:", `idv[argsowo.toUpperCase()].name`, true)
     .setImage(idv[argsowo.toUpperCase()].image)
-    .setColor(0xC76CF5);.
+    .setColor(0xC76CF5);
   }
   }else{
   return message.reply("no xd");
