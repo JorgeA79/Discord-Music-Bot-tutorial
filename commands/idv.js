@@ -16,14 +16,17 @@ module.exports = {
   }else{
   
   const argsowo = args.splice(1).join(" ");  
+    
   const idv = {
-  "EMMAWOODS": jsonContent.survivors[0],
-  "EMMAWOODSXD": jsonContent.survivors[0]
+  "EMMA WOODS": jsonContent.survivors[0]
   }
   const embed = new Discord.MessageEmbed()
     .setTitle("Identity V Survivors")
     .setDescription(`Here's **${idv[argsowo.toUpperCase()].name}** Background Story and abilities!`)
     .addField("Name:", `${idv[argsowo.toUpperCase()].name}`, true)
+    .addField("Background Story:", `${idv[argsowo.toUpperCase()].bg}`, false)
+    .addField("Abilities:", `**${idv[argsowo.toUpperCase()].abilities[0].name}:**\n${idv[argsowo.toUpperCase()].abilities[0].description}`, true)
+    .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[0].name}:**\n${idv[argsowo.toUpperCase()].abilities[0].description}`, true)
     .setThumbnail(idv[argsowo.toUpperCase()].image)
     .setColor(0xC76CF5);
     
