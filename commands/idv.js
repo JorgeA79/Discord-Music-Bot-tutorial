@@ -17,7 +17,8 @@ module.exports = {
   
   const argsowo = args.splice(1).join(" ");  
   const idv = {
-  "EMMA WOODS":jsonContent. survivors[0]
+  "EMMAWOODS": jsonContent.survivors[0],
+  "EMMAWOODSXD": jsonContent.survivors[0], 
   }
   const embed = new Discord.MessageEmbed()
     .setTitle("Identity V Survivors")
