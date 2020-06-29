@@ -22,9 +22,9 @@ module.exports = {
   }
   const embed = new Discord.MessageEmbed()
     .setTitle("Identity V Survivors")
-    .setDescription(`Here's **idv[argsowo.toUpperCase()].name** Background Story and abilities!`)
-    .addField("Name:", `idv[argsowo.toUpperCase()].name`, true)
-    .setImage(idv[argsowo.toUpperCase()].image)
+    .setDescription(`Here's **${idv[argsowo.toUpperCase()].name}** Background Story and abilities!`)
+    .addField("Name:", `${idv[argsowo.toUpperCase()].name}`, true)
+    .setThumbnail(idv[argsowo.toUpperCase()].image)
     .setColor(0xC76CF5);
     
     message.channel.send(embed);
