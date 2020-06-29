@@ -26,7 +26,9 @@ module.exports = {
     .addField("Name:", `${idv[argsowo.toUpperCase()].name}`, true)
     .addField("Background Story:", `${idv[argsowo.toUpperCase()].bg}`, false)
     .addField("Abilities:", `**${idv[argsowo.toUpperCase()].abilities[0].name}:**\n${idv[argsowo.toUpperCase()].abilities[0].description}`, true)
-    .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[0].name}:**\n${idv[argsowo.toUpperCase()].abilities[0].description}`, true)
+    .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[1].name}:**\n${idv[argsowo.toUpperCase()].abilities[1].description}`, true)
+    .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[2].name}:**\n${idv[argsowo.toUpperCase()].abilities[2].description}`, true)
+    .addField("\u200b", `**${idv[argsowo.toUpperCase()].abilities[3].name}:**\n${idv[argsowo.toUpperCase()].abilities[3].description}`, true)
     .setThumbnail(idv[argsowo.toUpperCase()].image)
     .setColor(0xC76CF5);
     
