@@ -144,7 +144,7 @@ const champs = {
    "Soraka":"<:SorakaSquare:721856055390502912>",
    "Swain":"<:SwainSquare:721856050990546954>",
    "Sylas":"<:SylasSquare:721856051007193138>",
-   "Syndra":"<:SyndraSquare:72185605004626974>",
+   "<:SyndraSquare:721856055004626974>",
    "Tahm Kench":"<:TahmKenchSquare:721856634120437852>",
    "Taliyah":"<:TaliyahSquare:721856057349242902>",
    "Talon":"<:TalonSquare:721856054727540907>",
