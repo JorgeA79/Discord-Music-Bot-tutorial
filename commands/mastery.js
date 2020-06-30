@@ -49,7 +49,7 @@ module.exports = {
     
     
     
-   var masteryArray = masteries.slice(0, 10).map((item) => {
+   var masteryArray1 = masteries.slice(0, 4).map((item) => {
       
      for (var i in championList) {
        if (championList[i].key == item.championId) {   
@@ -62,7 +62,7 @@ module.exports = {
      }   
      }
    });
-   var chestArray = masteries.slice(0, 10).map((item) => {
+   var chestArray1 = masteries.slice(0, 4).map((item) => {
        var emote = chestEmote[item.chestGranted]
        var status = "";
        if(item.championLevel == 7){
@@ -73,21 +73,52 @@ module.exports = {
        var text = `${emote} - ${status}`
        return text;
    }); 
-   var timeArray = masteries.slice(0, 10).map((item) => {
+   var timeArray1 = masteries.slice(0, 4).map((item) => {
        var time =  moment(item.lastPlayTime).fromNow();
        var text = `${time}`
        return text;
    }); 
 
-    
+      var masteryArray2 = masteries.slice(5, 10).map((item) => {
+      
+     for (var i in championList) {
+       if (championList[i].key == item.championId) {   
+       var emote = champs[championList[i].name];   
+       var id = championList[i].name;  
+       var lvl = masteryEmote[item.championLevel]; 
+       var points = numberWithCommas(item.championPoints);
+       var text = `**${lvl} ${emote} ${id}** - ${points}`
+       return text;
+     }   
+     }
+   });
+   var chestArray2 = masteries.slice(5, 10).map((item) => {
+       var emote = chestEmote[item.chestGranted]
+       var status = "";
+       if(item.championLevel == 7){
+       status = "Mastered";
+       }else{
+       status = `${item.tokensEarned} Tokens`;
+       }
+       var text = `${emote} - ${status}`
+       return text;
+   }); 
+   var timeArray2 = masteries.slice(5, 10).map((item) => {
+       var time =  moment(item.lastPlayTime).fromNow();
+       var text = `${time}`
+       return text;
+   });  
    const embed = new Discord.MessageEmbed()
     .setAuthor(`${body.name} Masteries`, `http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setColor(0xC76CF5)
     .setTitle("Profile: " + body.name)
     .setDescription(`Here are your masteries, ${body.name}!`)
-    .addField(`Masteries/Points [${masteries.length - 1}]`, masteryArray, true)
-    .addField(`Chest/Status`, chestArray, true)
-    .addField(`Last Played`, timeArray, true)
+    .addField(`Masteries/Points [${masteries.length - 1}]`, masteryArray1, true)
+    .addField(`Chest/Status`, chestArray1, true)
+    .addField(`Last Played`, timeArray1, true)
+    .addField(`\u200b`, masteryArray2, true)
+    .addField(`\u200b`, chestArray2, true)
+    .addField(`\u200b`, timeArray2, true)
     .setImage('https://d1mt9jmphk9kik.cloudfront.net/teamdignitas/image1566790968.png')
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
