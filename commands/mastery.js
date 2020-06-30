@@ -109,7 +109,7 @@ module.exports = {
        return text;
    });
     
-         var masteryArray3 = masteries.slice(11, 15).map((item) => {
+         var masteryArray3 = masteries.slice(10, 15).map((item) => {
       
      for (var i in championList) {
        if (championList[i].key == item.championId) {   
@@ -122,7 +122,7 @@ module.exports = {
      }   
      }
    });
-   var chestArray3 = masteries.slice(11, 15).map((item) => {
+   var chestArray3 = masteries.slice(10, 15).map((item) => {
        var emote = chestEmote[item.chestGranted]
        var status = "";
        if(item.championLevel == 7){
@@ -133,7 +133,7 @@ module.exports = {
        var text = `${emote} - ${status}`
        return text;
    }); 
-   var timeArray3 = masteries.slice(11, 15).map((item) => {
+   var timeArray3 = masteries.slice(10, 15).map((item) => {
        var time =  moment(item.lastPlayTime).fromNow();
        var text = `${time}`
        return text;
