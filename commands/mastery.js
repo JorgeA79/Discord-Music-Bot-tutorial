@@ -107,7 +107,39 @@ module.exports = {
        var time =  moment(item.lastPlayTime).fromNow();
        var text = `${time}`
        return text;
+   });
+    
+         var masteryArray3 = masteries.slice(11, 15).map((item) => {
+      
+     for (var i in championList) {
+       if (championList[i].key == item.championId) {   
+       var emote = champs[championList[i].name];   
+       var id = championList[i].name;  
+       var lvl = masteryEmote[item.championLevel]; 
+       var points = numberWithCommas(item.championPoints);
+       var text = `**${lvl} ${emote} ${id}** - ${points}`
+       return text;
+     }   
+     }
+   });
+   var chestArray3 = masteries.slice(11, 15).map((item) => {
+       var emote = chestEmote[item.chestGranted]
+       var status = "";
+       if(item.championLevel == 7){
+       status = "Mastered";
+       }else{
+       status = `${item.tokensEarned} Tokens`;
+       }
+       var text = `${emote} - ${status}`
+       return text;
+   }); 
+   var timeArray3 = masteries.slice(11, 15).map((item) => {
+       var time =  moment(item.lastPlayTime).fromNow();
+       var text = `${time}`
+       return text;
    });  
+    
+    
    const embed = new Discord.MessageEmbed()
     .setAuthor(`${body.name} Masteries`, `http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/${body.profileIconId}.png`)
     .setColor(0xC76CF5)
@@ -119,6 +151,9 @@ module.exports = {
     .addField(`\u200b`, masteryArray2, true)
     .addField(`\u200b`, chestArray2, true)
     .addField(`\u200b`, timeArray2, true)
+    .addField(`\u200b`, masteryArray3, true)
+    .addField(`\u200b`, chestArray3, true)
+    .addField(`\u200b`, timeArray3, true)
     .setImage('https://d1mt9jmphk9kik.cloudfront.net/teamdignitas/image1566790968.png')
     .setFooter("Have a nice day!", process.env.BOT_AVATAR)
     .setTimestamp();
